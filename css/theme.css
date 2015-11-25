@@ -7,7 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-	background-color: #F7F7F7
+	background-color: #FFF
 }
 
 .text-muted {
@@ -410,7 +410,6 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
     padding: 25px;
-    max-width: 400px;
     text-align: center;
     background-color: #fff;
 }
