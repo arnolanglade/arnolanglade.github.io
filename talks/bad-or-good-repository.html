@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>What is the difference between a good and a bad repository?</title>
+
+		<meta name="description" content="How to design a repository? Let's talk about mistake we have made since a lot long time and let's see how to design it">
+		<meta name="author" content="Arnaud Langlade">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.reveal .slides > section {
+				padding: 0;
+			}
+
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+			}
+
+			.reveal section .margin-left {
+				margin-left: 100px;
+			}
+
+			.reveal section .margin-top {
+				margin-top: 60px;
+			}
+
+			.reveal pre {
+				box-shadow: none;
+				margin: auto;
+				width: 100%;
+			}
+
+			.reveal pre code {
+				font-size: 30px;
+				line-height: 32px;
+				max-height: none;
+			}
+
+			.reveal .social {
+				font-size: 60px;
+			}
+
+			.reveal .social img {
+				margin-top: 0;
+				margin-bottom: 0;
+				vertical-align: middle;
+			}
+
+			.akeneo-color {
+				color: #9452BA;
+			}
+
+			.sylius-color {
+				color: #1abb9c;
+			}
+
+			.php-color {
+				color: #6C7EB7;
+			}
+
+			.reveal p.social {
+				margin: 100px 0;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>What is the difference between</h2>
+					<h2><span class="akeneo-color">good</span> or <span class="sylius-color">bad</span> repository?</h2>
+				</section>
+
+				<section>
+					<h1>Hi, I am <strong class="php-color">Arnaud!</strong></h1>
+
+					<p class="margin-top">
+						<img src="images/common/akeneo-large.png" height="140">
+						<img src="images/common/sylius-large.png" height="140" class="margin-left">
+					</p>
+					<aside class="notes">
+					My name is Arnaud Langlade and I am a developer. I work for <a href="https://www.akeneo.com/">Akeneo</a>: a french company which develops a Product Information Management. I was core team member of <a href="https://www.sylius.com/">Sylius</a> few years ago. This is a open source e-commerce framework.
+					</aside>
+				</section>
+
+				<section>
+					<h2><strong class="sylius-color">Bouchonnois Corp</strong></h2>
+					<img src="images/bad-or-good-repository/bouchonnoiscorp.png">
+					<aside class="notes">
+						We won't talk about that today but we will speak about Bouchonnois Corp which is a french corporation of hunters. It owns lot of applications, one of them is used to register their galinettes farming. We will focus on a small part of one of this application to speak about the pattern repository.
+					</aside>
+				</section>
+
+                <section>
+                    <h2>What is a <strong class="php-color">repository</strong>?</h2>
+                    <blockquote class="fragment">
+                        &laquo;A <strong class="sylius-color">repository</strong> behaves like a in memory collection of unique domain object without taking care about the storage&raquo;
+                    </blockquote>
+                </section>
+
+                <section>
+					<h2>Let's model a <span class="sylius-color">Galinette</span>!</h2>
+					<img src="images/bad-or-good-repository/dede.png">
+					<p><strong class="sylius-color">Dédé, Business Expert</strong> <span class="akeneo-color">@BouchonnoisCorp</span></p>
+					<aside class="notes">
+						First, we need a domain object: a galinette! Before coding we need to ask information for our business expert Dédé (seasoned hunter). He said us that a galinette is a bird that borns someday and then it meets a good hunter. Then he laughed and he wanted to have a break.
+					</aside>
+				</section>
+
+                <section>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Domain;
+
+							final class Galinette
+							{
+								// constructor ...
+
+								public static function born(
+									Identifier $identifier,
+									Birthday $birthday,
+									Gender $gender
+								): Galinette {
+									return new self($identifier, $birthday, new Name(''), $gender);
+								}
+
+							    public function name(Name $name): void
+								{
+									$this->name = $name;
+								}
+
+								public function goToHeaven(): void
+								{
+									$this->goToHeavenAt = new \DateTimeImmutable('NOW');
+								}
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						Dédé is not stupid he did not want reveal all his secrets about the galinette but he said us enough information to design a domain object. Let's keep it simple for this talk! This object has a named construct called "born". A named constructor is a static method used to build a object. We don't use the default constructor because it does not bring any information about our business. Dédé did not say that we create a galinette but he said that a galinette borns. The last information given by Dédé is that a galinette go to the heaven someday. The other method goToHeaven is quite simple we only store the date when the galinette dies.
+					</aside>
+				</section>
+
+				<section>
+					<h2><h2>The bad <strong class="php-color">repository</strong></h2></h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Domain;
+
+							interface GalinetteRepository
+							{
+								public function find(int $id): Galinette
+
+								public function countGalinette(): int
+
+								public function findGalinetteForARelease(): Galinette[];
+
+								public function findGalinetteIdentifierForAReleaseAsString(): string[];
+
+								// etc ...
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						Lot of applications have repositories which looks like this one. To be honest, I wrote a lot of repositories like this one. This repository have several methods that returns either a Domain object (Galinette) or scalar or array.
+					</aside>
+				</section>
+				<section>
+					<h2>These are not <span class="php-color">repositories</span>!</h2>
+					<p class="fragment">They are more <strong class="sylius-color">SQL query</strong> repositories</p>
+					<aside class="notes">
+						We use our repositories like a collection of SQL queries, we just use them to get get information. It does not match the definition you gave previously. It does not ack like a domain object collection because we cannot add anything to it.
+					</aside>
+				</section>
+
+				<section>
+					<h2>The good <strong class="php-color">repository</strong></h2>
+				</section>
+
+				<section>
+					<h2>Public <strong class="php-color">API</strong></h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Domain;
+
+							interface GalinetteRepository
+							{
+								/**
+								 * @throws \LogicException
+								 */
+								public function add(Domain\Galinette $galinette): void;
+
+								/**
+								 * @throws UnknownGalinette | \LogicException
+								 */
+								public function get(Domain\Identifier $identifier): Domain\Galinette;
+
+								/**
+								 * @throws \LogicException
+								 */
+								public function remove(Domain\Identifier $identifier): void;
+
+								/**
+								 * @throws \LogicException
+								 */
+								public function nextIdentity(): Domain\Identifier;
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						A repository looks like a collection so we need a method to a add a domain object (Galinette) to the repository. Then with a the get we can access to the object we added to it. the method remove allow to delete a object with its identifier. The last method nextIdentifier generates a domain object identifier. It is useful to use uuid to avoid coupling between the database and our application. A uuid is made with the current time and a mac address, this is something to infrastructure layer. That is why the repository generates it!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Let's use <strong class="sylius-color">doctrine</strong> to design it</h2>
+				</section>
+
+				<section>
+					<h2>Repository <span class="php-color">dependencies</span></h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine;
+
+							use BouchonnoisCorp\Domain\GalinetteRepository;
+
+							final class GalinetteRepository implements GalinetteRepository
+							{
+								private $entityManager;
+
+								public function __construct(EntityManagerInterface $entityManager)
+								{
+									$this->entityManager = $entityManager;
+								}
+
+								// ...
+							}
+						</code>
+					</pre>
+                    <aside class="notes">
+                        The repository does not need anymore to extends the Doctrine EntityRepository but it only need to depend the Doctrine EntityManager. The repository belongs the infrastructure layer but it implements an interface define in the domain layer.
+                    </aside>
+				</section>
+
+				<section>
+					<h2><span class="php-color">Add</span> a galinette</h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine;
+
+							final class GalinetteRepository implements GalinetteRepository
+							{
+								// ...
+
+								public function add(Domain\Galinette $galinette)
+								{
+									try {
+										$this->entityManager->persist($galinette);
+										$this->entityManager->flush($galinette);
+									} catch (ORMInvalidArgumentException | ORMException $e) {
+										throw new \LogicException('It is not possible to add this galinette');
+									}
+								}
+
+								// ...
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						First, we need to able to add a domain object (Galinette) the repository. This method ask to the entity manager to persist this object. That means that the entity manager will track all changes apply to this object. When we will call the flush method they will record in the database. Be careful, some exception might be thrown by the entity manager! We have to catch them and throw a LogicException to respect the contract define by GalinetteRepository.
+					</aside>
+				</section>
+
+				<section>
+					<h2><span class="php-color">Retrieve</span> a galinette</h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine;
+
+							final class GalinetteRepository implements GalinetteRepository
+							{
+								// ...
+
+								public function get(Domain\Identifier $identifier): Domain\Galinette
+								{
+									try {
+										$galinette = $this->entityManager->find(Galinette::class, $identifier);
+									} catch (ORMInvalidArgumentException | ORMException $e) {
+										throw new \LogicException('It is not possible to add this galinette');
+									} finally {
+										if (null === $galinette) {
+											throw new Exception\UnknownGalinette(
+												(string) $identifier,
+												Galinette::class
+											);
+										}
+
+										return $galinette;
+									}
+								}
+
+								// ...
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						Then, we may need to get the Galinette object to apply business action. The entity manager is able to get data from the database and map them to an object thank to an domain object identifier and its FQCN. For that, we need to define the doctrine mapping that will tell to doctrine which database field matches the object property.
+					</aside>
+				</section>
+
+				<section>
+					<h2><span class="php-color">Remove</span> a galinette</h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine;
+
+							final class GalinetteRepository implements GalinetteRepository
+							{
+								// ...
+
+								public function remove(Domain\Identifier $identifier)
+								{
+									try {
+										$galinette = $this->entityManager->getReference(
+											Domain\Galinette::class,
+											(string) $identifier
+										);
+
+										$this->entityManager->remove($galinette);
+										$this->entityManager->flush($galinette);
+									} catch (ORMInvalidArgumentException | ORMException $e) {
+										throw new \LogicException('It is not possible to remove this galinette');
+									}
+								}
+
+								// ...
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						The object deletion works pretty the same than the addition except we will use the method remove instead persist. This method asks to doctrine to remove all data related to this object in database when the method flush will be called.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Get the <span class="php-color">next identity</span></h2>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine;
+
+							final class GalinetteRepository implements GalinetteRepository
+							{
+								// ...
+
+								public function nextIdentity(): Domain\Identifier
+								{
+							        try {
+										return new Domain\Identifier(Uuid::uuid4()->toString());
+									} catch (\InvalidArgumentException $e) {
+										throw new \LogicException('It is not possible to build the next identity');
+									}
+								}
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						The value object Identifier belongs to the galinette aggregate and represents a galinette identifier (it is a part of the domain layer.). This method will simply build a galinette identifier, it will be use when we will register galinette birth.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Use your repository to </h2>
+					<h2>get a <strong class="php-color">domain object</strong>!</h2>
+				</section>
+
+				<section>
+					<h2>How to manage my <strong class="php-color">SQL queries</strong>?</h2>
+					<img src="images/bad-or-good-repository/dede-broucouille.png">
+					<aside class="notes">
+						Even a good hunter can fail! When it happens, the hunters organize a release of galinette. The hunters need to easily select some galinettes and drop the nature! It will be easier to find them if you know what I mean. For us, developer, that means we need to be able to select some galinette data in the database to display them in our application.
+					</aside>
+				</section>
+
+				<section>
+					<h2>What is a <strong class="php-color">Query function</strong>?</h2>
+					<blockquote class="fragment">
+						&laquo;A <strong class="sylius-color">query function</strong> is a class which represents <strong class="akeneo-color">a</strong> SQL query.&raquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Infrastructure\Storage\Doctrine\Query;
+
+							final class ReleaseOfGalinette
+							{
+								private $connection;
+
+								public function __construct(Connection $connection)
+								{
+									$this->connection = $connection;
+								}
+
+								public function findGalinettes(): array
+								{
+									$query = 'SELECT g.identifier, g.name, g.birthday FROM galinette as g'
+
+									$statement = $this->connection->query($query);
+
+									$galinettes = [];
+									while ($galinette = $statement->fetch()) {
+										$galinettes[] = new ReadModel\ReleasedGalinette(
+											$galinette['identifier'],
+											$galinette['name'],
+											$galinette['birthday']
+										);
+									}
+
+									return $galinettes;
+								}
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						For now, we will keep simple we will create a query function with the operator NEW from Doctrine. There are several ways to it: a native sql query, DQL query, etc. It builds easily an object with the data retrieved from the database.
+					</aside>
+				</section>
+
+				<!--<section>-->
+					<!--<h2>What is a <strong class="php-color">Read model</strong>?</h2>-->
+					<!--<blockquote class="fragment">-->
+						<!--&laquo;A <strong class="sylius-color">read model</strong> is an easily serializable object which is not responsible of changing the application state&raquo;-->
+					<!--</blockquote>-->
+				<!--</section>-->
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+							namespace BouchonnoisCorp\Domain\ReadModel;
+
+							final class ReleasedGalinette
+							{
+								private $identifier;
+								private $name;
+								private $birthday;
+
+								public function __construct(
+									string $identifier,
+									string $name,
+									string $birthday
+								) {
+									$this->identifier = $identifier;
+									$this->name = $name;
+									$this->birthday = $birthday;
+								}
+
+								public function normalize(): array
+								{
+									return [
+										'id' => $this->identifier,
+										'name' => $this->name,
+										'birthday' => $this->birthday,
+									];
+								}
+							}
+						</code>
+					</pre>
+					<aside class="notes">
+						To build the list of galinette released in the nature, we created a model that represent them. We don't use the write model to report data to the end user. This model won't be responsible of changing the state of the galinettes but they represent data. I don't like getter even for read model. To avoid them this model normalizes itself thought the method normalize.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Code example is available on <strong class="php-color">Github</strong>!</h2>
+					<p>
+						<a href="https://github.com/arnolanglade/galinette-repository">
+							https://github.com/arnolanglade/galinette-repository
+						</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Thank you! Questions?</h2>
+
+					<p class="social">
+						<img src="images/common/github.png" height="80"> arnolanglade <img src="images/common/twitter.png" height="80" class="margin-left"> arnolanglade
+					</p>
+					<p>
+					https://joind.in/talk/todo
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+                width: 1600,
+                height: 1100,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); hljs.configure({tabReplace: '    '});} },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

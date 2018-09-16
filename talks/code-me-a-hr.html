@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Code me a HR</title>
+
+		<meta name="description" content="Anemic model versus rich model">
+		<meta name="author" content="Arnaud Langlade">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.reveal .slides > section {
+				padding: 0;
+			}
+
+			.reveal section img {
+				border: none;
+				box-shadow: none;
+			}
+
+			.reveal section .margin-left {
+				margin-left: 100px;
+			}
+
+			.reveal section .margin-top {
+				margin-top: 60px;
+			}
+
+			.reveal pre {
+				box-shadow: none;
+				margin: auto;
+				width: 100%;
+			}
+
+			.reveal pre code {
+				font-size: 30px;
+				line-height: 32px;
+				max-height: none;
+			}
+
+			.reveal .social {
+				font-size: 60px;
+			}
+
+			.reveal .social img {
+				margin-top: 0;
+				margin-bottom: 0;
+				vertical-align: middle;
+			}
+
+			.akeneo-color {
+				color: #9452BA;
+			}
+
+			.sylius-color {
+				color: #1abb9c;
+			}
+
+			.php-color {
+				color: #6C7EB7;
+			}
+
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Code me a HR!</h1>
+					<img src="images/code-me-hr/title.jpg">
+				</section>
+
+				<section>
+					<h1>Hi, I am <strong class="php-color">Arnaud!</strong></h1>
+
+					<p class="margin-top">
+						<img src="images/common/akeneo-large.png" height="140">
+						<img src="images/common/sylius-large.png" height="140" class="margin-left">
+					</p>
+
+				</section>
+
+				<section data-background="images/code-me-hr/estelle.png">
+				</section>
+
+				<section>
+					<h2><strong class="akeneo-color">Anemic model</strong> versus <strong class="sylius-color">Model rich</strong></h2>
+					<aside class="notes">
+						Objects combine data and logic while anemic models separate them
+					</aside>
+				</section>
+
+				<section>
+					<h2>Playground</h2>
+					<p class="fragment"><strong class="akeneo-color">Business:</strong> Human resources management</p>
+					<p class="fragment"><strong class="sylius-color">Technical:</strong> Symfony / Doctrine ORM</p>
+				</section>
+
+				<section>
+					<h2>What do we usually do? <span class="fragment"><strong class="php-color">CRUD!</strong></span></h2>
+					<p class="fragment">
+						<strong class="akeneo-color">C</strong>reate <strong class="sylius-color">R</strong>ead <strong class="akeneo-color">U</strong>pdate <strong class="sylius-color">D</strong>elete
+					</p>
+				</section>
+
+				<section>
+					<h2>We start with creating <strong class="php-color">anemic model</strong></h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Domain;
+
+final class Employee
+{
+	/** @var Uuid */
+	private $id;
+
+	/** @var string */
+	private $name;
+
+	/** @var string */
+	private $position;
+
+	/** @var \DateTimeInterface */
+	private $createdAt;
+
+	/** @var \DateTimeInterface */
+	private $deletedAt;
+
+	// Getter and Setter
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Then a <strong class="akeneo-color">form</strong> and a <strong class="sylius-color">controller</strong></h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure\UserInterface\Web\Form;
+
+final class EmployeeType extends AbstractType
+{
+	public function buildForm(FormBuilderInterface $builder, array $options)
+	{
+		$builder->add('name');
+		$builder->add('position');
+	}
+
+	public function configureOptions(OptionsResolver $resolver)
+	{
+		$resolver->setDefaults(array(
+			'data_class' => Employee::class,
+		));
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure\UserInterface\Web\Controller;
+
+class EmployeeController extends Controller
+{
+	public function indexAction(Request $request): Response
+	{
+	}
+
+	public function showAction(Request $request): Response
+	{
+	}
+
+	public function createAction(Request $request): Response
+	{
+	}
+
+	public function updateAction(Request $request): Response
+	{
+	}
+
+	public function deleteAction(Request $request): Response
+	{
+	}
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure\UserInterface\Web\Controller;
+
+class EmployeeController extends Controller
+{
+	public function createAction(Request $request): Response
+	{
+		$form = $this->createForm(EmployeeType::class, new Employee());
+		$form->handleRequest($request);
+
+		// First, data are mapped to the model then it is validated.
+		if ($form->isSubmitted() && $form->isValid()) {
+			$em = $this->get('doctrine.orm.entity_manager');
+			$em->persist($form->getData());
+			$em->flush();
+
+			return $this->redirectToRoute('employee_list');
+		}
+
+		return $this->render('employee/hire.html.twig', [
+			'form' => $form->createView()
+		]);
+	}
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						Object oriented means that: an object manages its state and gurantees that it is in a legal state at any time.
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/code-me-hr/summary-anemic.png" height="900">
+					<aside class="notes">
+						<li>
+							<ul>Pas SRP</ul>
+							<ul>Validation</ul>
+							<ul>Manager</ul>
+							<ul>Trop technique</ul>
+						</li>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Let's refactor our <strong class="php-color">anemic model</strong></h2>
+				</section>
+
+				<section>
+					<h2>How does Estelle talk about her work?</h2>
+					<aside class="notes">
+						ce que je viens de raconter est technique, pas envie de tout le temps traduire
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/code-me-hr/employee.png" height="900">
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Domain;
+
+final class Employee
+{
+	public function hire(Uuid $identifier, string $name, string $forPosition)
+	{
+	}
+
+	public function promote(string $toNewPosition)
+	{
+	}
+
+	public function fire()
+	{
+	}
+
+	public function retire()
+	{
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Domain;
+
+final class Employee
+{
+	/** @var Uuid */
+	private $id;
+
+	/** @var string */
+	private $name;
+
+	/** @var string */
+	private $position;
+
+	/** @var \DateTimeInterface */
+	private $hiredAt;
+
+	/** @var \DateTimeInterface */
+	private $firedAt = null;
+
+	/** @var \DateTimeInterface */
+	private $retiredAt = null;
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Domain;
+
+final class Employee
+{
+	private function __construct(Uuid $identifier, string $name, string $position)
+	{
+		$this->id = $identifier;
+		$this->name = $name;
+		$this->position = $position;
+		$this->hireAt = new \DateTime();
+	}
+
+	public static function hire(Uuid $identifier, string $name, string $forPosition)
+	{
+		return new self($identifier, $name, $forPosition, $hiredAt);
+	}
+
+	public function promote(string $toNewPosition)
+	{
+		$this->position = $toNewPosition;
+	}
+
+	public function fire()
+	{
+		$this->firedAt = new \DateTime();
+	}
+
+	public function retire()
+	{
+		$this->retiredAt = new \DateTime();
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs " data-trim>
+namespace Al\Domain;
+
+final class Employee
+{
+	private function __construct(Uuid $identifier, string $name, string $position)
+	{
+		if (empty($name)) {
+			throw new \Exception('The name of the employee must not be empty');
+		}
+		if (empty($position)) {
+			throw new \Exception('The position of the employee must not be empty');
+		}
+
+		$this->id = $identifier;
+		$this->name = $name;
+		$this->position = $position;
+		$this->hireAt = new \DateTime();
+	}
+
+	public function retire()
+	{
+		if (null !== $this->fired) {
+			throw new \Exception(
+				sprint('%s employee has been fired!', $this->name)
+			);
+		}
+
+		$this->retiredAt = new \DateTime();
+	}
+}
+						</code></pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs " data-trim>
+namespace Al\Domain;
+
+final class Name
+{
+	private $name;
+
+	private function __construct(string $name)
+	{
+		if (empty($name)) {
+			throw new \Exception('The name of the employee must not be empty');
+		}
+
+		$this->name = $name
+	}
+
+	public function __toString(): string
+	{
+		return $this->name;
+	}
+}
+
+						</code></pre>
+				</section>
+				<section>
+					<pre>
+						<code class="php hljs " data-trim>
+namespace Al\Domain;
+
+final class Employee
+{
+	private function __construct(
+		EmployeeIdentifier $identifier,
+		Name $name,
+		Position $position
+	) {
+		$this->id = $identifier;
+		$this->name = $name;
+		$this->position = $position;
+		$this->hireAt = new \DateTime();
+	}
+}
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>How can we use it in our application?</h2>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">First problem:</strong> how do we use Doctrine?</h2>
+					<span class="fragment">
+						<pre>
+							<code class="php hljs" data-trim >
+								interface EmployeeRepository
+								{
+									public function findByNameAndPositionWithoutFiredPeople(
+										string $name,
+										string $position
+									): mixed;
+								}
+							</code>
+						</pre>
+						<p>We use them as query repositories</p>
+					</span>
+				</section>
+
+				<section>
+					<h2>What is a <strong class="php-color">repository</strong>?</h2>
+					<blockquote class="fragment">
+						&laquo;A <strong class="sylius-color">repository</strong> behaves like a collection of unique entities without taking care about the storage&raquo;
+					</blockquote>
+					<aside class="notes">
+						<p>
+							Mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects<br>
+							Operations performed over them provide a more object-oriented view of the persistence layer
+						</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>What does it look like?</h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure;
+
+final class EmployeeRepository implements EmployeeRepositoryInterface
+{
+	public function get(Uuid $identifier): Employee
+	{
+	}
+
+	public function add(Employee $employee): void
+	{
+	}
+
+	public function remove(Employee $employee): void
+	{
+	}
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						<ul>
+							<li>TODO identity map</li>
+							<li>Don't need to extend the <strong>Doctrine\ORM\EntityRepository</strong></li>
+							<li>It only depends on the <strong>Doctrine\ORM\EntityManager</strong></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure;
+
+final class EmployeeRepository implements EmployeeRepositoryInterface
+{
+	/** @var EntityManagerInterface */
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure;
+
+final class EmployeeRepository implements EmployeeRepositoryInterface
+{
+	public function get(Uuid $identifier): Employee
+	{
+		$employee = $this->entityManager->find(
+			Employee::class,
+			$identifier->toString()
+		);
+
+		if (null === $employee) {
+			throw new NonExistingEmployee($identifier->toString());
+		}
+
+		return $employee;
+	}
+
+	public function add(Employee $employee): void
+	{
+		$this->entityManager->persist($employee);
+		$this->entityManager->flush($employee);
+	}
+
+	public function remove(Employee $employee): void
+	{
+		$this->entityManager->remove($employee);
+		$this->entityManager->flush($employee);
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Is it mandatory to use setter? <span class="fragment"><strong class="php-color">NO!</strong></span></h2>
+					<p class="fragment">Doctrine uses the <strong class="akeneo-color">reflection</strong> to map data</p>
+					<p class="fragment">Doctrine does not instantiate objects (<strong class="sylius-color">Ocramius/Instantiator</strong>)</p>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">Second problem:</strong> Form component</h2>
+					<p class="fragment"><strong class="akeneo-color">PropertyAccessor</strong> is used to map data, it needs public properties or setter.</p>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">Command</strong> to the rescue!</h2>
+						<blockquote class="fragment">
+							&laquo; A <strong class="sylius-color">Command</strong> is an object that represents all the information needed to call a method.&raquo;
+						</blockquote>
+				</section>
+
+				<section>
+					<h2>Let’s create a command</h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Application;
+
+final class HireEmployeeCommand
+{
+	/** @var string */
+	public $name = '';
+
+	/** @var string */
+	public $position = '';
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Let’s update our controller</h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure\UserInterface\Web\Controller;
+
+class EmployeeController extends Controller
+{
+	public function hireAction(Request $request): Response
+	{
+		$form = $this->createForm(EmployeeType::class, new HireEmployeeCommand());
+		$form->handleRequest($request);
+
+		// Superficial validation
+		if ($form->isSubmitted() && $form->isValid()) {
+			$employeeCommand = $form->getData();
+
+			// Domain validation
+			$employee = Employee::hire(
+				Uuid::uuid4(),
+				$employeeCommand->getName(),
+				$employeeCommand->getPosition()
+			);
+
+			$this->get('employee.repository')->add($employee);
+
+			return $this->redirectToRoute('employee_list');
+		}
+
+		return $this->render('employee/hire.html.twig', [
+			'form' => $form->createView()
+		]);
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<img src="images/code-me-hr/summary-command.png" height="900">
+				</section>
+
+				<section>
+					<h2>Now, Estelle wants to import employees!</h2>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">Command Bus</strong> to the rescue</h2>
+					<blockquote class="fragment">
+						&laquo;A <strong class="sylius-color">Command Bus</strong> accepts a <strong>Command</strong> object and delegates it to a <strong>Command Handler</strong>.&raquo;
+					</blockquote>
+				</section>
+
+
+				<section>
+					<h2>Let’s update our controller</h2>
+					<p class="fragment">Here, we are going to use <strong class="akeneo-color">simple-bus/message-bus</strong></p>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure\UserInterface\Web\Controller;
+
+class EmployeeController extends Controller
+{
+	public function hireAction(Request $request): Response
+	{
+		$form = $this->createForm(EmployeeType::class, new HireEmployeeCommand());
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted() && $form->isValid()) {
+            $employeeCommand = $form->getData();
+
+            try {
+                $this->get('command_bus')->handle($employeeCommand);
+            } catch (\Exception $e) {
+                $this->addFlash('error', 'An error occurs!');
+            }code
+
+			return $this->redirectToRoute('employee_list');
+		}
+
+		return $this->render('employee/hire.html.twig', [
+			'form' => $form->createView()
+		]);
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+
+				<section>
+					<h2>Let’s create a command handler</h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Application\Handler;
+
+final class HireEmployeeHandler
+{
+	/** @var EmployeeRepositoryInterface */
+    private $employeeRepository;
+
+    public function __construct(EmployeeRepositoryInterface $employeeRepository)
+    {
+        $this->employeeRepository = $employeeRepository;
+    }
+
+    public function handle(HireEmployee $command): void
+    {
+        $employee = Employee::hire(
+			Uuid::uuid4(),
+			$command->getName(),
+			$command->getPosition()
+		);
+
+        $this->employeeRepository->add($employee);
+    }
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<img src="images/code-me-hr/summary-bus.png" height="900">
+				</section>
+
+				<section>
+					<h2>Estelle won't use <strong class="php-color">phpMyAdmin</strong> to read data!</span></h2>
+				</section>
+
+				<section>
+					<h2>Do our models need getter? <strong class="php-color fragment">Not necessarily !</strong></h2>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">DTO (Data Transfer Object)</strong> to the rescue!</h2>
+					<blockquote class="fragment">
+						&laquo;A <strong class="sylius-color">Data Transfer Object</strong> is an object that is used to encapsulate data, and to send it from one subsystem of an application to another.&raquo;
+					</blockquote>
+					<aside class="notes">
+						TODO:
+						découplage entre la couche de présentation et les objets métier stockés sur le serveur.
+						permettent également de remonter des informations à persister.
+					</aside>
+				</section>
+
+				<section>
+					<h2><strong class="php-color">Doctrine (>=2.4):</strong> Operator NEW </h2>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Domain\ReadModel;
+
+final class Employee
+{
+	/** string */
+	private $id;
+
+	/** string */
+	private $name;
+
+	/** string */
+	private $position;
+
+    public function __construct(string $id, string $name, string $position)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->position = $position;
+    }
+
+	// Define an accessor for each property
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<pre>
+						<code class="php hljs" data-trim >
+namespace Al\Infrastructure;
+
+final class ListEmployeeQuery implement SearchEmployeeQueryInterface
+{
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    public function search(): array
+    {
+		$queryBuilder = $this->entityManager->createQueryBuilder()
+			->from(Employee::class, 'e')
+			->select(
+				sprintf('NEW %s(e.id, e.name, e.position)', Employee::class)
+			);
+
+		// NEW Al\Domain\ReadModel\Employee(e.id, e.name, e.position)
+
+		return $queryBuilder->getQuery()->getResult();
+	}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>We can search and display Employee data!</h2>
+				</section>
+
+				<section>
+					<img src="images/code-me-hr/summary-rich-model.png"  height="900">
+				</section>
+
+                <section>
+                    <h2><span class="php-color">Legacy Blindness</span> / <span class="akeneo-color">DDD</span> / <span class="sylius-color">CQRS</span></h2>
+                    <p class="fragment">
+                        <strong class="akeneo-color">D</strong>omain <strong class="sylius-color">D</strong>riven <strong class="sylius-color">D</strong>esign
+					</p>
+                    <p class="fragment">
+                        <strong class="akeneo-color">C</strong>ommand <strong class="sylius-color">Q</strong>uery <strong class="akeneo-color">R</strong>esponsibility <strong class="sylius-color">S</strong>egregation
+                    </p>
+                </section>
+
+				<section>
+					<h2>What is the best solution?</h2>
+					<p class="fragment">It depends on what you want!</p>
+				</section>
+
+				<section>
+					<h2>That's the end!</h2>
+					<!--<p>-->
+						<!--https://joind.in/talk/6c974-->
+					<!--</p>-->
+				</section>
+
+				<section>
+					<h2>Thank you! Questions?</h2>
+
+					<img src="images/code-me-hr/conclusion.png" height="400">
+
+					<p class="social">
+						<img src="images/common/github.png" height="80"> aRn0D <img src="images/common/twitter.png" height="80" class="margin-left"> _aRn0D
+					</p>
+					<!--<p>-->
+						<!--https://joind.in/talk/6c974-->
+					<!--</p>-->
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+                width: 1600,
+                height: 1100,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); hljs.configure({tabReplace: '    '});} },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

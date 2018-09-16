@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="crud-explain.png"
+   inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/crud-explain.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3949"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3943"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.1604709"
+     inkscape:cx="468.38237"
+     inkscape:cy="445.8534"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-page="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1041"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-nodes="false"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="false"
+     inkscape:snap-bbox="false"
+     inkscape:bbox-paths="false"
+     inkscape:bbox-nodes="false"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox-midpoints="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff9d25;fill-opacity:0.56126482;stroke:#000000;stroke-width:7.7847147;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
+       id="rect5388"
+       width="702.5484"
+       height="200.16615"
+       x="9.7861109"
+       y="140.97052"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="59.832222"
+       y="119.02038"
+       id="text3763"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3765"
+         x="59.832222"
+         y="119.02038"
+         style="font-size:32px;fill:#ffffff;fill-opacity:1">Réponse</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="280.64755"
+       y="121.10075"
+       id="text3767"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3769"
+         x="280.64755"
+         y="121.10075"
+         style="font-size:32px;fill:#ffffff;fill-opacity:1">Contrôleur</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="531.75171"
+       y="122.82419"
+       id="text3771"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3773"
+         x="531.75171"
+         y="122.82419"
+         style="font-size:32px;fill:#ffffff;fill-opacity:1">Données</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:1.53617144px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 11.111487,141.67004 701.307263,0"
+       id="path3775"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3800"
+       width="74.337952"
+       height="51.183506"
+       x="270.4787"
+       y="215.33478"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3802"
+       width="199.85941"
+       height="65.807365"
+       x="283.94659"
+       y="146.9016"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3804"
+       width="218.13922"
+       height="79.21257"
+       x="277.79062"
+       y="217.77209"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="path3806"
+       sodipodi:cx="360.72186"
+       sodipodi:cy="264.5018"
+       sodipodi:rx="54.83947"
+       sodipodi:ry="29.857044"
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       transform="translate(0.37460682,-32.715163)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3808"
+       width="65.807365"
+       height="58.495434"
+       x="308.75699"
+       y="150.55756"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3810"
+       width="106.02298"
+       height="149.89455"
+       x="57.886112"
+       y="216.44409"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3812"
+       width="140.14531"
+       height="180.36093"
+       x="73.728615"
+       y="239.59854"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3814"
+       width="220.57654"
+       height="90.180466"
+       x="277.00928"
+       y="217.77209"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="217.77209"
+       x="277.00928"
+       height="90.180466"
+       width="220.57654"
+       id="rect3816"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.89102519;stroke-opacity:0"
+       id="rect3818"
+       width="171.93933"
+       height="67.134987"
+       x="283.04807"
+       y="178.72064"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="300.16373"
+       y="222.64671"
+       id="text3824"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3826"
+         x="300.16373"
+         y="222.64671"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">showAction</tspan></text>
+    <rect
+       y="300.64062"
+       x="274.13467"
+       height="51.183506"
+       width="74.337952"
+       id="rect3828"
+       style="fill:#000000;fill-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="251.89442"
+       x="289.19583"
+       height="65.807365"
+       width="199.85941"
+       id="rect3830"
+       style="fill:#000000;fill-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="250.67577"
+       x="278.22794"
+       height="79.21257"
+       width="218.13922"
+       id="rect3832"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       sodipodi:ry="29.857044"
+       sodipodi:rx="54.83947"
+       sodipodi:cy="264.5018"
+       sodipodi:cx="360.72186"
+       id="path3834"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       sodipodi:type="arc"
+       transform="translate(4.0305715,52.59068)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="255.5504"
+       x="316.00623"
+       height="58.495434"
+       width="65.807365"
+       id="rect3836"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="250.67577"
+       x="279.44659"
+       height="90.180466"
+       width="220.57654"
+       id="rect3838"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3840"
+       width="220.57654"
+       height="90.180466"
+       x="279.44659"
+       y="250.67577"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="264.02805"
+       x="283.04965"
+       height="67.131866"
+       width="173.15485"
+       id="rect3842"
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.89414841;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3844"
+       y="307.13416"
+       x="298.94507"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="307.13416"
+         x="298.94507"
+         id="tspan3846"
+         sodipodi:role="line">indexAction</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3848"
+       width="74.337952"
+       height="51.183506"
+       x="267.49478"
+       y="414.69513"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3850"
+       width="199.85941"
+       height="65.807365"
+       x="285.60257"
+       y="302.35928"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3852"
+       width="218.13922"
+       height="79.21257"
+       x="274.63467"
+       y="301.14062"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="translate(-2.6093275,166.64518)"
+       sodipodi:type="arc"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="path3854"
+       sodipodi:cx="360.72186"
+       sodipodi:cy="264.5018"
+       sodipodi:rx="54.83947"
+       sodipodi:ry="29.857044"
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3856"
+       width="65.807365"
+       height="58.495434"
+       x="312.41296"
+       y="306.01526"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3858"
+       width="220.57654"
+       height="90.180466"
+       x="275.85333"
+       y="301.14062"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="341.08356"
+       x="9.9803181"
+       height="446.2294"
+       width="702.16003"
+       id="rect5390"
+       style="fill:#00b11c;fill-opacity:0.4664032;stroke:#000000;stroke-width:11.62000751;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="301.14062"
+       x="275.85333"
+       height="90.180466"
+       width="220.57654"
+       id="rect3860"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.90036184;stroke-opacity:0"
+       id="rect3862"
+       width="175.58595"
+       height="67.125656"
+       x="278.99802"
+       y="378.08569"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="286.71667"
+       y="421.14536"
+       id="text3864"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3866"
+         x="286.71667"
+         y="421.14536"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">createAction</tspan></text>
+    <rect
+       y="659.4115"
+       x="267.99957"
+       height="51.183506"
+       width="74.337952"
+       id="rect3868"
+       style="fill:#000000;fill-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="452.47345"
+       x="282.55594"
+       height="65.807365"
+       width="199.85941"
+       id="rect3870"
+       style="fill:#000000;fill-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="451.25479"
+       x="271.58804"
+       height="79.21257"
+       width="218.13922"
+       id="rect3872"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       sodipodi:ry="29.857044"
+       sodipodi:rx="54.83947"
+       sodipodi:cy="264.5018"
+       sodipodi:cx="360.72186"
+       id="path3874"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       sodipodi:type="arc"
+       transform="translate(-2.1045441,411.36164)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="456.12943"
+       x="309.36633"
+       height="58.495434"
+       width="65.807365"
+       id="rect3876"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="451.25479"
+       x="272.8067"
+       height="90.180466"
+       width="220.57654"
+       id="rect3878"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3880"
+       width="220.57654"
+       height="90.180466"
+       x="272.8067"
+       y="451.25479"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="622.80157"
+       x="276.91727"
+       height="67.126434"
+       width="175.28206"
+       id="rect3882"
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.89958757;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3884"
+       y="664.28613"
+       x="284.27936"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="664.28613"
+         x="284.27936"
+         id="tspan3886"
+         sodipodi:role="line">updateAction</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3888"
+       width="74.337952"
+       height="51.183506"
+       x="268.60889"
+       y="698.40845"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3890"
+       width="199.85941"
+       height="65.807365"
+       x="283.06073"
+       y="693.53387"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3892"
+       width="218.13922"
+       height="79.21257"
+       x="272.09283"
+       y="692.31519"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="translate(-1.4952166,450.35859)"
+       sodipodi:type="arc"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="path3894"
+       sodipodi:cx="360.72186"
+       sodipodi:cy="264.5018"
+       sodipodi:rx="54.83947"
+       sodipodi:ry="29.857044"
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3896"
+       width="65.807365"
+       height="58.495434"
+       x="309.87112"
+       y="697.18982"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="rect3898"
+       width="220.57654"
+       height="90.180466"
+       x="273.92081"
+       y="648.44354"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="648.44354"
+       x="273.92081"
+       height="90.180466"
+       width="220.57654"
+       id="rect3900"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.90036184;stroke-opacity:0"
+       id="rect3902"
+       width="175.58595"
+       height="67.125656"
+       x="276.91766"
+       y="705.67059"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="291.17316"
+       y="748.22552"
+       id="text3904"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3906"
+         x="291.17316"
+         y="748.22552"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">deleteAction</tspan></text>
+    <rect
+       y="326.23239"
+       x="510.55371"
+       height="51.183506"
+       width="74.337952"
+       id="rect3908"
+       style="fill:#000000;fill-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       sodipodi:ry="29.857044"
+       sodipodi:rx="54.83947"
+       sodipodi:cy="264.5018"
+       sodipodi:cx="360.72186"
+       id="path3910"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       sodipodi:type="arc"
+       transform="translate(230.70038,-2.8581188)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="210.5034"
+       x="508.19669"
+       height="86.438026"
+       width="198.55429"
+       id="rect3912"
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:1.08647549;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3914"
+       y="242.75459"
+       x="510.99097"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="242.75459"
+         x="510.99097"
+         id="tspan3916"
+         sodipodi:role="line">object manager</tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:0"
+       id="rect3918"
+       width="74.337952"
+       height="51.183506"
+       x="501.98129"
+       y="655.75549"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(1.0639313,0,0,0.99963743,185.56945,51.463725)"
+       sodipodi:type="arc"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="path3920"
+       sodipodi:cx="360.72186"
+       sodipodi:cy="264.5018"
+       sodipodi:rx="54.83947"
+       sodipodi:ry="29.857044"
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5302"
+       d="m 458.72197,255.64272 c 14.21756,-0.0724 28.43512,-0.14486 42.65267,-0.2173"
+       style="fill:none;stroke:#000000;stroke-width:1.31969082;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="150.55756"
+       x="88.78978"
+       height="58.495434"
+       width="65.807365"
+       id="rect5304"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="181.20897"
+       x="16.822964"
+       height="67.032997"
+       width="213.88094"
+       id="rect5306"
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.99302065;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5308"
+       y="223.86537"
+       x="34.49696"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="223.86537"
+         x="34.49696"
+         id="tspan5310"
+         sodipodi:role="line">show.html.twig</tspan></text>
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.99302065;stroke-opacity:0"
+       id="rect5312"
+       width="213.88094"
+       height="67.032982"
+       x="16.822968"
+       y="263.46817"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="29.622339"
+       y="303.68729"
+       id="text5314"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5316"
+         x="29.622339"
+         y="303.68729"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">index.html.twig</tspan></text>
+    <rect
+       y="377.52478"
+       x="15.669113"
+       height="67.028793"
+       width="215.70473"
+       id="rect5318"
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.99721426;stroke-opacity:0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5320"
+       y="419.56976"
+       x="24.201097"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="419.56976"
+         x="24.201097"
+         id="tspan5322"
+         sodipodi:role="line">create.html.twig</tspan></text>
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.99860811;stroke-opacity:0"
+       id="rect5324"
+       width="216.31265"
+       height="67.027405"
+       x="17.393248"
+       y="624.67908"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="24.096552"
+       y="666.11407"
+       id="text5326"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5328"
+         x="24.096552"
+         y="666.11407"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">update.html.twig</tspan></text>
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.95734519;stroke-opacity:0"
+       id="rect5330"
+       width="198.68341"
+       height="67.068672"
+       x="504.39105"
+       y="376.89551"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="508.0683"
+       y="419.56982"
+       id="text5332"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5334"
+         x="508.0683"
+         y="419.56982"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">object manager</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="546.94135"
+       y="277.48627"
+       id="text5336"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5338"
+         x="546.94135"
+         y="277.48627"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">repository</tspan></text>
+    <path
+       transform="translate(223.83872,442.96223)"
+       sodipodi:type="arc"
+       style="fill:#0000b7;fill-opacity:0;stroke:#000000;stroke-opacity:0"
+       id="path5342"
+       sodipodi:cx="360.72186"
+       sodipodi:cy="264.5018"
+       sodipodi:rx="54.83947"
+       sodipodi:ry="29.857044"
+       d="m 415.56133,264.5018 a 54.83947,29.857044 0 1 1 -109.67894,0 54.83947,29.857044 0 1 1 109.67894,0 z"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:1.08647549;stroke-opacity:0"
+       id="rect5344"
+       width="198.55429"
+       height="86.438026"
+       x="507.21918"
+       y="656.93292"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="512.05054"
+       y="689.18414"
+       id="text5346"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5348"
+         x="512.05054"
+         y="689.18414"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">object manager</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5350"
+       y="724.52515"
+       x="540.68896"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:24px;fill:#ffffff;fill-opacity:1"
+         y="724.52515"
+         x="540.68896"
+         id="tspan5352"
+         sodipodi:role="line">repository</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.33875299;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       d="m 457.20517,411.90136 c 14.66692,-0.0722 29.33384,-0.14451 44.00077,-0.21677"
+       id="path5354"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5356"
+       d="m 453.29625,678.97895 c 16.88883,-0.071 33.77766,-0.14204 50.6665,-0.21306"
+       style="fill:none;stroke:#000000;stroke-width:1.42424726;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.42424726;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       d="m 453.54864,715.68042 c 16.88883,-0.071 33.77766,-0.14204 50.6665,-0.21306"
+       id="path5358"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.2868346;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       d="m 274.9732,658.74947 c -13.41707,-0.12072 -26.83414,-0.24139 -40.25121,-0.36209"
+       id="path5360"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5362"
+       d="m 273.41434,415.74684 c -12.63455,-0.12161 -25.2691,-0.24318 -37.90365,-0.36478"
+       style="fill:none;stroke:#000000;stroke-width:1.25337505;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.2868346;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       d="m 277.60021,299.27695 c -13.41707,-0.12072 -26.83414,-0.24139 -40.25121,-0.36209"
+       id="path5364"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5366"
+       d="m 277.95713,216.86555 c -13.41707,-0.12072 -26.83414,-0.24139 -40.25121,-0.36209"
+       style="fill:none;stroke:#000000;stroke-width:1.2868346;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#3737ff;fill-opacity:1;stroke:#000000;stroke-width:0.90345222;stroke-opacity:0"
+       id="rect5368"
+       width="176.80151"
+       height="67.122566"
+       x="277.78091"
+       y="502.16293"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="304.09891"
+       y="543.64551"
+       id="text5370"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5372"
+         x="304.09891"
+         y="543.64551"
+         style="font-size:24px;fill:#ffffff;fill-opacity:1">formulaire</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.42410636;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       d="m 362.10275,446.6058 c 0.0558,16.94937 0.11173,33.89871 0.16759,50.84807"
+       id="path5374"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5376"
+       d="m 362.99059,620.61806 c 0.0608,-16.16322 0.12134,-32.32639 0.18201,-48.4896"
+       style="fill:none;stroke:#000000;stroke-width:1.39477384;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="323.04813"
+       y="165.62921"
+       id="text5380"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5382"
+         x="323.04813"
+         y="165.62921"
+         style="font-size:22px;font-weight:bold;-inkscape-font-specification:Sans Bold">Lecture</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5384"
+       y="365.09894"
+       x="318.59171"
+       style="font-size:40px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arnaud/Documents/Présentation/resource-bundle/fr/images/rect3761.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-size:22px;font-weight:bold;-inkscape-font-specification:Sans Bold"
+         y="365.09894"
+         x="318.59171"
+         id="tspan5386"
+         sodipodi:role="line">Ecriture</tspan></text>
+    <rect
+       style="color:#000000;fill:#fff000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.75716937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3761"
+       width="221.9514"
+       height="705.25873"
+       x="256.50995"
+       y="82.26757"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

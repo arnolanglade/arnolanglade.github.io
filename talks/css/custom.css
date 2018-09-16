@@ -1,0 +1,98 @@
+.col-50 {
+    float: left;
+    width: 50%;
+}
+
+.col-70 {
+    float: left;
+    width: 70%;
+}
+
+.col-30 {
+    float: left;
+    width: 30%;
+}
+.col-60 {
+    float: left;
+    width: 60%;
+}
+
+.col-40 {
+    float: left;
+    width: 40%;
+}
+
+.col-55 {
+    float: left;
+    width: 55%;
+}
+
+.col-45 {
+    float: left;
+    width: 45%;
+}
+
+.reveal section ul {
+    margin-top: 15px;
+}
+.reveal small {
+    vertical-align: middle;
+}
+
+.reveal .col-30 pre,
+.reveal .col-70 pre,
+.reveal .col-60 pre,
+.reveal .col-45 pre,
+.reveal .col-55 pre,
+.reveal .col-50 pre {
+    margin: 0;
+    width: 97%;
+}
+
+.reveal p.topSpace {
+    margin-top: 47px;
+}
+
+.reveal .text-left {
+    text-align: left;
+}
+.reveal .text-right {
+    text-align: right;
+}
+
+#logo-clever {
+    width: 400px;
+    background-color: #FFF;
+    margin-left: 20px;
+}
+
+#logo-sylius {
+    width: 300px;
+    margin-right: 20px;
+    background-color: #FFF;
+}
+
+#question {
+    margin-left: 20px;
+}
+
+#question-text {
+    margin-top: 123px
+}
+
+#small-code-box {
+    width: 1000px;
+}
+
+#doc-future {
+    margin-left: 20px;
+}
+
+#symfony {
+    height: 200px;
+}
+
+#solid {
+   margin-left: 20px;
+    height: 300px;
+}
