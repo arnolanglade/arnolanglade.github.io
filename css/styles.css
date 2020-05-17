@@ -5387,7 +5387,6 @@ a.close.disabled {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 0.5rem;
   pointer-events: none;
 }
 .modal.fade .modal-dialog {
@@ -5452,8 +5451,6 @@ a.close.disabled {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
   outline: 0;
 }
 
@@ -5464,13 +5461,7 @@ a.close.disabled {
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
-}
-.modal-backdrop.fade {
-  opacity: 0;
-}
-.modal-backdrop.show {
-  opacity: 0.5;
+  background-color: #ffffff;
 }
 
 .modal-header {
@@ -5523,7 +5514,6 @@ a.close.disabled {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto;
   }
 
   .modal-dialog-scrollable {
@@ -9958,9 +9948,6 @@ p {
   line-height: 1.75;
 }
 
-.page-section {
-  padding: 6rem 0;
-}
 .page-section h2.section-heading {
   font-size: 2.5rem;
   margin-top: 0;
@@ -9974,11 +9961,6 @@ p {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
-  section {
-    padding: 9rem 0;
-  }
-}
 ::-moz-selection {
   background: #fed136;
   text-shadow: none;
@@ -10181,7 +10163,6 @@ header.masthead .masthead-heading {
 }
 
 .portfolio-modal .modal-dialog {
-  margin: 1rem;
   max-width: 100vw;
 }
 .portfolio-modal .modal-content {
@@ -10401,6 +10382,11 @@ header.masthead .masthead-heading {
   margin-bottom: 0;
 }
 
+section {
+  margin-top: 70px;
+  padding-top: 40px;
+}
+
 section#contact {
   background-color: #212529;
   background-image: url("../assets/img/map-image.png");
@@ -10474,4 +10460,16 @@ blockquote p {
 }
 .position {
   margin: 20px 0 25px 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #ced4da; /* or add it to the track */
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+* {
+  scrollbar-width: thin;
 }

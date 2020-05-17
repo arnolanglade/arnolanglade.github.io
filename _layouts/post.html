@@ -4,7 +4,11 @@
 
     <body id="page-top">
         {% include header.html %}
-        {{ content }}
+        <section class="page-section bg-light">
+            <div class="container">
+                {{ content }}
+            </div>
+        </section>
         {% include footer.html %}
         {% include js.html %}
     </body>

@@ -8,5 +8,5 @@ description: "Write an awesome description for your new site here. You can edit 
 
 
 # Build settings
-markdown: kramdown
-permalink: pretty
+#markdown: kramdown
+#fenced_code_blocks: true
