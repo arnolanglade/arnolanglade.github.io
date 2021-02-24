@@ -3,7 +3,7 @@ title: Command and command handler pattern
 permalink: /:title:output_ext
 layout: post
 modal-id: 1
-date: 2021-02-24
+date: 2021-02-28
 image: command-handler.svg
 alt: Command and command handler patterns
 ---
