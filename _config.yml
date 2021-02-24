@@ -1,0 +1,7 @@
+url: http://arnolanglade.github.io/
+baseurl: .
+
+# Site settings
+title: Arnaud Langlade - Software engineer
+author: Arnaud Langlade
+description: "Software engineer @convelio and former core developer @sylius and @akeneo. Love DDD, BDD, TDD, event storming, example mapping"
