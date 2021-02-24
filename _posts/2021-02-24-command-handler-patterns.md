@@ -131,7 +131,6 @@ final class CreateAnAccount
 ```php
 public function __invoke(Request $request): Response
 {
-    /** @var CreateAnAccount $command */
     $command = $this->serializer->deserialize(
         $request->getContent(),
         CreateAnAccount::class,
