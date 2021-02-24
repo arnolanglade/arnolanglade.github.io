@@ -1,13 +1,11 @@
-DOCKER_COMPOSE=docker-compose
-
 .PHONY: up
 up:
-	$(DOCKER_COMPOSE) up -d
-.PHONY: up
+	docker-compose up -d
 
+.PHONY: down
 down:
-	$(DOCKER_COMPOSE) down -v
+	docker-compose down -v
 
 .PHONY: blog
-blog:
-	$(DOCKER_COMPOSE) run --rm blog-builder jekyll build --watch
+blog: up
+	docker-compose run --rm blog-builder jekyll build --watch
