@@ -2,7 +2,6 @@
 title: Command and command handler design pattern
 permalink: /:title:output_ext
 layout: post
-modal-id: 1
 date: 2021-02-25
 image: command-handler.svg
 alt: Command and command handler design pattern
@@ -146,4 +145,4 @@ public function __invoke(Request $request): Response
 **In conclusion:** In many applications, I have seen a lot of classes called managers or services (AccountService, AccountManager for instance) which gather all use case management in a single class. It could work at the beginning but as the development progresses those classes become bigger and bigger (a god object). It makes their maintenance harder, those classes are less readable and they can quickly become a dump. I think this pattern can solve those problems.
 
 
-Thank to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
+Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).

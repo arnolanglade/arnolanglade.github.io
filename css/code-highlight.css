@@ -8,6 +8,8 @@
 .highlight .o { color: #f92672 } /* Operator */
 .highlight .p { color: #f8f8f2 } /* Punctuation */
 .highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cd { color: #92918a
+} /* Comment.Multiline */
 .highlight .cp { color: #75715e } /* Comment.Preproc */
 .highlight .c1 { color: #75715e } /* Comment.Single */
 .highlight .cs { color: #75715e } /* Comment.Special */

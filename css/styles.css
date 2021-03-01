@@ -10478,3 +10478,11 @@ blockquote p {
 * {
   scrollbar-width: thin;
 }
+
+.blog img {
+  width: 100%;
+}
+
+.blog p {
+  text-align: justify;
+}
