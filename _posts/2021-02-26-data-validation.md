@@ -38,7 +38,7 @@ final class Password
 
     public function __construct(string $password)
     {
-        if (1 !== \Safe\preg_match('#(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}#', $password)) {
+        if (1 !== \preg_match('#(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}#', $password)) {
             throw new \InvalidArgumentException(
                 'The password must contain at least 8 characters, an uppercase letter, lowercase letter and a number'
             );
@@ -101,7 +101,7 @@ final class PasswordShouldBeValid
     public static function validate(string $password, ExecutionContextInterface $context): void
     {
         try {
-            Password::fromString($password);
+            new Password($password);
         } catch (\InvalidArgumentException $e) {
             $context->buildViolation('account.passwordShouldBeValid')
                 ->addViolation();
