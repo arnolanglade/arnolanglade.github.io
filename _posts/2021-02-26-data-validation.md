@@ -12,8 +12,10 @@ alt: Data validation
 ![Data validation](assets/img/posts/data-validation.jpg)
 [@heapdump](https://unsplash.com/@heapdump)
 
+In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I spoke about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to about several kinds of validation in the blog post. First, we are going to speak about aggregate validation because we need to be sure that our domain objects are build with the good state before being able to validate a command. Then, we are going to speak about command validation because all data provided by users should be validated to prevent system failure first and give them feedback then.
+
 ## Domain validation
-In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I spoke about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. Let’s take the example of my previous blog post: an account creation. To create an account, my business expert expects that I provide a username with at least three characters and a password with at least eight characters, an uppercase letter, a lowercase letter, and a number.
+ Let’s take the example of my previous blog post: an account creation. To create an account, my business expert expects that I provide a username with at least three characters and a password with at least eight characters, an uppercase letter, a lowercase letter, and a number.
 
 How to make sure the username and password will match the rules given by our business expert? Value object will help us to achieve that. I **strongly recommend you** to wrap those properties into value objects which cannot be instantiable if data provided by users are wrong. It is a good way to introduce new types in your codebase and make it clearer and business-focused.
 
