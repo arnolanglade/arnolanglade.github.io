@@ -12,12 +12,13 @@ alt: Data validation
 ![Data validation](assets/img/posts/data-validation.jpg)
 [@heapdump](https://unsplash.com/@heapdump)
 
-In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I spoke about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to about several kinds of validation in the blog post. First, we are going to speak about aggregate validation because we need to be sure that our domain objects are build with the good state before being able to validate a command. Then, we are going to speak about command validation because all data provided by users should be validated to prevent system failure first and give them feedback then.
+In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I spoke about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to talk about several kinds of validation in this blog post. First, we are going to speak about domain validation, this validation ensures we can build our domain objects in a good state depending on the business rules. Then, we are going to speak about command validation, we will use it to give feedback to users about data they submit to the application.
+
+Let’s take the same example of my previous blog post: an account creation. To create an account, my business expert expects that I provide a username and a password. The username should have at least three characters and should be unique. The password should have at least eight characters, an uppercase letter, a lowercase letter, and a number.
 
 ## Domain validation
- Let’s take the example of my previous blog post: an account creation. To create an account, my business expert expects that I provide a username with at least three characters and a password with at least eight characters, an uppercase letter, a lowercase letter, and a number.
 
-How to make sure the username and password will match the rules given by our business expert? Value object will help us to achieve that. I **strongly recommend you** to wrap those properties into value objects which cannot be instantiable if data provided by users are wrong. It is a good way to introduce new types in your codebase and make it clearer and business-focused.
+How to make sure the domain objects follow the business rules? Value object will help us to achieve that. I **strongly recommend you** wrap all primitives into value objects. It is a good way to introduce new types in your codebase and make it clearer and business-focused. And don't forget, value objects **cannot** be built in a wrong state.
 
 ```php
 final class Username
@@ -51,7 +52,7 @@ final class Password
 }
 ```
 
-Then we are going to modelize an account aggregate with username and password properties.
+Then we are able to modelize the `Account` aggregate using the `Username` and `Password` value objects.
 
 ```php
 final class Account
@@ -69,8 +70,14 @@ final class Account
 }
 ```
 
-## Superficial validation
-Thanks to the domain validation we will be able to give feedback to users if they provide invalid data. As I explained in my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html) we create a command `CreateAnAccount` to represent the account creation user intent. I will show you how to use those value objects to validate command data. For that, we will use the Symfony validator component, and to be more precise we will only use the callback constraint. First, thanks to annotation will configure the validator to call a static method to validate command properties.
+Now, we are sure that as developers we can instantiate the `Account` aggregate in a wrong state. In the next chapter, we are going to see how to use those objects to give users feedback about their data.
+
+## Command validation
+
+As I explained in my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html) account creation is represented by a command `CreateAnAccount` which has properties needed to create an account: the username and the password. We need to validate them to create the account aggregate without any errors and tell users if they provided valid data to perform the action. The command validation will be done by the Symfony validator. Don’t hesitate to have a look at the [validator documentation](https://symfony.com/doc/current/validation.html) if you are not familiar with it.
+
+First, we will use the callback constraint to make sure the username and password follow the patterns given by the business expert. Thanks to annotation we will configure the validator to call a static method to validate command properties. For your information, I will call them “static validators“ in the rest of the blog post.
+
 
 ```php
 final class CreateAnAccount implements Command
@@ -82,7 +89,7 @@ final class CreateAnAccount implements Command
 }
 ```
 
-Then, we need to create those static methods to be able to add violations if command properties are wrong. Don’t hesitate to have a look at the [validator documentation](https://symfony.com/doc/current/validation.html) if you are not familiar with it. We just need to instantiate our value objects and check if they throw exceptions to catch them and turn them into violations.
+Then, it is time to create those static validators. We just need to instantiate our value objects and check if they throw exceptions to catch them and turn them into violations.
 
 ```php
 final class UsernameShouldBeValid
@@ -112,7 +119,7 @@ final class PasswordShouldBeValid
 }
 ```
 
-For more complex use cases you can call methods on value objects to make sure the given data are valid like the following example.
+For more complex use cases you can call any methods on value objects but you need to keep in mind that you cannot inject services into those static validators.
 
 ```php
 public static function validate(BookFlightTicket $flightTicket, ExecutionContextInterface $context): void
@@ -128,10 +135,12 @@ public static function validate(BookFlightTicket $flightTicket, ExecutionContext
 }
 ```
 
-Then, you just need to serialize those violations and give them to your front application to print errors to users. That is what I call superficial validation. It makes sure that all domain objects (value objects, aggregates, and so on) will be instantiated without throwing any exception.
+The first step is done! Thanks to those static validators, we apply domain validation on command properties to ensure we can instantiate domain objects like value objects and aggregate. But domain validation only works with a single account because account aggregate only represents the account of a single user. For instance, an account cannot validate if a username is unique because it needs to be aware of the rest of the created account.
 
-## Business validation
-Keep in mind that domain validation only works with a single account because account aggregate only represents the account of a single user. For instance, an account cannot validate if a username is unique because it needs to be aware of the rest of the created account. To achieve that we will still use the Symfony validator with a custom validation constraint. It allows us to use all application services (like repositories for instance) to apply the rest of the business rules defined by our business expert.
+We cannot use the static validators We cannot validate if a username is already used by another user thanks to static validators because those constraints cannot have dependencies.
+
+To check if a username is used by another user we will need to ask the repository if an account already exists with the given username. That’s why we will need to create a custom validation constraint because those constraints are declared as services and they can depend on other application services.
+
 
 ```php
 /** @Annotation */
@@ -166,7 +175,7 @@ final class UsernameShouldBeUniqueValidator extends ConstraintValidator
 }
 ```
 
-As I said previously, superficial validation makes us sure that all domain objects are instantiable, that's why we need to apply those business constraints after the superficial ones.
+Finally, we need to configure the validator to apply this new constraint on the username property.
 
 
 ```php
@@ -185,13 +194,12 @@ final class CreateAnAccount implements Command
 }
 ```
 
-`UsernameShouldBeUnique` will be applied after `UsernameShouldBeValid` thanks to the [GroupSequence](https://symfony.com/doc/current/validation/sequence_provider.html).
+**Caution:** we need to apply static validators before applying custom constraints because we need to be sure we can instantiate all domain objects without raising any error. For instance, the instantiation of `Username` in `UsernameShouldBeUniqueValidator` must not raise any error because the goal of this constraint is not to check if the username contains at least three characters but its goals is to check the username is already used. It can be done with [GroupSequence](https://symfony.com/doc/current/validation/sequence_provider.html). This Validator feature allows to add groups to constraints and define the order to apply them.
 
-## Conclusion
-During the blog post writing, I realized that superficial validation and business validation might not be the right words to describe those concepts but the important thing is what they do. Superficial validation makes me sure I can instantiate all my domain objects to make sure that business validation can use them to apply rules which need to be aware of what happens in the whole application.
+Now, this is the end of the story! If commands are invalid, we just need to serialize violations, give them to your front application, and print errors to users.
 
-My commands are not objects but simple DTOs because DTOs are easily buildable thanks to the Symfony Serializer component. Then I use Symfony validator to validate commands because with this library I can easily apply domain validation on command properties thanks to the callback constraint and I can easily use application services to apply the rest of the data validation thanks to the custom constraints.
+## Last word
 
-I hope it answers Baptiste Langlade’s [question](https://twitter.com/Baptouuuu/status/1364945053236494336) on Twitter (this is not my brother by the way ;)).
+This might not be the only way to validate data but it worked on my previous project. Even if I use a service to validate my command I try to use as many as possible domain objects to avoid reinventing the wheel. I hope it answers Baptiste Langlade’s [question](https://twitter.com/Baptouuuu/status/1364945053236494336) on Twitter. If you wonder, Baptiste is not my brother ;).
 
-Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
+Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau) and [@jjanvier_](https://twitter.com/jjanvier_).
