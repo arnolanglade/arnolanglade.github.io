@@ -6,7 +6,9 @@
         {% include header.html %}
         <section class="page-section bg-light">
             <div class="container blog">
+                {% include share-buttons.html %}
                 {{ content }}
+                {% include share-buttons.html %}
             </div>
         </section>
         {% include footer.html %}
