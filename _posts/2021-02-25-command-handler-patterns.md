@@ -58,7 +58,7 @@ $createAccount = $serializer->deserialize(
 **Tip:** To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command.
 
 ```php
-$violation = $validator->validate(createAccount);
+$violation = $validator->validate($createAccount);
 ```
 
 Then we need to create a command handler to handle this use case. The command handler is callable: a function or an invocable object for instance. It should return nothing (void) to be able to handle it asynchronously. We don’t know when it will be handled so we can’t expect a result. With the command data, we execute all actions needed to handle the use case. In our example, we create an account aggregate and give it to the account repository.
