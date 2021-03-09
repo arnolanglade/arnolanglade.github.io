@@ -2,7 +2,7 @@
 title: Build an object using PHP
 permalink: /:title:output_ext
 layout: post
-date: 2021-03-04
+date: 2021-03-10
 image: build-object.jpg
 alt: Build an object using PHP
 ---
