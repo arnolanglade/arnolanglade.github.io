@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Arnaud Langlade" />
+    <meta name="description" content="Software engineer @convelio and former core developer @sylius and @akeneo. Love DDD, BDD, TDD, event storming, example mapping">
+    <title>Command and command handler design pattern</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/code-highlight.css" rel="stylesheet" />
+</head>
+
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu<i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">About me</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="talks.html">My talks</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <section class="page-section bg-light">
+            <div class="container blog">
+                
+
+<style>
+    #share-buttons {width: 100%; margin-bottom: 20px;}
+    #share-buttons:after {content: ""; display: block; clear: both;}
+    #share-buttons > div {float: right;width: 40px;cursor: pointer;}
+    #share-buttons > .facebook > svg {fill: #3B5998;}
+    #share-buttons > .twitter > svg {fill: #55ACEE;}
+    #share-buttons > .linkedin > svg {fill: #0077b5;}
+    #share-buttons > .facebook > svg {height: 30px; margin-top: 9px;}
+    #share-buttons > .twitter > svg {height: 32px; margin-top: 8px;}
+    #share-buttons > .linkedin > svg {height: 31px; margin-top: 7px;margin-left: 3px}
+</style>
+
+<div id="share-buttons">
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://arnolanglade.github.io//command-handler-patterns.html&title=title&summary=summary&source=source');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Command and command handler design pattern&url=http://arnolanglade.github.io//command-handler-patterns.html&via=arnolanglade');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('https://www.facebook.com/share.php?u=http://arnolanglade.github.io//command-handler-patterns.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+</div>
+                <h1 id="command-and-command-handler-design-pattern">Command and command handler design pattern</h1>
+
+<p>A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.</p>
+
+<p>A command is often designed as a Data Transfer Object (an object without any behavior). The most important rule to know about its design is that a command should be easily serializable. This way it can be sent to a queue (RabbitMQ or pub-sub for instance) to be handled in an asynchronous way.</p>
+
+<p>As you will see in the next schema, there is a one-to-one relationship between a command and a command handler because there is only a single way to handle a use case. Moreover, the command handler should receive a valid command because it gives feedback to users before handling the use case if the data given by the user is wrong. The only responsibility of a command handler is to handle use cases.</p>
+
+<p><img src="assets/img/posts/command-handler.svg" alt="Command handler design pattern" /></p>
+
+<p>Let’s take a simple example: an account creation. Our business expert only expects that users need to provide an email and a password to create an account to be able to log in. We will create a command CreateAnAccount and its handler CreateAnAccountHandler.</p>
+
+<p>First, we need to create a command named CreateAnAccount which will represent the user intent.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
+   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">;</span>
+   
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span> 
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+   <span class="p">}</span>
+   
+    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">password</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>Tip:</strong> To ease the command creation you can use libraries like the Symfony Serializer component. It makes object creation from a set of data (JSON for example) easier and faster.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$createAccount</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+    <span class="s1">'{“username”:”arnaud”, “password”:“password”}'</span><span class="p">,</span>
+    <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="s1">'json'</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$violation</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$createAccount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Then we need to create a command handler to handle this use case. The command handler is callable: a function or an invocable object for instance. It should return nothing (void) to be able to handle it asynchronously. We don’t know when it will be handled so we can’t expect a result. With the command data, we execute all actions needed to handle the use case. In our example, we create an account aggregate and give it to the account repository.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccountHandler</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span> <span class="o">=</span> <span class="nv">$accounts</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">CreateAnAccount</span> <span class="nv">$createAnAccount</span><span class="p">):</span> <span class="kt">void</span>
+   <span class="p">{</span>
+       <span class="nv">$account</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span>
+           <span class="nv">$createAnAccount</span><span class="o">-&gt;</span><span class="nf">username</span><span class="p">(),</span>
+           <span class="nv">$createAnAccount</span><span class="o">-&gt;</span><span class="nf">password</span><span class="p">()</span>
+       <span class="p">);</span>
+
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$account</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally, let’s stick those pieces of code together in a controller (this example is made with a Symfony Framework). This controller receives JSON encoded data to create a command, then we validate it to give it to the handler.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">CreateAnAccountHandler</span> <span class="nv">$createAnAccountHandler</span><span class="p">,</span>
+        <span class="kt">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">,</span>
+        <span class="kt">ValidatorInterface</span> <span class="nv">$validator</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">createAnAccountHandler</span> <span class="o">=</span> <span class="nv">$createAnAccountHandler</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span> <span class="o">=</span> <span class="nv">$validator</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
+    <span class="p">{</span>
+        <span class="cd">/** @var CreateAnAccount $command */</span>
+        <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+            <span class="nv">$request</span><span class="o">-&gt;</span><span class="nf">getContent</span><span class="p">(),</span>
+            <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+            <span class="s1">'json'</span>
+        <span class="p">);</span>
+        
+        <span class="nv">$violations</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="nv">$violations</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">())</span> <span class="p">{</span>
+           <span class="k">throw</span> <span class="k">new</span> <span class="nc">BadRequestHttpException</span><span class="p">(</span><span class="cm">/*json encoded violation*/</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">createAnAccountHandler</span><span class="p">)(</span><span class="nv">$command</span><span class="p">);</span>
+        
+        <span class="k">return</span> <span class="k">new</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nc">Response</span><span class="o">::</span><span class="no">HTTP_CREATED</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> To simplify this controller you can use a command bus like message bus for instance. It will be in charge of finding the right handler for a given command. If the command bus is built with middleware you can add a middleware to make sure that all commands will be valid before being given to a handler.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
+<span class="p">{</span>
+    <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="nf">getContent</span><span class="p">(),</span>
+        <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="s1">'json'</span>
+    <span class="p">);</span>
+    
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandBus</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="k">new</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nc">Response</span><span class="o">::</span><span class="no">HTTP_CREATED</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>In conclusion:</strong> In many applications, I have seen a lot of classes called managers or services (AccountService, AccountManager for instance) which gather all use case management in a single class. It could work at the beginning but as the development progresses those classes become bigger and bigger (a god object). It makes their maintenance harder, those classes are less readable and they can quickly become a dump. I think this pattern can solve those problems.</p>
+
+<p>Thanks to my proofreader <a href="https://twitter.com/LaureBrosseau">@LaureBrosseau</a>.</p>
+
+                
+
+<style>
+    #share-buttons {width: 100%; margin-bottom: 20px;}
+    #share-buttons:after {content: ""; display: block; clear: both;}
+    #share-buttons > div {float: right;width: 40px;cursor: pointer;}
+    #share-buttons > .facebook > svg {fill: #3B5998;}
+    #share-buttons > .twitter > svg {fill: #55ACEE;}
+    #share-buttons > .linkedin > svg {fill: #0077b5;}
+    #share-buttons > .facebook > svg {height: 30px; margin-top: 9px;}
+    #share-buttons > .twitter > svg {height: 32px; margin-top: 8px;}
+    #share-buttons > .linkedin > svg {height: 31px; margin-top: 7px;margin-left: 3px}
+</style>
+
+<div id="share-buttons">
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://arnolanglade.github.io//command-handler-patterns.html&title=title&summary=summary&source=source');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Command and command handler design pattern&url=http://arnolanglade.github.io//command-handler-patterns.html&via=arnolanglade');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('https://www.facebook.com/share.php?u=http://arnolanglade.github.io//command-handler-patterns.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+</div>
+            </div>
+        </section>
+        <footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright © Arnaud Langlade</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a href="https://twitter.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://gitlab.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-gitlab"></i></a>
+                <a href="https://www.linkedin.com/in/arnaudlanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="./js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="author" content="Arnaud Langlade" />
+    <meta name="description" content="Software engineer @convelio and former core developer @sylius and @akeneo. Love DDD, BDD, TDD, event storming, example mapping">
+    <title>Build an object using PHP</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/code-highlight.css" rel="stylesheet" />
+</head>
+
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu<i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">About me</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="talks.html">My talks</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <section class="page-section bg-light">
+            <div class="container blog">
+                
+
+<style>
+    #share-buttons {width: 100%; margin-bottom: 20px;}
+    #share-buttons:after {content: ""; display: block; clear: both;}
+    #share-buttons > div {float: right;width: 40px;cursor: pointer;}
+    #share-buttons > .facebook > svg {fill: #3B5998;}
+    #share-buttons > .twitter > svg {fill: #55ACEE;}
+    #share-buttons > .linkedin > svg {fill: #0077b5;}
+    #share-buttons > .facebook > svg {height: 30px; margin-top: 9px;}
+    #share-buttons > .twitter > svg {height: 32px; margin-top: 8px;}
+    #share-buttons > .linkedin > svg {height: 31px; margin-top: 7px;margin-left: 3px}
+</style>
+
+<div id="share-buttons">
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://arnolanglade.github.io//build-object-using-php.html&title=title&summary=summary&source=source');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Build an object using PHP&url=http://arnolanglade.github.io//build-object-using-php.html&via=arnolanglade');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('https://www.facebook.com/share.php?u=http://arnolanglade.github.io//build-object-using-php.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+</div>
+                <h1 id="build-an-object-using-php">Build an object using PHP</h1>
+
+<p><img src="assets/img/posts/build-object.jpg" alt="Data validation" />
+<a href="https://unsplash.com/@danist07">@danist07</a></p>
+
+<p>In this new blog post, I want to talk about object building more specifically about primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases.</p>
+
+<p><strong>Note:</strong> I did not work on a PHP8 project yet so that is why I won’t talk about named arguments feature.</p>
+
+<h2 id="primary-constructor">Primary constructor</h2>
+
+<p>The PHP language provides a single way to build an object thanks to the  <code class="language-plaintext highlighter-rouge">__construct()</code>  method. I use this method to define the primary constructor of my classes to encapsulate all their dependencies.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">MapName</span> <span class="nv">$name</span><span class="p">;</span>
+   <span class="k">private</span> <span class="kt">CartographersAllowedToEditMap</span> <span class="nv">$cartographersAllowedToEditMap</span><span class="p">;</span>
+   <span class="cd">/** @var Marker[] */</span>
+   <span class="k">private</span> <span class="kt">array</span> <span class="nv">$markers</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+       <span class="kt">MapName</span> <span class="nv">$name</span><span class="p">,</span>
+       <span class="kt">CartographersAllowedToEditMap</span> <span class="nv">$cartographersAllowedToEditMap</span><span class="p">,</span>
+       <span class="kt">Marker</span> <span class="mf">...</span><span class="nv">$markers</span>
+   <span class="p">)</span> <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cartographersAllowedToEditMap</span> <span class="o">=</span> <span class="nv">$cartographersAllowedToEditMap</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">markers</span> <span class="o">=</span> <span class="nv">$markers</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> If your objects encapsulate a collection of a specific type (like the <code class="language-plaintext highlighter-rouge">Marker</code> in this example), you can use variadic arguments to automatically validate each item of this collection. Here, we don’t need to iterate the collection to check the type of its items, the language does it for us.</p>
+
+<h2 id="secondary-constructor">Secondary constructor</h2>
+
+<p>The PHP language does not ease the data encapsulation because it only provides a single way to build objects but we should be able to define several constructors depending on all our use cases. How to solve this problem? Named constructors! Named constructors are static factories, in other words static methods that build the object itself.
+Let’s take an example with the map object. How to initialize a map without any marker?</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">initialize</span><span class="p">(</span>
+       <span class="kt">string</span> <span class="nv">$name</span><span class="p">,</span>
+       <span class="kt">array</span> <span class="nv">$cartographerAllowedToEditMap</span>
+    <span class="p">):</span> <span class="kt">self</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="k">new</span> <span class="nc">self</span><span class="p">(</span>
+           <span class="k">new</span> <span class="nc">MapName</span><span class="p">(</span><span class="nv">$name</span><span class="p">),</span>
+           <span class="k">new</span> <span class="nc">CartographersAllowedToEditMap</span><span class="p">(</span><span class="nv">$cartographerAllowedToEditMap</span><span class="p">),</span>
+       <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here, we added a named constructor called  <code class="language-plaintext highlighter-rouge">initialize</code> to the <code class="language-plaintext highlighter-rouge">Map</code> class. It uses the primary constructor to build the map object with an empty collection of Marker objects.</p>
+
+<p><strong>Tip:</strong> Some developers change the visibility of the primary constructor method to private but I am not a big fan of that. I use object comparison to test objects to avoid the usage of getters. I like keeping my primary constructor public because it allows me to build objects in any state to compare them to other ones.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">it</span><span class="err"> </span><span class="n">adds</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="n">marker</span><span class="err"> </span><span class="n">on</span><span class="err"> </span><span class="n">the</span><span class="err"> </span><span class="nf">map</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="nv">$actualMap</span> <span class="o">=</span> <span class="nc">Map</span><span class="o">::</span><span class="nf">initialize</span><span class="p">(</span>
+       <span class="s1">'Bons plans sur Nantes'</span><span class="p">,</span>
+       <span class="p">[</span><span class="s1">'Arnaud'</span><span class="p">]</span>
+   <span class="p">);</span>
+
+   <span class="nv">$actualMap</span><span class="o">-&gt;</span><span class="nf">addMarker</span><span class="p">(</span><span class="s1">'Bubar'</span><span class="p">);</span>
+
+   <span class="nv">$expectedMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span>
+       <span class="k">new</span> <span class="nc">MapName</span><span class="p">(</span><span class="s1">'Bons plans sur Nantes'</span><span class="p">),</span>
+       <span class="k">new</span> <span class="nc">CartographersAllowedToEditMap</span><span class="p">([</span><span class="s1">'Arnaud'</span><span class="p">]),</span>
+       <span class="k">new</span> <span class="nc">Marker</span><span class="p">(</span><span class="s1">'Bubar'</span><span class="p">)</span>
+   <span class="p">);</span>
+   
+   <span class="nf">assertSame</span><span class="p">(</span><span class="nv">$actualMap</span><span class="p">,</span> <span class="nv">$expectedMap</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Thanks to my proofreader <a href="https://twitter.com/LaureBrosseau">@LaureBrosseau</a>.</p>
+
+                
+
+<style>
+    #share-buttons {width: 100%; margin-bottom: 20px;}
+    #share-buttons:after {content: ""; display: block; clear: both;}
+    #share-buttons > div {float: right;width: 40px;cursor: pointer;}
+    #share-buttons > .facebook > svg {fill: #3B5998;}
+    #share-buttons > .twitter > svg {fill: #55ACEE;}
+    #share-buttons > .linkedin > svg {fill: #0077b5;}
+    #share-buttons > .facebook > svg {height: 30px; margin-top: 9px;}
+    #share-buttons > .twitter > svg {height: 32px; margin-top: 8px;}
+    #share-buttons > .linkedin > svg {height: 31px; margin-top: 7px;margin-left: 3px}
+</style>
+
+<div id="share-buttons">
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://arnolanglade.github.io//build-object-using-php.html&title=title&summary=summary&source=source');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Build an object using PHP&url=http://arnolanglade.github.io//build-object-using-php.html&via=arnolanglade');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('https://www.facebook.com/share.php?u=http://arnolanglade.github.io//build-object-using-php.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+</div>
+            </div>
+        </section>
+        <footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright © Arnaud Langlade</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a href="https://twitter.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://gitlab.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-gitlab"></i></a>
+                <a href="https://www.linkedin.com/in/arnaudlanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="./js/scripts.js"></script>
+    </body>
+</html>
