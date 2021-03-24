@@ -69,7 +69,7 @@ class PostgreSqlMaps implements Maps
    {
        $sql = <<<SQL
            INSERT INTO map ("mapId", name)
-           VALUES (:mapId,:name)
+           VALUES (:mapId, :name)
            ON CONFLICT ("mapId")
            DO UPDATE SET name = :name;
        SQL;
@@ -86,11 +86,11 @@ class PostgreSqlMaps implements Maps
 
 **Tip:** Thanks to the clause [ON CONFLICT](https://www.postgresql.org/docs/9.5/sql-insert.html) we can easily insert or update data with a single query.
 
-## Entity design impact
+## Entity design impacts
 
 Now we are able to persist and retrieve our map entity. Let's study the impact on entity design.
 
-Let’s start with persistence. In the previous example, I used getters to get its properties but I am not a fan of the getter to be honest! Getters break data encapsulation because they expose object implementation details. They don’t follow the [Tell don’t ask](TODO) principle because we should not ask about the object state to do something, we should tell the object to do something for us. I like adding a `toState` method that is responsible to turn the entity into an associative array.
+Let’s start with persistence. In the previous example, I used getters to get its properties but I am not a fan of the getter to be honest! Getters break data encapsulation because they expose object implementation details. They don’t follow the [Tell don’t ask](https://www.martinfowler.com/bliki/TellDontAsk.html) principle because we should not ask about the object state to do something, we should tell the object to do something for us. I like adding a `toState` method that is responsible to turn the entity into an associative array.
 
 ```php
 final class Map
