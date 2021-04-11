@@ -15,6 +15,7 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/code-highlight.css" rel="stylesheet" />
     <script src="https://getinsights.io/js/insights.js"></script>
+    {% if jekyll.environment == "production" %}
     <script>
         insights.init('VoIrQveDE0uUwpQi');
         insights.trackPages({
@@ -22,4 +23,5 @@
             search: true
         });
     </script>
+    {% endif %}
 </head>
