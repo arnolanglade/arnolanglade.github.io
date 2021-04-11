@@ -7,14 +7,10 @@ services:
             - '${DOCKER_PORT_WEB_API:-8003}:80'
         volumes:
             - './_site:/usr/local/apache2/htdocs/:ro'
-        networks:
-            - 'dev'
+
     blog-builder:
         image: 'jekyll/jekyll:latest'
         volumes:
             - '.:/srv/jekyll'
-        networks:
-            - 'dev'
-
-networks:
-    dev:
+        environment:
+            JEKYLL_ENV: development
