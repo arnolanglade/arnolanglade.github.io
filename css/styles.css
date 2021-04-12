@@ -10487,6 +10487,15 @@ blockquote p {
   text-align: justify;
 }
 
+.blog h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.blog h1 + p {
+  text-align: center;
+}
+
 .chip {
   display: inline-block;
   padding: 0 10px;
