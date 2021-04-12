@@ -5,6 +5,7 @@ layout: post
 date: 2021-03-30
 image: project-symfony-organization.jpg
 alt: How did I organize my last Symfony projects?
+tags: [php, symfony, architecture]
 ---
 
 # How did I organize my last Symfony projects?

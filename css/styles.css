@@ -10486,3 +10486,14 @@ blockquote p {
 .blog p {
   text-align: justify;
 }
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  height: 35px;
+  font-size: 16px;
+  line-height: 33px;
+  border-radius: 25px;
+  background-color: #f8f9fa;
+  margin: 3px 2px;
+}
