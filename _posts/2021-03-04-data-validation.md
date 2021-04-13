@@ -6,6 +6,7 @@ date: 2021-03-04
 image: data-validation.jpg
 alt: Data validation
 tags: [php, oop, design-patterns, symfony]
+related_posts: [Command and command handler design pattern]
 ---
 
 # Data validation
@@ -202,8 +203,3 @@ Now, this is the end of the story! If commands are invalid, we just need to seri
 This might not be the only way to validate data but it worked on my previous project. Even if I use a service to validate my command I try to use as many domain objects as possible to avoid reinventing the wheel. I hope it answers Baptiste Langlade’s [question](https://twitter.com/Baptouuuu/status/1364945053236494336) on Twitter. If you wonder, Baptiste is not my brother ;).
 
 Thanks to my proofreaders [@LaureBrosseau](https://twitter.com/LaureBrosseau) and [@jjanvier_](https://twitter.com/jjanvier_).
-
-## Related posts
-
-* {% post_url 2021-02-25-command-handler-patterns %}
-* {% link _posts/2021-02-25-command-handler-patterns.md %}

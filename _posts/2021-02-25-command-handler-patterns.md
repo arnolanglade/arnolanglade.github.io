@@ -6,6 +6,7 @@ date: 2021-02-25
 image: command-handler.svg
 alt: Command and command handler design pattern
 tags: [php, design-patterns, symfony]
+related_posts: [Data validation]
 ---
 
 # Command and command handler design pattern

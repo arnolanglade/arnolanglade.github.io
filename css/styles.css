@@ -165,7 +165,6 @@ a {
 }
 a:hover {
   color: #b88d07;
-  text-decoration: underline;
 }
 
 a:not([href]) {
@@ -10505,4 +10504,6 @@ blockquote p {
   border-radius: 25px;
   background-color: #f8f9fa;
   margin: 3px 2px;
+  color: #000000;
+  cursor: default;
 }

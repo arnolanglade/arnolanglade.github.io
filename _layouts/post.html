@@ -9,6 +9,26 @@
                 {% include share-buttons.html %}
                 {{ content }}
                 {% include share-buttons.html %}
+
+                {% if page.related_posts.size > 0 %}
+                <h1>Related posts</h1>
+                <div class="row">
+                    {% for post in site.posts %}
+                        {% if page.related_posts contains post.title %}
+                        <div class="col-lg-3 col-sm-6 mb-3">
+                            <div class="portfolio-item">
+                                <a class="portfolio-link text-black" href="{{ post.url }}">
+                                    <img class="img-fluid" src="assets/img/posts/{{ post.image }}" alt="{{ post.alt }}"/>
+                                    <div class="portfolio-caption">
+                                        <div class="portfolio-caption-heading">{{ post.title }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </section>
         {% include footer.html %}
