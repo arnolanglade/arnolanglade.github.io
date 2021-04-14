@@ -4,7 +4,7 @@ services:
     web:
         image: 'httpd:2.4'
         ports:
-            - '${DOCKER_PORT_WEB_API:-8003}:80'
+            - '${BLOG_PORT:-8003}:80'
         volumes:
             - './_site:/usr/local/apache2/htdocs/:ro'
 
