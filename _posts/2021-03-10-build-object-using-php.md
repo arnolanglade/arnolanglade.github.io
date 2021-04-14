@@ -5,6 +5,7 @@ layout: post
 date: 2021-03-10
 image: build-object.jpg
 alt: Build an object using PHP
+tags: [php, oop, design-patterns]
 ---
 
 # Build an object using PHP

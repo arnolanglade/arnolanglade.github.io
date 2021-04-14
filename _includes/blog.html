@@ -9,14 +9,16 @@
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="portfolio-item">
                     <a class="portfolio-link text-black" href="{{ post.url }}">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-book-reader fa-3x"></i></div>
-                        </div>
                         <img class="img-fluid" src="assets/img/posts/{{ post.image }}" alt="{{ post.alt }}"/>
 
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{ post.title }}</div>
                             <div class="portfolio-caption-subheading text-muted">{{ post.date | date: "%b %-d, %Y" }}</div>
+                            {% for tag in post.tags %}
+                            <div class="chip">
+                                #{{ tag }}
+                            </div>
+                            {% endfor %}
                         </div>
                     </a>
                 </div>

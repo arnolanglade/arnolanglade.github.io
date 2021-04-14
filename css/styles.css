@@ -165,7 +165,6 @@ a {
 }
 a:hover {
   color: #b88d07;
-  text-decoration: underline;
 }
 
 a:not([href]) {
@@ -10485,4 +10484,31 @@ blockquote p {
 
 .blog p {
   text-align: justify;
+}
+
+.blog h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.blog h1 + p {
+  text-align: center;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  height: 35px;
+  font-size: 16px;
+  line-height: 33px;
+  border-radius: 25px;
+  background-color: #f8f9fa;
+  margin: 3px 2px;
+  color: #000000;
+  cursor: default;
+}
+
+.related-post .portfolio-item .portfolio-caption .portfolio-caption-heading {
+  padding: 15px;
+  font-size: 20px;
 }

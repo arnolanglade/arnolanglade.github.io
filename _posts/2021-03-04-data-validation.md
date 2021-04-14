@@ -5,6 +5,8 @@ layout: post
 date: 2021-03-04
 image: data-validation.jpg
 alt: Data validation
+tags: [php, oop, design-patterns, symfony]
+related_posts: [Command and command handler design pattern]
 ---
 
 # Data validation

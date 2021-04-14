@@ -5,6 +5,8 @@ layout: post
 date: 2021-03-23
 image: persisting-entity-without-orm.jpg
 alt: Persisting entities without ORM
+tags: [php, oop, design-patterns]
+related_posts: [Build an object using PHP]
 ---
 
 # Persisting entities without ORM
