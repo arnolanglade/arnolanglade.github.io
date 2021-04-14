@@ -10507,3 +10507,8 @@ blockquote p {
   color: #000000;
   cursor: default;
 }
+
+.related-post .portfolio-item .portfolio-caption .portfolio-caption-heading {
+  padding: 15px;
+  font-size: 20px;
+}
