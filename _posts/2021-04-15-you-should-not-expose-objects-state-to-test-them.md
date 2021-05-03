@@ -6,6 +6,7 @@ date: 2021-04-13
 image: test-comparison.jpg
 alt: Why you should not expose objects' state to test them
 tags: [php, oop, testing]
+related_posts: ["Why unit testing can be hard?"]
 ---
 
 # Why you should not expose objects' state to test them
@@ -117,4 +118,4 @@ Now, the `Map` object is better designed. Its state is not exposed anymore which
 Assert::equals($map, new Map('Best places at Bordeaux'));
 ```
 
-Thanks to my proofreaders [@LaureBrosseau](https://twitter.com/LaureBrosseau).
+Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
