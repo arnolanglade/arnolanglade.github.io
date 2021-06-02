@@ -2,7 +2,7 @@
 title: "Objective: set up your projects more easily"
 permalink: /:title:output_ext
 layout: post
-date: 2021-05-01
+date: 2021-06-02
 image: set-up-your-projects-more-easily.jpg
 alt: "Objective: set up your projects more easily"
 tags: [makefile]
