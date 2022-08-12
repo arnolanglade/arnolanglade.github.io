@@ -1,3 +1,11 @@
+<script>
+    function trackTalkLink(link) {
+        {% if jekyll.environment == "production" %}
+        insights.track({id: "talk-link-"+link});
+        {% endif %}
+    }
+</script>
+
 <section class="page-section bg-light" id="talks">
     <div class="container">
         <div class="text-center">
@@ -17,7 +25,7 @@
                                 Forum PHP 2018 (French)
                             </a>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=cYFKkhtIr8w" target="_blank" title="Watch the video" class="btn-social btn-dark">
+                        <a href="https://www.youtube.com/watch?v=cYFKkhtIr8w" onclick="trackTalkLink(link)" target="_blank" title="Watch the video" class="btn-social btn-dark">
                             <i class="fab fa-youtube"></i>
                         </a>
                         <a href="https://arnolanglade.gitlab.io/bad-or-good-repository/#/" target="_blank" title="Open the slides"  class="btn-social btn-dark">
