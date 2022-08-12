@@ -1,7 +1,15 @@
 <script>
-    function trackTalkLink(link) {
+    function trackTalkLink(talk, link) {
         {% if jekyll.environment == "production" %}
-        insights.track({id: "talk-link-"+link});
+        insights.track(
+            {
+                id: "talk-links",
+                parameters: {
+                    talk: talk,
+                    link: link,
+                }
+            }
+        );
         {% endif %}
     }
 </script>
@@ -25,16 +33,16 @@
                                 Forum PHP 2018 (French)
                             </a>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=cYFKkhtIr8w" onclick="trackTalkLink(link)" target="_blank" title="Watch the video" class="btn-social btn-dark">
+                        <a href="https://www.youtube.com/watch?v=cYFKkhtIr8w" onclick="trackTalkLink('Forum PHP 2018', 'youtube')" target="_blank" title="Watch the video" class="btn-social btn-dark">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://arnolanglade.gitlab.io/bad-or-good-repository/#/" target="_blank" title="Open the slides"  class="btn-social btn-dark">
+                        <a href="https://arnolanglade.gitlab.io/bad-or-good-repository/#/" onclick="trackTalkLink('Forum PHP 2018', 'slideshare')" target="_blank" title="Open the slides"  class="btn-social btn-dark">
                             <i class="fab fa-slideshare"></i>
                         </a>
-                        <a href="https://gitlab.com/arnolanglade/bad-or-good-repository" target="_blank" title="Code example" class="btn-social btn-dark">
+                        <a href="https://gitlab.com/arnolanglade/bad-or-good-repository" onclick="trackTalkLink('Forum PHP 2018', 'gitlab')" target="_blank" title="Code example" class="btn-social btn-dark">
                             <i class="fab fa-gitlab"></i>
                         </a>
-                        <a href="https://event.afup.org/forumphp2018-interview-arnaud-langlade/" target="_blank" title="Interview" class="btn-social btn-dark">
+                        <a href="https://event.afup.org/forumphp2018-interview-arnaud-langlade/" onclick="trackTalkLink('Forum PHP 2018', 'interview')" target="_blank" title="Interview" class="btn-social btn-dark">
                             <i class="fas fa-microphone"></i>
                         </a>
                     </div>
@@ -50,13 +58,13 @@
                                 PHPtour 2017 à Nantes (French)
                             </a>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=h0Upir7bg1o" target="_blank" title="Watch the video" class="btn-social btn-dark">
+                        <a href="https://www.youtube.com/watch?v=h0Upir7bg1o" onclick="trackTalkLink('PHPtour 2017 à Nantes', 'youtube')" target="_blank" title="Watch the video" class="btn-social btn-dark">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://www.slideshare.net/ArnaudLanglade/code-moi-une-rh" target="_blank" title="Open the slides" class="btn-social btn-dark">
+                        <a href="https://www.slideshare.net/ArnaudLanglade/code-moi-une-rh" onclick="trackTalkLink('PHPtour 2017 à Nantes', 'slideshare')" target="_blank" title="Open the slides" class="btn-social btn-dark">
                             <i class="fab fa-slideshare"></i>
                         </a>
-                        <a href="https://github.com/arnolanglade/code-me-hr" target="_blank" title="Code example" class="btn-social btn-dark">
+                        <a href="https://github.com/arnolanglade/code-me-hr" onclick="trackTalkLink('PHPtour 2017 à Nantes', 'github')" target="_blank" title="Code example" class="btn-social btn-dark">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -72,10 +80,10 @@
                                 Symfony live Paris 2015 (French)
                             </a>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=O8jzsNVFQHg" target="_blank" title="Watch the video" class="btn-social btn-dark">
+                        <a href="https://www.youtube.com/watch?v=O8jzsNVFQHg" onclick="trackTalkLink('Symfony live Paris 2015', 'youtube')" target="_blank" title="Watch the video" class="btn-social btn-dark">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://www.slideshare.net/ArnaudLanglade/dvelopper-avec-le-sylius-resourcebundle" target="_blank" title="Open the slides" class="btn-social btn-dark">
+                        <a href="https://www.slideshare.net/ArnaudLanglade/dvelopper-avec-le-sylius-resourcebundle" onclick="trackTalkLink('PHPtour 2017 à Nantes', 'slideshare')" target="_blank" title="Open the slides" class="btn-social btn-dark">
                             <i class="fab fa-slideshare"></i>
                         </a>
                     </div>
@@ -93,7 +101,7 @@
                                 Bdx.io 2015 (French)
                             </a>
                         </div>
-                        <a href="https://fr.slideshare.net/ArnaudLanglade/php-trollonsmaistrollonsbien-au-bdxio" target="_blank" title="Open the slides" class="btn-social btn-dark">
+                        <a href="https://fr.slideshare.net/ArnaudLanglade/php-trollonsmaistrollonsbien-au-bdxio" onclick="trackTalkLink('Bdx.io 2015', 'slideshare')" target="_blank" title="Open the slides" class="btn-social btn-dark">
                             <i class="fab fa-slideshare"></i>
                         </a>
                     </div>
@@ -107,7 +115,7 @@
                         <div class="portfolio-caption-subheading text-muted">
                             Bordeaux PHP Meetup (French)
                         </div>
-                        <a href="https://fr.slideshare.net/ArnaudLanglade/programmation-stupid-vs-solid" target="_blank" title="Open the slides" class="btn-social btn-dark">
+                        <a href="https://fr.slideshare.net/ArnaudLanglade/programmation-stupid-vs-solid" onclick="trackTalkLink('Bordeaux PHP Meetup', 'slideshare')" target="_blank" title="Open the slides" class="btn-social btn-dark">
                             <i class="fab fa-slideshare"></i>
                         </a>
                     </div>
