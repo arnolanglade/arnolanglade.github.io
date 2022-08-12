@@ -6,7 +6,7 @@ date: 2021-03-30
 image: project-symfony-organization.jpg
 alt: How did I organize my last Symfony projects?
 tags: [php, symfony, architecture]
-related_posts: [Command and command handler design pattern, Data validation, Persisting entities without ORM]
+related_posts: [Command and command handler design pattern, "How to validate a command?", Persisting entities without ORM]
 ---
 
 # How did I organize my last Symfony projects?

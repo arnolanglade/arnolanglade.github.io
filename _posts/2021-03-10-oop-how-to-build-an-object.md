@@ -10,7 +10,7 @@ tags: [php, oop, design-patterns]
 
 # OOP: how to build an object
 
-![Data validation](assets/img/posts/build-object.jpg)
+![Build object](assets/img/posts/build-object.jpg)
 [@danist07](https://unsplash.com/@danist07)
 
 In this new blog post, I want to talk about object building more specifically about primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases.
