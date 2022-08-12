@@ -1,3 +1,18 @@
+<script>
+    function trackAboutLink(link) {
+        {% if jekyll.environment == "production" %}
+        insights.track(
+            {
+                id: "about-link",
+                parameters: {
+                    link: link,
+                }
+            }
+        );
+        {% endif %}
+    }
+</script>
+
 <section class="page-section bg-light" id="about">
     <div class="container">
         <div class="text-center">
@@ -12,10 +27,10 @@
                     <img class="mx-auto rounded-circle" src="./assets/img/me.jpg" alt="Arnaud langlade"/>
                     <p class="text-muted position"></p>
 
-                    <a href="https://twitter.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://github.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://gitlab.com/arnolanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-gitlab"></i></a>
-                    <a href="https://www.linkedin.com/in/arnaudlanglade" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/arnolanglade" onclick="trackAboutLink('twitter')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/arnolanglade" onclick="trackAboutLink('github')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://gitlab.com/arnolanglade" onclick="trackAboutLink('gitlab')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-gitlab"></i></a>
+                    <a href="https://www.linkedin.com/in/arnaudlanglade" onclick="trackAboutLink('linkedin')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
