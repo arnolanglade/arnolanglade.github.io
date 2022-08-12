@@ -1,14 +1,14 @@
 ---
-title: Build an object using PHP
+title: "OOP: how to build an object"
 permalink: /:title:output_ext
 layout: post
 date: 2021-03-10
 image: build-object.jpg
-alt: Build an object using PHP
+alt: "OOP: how to build an object"
 tags: [php, oop, design-patterns]
 ---
 
-# Build an object using PHP
+# OOP: how to build an object
 
 ![Data validation](assets/img/posts/build-object.jpg)
 [@danist07](https://unsplash.com/@danist07)
@@ -33,7 +33,7 @@ final class Map
        MapName $name,
        CartographersAllowedToEditMap $cartographersAllowedToEditMap,
        Marker ...$markers
-   ) {
+   ) {  
        $this->name = $name;
        $this->cartographersAllowedToEditMap = $cartographersAllowedToEditMap;
        $this->markers = $markers;
