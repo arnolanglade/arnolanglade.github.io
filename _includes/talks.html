@@ -38,6 +38,7 @@
                             {{ post.event_name }}
                             {% endif %}
                         </div>
+                        <p class="text-black-50 text-justify">{{ post.abstract }}</p>
                         {% if post.youtube_link %}
                         <a href="{{ post.youtube_link }}" onclick="trackTalkLink('{{ post.event_name }}', 'youtube')" target="_blank" title="Watch the video" class="btn-social btn-dark">
                             <i class="fab fa-youtube"></i>
