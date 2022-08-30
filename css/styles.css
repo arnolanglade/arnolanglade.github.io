@@ -476,7 +476,14 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+}
+
+#blog .img-fluid {
+  height: 210px;
+}
+
+.related-post .img-fluid {
+  height: 110px;
 }
 
 .img-thumbnail {
@@ -10509,4 +10516,8 @@ blockquote p {
 .related-post .portfolio-item .portfolio-caption .portfolio-caption-heading {
   padding: 15px;
   font-size: 20px;
+}
+
+#blog .portfolio-caption {
+  height: 100%;
 }
