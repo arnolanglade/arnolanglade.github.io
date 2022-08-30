@@ -1,6 +1,7 @@
 ---
 title: "OOP: how to build an object"
 permalink: /:title:output_ext
+description: "Object-oriented programming: primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases."
 layout: post
 date: 2021-03-10
 image: build-object.jpg

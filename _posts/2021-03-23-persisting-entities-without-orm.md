@@ -1,6 +1,7 @@
 ---
 title: Persisting entities without ORM
 permalink: /:title:output_ext
+description: The repository pattern provides a good abstraction to manage object persistence. Even if a lot of projects use an ORM, persisting entities do not necessarily require it.
 layout: post
 date: 2021-03-23
 image: persisting-entity-without-orm.jpg

@@ -1,6 +1,7 @@
 ---
 title: How to validate a command?
 permalink: /:title:output_ext
+description: Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
 layout: post
 date: 2021-03-04
 image: data-validation.jpg

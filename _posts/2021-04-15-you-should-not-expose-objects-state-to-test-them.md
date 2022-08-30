@@ -1,6 +1,7 @@
 ---
 title: Why you should not expose objects' state to test them
 permalink: /:title:output_ext
+description: Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.
 layout: post
 date: 2021-04-13
 image: test-comparison.jpg

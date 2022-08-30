@@ -1,6 +1,7 @@
 ---
 title: "Objective: set up your projects more easily"
 permalink: /:title:output_ext
+description: Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hide the complexity.
 layout: post
 date: 2021-06-02
 image: set-up-your-projects-more-easily.jpg

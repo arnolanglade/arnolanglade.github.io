@@ -1,6 +1,7 @@
 ---
 title: How did I organize my last Symfony projects?
 permalink: /:title:output_ext
+description: "Return of experience: In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture."
 layout: post
 date: 2021-03-30
 image: project-symfony-organization.jpg
