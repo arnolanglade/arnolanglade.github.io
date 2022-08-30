@@ -6,7 +6,7 @@ layout: post
 date: 2021-05-03
 image: why-unit-testing-can-be-hard.jpg
 alt: Why unit testing can be hard?
-tags: [php, oop, testing]
+tags: [oop, testing]
 related_posts: ["Why you should not expose objects' state to test them"]
 ---
 

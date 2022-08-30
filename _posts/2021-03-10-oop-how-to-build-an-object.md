@@ -6,7 +6,7 @@ layout: post
 date: 2021-03-10
 image: build-object.jpg
 alt: "OOP: how to build an object"
-tags: [php, oop, design-patterns]
+tags: [oop, design-patterns]
 ---
 
 # OOP: how to build an object

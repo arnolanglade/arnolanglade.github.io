@@ -6,7 +6,7 @@ layout: post
 date: 2021-03-04
 image: data-validation.jpg
 alt: How to validate a command?
-tags: [php, oop, design-patterns, symfony]
+tags: [oop, design-patterns]
 related_posts: ["Command and command handler design pattern", "The command bus design pattern"]
 ---
 

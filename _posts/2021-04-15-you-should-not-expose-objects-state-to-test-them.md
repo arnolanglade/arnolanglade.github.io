@@ -6,7 +6,7 @@ layout: post
 date: 2021-04-13
 image: test-comparison.jpg
 alt: Why you should not expose objects' state to test them
-tags: [php, oop, testing]
+tags: [oop, testing]
 related_posts: ["Why unit testing can be hard?"]
 ---
 
