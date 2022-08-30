@@ -5,8 +5,8 @@ layout: post
 date: 2021-02-25
 image: command-handler.svg
 alt: Command and command handler design pattern
-tags: [php, design-patterns, symfony]
-related_posts: ["How to validate a command?"]
+tags: [php, design-patterns, software-architecture]
+related_posts: ["How to validate a command?", "The command bus design pattern"]
 ---
 
 # Command and command handler design pattern

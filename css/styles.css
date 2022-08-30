@@ -10126,6 +10126,7 @@ header.masthead .masthead-heading {
   position: relative;
   display: block;
   margin: 0 auto;
+  border: 1px solid #F0F0F0;
 }
 .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
@@ -10152,6 +10153,7 @@ header.masthead .masthead-heading {
 }
 .bg-light .portfolio-item .portfolio-caption {
   background-color: #fff;
+  border-top: 1px solid #F0F0F0
 }
 .portfolio-item .portfolio-caption .portfolio-caption-heading {
   font-size: 1.5rem;
@@ -10489,10 +10491,6 @@ blockquote p {
 .blog h1 {
   text-align: center;
   margin-bottom: 15px;
-}
-
-.blog h1 + p {
-  text-align: center;
 }
 
 .chip {
