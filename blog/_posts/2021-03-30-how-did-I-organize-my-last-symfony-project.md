@@ -7,6 +7,7 @@ date: 2021-03-30
 image: project-symfony-organization.jpg
 alt: How did I organize my last Symfony projects?
 tags: [php, symfony, software-architecture]
+keywords: "software,software architecture,symfony,cqrs,php,hexagonal architecture,port adapters,rex"
 related_posts: [Command and command handler design pattern, "How to validate a command?", Persisting entities without ORM]
 ---
 

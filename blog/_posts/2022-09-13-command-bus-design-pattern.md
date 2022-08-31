@@ -6,6 +6,7 @@ layout: post
 date: 2022-09-13
 image: command-bus/command-bus.svg
 alt: Command and command handler design pattern
+keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
 tags: [software-architecture, design-patterns]
 related_posts: ["How to validate a command?", "Command and command handler design pattern"]
 ---

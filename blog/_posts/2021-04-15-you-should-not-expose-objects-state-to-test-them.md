@@ -7,6 +7,7 @@ date: 2021-04-13
 image: test-comparison.jpg
 alt: Why you should not expose objects' state to test them
 tags: [oop, testing]
+keywords: "software,testing,unit test,oop,encapsulation,ask don't tell"
 related_posts: ["Why unit testing can be hard?"]
 ---
 

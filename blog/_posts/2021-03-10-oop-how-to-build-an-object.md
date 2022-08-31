@@ -7,6 +7,7 @@ date: 2021-03-10
 image: build-object.jpg
 alt: "OOP: how to build an object"
 tags: [oop, design-patterns]
+keywords: "software,oop,design patterns,primary constructor, secondary constructor"
 ---
 
 # OOP: how to build an object

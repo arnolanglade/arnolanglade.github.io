@@ -7,6 +7,7 @@ date: 2021-03-04
 image: data-validation.jpg
 alt: How to validate a command?
 tags: [oop, design-patterns]
+keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
 related_posts: ["Command and command handler design pattern", "The command bus design pattern"]
 ---
 

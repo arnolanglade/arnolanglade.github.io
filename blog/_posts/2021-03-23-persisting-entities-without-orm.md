@@ -8,6 +8,7 @@ image: persisting-entity-without-orm.jpg
 alt: Persisting entities without ORM
 tags: [oop, design-patterns]
 related_posts: ["OOP: how to build an object"]
+keywords: "software,oop,repository,design patterns,orm,persistence,sql,database"
 ---
 
 # Persisting entities without ORM

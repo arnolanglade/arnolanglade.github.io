@@ -7,6 +7,7 @@ date: 2021-06-02
 image: set-up-your-projects-more-easily.jpg
 alt: "Objective: set up your projects more easily"
 tags: [makefile]
+keywords: "makefile,software,setup,installation"
 related_posts: ["How did I organize my last Symfony projects?"]
 ---
 
