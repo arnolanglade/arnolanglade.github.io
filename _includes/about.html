@@ -9,6 +9,8 @@
                 }
             }
         );
+        {% else %}
+        console.log(link)
         {% endif %}
     }
 </script>
@@ -31,6 +33,7 @@
                     <a href="https://github.com/arnolanglade" onclick="trackAboutLink('github')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://gitlab.com/arnolanglade" onclick="trackAboutLink('gitlab')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-gitlab"></i></a>
                     <a href="https://www.linkedin.com/in/arnaudlanglade" onclick="trackAboutLink('linkedin')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="feed.xml" onclick="trackAboutLink('feed')" class="btn btn-dark btn-social mx-2" target="_blank"><i class="fas fa-rss-square"></i></a>
                 </div>
             </div>
         </div>
