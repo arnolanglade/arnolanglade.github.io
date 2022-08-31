@@ -9,7 +9,7 @@
     </url>
     {% endif %}
     {% endfor %}
-    {% for page in site.posts %}
+    {% for page in site.categories.blog %}
     <url>
         <loc>{{ site.url }}{{ page.url | replace: 'index.html', '' }}</loc>
         <changefreq>monthly</changefreq>
