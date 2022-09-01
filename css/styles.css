@@ -10521,3 +10521,48 @@ blockquote p {
 #blog .portfolio-caption {
   height: 100%;
 }
+
+.share-buttons {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.share-buttons:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.share-buttons > div {
+  float: right;
+  width: 40px;
+  cursor: pointer;
+}
+
+.share-buttons > .facebook > svg {
+  fill: #3B5998;
+}
+
+.share-buttons > .twitter > svg {
+  fill: #55ACEE;
+}
+
+.share-buttons > .linkedin > svg {
+  fill: #0077b5;
+}
+
+.share-buttons > .facebook > svg {
+  height: 30px;
+  margin-top: 9px;
+}
+
+.share-buttons > .twitter > svg {
+  height: 32px;
+  margin-top: 8px;
+}
+
+.share-buttons > .linkedin > svg {
+  height: 31px;
+  margin-top: 7px;
+  margin-left: 3px
+}
