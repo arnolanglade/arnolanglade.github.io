@@ -6,8 +6,8 @@ layout: post
 date: 2022-09-20
 image: how-to-handle-permissions-through-command-bus-middleware.jpg
 alt: How to handle user permissions through command bus middleware
-keywords: "software,software architecture,design patterns,command bus,permissions,bus,middleware"
-tags: [software-architecture, design-patterns]
+keywords: "software,software architecture,design patterns,command bus,permissions,security,bus,middleware"
+tags: [software-architecture, security]
 related_posts: ["How to validate a command?", "Command and command handler design pattern", "The command bus design pattern"]
 ---
 
