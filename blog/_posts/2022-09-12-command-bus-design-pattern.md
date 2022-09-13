@@ -3,7 +3,7 @@ title: The command bus design pattern
 permalink: /:title:output_ext
 description: "The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event)."
 layout: post
-date: 2022-09-13
+date: 2022-09-12
 image: command-bus/command-bus.svg
 alt: Command and command handler design pattern
 keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
