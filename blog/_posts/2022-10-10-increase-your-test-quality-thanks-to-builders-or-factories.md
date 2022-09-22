@@ -1,7 +1,7 @@
 ---
 title: Increase your test quality thanks to builders or factories
 permalink: /:title:output_ext
-description: "Bad tests will be hard to maintain and they will slow down your productivity. Test code quality is as important as production code. The builder or factory patterns can help you to improve your test code quality. It will ease test refactoring and make tests more readable."
+description: "Bad tests are hard to maintain and they slow down your productivity. Test code quality is as important as production code. The builder or factory patterns can help you to improve your test code quality. It will ease test refactoring and make tests more readable."
 layout: post
 date: 2022-10-10
 image: increase-your-test-quality-thanks-to-builders-or-factories.jpg
@@ -13,9 +13,9 @@ related_posts: ["Why you should not expose objects' state to test them", "Why un
 
 # Increase your test quality thanks to builders or factories
 
-In a previous [blog post](http://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html), I explained why it is better to compare object instances instead of exposing their state to test them. It avoids breaking encapsulation and it does not have any impact on their design.
+In a previous [blog post](http://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html), I explained why it’s better to compare object instances instead of exposing their state to test them. This avoids breaking encapsulation and it does not have any impact on their design.
 
-Let’s take an example! My side project allows me to create maps to remember places I have been. A map has a name and as a cartographer I am allowed to rename it. Real basic use case but more than enough! The following test ensures I can rename this map:
+Let’s take an example! My side project allows me to create maps to remember places I have been. A map has a name and, as a cartographer, I am allowed to rename it. Real basic use case but more than enough! The following test ensures I can rename this map:
 
 ```php
 $map = new Map(
@@ -38,13 +38,13 @@ Assert::equals(
         new Description('Ma vie sur 'Anglet'),
         Tag::travel(),
         MarkerList::empty(),
-    )k
+    )
 );
 ```
 
-We can see that comparing object instances is great for encapsulation because we don’t expose the object’s state but it makes the test less readable. Here, the only thing we want to focus on is the value of `MapName`. The values of the other value object are only noise because they are not useful for this test. But, this is not the only drawback of this test. What happens if you want to add an extra property to the `Map` object? We will need to refactor all tests that create a map object. It might be easily doable in small projects but it can be a mess for big ones.
+We can see that comparing object instances is great for encapsulation because we don’t expose the object’s state but this makes the test less readable. Here, the only thing we want to focus on is the value of `MapName`. The values of the other value object are only noise because they are not useful for this test. But, this is not the only drawback of this test. What happens if you want to add an extra property to the `Map` object? In this case, we will need to refactor all the tests that create a map object. It might be easily doable in small projects but it can become messy for big ones.
 
-Now, let's show how we can improve this test. Yes, the title of the blog post spoils the solution a bit. We will add a named constructor called `whatever` to the `Map` object to centralize the object construction. Named constructors are static factories that build the object itself.
+Now, let's show how we can improve this test. The title of my blogpost can give you a huge hint on the solution. We will add a named constructor called `whatever` to the `Map` object to centralize the object construction. Named constructors are static factories that build the object itself.
 
 ```php
 class Map 
@@ -70,9 +70,9 @@ class Map
 }
 ```
 
-**Tip:** I like to add a `@internal` annotation to remind all teammates that the object constructor should be only used in tests.
+**Tip:** I like to add a `@internal` annotation to remind all teammates that the object constructor should only be used in tests.
 
-The value object instantiation is delegated to the `whatever` constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it is easier to read. All constructor arguments have a default value then I can override a given value depending on the needs thanks to the named argument feature.
+The value object instantiation is delegated to the `whatever` constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it’s easier to read. All constructor arguments have a default value, then I can override a given value depending on the needs thanks to the named argument feature.
 
 ```php
 $map =  Map::whatever(name: 'Anglet');
@@ -85,9 +85,9 @@ Assert::equals(
 );
 ```
 
-Now, the test is clear and focuses on the right thing. Everyone can easily understand it and it will help your teammate to grasp the code you wrote. Refactoring will be simplified as you only have to rewrite the `whatever` constructor if the signature of the primary constructor of `Map` changes.
+Now, the test is clear and focuses on the right thing. Everyone can easily understand it, and it will help your teammates to grasp the code you wrote. Refactoring will be simplified as you only have to rewrite the `whatever` constructor if the signature of the primary constructor of `Map` changes.
 
-I know that some people won’t like the idea of adding a method to objects only for testing purposes. If you don’t like that you can replace this static factory with a builder.
+I know that some people won’t like the idea of adding a method to objects only for testing purposes. If you don’t like that, you can replace this static factory with a builder.
 
 ```php
 class MapBuilder
@@ -128,7 +128,7 @@ class MapBuilder
 }
 ```
 
-Then your test will look at this:
+Then your test will look like this:
 
 ```php
 $map =  (new MapBuilder())->named('Anglet'')->build();
@@ -143,8 +143,8 @@ Assert::equals(
 
 **Tip:** Read or anemic models don’t have logic to ensure they are built in a good way. If you use this method for them you can add some logic to your builder/factories to ensure they are created with consistent data. It will make your tests stronger.
 
-# Final though
+## Final thought
 
-Builders or factories ease test refactoring and make tests more readable. Don’t forget that bad test suites are a nightmare to maintain and drastically slow down your delivery. Taking care of your test quality will help you to ship fast. Moreover, good tests are free documentation.
+Builders or factories ease test refactoring and make tests more readable. Don’t forget that bad test suites are a nightmare to maintain and can drastically slow down your delivery. Taking care of your test quality will help you to ship fast. Moreover, good tests are free documentation.
 
 Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
