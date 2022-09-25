@@ -5,13 +5,12 @@
             {
                 id: "talk-links",
                 parameters: {
-                    talk: talk,
-                    link: link,
+                    link: talk+"-"+link,
                 }
             }
         );
         {% else %}
-        console.log({talk, link});
+        console.log(talk+"-"+link);
         {% endif %}
     }
 </script>
