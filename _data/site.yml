@@ -1,0 +1,78 @@
+timeline:
+  title: "My main experiences"
+  section: timeline
+  # left is the default
+  #start_align: "left"
+  events:
+    - title: "Sunday"
+      link: "https://sundayapp.com"
+      role: "Software engineer"
+      desc: "Sunday aims to simplify the payment experience at restaurants. You scan a QR code, pay, and walk away. In the meantime restaurateurs can focus on what matters for them"
+      image: assets/img/timeline/sunday.png
+      alt: "Sunday"
+    - title: "Akeneo Shared Catalog"
+      link: "https://www.akeneo.com"
+      role: "Lead software engineer"
+      desc: "Shared Catalogs aims to ease the sharing of product information with internal or external teams through a dedicated portal."
+      image: assets/img/timeline/akeneo.jpg
+      alt: "Akeneo"
+      reco:
+        text: "Arnaud is a very talentuous senior software engineer with robust and proven experience. Arnaud, as leader of a development squad, has successfully delivered a SaaS native platform from first steps of product ideation all the way to the SaaS platform in production. Thanks to Arnaud broad technical expertise and smart human touch, he has been able to lead, coach and grow multiple members of the squad (product manager, software engineer, DevOps). While being very demanding for himself, Arnaud is very pleasant toward his team members and fun to work with. 
+Arnaud is also very result driven and goal focus. Such qualities naturally position Arnaud towards the management as a robust team pillar and committed to the success of the team."
+        givenBy: "—Arnaud Faisolle"
+        link: "https://www.linkedin.com/in/arnaud-faissolle-249315/"
+      align: right
+    - title: "Akeneo PIM"
+      link: "https://www.akeneo.com"
+      role: "(Lead) Software engineer"
+      desc: "Akeneo is an open-source PIM aims to enable small and medium-sized businesses to start centralizing, managing, enriching and distributing their product information at low cost."
+      image: assets/img/timeline/akeneo.jpg
+      alt: "Akeneo"
+      reco:
+        text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
+        givenBy: "—Nicolas Dupont"
+        link: "https://www.linkedin.com/in/nicolasdupontakeneo/"
+      align: right
+    - title: "Groupe Sud Ouest"
+      link: "https://www.groupesudouest.com/"
+      role: "Software engineer at Clever Age"
+      desc: "The Sud Ouest Group is an independent media, communication and services group which media brands ([Sud Ouest](https://www.sudouest.fr), [Charente libre](https://www.charentelibre.fr) and [La république des Pyrénées](https://www.larepubliquedespyrenees.fr)) are well identified within their territory."
+      image: assets/img/timeline/sudouest.png
+      alt: "Groupe Sud Ouest Interactive"
+      reco:
+        text: "J'ai travaillé pendant plusieurs années chez Clever Age en même temps qu'Arnaud. Nous avons souvent évolué sur des projets différents, mais avons eu quelques occasions de travailler ensemble, notamment sur des démarrages de projets Symfony où l'expertise d'Arnaud était très appréciée, puisqu'il était capable de comprendre les problématiques métiers que nous rencontrions et de nous proposer la juste couche d'abstraction pour y répondre, afin de partir sur une architecture logicielle dont la complexité était adaptée. Si l'occasion venait à ne présenter, je travaillerais à nouveau avec Arnaud avec plaisir, et confiance."
+        givenBy: "—Boris Schapira"
+        link: "https://www.linkedin.com/in/borisschapira/"
+    - title: "Sylius"
+      link: "https://sylius.com"
+      role: "Core team member"
+      desc: "Sylius is an open source eCommerce Platform."
+      image: assets/img/timeline/sylius.png
+      alt: "Sylius"
+      reco:
+        text: "Arnaud has been a great Open Source collaborator and developer in the early days of Sylius. Skilled with BDD tools and modern development techniques. Highly recommended!"
+        givenBy: "—Paweł Jędrzejewski"
+        link: "https://www.linkedin.com/in/pjedrzejewski/"
+    - title: "Royal Canin - EasyPack"
+      link: "https://www.royalcanin.com"
+      role: "Lead software engineer at Galilée"
+      desc: "EasyPack is a tool that allows Royal Canin to automate the packaging production process for the brand's products. Easypack is available worldwide for all players linked to Royal Canin."
+      image: assets/img/timeline/royal-canin.jpg
+      alt: "Royal Canin"
+      align: left
+    - title: "Prisma media - CMonOeuvre.com"
+      link: "https://www.prismamedia.com"
+      role: "Software engineer at Galilée"
+      desc: "CMonOeuvre.com was a web2print shop that allowed the creation of paintings, postcards and other content from professional quality photos provided by [GEO](https://www.geo.fr), RMN and [National Geographic](https://www.nationalgeographic.fr)."
+      image: assets/img/timeline/prisma-media.png
+      alt: "Prisma media"
+      align: left
+    - title: "Télécoms sans frontières"
+      link: "https://www.tsfi.org"
+      role: "Telecommunication technician"
+      desc: "Télécoms Sans Frontières (TSF) gives affected people the possibility to contact their families and build rapid-response communications centres for local and international responders. "
+      image: assets/img/timeline/tsf.jpg
+      alt: "Télécoms sans frontières"
+  end:
+    title: More info on linkedin
+    link: https://www.linkedin.com/in/arnaudlanglade

@@ -603,6 +603,11 @@ pre code {
     max-width: 1140px;
   }
 }
+@media (min-width: 1400px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1340px;
+  }
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -10244,7 +10249,7 @@ header.masthead .masthead-heading {
   position: relative;
   float: right;
   width: 100%;
-  padding: 0 20px 0 100px;
+  padding: 0 20px 0 20px;
   text-align: left;
 }
 .timeline > li .timeline-panel:before {
@@ -10366,7 +10371,7 @@ header.masthead .masthead-heading {
     min-height: 170px;
   }
   .timeline > li .timeline-panel {
-    padding: 0 20px 20px 100px;
+    padding: 0 20px 20px 20px;
   }
   .timeline > li .timeline-image {
     width: 170px;
@@ -10377,7 +10382,7 @@ header.masthead .masthead-heading {
     margin-top: 40px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 100px 20px 20px;
+    padding: 0 20px 20px 20px;
   }
 }
 .team-member {
@@ -10565,4 +10570,20 @@ blockquote p {
   height: 31px;
   margin-top: 7px;
   margin-left: 3px
+}
+
+blockquote::before {
+  content: open-quote;
+  margin-right: .2em;
+  vertical-align: -.4em;
+}
+
+blockquote::after, blockquote::before {
+  font-size: 4em;
+  line-height: 0;
+}
+
+blockquote::after {
+  content: close-quote;
+  vertical-align: -.5em;
 }
