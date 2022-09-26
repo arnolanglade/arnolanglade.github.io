@@ -7,7 +7,7 @@ timeline:
     - title: "Sunday"
       link: "https://sundayapp.com"
       role: "Software engineer"
-      desc: "Sunday aims to simplify the payment experience at restaurants. You scan a QR code, pay, and walk away. In the meantime restaurateurs can focus on what matters for them"
+      desc: "Sunday aims to simplify the payment experience for restaurant customers. You scan a QR code, pay, and walk away. In the meantime restaurateurs can focus on what matters for them"
       image: assets/img/timeline/sunday.png
       alt: "Sunday"
     - title: "Akeneo Shared Catalog"
