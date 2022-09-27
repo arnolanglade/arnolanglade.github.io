@@ -13,6 +13,8 @@ related_posts: ["Why you should not expose objects' state to test them", "Why un
 
 # Increase your test quality thanks to builders or factories
 
+![Increase your test quality thanks to builders or factories](assets/img/posts/increase-your-test-quality-thanks-to-builders-or-factories.jpg)[@thoughtcatalog](https://unsplash.com/@thoughtcatalog)
+
 In a previous [blog post](http://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html), I explained why it’s better to compare object instances instead of exposing their state to test them. This avoids breaking encapsulation and it does not have any impact on their design.
 
 Let’s take an example! My side project allows me to create maps to remember places I have been. A map has a name and, as a cartographer, I am allowed to rename it. Real basic use case but more than enough! The following test ensures I can rename this map:
