@@ -10525,10 +10525,6 @@ blockquote p {
   width: 100%;
 }
 
-.blog h1 + p {
-  text-align: center;
-}
-
 .blog p {
   text-align: justify;
 }
@@ -10613,18 +10609,18 @@ blockquote p {
   margin-left: 3px
 }
 
-blockquote::before {
+.timeline blockquote::before {
   content: open-quote;
   margin-right: .2em;
   vertical-align: -.4em;
 }
 
-blockquote::after, blockquote::before {
+.timeline blockquote::after, blockquote::before {
   font-size: 4em;
   line-height: 0;
 }
 
-blockquote::after {
+.timeline blockquote::after {
   content: close-quote;
   vertical-align: -.5em;
 }
