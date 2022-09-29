@@ -10158,6 +10158,9 @@ header.masthead .masthead-heading {
 .portfolio-item .portfolio-link:hover .portfolio-hover {
   opacity: 1;
 }
+.portfolio-link {
+  text-align: center;
+}
 .portfolio-item .portfolio-caption {
   padding: 1.5rem;
   text-align: center;
