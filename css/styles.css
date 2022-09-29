@@ -10497,13 +10497,25 @@ blockquote p {
   width: 100%;
 }
 
+.blog h1 + p {
+  text-align: center;
+}
+
 .blog p {
   text-align: justify;
 }
 
-.blog h2 {
+.blog h1 {
   text-align: center;
+}
+
+.blog h2 {
+  text-align: left;
   margin-bottom: 15px;
+}
+
+.blog .related-post h2 {
+  text-align: center;
 }
 
 .chip {
