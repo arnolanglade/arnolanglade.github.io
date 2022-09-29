@@ -478,10 +478,6 @@ mark,
   max-width: 100%;
 }
 
-#blog .img-fluid {
-  height: 210px;
-}
-
 .related-post .img-fluid {
   height: 110px;
 }
@@ -10494,6 +10490,35 @@ blockquote p {
 }
 * {
   scrollbar-width: thin;
+}
+
+.blog-post-image {
+  height: 210px;
+  object-fit: fill;
+}
+
+@media (max-width: 576px) {
+  .blog-post-image {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  blockquote {
+    padding: 10px 0px 10px 5px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel,
+  .timeline > li .timeline-panel{
+    padding: 0 10px 0 85px;
+  }
+  .timeline .timeline-body {
+    text-align: justify;
+  }
 }
 
 .blog img {
