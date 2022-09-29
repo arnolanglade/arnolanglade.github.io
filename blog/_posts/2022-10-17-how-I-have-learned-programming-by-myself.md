@@ -4,7 +4,7 @@ permalink: /:title:output_ext
 description: "Learning is an important part of our job. It is not that easy when you don’t know where to start, especially if you're self-taught like me. I share what I did to learn software development for the last 15 years in this blog post."
 layout: post
 date: 2022-10-17
-image: how-I-have-learned-programming-by-myself.jpg
+image: how-I-have-learned-programming-by-myself.webp
 alt: How I have learned programming by myself
 keywords: "learning,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training"
 tags: [learning, self-taught]
@@ -12,7 +12,7 @@ tags: [learning, self-taught]
 
 # How I have learned programming by myself
 
-![How I have learned programming by myself](assets/img/posts/how-I-have-learned-programming-by-myself.jpg)[@thoughtcatalog](https://unsplash.com/@kellysikkema)
+![How I have learned programming by myself](assets/img/posts/how-I-have-learned-programming-by-myself.webp)[@thoughtcatalog](https://unsplash.com/@kellysikkema)
 
 I am, what we call, a self-taught. I studied telecommunications and networks at school, unfortunately, I only learned the basics of programming. I had to learn and improve my skills by myself for many years during my free time. I did not take the easiest path to learn! That’s why I wanted to share with you my own experience and what I did to learn software development. I hope this post will help some of you.
 

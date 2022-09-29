@@ -4,7 +4,7 @@ permalink: /:title:output_ext
 description: "Bad tests are hard to maintain and they slow down your productivity. Test code quality is as important as production code. The builder or factory patterns can help you to improve your test code quality. It will ease test refactoring and make tests more readable."
 layout: post
 date: 2022-10-10
-image: increase-your-test-quality-thanks-to-builders-or-factories.jpg
+image: increase-your-test-quality-thanks-to-builders-or-factories.webp
 alt: Increase your test quality thanks to builders or factories
 keywords: "testing,software,design pattern,code quality"
 tags: [testing, code-quality]
@@ -13,7 +13,7 @@ related_posts: ["Why you should not expose objects' state to test them", "Why un
 
 # Increase your test quality thanks to builders or factories
 
-![Increase your test quality thanks to builders or factories](assets/img/posts/increase-your-test-quality-thanks-to-builders-or-factories.jpg)[@thoughtcatalog](https://unsplash.com/@thoughtcatalog)
+![Increase your test quality thanks to builders or factories](assets/img/posts/increase-your-test-quality-thanks-to-builders-or-factories.webp)[@thoughtcatalog](https://unsplash.com/@thoughtcatalog)
 
 In a previous [blog post](http://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html), I explained why it’s better to compare object instances instead of exposing their state to test them. This avoids breaking encapsulation and it does not have any impact on their design.
 

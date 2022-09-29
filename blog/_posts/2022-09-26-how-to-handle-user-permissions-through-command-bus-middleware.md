@@ -4,7 +4,7 @@ permalink: /:title:output_ext
 description: "Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue."
 layout: post
 date: 2022-09-26
-image: how-to-handle-permissions-through-command-bus-middleware.jpg
+image: how-to-handle-permissions-through-command-bus-middleware.webp
 alt: How to handle user permissions through command bus middleware
 keywords: "software,software architecture,design patterns,command bus,permissions,security,bus,middleware"
 tags: [software-architecture, security]
@@ -13,7 +13,7 @@ related_posts: ["How to validate a command?", "Command and command handler desig
 
 # How to handle user permissions through command bus middleware
 
-![How to handle user permissions through command bus middleware](assets/img/posts/how-to-handle-permissions-through-command-bus-middleware.jpg)[@scottwebb](https://unsplash.com/@scottwebb)
+![How to handle user permissions through command bus middleware](assets/img/posts/how-to-handle-permissions-through-command-bus-middleware.webp)[@scottwebb](https://unsplash.com/@scottwebb)
 
 Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. In this blog post, I want to share with you how to do it by simply adding a middleware to your command bus.
 

@@ -4,7 +4,7 @@ permalink: /:title:output_ext
 description: Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.
 layout: post
 date: 2021-04-13
-image: test-comparison.jpg
+image: test-comparison.webp
 alt: Why you should not expose objects' state to test them
 tags: [oop, testing]
 keywords: "software,testing,unit test,oop,encapsulation,ask don't tell"
@@ -13,7 +13,7 @@ related_posts: ["Why unit testing can be hard?", "How to handle user permissions
 
 # Why you should not expose objects' state to test them
 
-![Why you should not expose objects' state to test them](assets/img/posts/test-comparison.jpg)
+![Why you should not expose objects' state to test them](assets/img/posts/test-comparison.webp)
 [@jdent](https://unsplash.com/@jdent)
 
 To introduce this topic, let’s have a look at the PHP documentation to understand how object comparison works using the comparison and identity operators.

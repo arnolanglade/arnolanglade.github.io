@@ -4,7 +4,7 @@ permalink: /:title:output_ext
 description: Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hide the complexity.
 layout: post
 date: 2021-06-02
-image: set-up-your-projects-more-easily.jpg
+image: set-up-your-projects-more-easily.webp
 alt: "Objective: set up your projects more easily"
 tags: [makefile]
 keywords: "makefile,software,setup,installation"
@@ -13,7 +13,7 @@ related_posts: ["How did I organize my last Symfony projects?"]
 
 # Objective: set up your projects more easily
 
-![Objective: set up your projects more easily](assets/img/posts/set-up-your-projects-more-easily.jpg)
+![Objective: set up your projects more easily](assets/img/posts/set-up-your-projects-more-easily.webp)
 [@intelligenciya](https://unsplash.com/@intelligenciya)
 
 For the last decade I worked on several more or less complex projects. I often had problems with their installation. Sometimes, the project was not documented or the existing documentation was not up to date. I had to run commands but I did not understand all of them. When I got errors it was hard to understand what happened. That was not always simple.
