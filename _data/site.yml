@@ -10,6 +10,10 @@ timeline:
       desc: "Sunday aims to simplify the payment experience for restaurant customers. You scan a QR code, pay, and walk away. In the meantime restaurateurs can focus on what matters for them"
       image: assets/img/timeline/sunday.png
       alt: "Sunday"
+      reco:
+        text: "J'ai eu la chance de travailler avec Arnaud pendant plusieurs mois au sein de Sunday. Je dis bien 'chance' car j'ai appris beaucoup à ses côtés, que ce soit sur l'exercice de son métier que sur l'environnement nécessaire au bon exercice de son métier. Je recommande donc chaudement Arnaud qui, au-delà de ses connaissances multiples et de son expertise profonde, est un collègue très agréable avec qui travailler !"
+        givenBy: "Denis Migot"
+        link: "https://www.linkedin.com/in/denis-migot"
     - title: "Akeneo Shared Catalog"
       link: "https://www.akeneo.com"
       role: "Lead software engineer"
