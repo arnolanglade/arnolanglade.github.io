@@ -8,7 +8,7 @@ image: data-validation.webp
 alt: How to validate a command?
 tags: [oop, design-patterns]
 keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
-related_posts: ["Command and command handler design pattern", "The command bus design pattern", "How to handle user permission through command bus middleware"]
+related_posts: ["Command and command handler design pattern", "The command bus design pattern", "How to handle user permissions through command bus middleware"]
 ---
 
 # How to validate a command?

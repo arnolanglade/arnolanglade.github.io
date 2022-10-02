@@ -8,7 +8,7 @@ image: command-bus/command-bus.svg
 alt: Command and command handler design pattern
 keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
 tags: [software-architecture, design-patterns]
-related_posts: ["How to validate a command?", "Command and command handler design pattern", "How to handle user permission through command bus middleware"]
+related_posts: ["How to validate a command?", "Command and command handler design pattern", "How to handle user permissions through command bus middleware"]
 ---
 
 # The command bus design pattern
