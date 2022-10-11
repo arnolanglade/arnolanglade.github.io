@@ -23,22 +23,22 @@ Let’s take an example! My side project allows me to create maps to remember pl
 $map = new Map(
     new MapId('e9a01a8a-9d40-476e-a946-06b159cd484a'),
     new Username('Pepito'),
-    new MapName('Bordeaux'),
-    new Description('Ma vie sur 'Anglet'),
-    Tag::travel(),
+    new MapName('Bordeaux city'),
+    new Description('Good places in Anglet'),
+    Tag::city(),
     MarkerList::empty(),
 );
 
-$map->rename('Bons plans sur 'Anglet');
+$map->rename('Anglet city');
 
 Assert::equals(
     $map,
     new Map(
         new MapId('e9a01a8a-9d40-476e-a946-06b159cd484a'),
         new Username('Pepito'),
-        new MapName('Bons plans sur 'Anglet'),
-        new Description('Ma vie sur 'Anglet'),
-        Tag::travel(),
+        new MapName('Anglet city'),
+        new Description('Good places in Anglet'),
+        Tag::city(),
         MarkerList::empty(),
     )
 );
@@ -55,8 +55,8 @@ class Map
     public static function whatever(
         string $mapId = 'e9a01a8a-9d40-476e-a946-06b159cd484a',
         string $addedBy = 'Pepito',
-        string $name = 'Bons plans sur Nantes',
-        string $description = 'Ma vie sur Nantes',
+        string $name = 'Anglet city',
+        string $description = 'Good places in Anglet',
         string $tag = 'city',
         array $markers = [],
     ): self {
@@ -77,13 +77,13 @@ class Map
 The value object instantiation is delegated to the `whatever` constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it’s easier to read. All constructor arguments have a default value, then I can override a given value depending on the needs thanks to the named argument feature.
 
 ```php
-$map =  Map::whatever(name: 'Anglet');
+$map =  Map::whatever(name: 'Bordeaux city');
 
-$map->rename('Bons plans sur Anglet');
+$map->rename('Anglet city');
 
 Assert::equals(
     $map,
-    Map::whatever(name: 'Bons plans sur Anglet')
+    Map::whatever(name: 'Anglet city')
 );
 ```
 
@@ -96,8 +96,8 @@ class MapBuilder
 {
     private string $mapId = 'e9a01a8a-9d40-476e-a946-06b159cd484a';
     private string $addedBy = 'Pepito';
-    private string $name = 'Bons plans sur Nantes';
-    private string $description = 'Ma vie sur Nantes';
+    private string $name = 'Anglet city';
+    private string $description = 'Good places in Anglet';
     private string $tag = 'city';
     private array $markers = [];
 
@@ -133,13 +133,13 @@ class MapBuilder
 Then your test will look like this:
 
 ```php
-$map =  (new MapBuilder())->named('Anglet'')->build();
+$map =  (new MapBuilder())->named('Bordeaux city')->build();
 
-$map->rename('Bons plans sur Anglet');
+$map->rename('Anglet city');
 
 Assert::equals(
     $map,
-    (new MapBuilder())->named('Bons plans sur Anglet')->build()
+    (new MapBuilder())->named('Anglet city')->build()
 );
 ```
 
