@@ -117,8 +117,8 @@ class MapBuilder
 
     // ... other setters ....
 
-    public function build(): self {
-        return new self(
+    public function build(): Map {
+        return new Map(
             new MapId($this->mapId),
             new Username($this->addedBy),
             new MapName($this->name),
