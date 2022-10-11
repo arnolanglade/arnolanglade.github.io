@@ -6,7 +6,7 @@ layout: post
 date: 2022-10-10
 image: increase-your-test-quality-thanks-to-builders-or-factories.webp
 alt: Increase your test quality thanks to builders or factories
-keywords: "testing,software,design pattern,code quality"
+keywords: "testing,test,software,design pattern,code quality"
 tags: [testing, code-quality]
 related_posts: ["Why you should not expose objects' state to test them", "Why unit testing can be hard?"]
 ---
