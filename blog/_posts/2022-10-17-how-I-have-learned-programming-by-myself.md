@@ -6,7 +6,7 @@ layout: post
 date: 2022-10-17
 image: how-I-have-learned-programming-by-myself.webp
 alt: How I have learned programming by myself
-keywords: "learning,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training"
+keywords: "learning,knowledge,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training"
 tags: [learning, self-taught]
 ---
 
