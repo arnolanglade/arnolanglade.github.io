@@ -47,6 +47,11 @@
                             <i class="fab fa-slideshare"></i>
                         </a>
                         {% endif %}
+                        {% if post.slide_source %}
+                        <a href="{{ post.url }}" title="Open the slides" class="btn-social btn-dark">
+                            <i class="fab fa-slideshare"></i>
+                        </a>
+                        {% endif %}
                         {% if post.code_link %}
                         <a href="{{ post.code_link }}" onclick="trackTalkLink('{{ post.event_name }}', 'gitlab')" target="_blank" title="Code example" class="btn-social btn-dark">
                             <i class="fab fa-github"></i>
