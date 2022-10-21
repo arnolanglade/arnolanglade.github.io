@@ -10124,12 +10124,16 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
-#blog .portfolio-item,
-#talks .portfolio-item {
+#blog .portfolio-item {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
 }
+
+#talk .img-fluid {
+  width: 100%;
+}
+
 .portfolio-item .portfolio-link {
   position: relative;
   display: block;
