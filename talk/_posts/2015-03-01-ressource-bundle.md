@@ -6,4 +6,5 @@ image: sylius-resource-bundle.png
 alt: sylius resource bundle
 youtube_link: https://www.youtube.com/watch?v=O8jzsNVFQHg
 slide_link: https://www.slideshare.net/ArnaudLanglade/dvelopper-avec-le-sylius-resourcebundle
+hide_in_list: no
 ---

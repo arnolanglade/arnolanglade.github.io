@@ -7,4 +7,5 @@ abstract: During this talk, I explain and share tips about how to run an example
 image: example-mapping.webp
 alt: Example Mapping
 slide_source: example-mapping
+hide_in_list: yes
 ---
