@@ -6,9 +6,9 @@ layout: post
 date: 2021-05-03
 image: why-unit-testing-can-be-hard.webp
 alt: Why unit testing can be hard?
-tags: [oop, testing]
-keywords: "software,testing,unit test,coupling,io"
-related_posts: ["Why you should not expose objects' state to test them", "How to handle user permissions through command bus middleware"]
+tags: ["design-patterns", testing]
+keywords: "software,testing,unit test,coupling,io,dependency inversion"
+related_posts: ["Why you should not expose objects' state to test them", "Increase your test quality thanks to builders or factories"]
 ---
 
 # Why unit testing can be hard?
