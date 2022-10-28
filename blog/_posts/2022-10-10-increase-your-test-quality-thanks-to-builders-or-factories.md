@@ -8,7 +8,7 @@ image: increase-your-test-quality-thanks-to-builders-or-factories.webp
 alt: Increase your test quality thanks to builders or factories
 keywords: "testing,test,software,design pattern,code quality"
 tags: [testing, code-quality]
-related_posts: ["Why unit testing can be hard?", "Why unit testing can be hard"]
+related_posts: ["Why you should not expose objects' state to test them", "Why unit testing can be hard?"]
 ---
 
 # Increase your test quality thanks to builders or factories
