@@ -40,9 +40,9 @@ I worked with some product managers and domain experts who wanted to contribute 
 
 Writing the title of a story on a yellow sticky note is pretty simple but I sometimes had difficulties getting the business rules and the examples listed. Especially, when you are doing this workshop with a team for the first time. I found out that it was easier to sometimes start by writing the example first or sometimes by writing the business rules first.
 
-First option: start by writing the business rules and then write the examples if your product manager is comfortable with the exercise, he/she has in mind all business rules and he/she is able to share business knowledge easily with the rest of the team.
+First option: start by writing the business rules and then write the examples if your team is comfortable with the exercise and your product manager has a clear vision of what is expected.
 
-Second option: start by writing examples and then extract business rules from examples if your product manager needs to explore a topic and he/she waits for your feedback. It will let you and your teammates speak, and understand what is going on. When you have enough examples and your understanding of business is better you can extract the business rules.
+Second option: start by writing examples and then extract business rules from examples if your team is not comfortable with the workshop or if your product manager needs to explore a topic and he/she waits for your feedback. It will let you and your teammates speak, and understand what is going on. When you have enough examples and your understanding of business is better you can extract the business rules.
 
 Don't be afraid if it is a bit complicated to be efficient in the beginning. One day, my teammates and I prepared a story about exporting a CSV file, quite simple, right? We only needed to “take data from the DB and build a file” but it wasn't that simple! We turned this "simple" story into at least 15 stories. We discovered a lot of "hidden" business rules. We thought it was a story but it was an epic…
 
