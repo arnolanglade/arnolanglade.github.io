@@ -58,7 +58,7 @@ $createAccount = $serializer->deserialize(
 );
 ```
 
-**Tip:** To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command.
+**Tip:** To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command. I wrote a dedicated [blog post](/how-to-validate-a-command.html) to explain how to validate a command.
 
 ```php
 $violation = $validator->validate($createAccount);
@@ -128,7 +128,7 @@ final class CreateAnAccount
 }
 ```
 
-**Tip:** To simplify this controller you can use a command bus like message bus for instance. It will be in charge of finding the right handler for a given command. If the command bus is built with middleware you can add a middleware to make sure that all commands will be valid before being given to a handler.
+**Tip:** To simplify this controller you can use a command bus like [Symfony Messenger](https://symfony.com/doc/current/components/messenger.html) for instance. It will be in charge of finding the right handler for a given command. If the command bus is built with middleware you can add a middleware to make sure that all commands will be valid before being given to a handler. By the way, I wrote a dedicated [blog post](/command-bus-design-pattern.html) to explain how this pattern works.
 
 ```php
 public function __invoke(Request $request): Response
@@ -144,6 +144,8 @@ public function __invoke(Request $request): Response
     return new JsonResponse(null, Response::HTTP_CREATED);
 }
 ```
+
+**Tip:** Please, have a look at this [blog post](/how-to-handle-user-permissions-through-command-bus-middleware.html) if you need to handle user permissions. Adding a middleware to the command bus will secure your application.
 
 **In conclusion:** In many applications, I have seen a lot of classes called managers or services (AccountService, AccountManager for instance) which gather all use case management in a single class. It could work at the beginning but as the development progresses those classes become bigger and bigger (a god object). It makes their maintenance harder, those classes are less readable and they can quickly become a dump. I think this pattern can solve those problems.
 
