@@ -54,6 +54,6 @@ A few weeks ago, I saw some software engineers saying on social media that we sh
 
 I also had to take several breaks in my learning process to avoid going to the dark side of the force. **Only do things when you want in your free time! Don't put pressure on yourself!** And keep in mind that learning should be fun!
 
-Learning is a part of your job. Companies should let you learn during business hours. On a day-to-day basis, pair and mob programming is a good way to learn and challenge your ideas. Your company should train you as well. For instance, [Mathias Noback’s](https://twitter.com/matthiasnoback) gave us some training when I was at Akeneo. I learned a lot from him, and I definitely recommend him!
+Learning is a part of your job. Companies should let you learn during business hours. On a day-to-day basis, pair and mob programming is a good way to learn and challenge your ideas. Your company should train you as well. For instance, [Mathias Noback](https://matthiasnoback.nl) gave us some training when I was at Akeneo. I learned a lot from him, and I definitely recommend him!
 
 Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
