@@ -266,7 +266,7 @@ final class Map
   public function addMarker(string $name, array $location, Clock $clock): void
   {
       // ...
-      $this->markerAddedAt = new $clock->now();
+      $this->markerAddedAt = $clock->now();
   }
    // ...
 }
