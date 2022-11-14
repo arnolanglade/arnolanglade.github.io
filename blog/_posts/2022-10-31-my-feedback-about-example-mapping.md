@@ -10,7 +10,7 @@ keywords: "example mapping,bdd,behavior driven development,no estimate,team coll
 tags: [BDD, workshop]
 ---
 
-# My feedback about example mappingk
+# My feedback about example mapping
 
 ![My feedback about example mapping](assets/img/posts/example-mapping/my-feedback-about-example-mapping.webp)[@amandagraphc](https://unsplash.com/@amandagraphc)
 
