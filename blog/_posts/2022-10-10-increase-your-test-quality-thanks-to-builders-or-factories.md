@@ -108,9 +108,9 @@ class MapBuilder
         return $this;
     }
 
-    public function named(string $addedBy): self
+    public function named(string $name): self
     {
-        $this->addedBy = $addedBy;
+        $this->name = $name;
 
         return $this;
     }
