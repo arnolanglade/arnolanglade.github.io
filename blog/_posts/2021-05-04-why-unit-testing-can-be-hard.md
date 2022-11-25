@@ -39,7 +39,7 @@ Actually, it is better to have several small objects solving simple problems ins
 > Input/output (I/O, or informally io or IO) is the communication between an information processing system, such as a computer, and the outside world, possibly a human or another information processing system.
 >
 > [Wikipedia](https://press.rebus.community/programmingfundamentals/chapter/input-and-output/)
-k
+
 For example, IO are side effects like: network calls, database queries, filesystem operations, actual timestamps or randomness.
 
 ### Do not deal with the outside
