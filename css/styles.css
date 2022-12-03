@@ -10628,3 +10628,7 @@ blockquote p {
   content: close-quote;
   vertical-align: -.5em;
 }
+
+.talk-image {
+  max-height: 370px;
+}
