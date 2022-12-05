@@ -16,7 +16,7 @@ tags: [BDD, workshop]
 
 Example mapping is a workshop that gathers tech and non-tech people to ensure everyone has the same understanding of the domain problem. It also helps clarify the acceptance criteria for a given story. Because it’s always better to understand what is expected and raise all bottlenecks before developing a story.
 
-Disclaimer! I won’t explain how to run such a workshop, you can easily find a bunch of articles on the web. In this blog article, I want to share with you my experience on Example Mapping and how it helps me to prepare and organize the team’s work.
+Disclaimer! I won’t explain how to run such a workshop, you can easily find a bunch of articles on the web. You can also have a look at [these slides](/example-mapping.html), they come from one of my talks about example mapping if you’re not familiar with it. In this blog article, I want to share with you my experience on Example Mapping and how it helps me to prepare and organize the team’s work.
 
 ## Who will attend the workshop?
 
@@ -32,7 +32,7 @@ Depending on their roles, some team members can be really busy. For instance, I 
 
 ## How organize the team
 
-The attendees can have different roles: one person writes sticky notes, another animates the workshop and the others ask questions and drive the person who writes sticky notes. I think it is important to switch his/her role each session to keep everyone involved during the workshop.
+The attendees can have different roles: onek person writes sticky notes, another animates the workshop and the others ask questions and drive the person who writes sticky notes. I think it is important to switch his/her role each session to keep everyone involved during the workshop.
 
 I worked with some product managers and domain experts who wanted to contribute and write sticky notes. It is not a good idea because they should focus on sharing the knowledge and let the rest of the team grasp the business expectations. You won’t help someone if you do his/her job.
 
