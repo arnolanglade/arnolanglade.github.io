@@ -1,1 +1,30 @@
-{% include_relative slides/{{ page.slide_source }}.html %}
+<!DOCTYPE html>
+<html class="sl-root decks export loaded ua-phantomjs" lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="{{ site.author }}" />
+        <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+        <link href="css/reveal.css" rel="stylesheet" media="all" />
+        <meta name="csrf-param" content="authenticity_token" />
+        <meta name="csrf-token" content="Igi8UpnJlyfKACIf+8yjjBnhJwLJA/6Oc3vuRuvA3iJvq3B597Z1Sopo523Z/RI3oZTa3tMjAtOFn+XWGG8FZA==" />
+
+        {% if jekyll.environment == "production" %}
+        <script src="https://getinsights.io/js/insights.js"></script>
+        <script>
+            insights.init('VoIrQveDE0uUwpQi');
+            insights.trackPages({
+                hash: false,
+                search: false
+            });
+        </script>
+        {% endif %}
+    </head>
+    <body class="reveal-viewport theme-font-quicksand theme-color-sky-blue">
+        {% include_relative slides/{{ page.slide_source }}.html %}
+        <script src="./js/reveal.js"></script>
+    </body>
+</html>
