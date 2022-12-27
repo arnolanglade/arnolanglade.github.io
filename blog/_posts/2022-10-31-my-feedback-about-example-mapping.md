@@ -16,7 +16,7 @@ tags: [BDD, workshop]
 
 Example mapping is a workshop that gathers tech and non-tech people to ensure everyone has the same understanding of the domain problem. It also helps clarify the acceptance criteria for a given story. Because it’s always better to understand what is expected and raise all bottlenecks before developing a story.
 
-Disclaimer! I won’t explain how to run such a workshop, you can easily find a bunch of articles on the web. You can also have a look at [these slides](/example-mapping.html), they come from one of my talks about example mapping if you’re not familiar with it. In this blog article, I want to share with you my experience on Example Mapping and how it helps me to prepare and organize the team’s work.
+Disclaimer! I won’t explain how to run such a workshop, you can easily find a bunch of articles on the web. You can also have a look at [these slides](/agile-tour-rennes-example-mapping.html), they come from one of my talks about example mapping if you’re not familiar with it. In this blog article, I want to share with you my experience on Example Mapping and how it helps me to prepare and organize the team’s work.
 
 ## Who will attend the workshop?
 
