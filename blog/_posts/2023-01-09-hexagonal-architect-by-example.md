@@ -3,7 +3,7 @@ title: Hexagonal architecture by example
 permalink: /:title:output_ext
 description: "The hexagonal architecture, or ports and adapters architecture, is an architectural pattern used in software design. It aims at creating loosely coupled application components that can be easily connected to their software environment by means of ports and adapters."
 layout: post
-date: 2022-01-09
+date: 2023-01-09
 image: hexagonal-architecture/hexagonal-architect-by-example.webp
 alt: Hexagonal architecture by example
 keywords: "architectural pattern,design pattern,hexagonal architecture,port adapter architecture,domain,infrastructure,user interface,software"
