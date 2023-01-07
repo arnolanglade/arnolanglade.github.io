@@ -9,9 +9,8 @@
         {% if jekyll.environment == "production" %}
         insights.track(
             {
-                id: "blog-post-shared",
+                id: "blog-post-shared-"+socialMedia,
                 parameters: {
-                    socialMedia: socialMedia,
                     title: "{{ page.title }}",
                 }
             }
