@@ -95,3 +95,5 @@ a command and query bus, an event sourcing architecture or multiple databases. G
 Depending on the number of use cases the service classes can become really huge. CQRS helps to decrease their size but I am a big fan of them. I like to separate each use case into a dedicated class.
 
 **Note:** I explained this principle for commands in this [blog post ](/command-handler-patterns.html) but we can apply it to query too.
+
+Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).

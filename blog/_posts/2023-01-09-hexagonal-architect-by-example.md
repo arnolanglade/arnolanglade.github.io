@@ -175,3 +175,5 @@ src
 ```
 
 **Note:** I decided to split each class/interface into a dedicated module because I wanted to show you where things are. Feel free to organize your module as you wish.
+
+Thanks to my proofreader [@LaureBrosseau](https://twitter.com/LaureBrosseau).
