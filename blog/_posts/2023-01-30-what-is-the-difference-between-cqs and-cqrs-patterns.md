@@ -8,6 +8,7 @@ image: what-is-the-difference-between-cqs-and-cqrs-patterns.webp
 alt: What is the difference between CQS and CQRS patterns?
 keywords: "cqs,cqrs,design pattern,software"
 tags: [design-patterns]
+related_posts: ["How did I organize my last Symfony projects?"]
 ---
 
 # What is the difference between CQS and CQRS patterns?

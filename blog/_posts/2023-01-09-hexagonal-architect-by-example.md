@@ -8,6 +8,7 @@ image: hexagonal-architecture/hexagonal-architect-by-example.webp
 alt: Hexagonal architecture by example
 keywords: "architectural pattern,design pattern,hexagonal architecture,port adapter architecture,domain,infrastructure,user interface,software"
 tags: [software-architecture, design-patterns]
+related_posts: ["How did I organize my last Symfony projects?"]
 ---
 
 # Hexagonal architecture by example

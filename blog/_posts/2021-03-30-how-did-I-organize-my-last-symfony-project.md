@@ -8,7 +8,7 @@ image: project-symfony-organization.webp
 alt: How did I organize my last Symfony projects?
 tags: [php, symfony, software-architecture]
 keywords: "software,software architecture,symfony,cqrs,php,hexagonal architecture,port adapters,rex"
-related_posts: [Command and command handler design pattern, "How to validate a command?", Persisting entities without ORM]
+related_posts: [Command and command handler design pattern, "How to validate a command?", Persisting entities without ORM, Hexagonal architecture by example]
 ---
 
 # How did I organize my last Symfony projects?
