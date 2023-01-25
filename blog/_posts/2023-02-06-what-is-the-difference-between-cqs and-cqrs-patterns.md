@@ -3,7 +3,7 @@ title: What is the difference between CQS and CQRS patterns?
 permalink: /:title:output_ext
 description: "Description: CQS and CQRS are misunderstood design patterns. They are more simple than people think! CQRS is about dividing an object's methods into two categories: commands and queries while CQRS is about separating query and command into two objects."
 layout: post
-date: 2023-01-30
+date: 2023-02-06
 image: what-is-the-difference-between-cqs-and-cqrs-patterns.webp
 alt: What is the difference between CQS and CQRS patterns?
 keywords: "cqs,cqrs,design pattern,software"
