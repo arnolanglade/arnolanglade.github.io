@@ -1,3 +1,5 @@
+include: [".well-known"]
+
 url: http://arnolanglade.github.io
 
 # Site settings
