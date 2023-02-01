@@ -18,6 +18,8 @@ Example mapping is a workshop that gathers tech and non-tech people to ensure ev
 
 Disclaimer! I won’t explain how to run such a workshop, you can easily find a bunch of articles on the web. You can also have a look at [these slides](/agile-tour-rennes-example-mapping.html), they come from one of my talks about example mapping if you’re not familiar with it. In this blog article, I want to share with you my experience on Example Mapping and how it helps me to prepare and organize the team’s work.
 
+**Caution:**  A little while ago, I got feedback from [Bruno Boucard](https://twitter.com/brunoboucard) about using sticky notes. He advised me to use index cards instead of sticky notes. The workshop attendees can put them on a table and easily move them, unlike stick notes. I speak about sticky notes in this blog post because I only practiced this workshop remotely using tools like [Miro](https://www.miro.com).
+
 ## Who will attend the workshop?
 
 The methodology recommends to involve at least the product managers, developers and testers. The goal of example mapping is that the product manager shares the problem with the person(s) who will solve it. I will go further, you can invite anyone who wants to understand what you are doing. It is a good way to share knowledge.
