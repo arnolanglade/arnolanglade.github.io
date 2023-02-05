@@ -10571,17 +10571,16 @@ blockquote p {
 .share-buttons {
   width: 100%;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.share-buttons:after {
-  content: "";
-  display: block;
-  clear: both;
+.share-buttons img.shareSocialMedia {
+  width: 150px;
 }
 
 .share-buttons > div {
-  float: right;
-  width: 40px;
+  display: inline;
+  margin: 0 20px;
   cursor: pointer;
 }
 
