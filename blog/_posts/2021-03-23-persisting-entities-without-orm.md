@@ -5,16 +5,12 @@ description: The repository pattern provides a good abstraction to manage object
 layout: post
 date: 2021-03-23
 image: persisting-entity-without-orm.webp
-alt: Persisting entities without ORM
+image_alt: Persisting entities without ORM
+image_credit: tofi
 tags: [oop, design-patterns]
 related_posts: ["OOP: how to build an object"]
 keywords: "software,oop,repository,design patterns,orm,persistence,sql,database"
 ---
-
-# Persisting entities without ORM
-
-![Persisting entities without ORM](assets/img/posts/persisting-entity-without-orm.webp)
-[@tofi](https://unsplash.com/@tofi)
 
 Today, I will talk about persisting entities without ORM. First, I will introduce the repository pattern because it provides a good abstraction to manage object persistence. Then, we will see what are the impacts on the entity design.
 

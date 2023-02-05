@@ -5,16 +5,12 @@ description: Exposing the object's state to test them is not a good idea. Compar
 layout: post
 date: 2021-04-13
 image: test-comparison.webp
-alt: Why you should not expose objects' state to test them
+image_alt: Why you should not expose objects' state to test them
+image_credit: jdent
 tags: [oop, testing]
 keywords: "software,testing,unit test,oop,encapsulation,ask don't tell"
 related_posts: ["Why unit testing can be hard?", "Increase your test quality thanks to builders or factories"]
 ---
-
-# Why you should not expose objects' state to test them
-
-![Why you should not expose objects' state to test them](assets/img/posts/test-comparison.webp)
-[@jdent](https://unsplash.com/@jdent)
 
 To introduce this topic, let’s have a look at the PHP documentation to understand how object comparison works using the comparison and identity operators.
 

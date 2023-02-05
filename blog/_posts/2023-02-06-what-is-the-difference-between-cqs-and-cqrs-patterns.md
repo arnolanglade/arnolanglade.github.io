@@ -5,15 +5,12 @@ description: "Description: CQS and CQRS are misunderstood design patterns. They 
 layout: post
 date: 2023-02-06
 image: what-is-the-difference-between-cqs-and-cqrs-patterns.webp
-alt: What is the difference between CQS and CQRS patterns?
+image_alt: What is the difference between CQS and CQRS patterns?
+image_credit: mihaistrompl
 keywords: "cqs,cqrs,design pattern,software"
 tags: [design-patterns]
 related_posts: ["How did I organize my last Symfony projects?"]
 ---
-
-# What is the difference between CQS and CQRS patterns?
-
-![What is the difference between CQS and CQRS patterns?](assets/img/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp)[@mihaistrompl](https://unsplash.com/fr/@mihaistrompl)
 
 I recently found out that I did not grasp those design patterns. There are a lot of resources on the Internet about them but they are not always accurate. That’s a shame because they are pretty simple. I will share my understanding of them with you.
 

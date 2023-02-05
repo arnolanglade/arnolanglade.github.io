@@ -5,16 +5,12 @@ description: Domain validation ensures your aggregate cannot be built in an inva
 layout: post
 date: 2021-03-04
 image: data-validation.webp
-alt: How to validate a command?
+image_alt: How to validate a command?
+image_credit: heapdump
 tags: [oop, design-patterns]
 keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
 related_posts: ["Command and command handler design pattern", "The command bus design pattern", "How to handle user permissions through command bus middleware"]
 ---
-
-# How to validate a command?
-
-![Command validation](assets/img/posts/data-validation.webp)
-[@heapdump](https://unsplash.com/@heapdump)
 
 In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I talked about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to talk about several kinds of data validation in this blog post. We will start with domain validation, this validation ensures we can build our domain objects in a good state depending on business rules. Then, we will talk about command validation and how we can use it to give feedback to users when they submit data to the application.
 

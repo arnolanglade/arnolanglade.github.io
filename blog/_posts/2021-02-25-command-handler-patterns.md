@@ -4,13 +4,11 @@ permalink: /:title:output_ext
 layout: post
 date: 2021-02-25
 image: command-handler.svg
-alt: Command and command handler design pattern
+image_alt: Command and command handler design pattern
 tags: [design-patterns, software-architecture]
 keywords: "design patterns,software,software architecture,command,command handler,command bus"
 related_posts: ["How to validate a command?", "The command bus design pattern", "How to handle user permissions through command bus middleware"]
 ---
-
-# Command and command handler design pattern
 
 A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.
 

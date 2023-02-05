@@ -5,16 +5,12 @@ description: Testing can be really difficult for beginners. The main reason is t
 layout: post
 date: 2021-05-03
 image: why-unit-testing-can-be-hard.webp
-alt: Why unit testing can be hard?
+image_alt: Why unit testing can be hard?
+image_credit: craftedbygc
 tags: ["design-patterns", testing]
 keywords: "software,testing,unit test,coupling,io,dependency inversion"
 related_posts: ["Why you should not expose objects' state to test them", "Increase your test quality thanks to builders or factories"]
 ---
-
-# Why unit testing can be hard?
-
-![Why unit testing can be hard?](assets/img/posts/why-unit-testing-can-be-hard.webp)
-[@craftedbygc](https://unsplash.com/@craftedbygc)
 
 > Unit tests are typically automated tests written and run by software developers to ensure that a section of an application (known as the "unit") meets its design and behaves as intended
 >

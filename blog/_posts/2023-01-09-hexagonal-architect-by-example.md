@@ -5,15 +5,12 @@ description: "The hexagonal architecture, or ports and adapters architecture, is
 layout: post
 date: 2023-01-09
 image: hexagonal-architecture/hexagonal-architect-by-example.webp
-alt: Hexagonal architecture by example
+image_alt: Hexagonal architecture by example
+image_credit: t0D5oR60FkM
 keywords: "architectural pattern,design pattern,hexagonal architecture,port adapter architecture,domain,infrastructure,user interface,software"
 tags: [software-architecture, design-patterns]
 related_posts: ["How did I organize my last Symfony projects?"]
 ---
-
-# Hexagonal architecture by example
-
-![Hexagonal architecture by example](assets/img/posts/hexagonal-architecture/hexagonal-architect-by-example.webp)[@t0D5oR60FkM](https://unsplash.com/fr/photos/t0D5oR60FkM)
 
 In this blog post, I would like to explain the basics of hexagonal architecture thanks to a simple example: a product catalogue. The catalogue manager can add new products through a user interface and the nightly cron task imports new products from the ERP.
 

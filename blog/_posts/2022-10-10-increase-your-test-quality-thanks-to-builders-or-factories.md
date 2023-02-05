@@ -5,15 +5,12 @@ description: "Bad tests are hard to maintain and they slow down your productivit
 layout: post
 date: 2022-10-10
 image: increase-your-test-quality-thanks-to-builders-or-factories.webp
-alt: Increase your test quality thanks to builders or factories
+image_alt: Increase your test quality thanks to builders or factories
+image_credit: thoughtcatalog
 keywords: "testing,test,software,design pattern,code quality"
 tags: [testing, code-quality]
 related_posts: ["Why you should not expose objects' state to test them", "Why unit testing can be hard?"]
 ---
-
-# Increase your test quality thanks to builders or factories
-
-![Increase your test quality thanks to builders or factories](assets/img/posts/increase-your-test-quality-thanks-to-builders-or-factories.webp)[@thoughtcatalog](https://unsplash.com/@thoughtcatalog)
 
 In a previous [blog post](http://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html), I explained why it’s better to compare object instances instead of exposing their state to test them. This avoids breaking encapsulation and it does not have any impact on their design.
 

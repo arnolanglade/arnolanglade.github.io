@@ -5,14 +5,11 @@ description: "Event sourcing consists in storing all changes that happened to th
 layout: post
 date: 2022-11-28
 image: what-is-the-event-sourcing-pattern.webp
-alt: What is the event sourcing pattern?
+image_alt: What is the event sourcing pattern?
+image_credit: vitsinkevich
 keywords: "software,software architecture,design patterns,es,event sourcing,table soccer"
 tags: [software-architecture, design-patterns]
 ---
-
-# What is the event sourcing pattern?
-
-![What is the event sourcing pattern?](assets/img/posts/what-is-the-event-sourcing-pattern.webp)[@vitsinkevich](https://unsplash.com/@vitsinkevich)
 
 Event sourcing consists in storing all changes that happened to an application as a sequence of events instead of only storing the current state of the application. The sum of all events is the current application state. When I heard about this pattern a few years ago, I was really confused. I used to only persist the current application state in a database and that was fine! So I asked myself do I need that?
 

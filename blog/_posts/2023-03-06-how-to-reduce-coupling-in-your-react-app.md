@@ -6,13 +6,10 @@ layout: post
 date: 2023-03-06
 image: how-to-reduce-coupling-in-your-react-app.webp
 alt: How to reduce coupling in your React app
+image_credit: diana_pole
 keywords: "react,dependency injection,dependency inversion,typescript,coupling,software,design pattern"
 tags: [react, design-patterns]
 ---
-
-# How to reduce coupling in your React app
-
-![How to reduce coupling in your React app](assets/img/posts/how-to-reduce-coupling-in-your-react-app.webp)[@diana_pole](https://unsplash.com/@diana_pole)
 
 Today, I would like to cover dependency injection in React. I worked with several frameworks using tools to build and inject dependencies. It is pretty convenient if you apply the dependency inversion principle because you can easily change a dependency with another one.
 
