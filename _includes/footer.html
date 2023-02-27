@@ -30,16 +30,4 @@
     </div>
 </footer>
 
-{% if jekyll.environment == "production" %}
-<amp-analytics config="https://events.newsroom.bi/amp.v1.json" data-credentials="include">
-    <script type="application/json" >
-        {
-            "vars" : {
-                "accountId": "2742"
-            }
-        }
-    </script>
-</amp-analytics>
-{% endif %}
-
 <script src="./js/scripts.js"></script>
