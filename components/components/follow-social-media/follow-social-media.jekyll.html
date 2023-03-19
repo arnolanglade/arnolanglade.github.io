@@ -1,0 +1,17 @@
+{% if site.data.social_links.social %}
+<div class="follow-social-media">
+  <div class="social">
+    <ul class="social__list list-reset">
+      {% for social in site.data.social_links.social %}
+        {% if social.contact == 'yes' %}
+        <li class="social__item">
+          <a class="social__link" href="{{social.link}}" target="_blank" rel="noopener" aria-label="{{social.icon | downcase}} icon">
+            <i class="ion ion-{{social.icon | downcase}}"></i>
+          </a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}

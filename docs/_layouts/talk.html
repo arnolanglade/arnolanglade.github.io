@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="talk-top">
+  <div class="container">
+    <div class="row">
+
+      {%if page.image %}
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="{{site.baseurl}}/images/talks/{{page.image}}" alt="{{page.title}}">
+        </div>
+      </div>
+      {%endif %}
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          <h1 class="post__title">{{ page.title | escape }}</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <a href="{{ page.conference_link }}">
+                <i class="ion ion-md-globe"></i> {{ page.conference | escape }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin talk -->
+<div class="container animate">
+
+  <article class="talk">
+
+    <div class="talk__content">
+      {{ content }}
+    </div>
+
+    {% include share.html %}
+
+  </article>
+</div>
+<!-- end talk -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      {% include talk-navigation.html %}
+    </div>
+  </div>
+</div>
+
+{% include related-posts.html %}
+{% if site.data.general_settings.disqus-identifier %}
+{% include disqus-comments.html %}
+{% endif %}
+
+
+{% bookshop
+  newsletter newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button
+%}

@@ -1,0 +1,17 @@
+footer_menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'About me'
+      url: '/about/'
+    - title: 'Experiences'
+      url: '/experiences/'
+    - title: 'My talks'
+      url: '/talks/'
+    - title: 'Contact'
+      url: '/contact/'
+    - title: 'Blog'
+      url: '/blog/'
+
+copyright_text_html: >-
+  <p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p>

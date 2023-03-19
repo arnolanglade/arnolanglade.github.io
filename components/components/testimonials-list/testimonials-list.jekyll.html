@@ -1,0 +1,21 @@
+<div class="container testimonial-list">
+    <div class="section__head">
+        <h2 class="section__title">{{ include.title | default: "They liked working with me" }}</h2>
+    </div>
+    <div class="section__description">{{ include.description_html }}</div>
+</div>
+<div class="container animate">
+  <div class="testimonial-list__slider testimonials-slider">
+    {% for testimonial-item in site.testimonials %}
+        {% bookshop testimonial-card testimonial-item=testimonial-item %}
+    {% endfor %}
+  </div>
+</div>
+<ul class="controls list-reset" id="testimonials-slider-controls" aria-label="Slider Navigation" tabindex="0">
+    <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+        <i class="ion ion-ios-arrow-back"></i>
+    </li>
+    <li class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+        <i class="ion ion-ios-arrow-forward"></i>
+    </li>
+</ul>
