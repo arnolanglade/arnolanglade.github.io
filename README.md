@@ -18,9 +18,10 @@ Run the website:
 $ npm start
 ~~~
 
+Misc :
+
 mkdir ~/.ruby
 echo 'export GEM_HOME=~/.ruby/' >> ~/.zshrc
 echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.zshrc
 source ~/.zshrc
-
- bundle add webrick
+bundle add webrick
