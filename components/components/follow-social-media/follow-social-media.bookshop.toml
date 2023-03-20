@@ -1,0 +1,3 @@
+[component]
+structures = [ "content_blocks" ]
+label = "follow-social-media"

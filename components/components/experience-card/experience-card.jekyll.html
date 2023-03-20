@@ -1,0 +1,32 @@
+{% assign c = "c-experience-card" %}
+<div class="{{c}}">
+  <div class="{{c}}__content">
+    <div class="{{c}}__client-meta">
+      {% if include.experience-item.image %}
+        <div class="{{c}}__image-container">
+          <img class="{{c}}__client-avatar" src="{{ include.experience-item.image }}" alt="{{ include.experience-item.name }}">
+        </div>
+      {% endif %}
+      <div class="{{c}}__client-info">
+        {% if include.experience-item.name %}
+          <h3 class="{{c}}__client-name">
+            <a href="{{ include.experience-item.link }}">{{ include.experience-item.name }}</a>
+          </h3>
+        {% endif %}
+        {% if include.experience-item.position %}
+          <p class="{{c}}__client-position">{{ include.experience-item.position }}</p>
+        {% endif %}
+      </div>
+      {% if include.experience-item.tags.size >= 1 %}
+      <div class="{{c}}__tags-box">
+        {% for tag in include.experience-item.tags %}
+        <div class="{{c}}__tag">{{ tag }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% if include.experience-item.blurb %}
+      <p class="{{c}}__client-text">{{ include.experience-item.blurb }}</p>
+    {% endif %}
+  </div>
+</div>

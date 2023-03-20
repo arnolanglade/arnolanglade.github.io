@@ -1,0 +1,23 @@
+{% assign c = "c-service-card" %}
+<div class="{{c}}">
+  <div class="{{c}}__content">
+    <div class="{{c}}__client-meta">
+      {% if include.service-item.image %}
+        <div class="{{c}}__image-container">
+          <i class="ion ion-md-{{ include.service-item.image }}"></i>
+        </div>
+      {% endif %}
+      <div class="{{c}}__client-info">
+        {% if include.service-item.name %}
+          <h3 class="{{c}}__client-name">{{ include.service-item.name }}</h3>
+        {% endif %}
+        {% if include.service-item.position %}
+          <p class="{{c}}__client-position">{{ include.service-item.position }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% if include.service-item.blurb %}
+      <p class="{{c}}__client-text">{{ include.service-item.blurb }}</p>
+    {% endif %}
+  </div>
+</div>

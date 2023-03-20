@@ -1,0 +1,12 @@
+[component]
+structures = []
+label = "talk Card"
+description = "talk card used for talk lists"
+icon = "wysiwyg"
+tags = []
+
+[props.talk]
+title = "Hello World"
+subtitle = "Lorem Ipsum"
+image = "https://placekitten.com/800/400"
+url = "/"
