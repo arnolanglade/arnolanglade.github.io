@@ -23,4 +23,3 @@ jobs:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }}
           jekyll_src: ./site
-          jekyll_cfg: ./site/_config.yml
