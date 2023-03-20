@@ -1,0 +1,13 @@
+{
+  "name": "arnaud-langlade-blog",
+  "description": "Arnaud langlade's blog",
+  "scripts": {
+    "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site -",
+    "start": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
+    "install-jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle install"
+  },
+  "author": "Arnaud Langlade",
+  "devDependencies": {
+    "@bookshop/jekyll-engine": "^2.2.2"
+  }
+}

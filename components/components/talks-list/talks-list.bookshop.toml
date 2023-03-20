@@ -1,0 +1,9 @@
+[component]
+structures = [ "content_blocks" ]
+label = "Talks List"
+description = "Lists all of the site's talks"
+icon = "wysiwyg"
+tags = ["Collections"]
+
+[props]
+show_talks = true

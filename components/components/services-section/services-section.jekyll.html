@@ -1,0 +1,31 @@
+<!-- begin services -->
+<section class="section service-section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title service-title">{{ include.title | default: "My expertise" }}</h2>
+          </div>
+          <div class="section__description">{{ include.description_html }}</div>
+        </div>
+
+        <div class="services__slider service-slider">
+          {% for service-item in site.services %}
+            {% bookshop service-card service-item=service-item %}
+          {% endfor %}
+        </div>
+        <ul class="controls list-reset" id="service-slider-controls" aria-label="Slider Navigation" tabindex="0">
+          <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+            <i class="ion ion-ios-arrow-back"></i>
+          </li>
+          <li class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+            <i class="ion ion-ios-arrow-forward"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end services -->

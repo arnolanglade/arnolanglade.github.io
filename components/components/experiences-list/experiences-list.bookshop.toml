@@ -1,0 +1,9 @@
+[component]
+structures = [ "content_blocks" ]
+label = "Experiences List"
+description = "Lists all of the site's blog experiences"
+icon = "wysiwyg"
+tags = ["Collections"]
+
+[props]
+show_experiences = true

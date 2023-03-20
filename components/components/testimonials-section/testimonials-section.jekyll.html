@@ -1,0 +1,25 @@
+<!-- begin testimonials -->
+<section class="section testimonial-section animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <div class="section__head">
+            <h2 class="section__title">{{ include.title | default: "They liked working with me" }}</h2>
+            <a class="section__link" href="{{ include.link_url }}">View all <i class="ion ion-md-arrow-forward"></i></a>
+          </div>
+          <div class="section__description">{{ include.description_html }}</div>
+        </div>
+        <div class="row">
+          {% for testimonial-item in site.testimonials %}
+            {% if testimonial-item.homepage %}
+              {% bookshop testimonial-card testimonial-item=testimonial-item %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end testimonials -->

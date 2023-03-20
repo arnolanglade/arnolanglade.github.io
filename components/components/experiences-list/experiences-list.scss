@@ -1,0 +1,17 @@
+.experience-list {
+  .section__head {
+    margin-top: 50px;
+
+    @media only screen and (max-width: $desktop) {
+      margin-top: 30px;
+    }
+
+    @media only screen and (max-width: $tablet) {
+      margin-top: 20px;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      margin-top: 10px;
+    }
+  }
+}
