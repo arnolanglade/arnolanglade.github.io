@@ -15,12 +15,13 @@ jobs:
       - name: Build Jekyll site
         run: |
           docker run \
-            -v ${{ github.workspace }}/site:/srv/jekyll \
+            -v $PWD:/srv/jekyll \
+            -e BUNDLE_GEMFILE=site/Gemfile \
             jekyll/builder:4.2.0 \
-            /bin/bash -c 'chmod 777 /srv/jekyll && bundle install && bundle exec jekyll build --future'
+            /bin/bash -c 'chmod 777 /srv/jekyll && bundle install && bundle exec jekyll build --source site'
 
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: site/_site
+          publish_dir: _site
