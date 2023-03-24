@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Objective: set up your projects more easily</title>
+  <meta name='description' content='Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hid...'>
+  <meta name="keywords" content="makefile,software,setup,installation">
+  <link rel="canonical" href="/objective-set-up-your-projects-more-easily.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Objective: set up your projects more easily – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hide the complexity.">
+  <meta name="twitter:image:src" content="/set-up-your-projects-more-easily.webp">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Objective: set up your projects more easily – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hide the complexity.">
+  <meta property="og:image" content="/set-up-your-projects-more-easily.webp">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/set-up-your-projects-more-easily.webp" alt="Objective: set up your projects more easily">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/makefile" class="post-tags__tag">makefile</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">Objective: set up your projects more easily</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2021-06-02T00:00:00-05:00">
+                02 Jun 2021
+              </time>
+              
+              <p class="post__image-credit">
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@intelligenciya">@intelligenciya</a>
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>For the last decade I worked on several more or less complex projects. I often had problems with their installation. Sometimes, the project was not documented or the existing documentation was not up to date. I had to run commands but I did not understand all of them. When I got errors it was hard to understand what happened. That was not always simple.</p>
+
+<p>During my last projects, I used makefile to provide an abstraction to simplify their installation and hide complexity. It let me install projects with a single command and provided a minimal set of targets which made my daily work easier.</p>
+
+<h2 id="how-does-makefile-work">How does makefile work?</h2>
+
+<p>A makefile is a set of “rules” that looks like:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target: prerequisites prerequisites
+        recipe
+        recipe
+        ...
+</code></pre></div></div>
+
+<p>A <strong>target</strong> is the name of a file (or a folder) that is generated by <code class="language-plaintext highlighter-rouge">make</code>. It could also be the name of an action to perform but you need to declare it as PHONY.</p>
+
+<p>A <strong>prerequisite</strong> are the files (or folders) needed to create the target, you can see them as target dependencies.</p>
+
+<p>A <strong>recipe</strong> are all actions executed when the target is run. <strong>Caution:</strong> you need to indent all recipes using a “real” tab character otherwise you will get errors.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.env:
+     <span class="nb">cp</span> .env.dist .env
+</code></pre></div></div>
+
+<p>If the <code class="language-plaintext highlighter-rouge">.env</code> file does not exist, the recipe will be carried out, but if it does exist the recipe won’t be executed #magic.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.PHONY: cache
+cache: .env
+      bin/console c:c
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">cache</code> target does not target a file. Declaring this target as PHONY allows having a file named <code class="language-plaintext highlighter-rouge">cache</code> in the same directory as the Makefile.</p>
+
+<p><strong>Note:</strong> If the <code class="language-plaintext highlighter-rouge">.env</code> file does not exist the <code class="language-plaintext highlighter-rouge">.env</code> target will be performed before the <code class="language-plaintext highlighter-rouge">cache</code> target.</p>
+
+<h2 id="lets-take-an-example">Let’s take an example</h2>
+
+<p>For instance, a project orchestrated by docker-compose having:</p>
+<ul>
+  <li>a front application written in JS using React framework,</li>
+  <li>a back application written in PHP using Symfony framework,</li>
+  <li>a PostgreSQL database managed by Doctrine DBAL and Doctrine migration</li>
+</ul>
+
+<p><strong>Caution:</strong> I will only speak about projects setup for dev purposes. I won’t talk about making docker images ready for production.</p>
+
+<p>Let’s start installing the project dependencies. The following targets install project dependencies if they have not been downloaded yet. They can guess if they are outdated to upgrade them thanks to target prerequisites. Another interesting thing is that nothing will be done if dependencies are already installed and up to date.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Front</span>
+web/yarn.lock: web/package.json
+  docker-compose run <span class="nt">--rm</span> node yarn <span class="nb">install
+
+</span>web/node_modules: web/yarn.lock
+  docker-compose run <span class="nt">--rm</span> node yarn <span class="nb">install</span> <span class="nt">--frozen-lockfile</span>
+  docker-compose run <span class="nt">--rm</span> node yarn check <span class="nt">--integrity</span>
+
+<span class="c"># back</span>
+api/composer.lock: api/composer.json
+  docker-compose run <span class="nt">--rm</span> fpm composer update
+
+api/vendor: api/composer.lock
+  docker-compose run <span class="nt">--rm</span> fpm composer <span class="nb">install</span>
+
+</code></pre></div></div>
+
+<p>Then, we need to “up” all docker-compose services: the web server, the PHP process manager, the datatable, and the node to run the front application in development mode.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.PHONY: up
+up:
+  docker-compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose ps                                              
+         Name                        Command               State                                     Ports                                   
+<span class="nt">---------------------------------------------------------------------------------------------------------------------------------------------</span>                                                     
+my-maps-node              docker-entrypoint.sh yarn  ...   Up                                                                                
+my-maps-web               nginx <span class="nt">-g</span> daemon off<span class="p">;</span>             Up      80/tcp                                                                    
+my-maps_database_1        docker-entrypoint.sh postgres    Up      5432/tcp                                                                  
+my-maps_fpm_1             php-fpm <span class="nt">-F</span>                       Up                                                                           
+</code></pre></div></div>
+
+<p>The last thing to do is to create the database schema using Doctrine migration.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.PHONY: db-migration
+db-migration: api/vendor
+  docker-compose run <span class="nt">--rm</span> fpm bin/console doctrine:migrations:migrate <span class="nt">--no-interaction</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> To ease my daily work, I like introducing other targets like <code class="language-plaintext highlighter-rouge">db</code> target that resets database quickly or <code class="language-plaintext highlighter-rouge">fixture</code> to load some data fixtures.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.PHONY: db
+db: api/vendor
+  docker-compose run <span class="nt">--rm</span> fpm bin/console doctrine:database:drop <span class="nt">--force</span> <span class="nt">--no-interaction</span>
+  docker-compose run <span class="nt">--rm</span> fpm bin/console doctrine:database:create <span class="nt">--no-interaction</span>
+
+.PHONY: fixtures
+fixtures: api/vendor
+  docker-compose run <span class="nt">--rm</span> fpm bin/console project:fixtures:load
+</code></pre></div></div>
+
+<p>Now, we have all atomic targets to set up all parts of the application. Another interesting thing with make, is that it can run several targets within a single command <code class="language-plaintext highlighter-rouge">make up api/vendor web/node_modules</code>.This is pretty useful to create scenarios. For instance, to set up and run the project I only need to run the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make up api/vendor web/node_modules db db-migration fixtures
+</code></pre></div></div>
+
+<p>But it works with everything:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make db db-migration fixtures
+make api/vendor web/node_modules
+</code></pre></div></div>
+
+<p>To make your day-to-day basis, you can introduce targets that run those scenarios.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># It builds and runs the application</span>
+.PHONY: app-dev
+app-dev: up api/vendor web/node_modules db db-migration fixtures
+
+<span class="c"># It resets the database</span>
+.PHONY: db-reset
+db-reset: db db-migration fixtures
+
+<span class="c"># It resets the database</span>
+.PHONY: dependencies
+dependencies: api/vendor web/node_modules
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> I advise you to introduce the minimum set of targets into the makefile. Keep it simple! Don’t forget that everyone uses it! To let developers have their custom targets you may want to include custom makefiles using <a href="https://www.gnu.org/software/make/manual/html_node/Include.html">include</a>. Don’t forget to add an entry into <code class="language-plaintext highlighter-rouge">.ignore</code> to avoid committing those files. Now, developers can create their own makefile with their personal targets.</p>
+
+<h2 id="one-last-word">One last word</h2>
+
+<p>Makefile is only a solution, this is not THE solution. The important thing to keep in mind is that you should be able to easily run your project to reduce the developer’s mental load and let them focus on the right thing. It will improve the day-to-day basis and make newcomers’ onboarding easier.</p>
+
+<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Objective:%20set%20up%20your%20projects%20more%20easily&url=/objective-set-up-your-projects-more-easily.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/objective-set-up-your-projects-more-easily.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/objective-set-up-your-projects-more-easily.html&title=Objective:%20set%20up%20your%20projects%20more%20easily&summary=Setting%20up%20a%20project%20locally%20should%20be%20easy%20to%20let%20devs%20focus%20on%20delivering%20value.%20Makefile%20can%20provide%20an%20abstraction%20to%20simplify%20their%20installation%20and%20hide%20the%20complexity.&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/why-unit-testing-can-be-hard.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/posts/why-unit-testing-can-be-hard.webp" alt="Objective: set up your projects more easily">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Why unit testing can be hard?</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/command-bus-design-pattern.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">The command bus design pattern</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="Objective: set up your projects more easily">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts  animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/makefile" class="section__link related-tag">See all<span> makefile</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>

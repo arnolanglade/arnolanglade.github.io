@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Command and command handler design pattern</title>
+  <meta name='description' content='Arnaud Langlade - I am a senior software engineer, architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further».'>
+  <meta name="keywords" content="design patterns,software,software architecture,command,command handler,command bus">
+  <link rel="canonical" href="/command-handler-patterns.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Command and command handler design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.
+">
+  <meta name="twitter:image:src" content="/command-handler.svg">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Command and command handler design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.
+">
+  <meta property="og:image" content="/command-handler.svg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/command-handler.svg" alt="Command and command handler design pattern">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/command-bus" class="post-tags__tag">command-bus</a>
+            
+              <a href="/tag/design-patterns" class="post-tags__tag">design-patterns</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">Command and command handler design pattern</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2021-02-25T00:00:00-06:00">
+                25 Feb 2021
+              </time>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.</p>
+
+<p>A command is often designed as a Data Transfer Object (an object without any behavior). The most important rule to know about its design is that a command should be easily serializable. This way it can be sent to a queue (RabbitMQ or pub-sub for instance) to be handled in an asynchronous way.</p>
+
+<p>As you will see in the next schema, there is a one-to-one relationship between a command and a command handler because there is only a single way to handle a use case. Moreover, the command handler should receive a valid command because it gives feedback to users before handling the use case if the data given by the user is wrong. The only responsibility of a command handler is to handle use cases.</p>
+
+<p><img src="images/posts/command-handler.svg" alt="Command handler design pattern" /></p>
+
+<p>Let’s take a simple example: an account creation. Our business expert only expects that users need to provide an email and a password to create an account to be able to log in. We will create a command CreateAnAccount and its handler CreateAnAccountHandler.</p>
+
+<p>First, we need to create a command named CreateAnAccount which will represent the user intent.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
+   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">;</span>
+   
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span> 
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+   <span class="p">}</span>
+   
+    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">password</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>Tip:</strong> To ease the command creation you can use libraries like the Symfony Serializer component. It makes object creation from a set of data (JSON for example) easier and faster.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$createAccount</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+    <span class="s1">'{“username”:”arnaud”, “password”:“password”}'</span><span class="p">,</span>
+    <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="s1">'json'</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command. I wrote a dedicated <a href="/how-to-validate-a-command.html">blog post</a> to explain how to validate a command.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$violation</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$createAccount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Then we need to create a command handler to handle this use case. The command handler is callable: a function or an invocable object for instance. It should return nothing (void) to be able to handle it asynchronously. We don’t know when it will be handled so we can’t expect a result. With the command data, we execute all actions needed to handle the use case. In our example, we create an account aggregate and give it to the account repository.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccountHandler</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span> <span class="o">=</span> <span class="nv">$accounts</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">CreateAnAccount</span> <span class="nv">$createAnAccount</span><span class="p">):</span> <span class="kt">void</span>
+   <span class="p">{</span>
+       <span class="nv">$account</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">::</span><span class="nf">create</span><span class="p">(</span>
+           <span class="nv">$createAnAccount</span><span class="o">-&gt;</span><span class="nf">username</span><span class="p">(),</span>
+           <span class="nv">$createAnAccount</span><span class="o">-&gt;</span><span class="nf">password</span><span class="p">()</span>
+       <span class="p">);</span>
+
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$account</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally, let’s stick those pieces of code together in a controller (this example is made with a Symfony Framework). This controller receives JSON encoded data to create a command, then we validate it to give it to the handler.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">CreateAnAccountHandler</span> <span class="nv">$createAnAccountHandler</span><span class="p">,</span>
+        <span class="kt">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">,</span>
+        <span class="kt">ValidatorInterface</span> <span class="nv">$validator</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">createAnAccountHandler</span> <span class="o">=</span> <span class="nv">$createAnAccountHandler</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span> <span class="o">=</span> <span class="nv">$validator</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
+    <span class="p">{</span>
+        <span class="cd">/** @var CreateAnAccount $command */</span>
+        <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+            <span class="nv">$request</span><span class="o">-&gt;</span><span class="nf">getContent</span><span class="p">(),</span>
+            <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+            <span class="s1">'json'</span>
+        <span class="p">);</span>
+        
+        <span class="nv">$violations</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="nv">$violations</span><span class="o">-&gt;</span><span class="nb">count</span><span class="p">())</span> <span class="p">{</span>
+           <span class="k">throw</span> <span class="k">new</span> <span class="nc">BadRequestHttpException</span><span class="p">(</span><span class="cm">/*json encoded violation*/</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">createAnAccountHandler</span><span class="p">)(</span><span class="nv">$command</span><span class="p">);</span>
+        
+        <span class="k">return</span> <span class="k">new</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nc">Response</span><span class="o">::</span><span class="no">HTTP_CREATED</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> To simplify this controller you can use a command bus like <a href="https://symfony.com/doc/current/components/messenger.html">Symfony Messenger</a> for instance. It will be in charge of finding the right handler for a given command. If the command bus is built with middleware you can add a middleware to make sure that all commands will be valid before being given to a handler. By the way, I wrote a dedicated <a href="/command-bus-design-pattern.html">blog post</a> to explain how this pattern works.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
+<span class="p">{</span>
+    <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="nf">getContent</span><span class="p">(),</span>
+        <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+        <span class="s1">'json'</span>
+    <span class="p">);</span>
+    
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandBus</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="k">new</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nc">Response</span><span class="o">::</span><span class="no">HTTP_CREATED</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> Please, have a look at this <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">blog post</a> if you need to handle user permissions. Adding a middleware to the command bus will secure your application.</p>
+
+<p><strong>In conclusion:</strong> In many applications, I have seen a lot of classes called managers or services (AccountService, AccountManager for instance) which gather all use case management in a single class. It could work at the beginning but as the development progresses those classes become bigger and bigger (a god object). It makes their maintenance harder, those classes are less readable and they can quickly become a dump. I think this pattern can solve those problems.</p>
+
+<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Command%20and%20command%20handler%20design%20pattern&url=/command-handler-patterns.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/command-handler-patterns.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/command-handler-patterns.html&title=Command%20and%20command%20handler%20design%20pattern&summary=&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+
+  
+  <a class="post__next" href="/how-to-validate-a-command.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">How to validate a command?</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/data-validation.webp" alt="Command and command handler design pattern">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-reduce-coupling-in-your-react-app.html">
+        <img loading="lazy" src="/images/posts/how-to-reduce-coupling-in-your-react-app.webp" alt="How to reduce coupling in your React app">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/react" class="c-blog-card__tag">react</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-reduce-coupling-in-your-react-app.html">How to reduce coupling in your React app</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The dependency inversion principle is a great design pattern, it makes applications more modular and easier to test. A React Context can help to implement this pattern in a React application. Learn how in this new blog article.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-03-06T00:00:00-06:00">06 Mar 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">
+        <img loading="lazy" src="/images/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp" alt="What is the difference between CQS and CQRS patterns?">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">What is the difference between CQS and CQRS patterns?</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        CQS and CQRS are misunderstood design patterns. They are more simple than people think! CQS is about dividing an object's methods into two categories: commands and queries while CQRS is about separating query and command into two objects.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-02-06T00:00:00-06:00">06 Feb 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[7]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+        <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
+        
+        <a href="/tag/security" class="c-blog-card__tag">security</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">How to handle user permissions through command bus middleware</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2022-09-26T00:00:00-05:00">26 Sep 2022</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+                  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>

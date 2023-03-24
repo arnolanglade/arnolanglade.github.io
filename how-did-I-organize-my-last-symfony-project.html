@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How did I organize my last Symfony projects?</title>
+  <meta name='description' content='Return of experience: In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture.'>
+  <meta name="keywords" content="software,software architecture,symfony,cqrs,php,hexagonal architecture,port adapters,rex">
+  <link rel="canonical" href="/how-did-I-organize-my-last-symfony-project.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How did I organize my last Symfony projects? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="Return of experience: In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture.">
+  <meta name="twitter:image:src" content="/project-symfony-organization.webp">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="How did I organize my last Symfony projects? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="Return of experience: In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture.">
+  <meta property="og:image" content="/project-symfony-organization.webp">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/project-symfony-organization.webp" alt="How did I organize my last Symfony projects?">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/software-architecture" class="post-tags__tag">software-architecture</a>
+            
+              <a href="/tag/symfony" class="post-tags__tag">symfony</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">How did I organize my last Symfony projects?</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2021-03-30T00:00:00-05:00">
+                30 Mar 2021
+              </time>
+              
+              <p class="post__image-credit">
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@alexkixa">@alexkixa</a>
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture. Keep in mind that I did not try to implement these architectures by the book, I only took some concepts that helped me to have a simple and clear codebase organization.</p>
+
+<p>If we have a look at the project’s root, nothing special happens, I kept all folders and files created during Symfony installation.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree <span class="nb">.</span> <span class="nt">-L</span> 1                       
+├── bin
+├── composer.json
+├── composer.lock
+├── config
+├── features
+├── public
+├── src
+├── symfony.lock
+├── tests
+├── translations
+├── var
+└── vendor
+</code></pre></div></div>
+
+<p>In the next sections, we are going to see how I organized the src folder.</p>
+
+<h2 id="hexagonal-architecture">Hexagonal architecture</h2>
+
+<p>The foundation of the hexagonal architecture is the explicit separation between the domain (inside) and the infrastructure (outside). All dependencies are going from Infrastructure to the Domain.</p>
+
+<p>The domain is the part of the application that contains your business logic. It must reflect as much as possible the problem your application has to solve. This part of the application must not use IO, the infrastructure contains them all. For instance, IO are side effects like network calls, database queries, filesystem operations, actual timestamps or randomness..</p>
+
+<p>Based on that information my first decision was to split src into two areas: <code class="language-plaintext highlighter-rouge">Domain</code> and <code class="language-plaintext highlighter-rouge">Infrastructure</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Domain/ <span class="nt">-L</span> 1
+api/src/Domain/
+├── Domain
+└── Infrastructure
+</code></pre></div></div>
+
+<p><strong>Coupling rules:</strong></p>
+<ul>
+  <li>Domain must not depend on the Infrastructure.</li>
+  <li>Domain must not use IO</li>
+</ul>
+
+<p>I am not a big fan of the onion architecture because I want to keep my projects as simple as possible. Having a lot of layers can be really hard to maintain because you need to align the whole team on the coupling rules. Agreeing with yourself is not easy, so getting several people to agree may be really hard. Here, we only have a single rule.</p>
+
+<p>Sometimes, I needed to write libraries because I could not find any open source libraries that match my expectations. To avoid coding in the vendor directory, I introduced a third area called <code class="language-plaintext highlighter-rouge">Libraries</code> (this new area is optional). Those libraries may be used in the domain and the infrastructure but their usage should not break the coupling rules that are defined for those areas.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Domain/ <span class="nt">-L</span> 1
+api/src/Domain/
+├── Domain
+├── Infrastructure
+└── Librairies
+</code></pre></div></div>
+
+<p><strong>Coupling rules:</strong></p>
+<ul>
+  <li>Libraries must not depend on Domain and Infrastructure</li>
+</ul>
+
+<p>Finally, I created a “sub” area called <code class="language-plaintext highlighter-rouge">Application</code> in the infrastructure that contains all pieces of code needed to have an application up and running: framework code (Symfony kernel, framework customizations), data fixtures, and migration.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Infrastructure/Application <span class="nt">-L</span> 1 
+api/src/Infrastructure/Application
+├── Exception 
+├── Fixture
+├── Kernel.php
+├── Migrations
+├── Security
+└── Kernel
+</code></pre></div></div>
+<p>In this example, <code class="language-plaintext highlighter-rouge">Exception</code> and <code class="language-plaintext highlighter-rouge">Security</code> folders contain framework customizations.</p>
+
+<h2 id="business-first">Business first</h2>
+
+<p>A really important thing for me is to drive codebase organization by business concepts. I don’t want to name folders and classes with technical patterns like factory or repository for instance. Non-tech people should be able to understand what a class does thanks to its name.</p>
+
+<h3 id="domain">Domain</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Domain <span class="nt">-L</span> 1
+api/src/Domain
+├── Cartographer
+└── Map
+</code></pre></div></div>
+
+<p>Because I did not use any technical words to name folders we can easily imagine the project is about making maps. Now, let’s have a look inside the <code class="language-plaintext highlighter-rouge">Map</code> directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Domain/Map <span class="nt">-L</span> 1
+├── CartographersAllowedToEditMap.php   // Value object
+├── Description.php   // Value object
+├── MapCreated.php   // Event 
+├── MapId.php   // Value object
+├── MapName.php   // Value object
+├── Map.php   // Root aggregate
+├── Maps.php   // Repository interface
+├── Marker    // All classes to design Marker entity
+├── MarkerAddedToMap.php   // Event
+├── MarkerDeletedFromMap.php   // Event
+├── MarkerEditedOnMap.php   // Event
+├── UnknownMap.php   // Exception
+└── UseCase    // Use cases orchestration
+</code></pre></div></div>
+
+<p>In this folder, we have all the pieces of code needed to design the <code class="language-plaintext highlighter-rouge">Map</code> aggregate. As you can see, I did not organize it by design patterns like <code class="language-plaintext highlighter-rouge">ValueObject</code>, <code class="language-plaintext highlighter-rouge">Event</code> or <code class="language-plaintext highlighter-rouge">Exception</code>.</p>
+
+<p>As you might have understood the <code class="language-plaintext highlighter-rouge">Map</code> entity has a one-to-many relationship with the Marker entity. All classes needed to modelize this entity are in the Marker folder and they are organized the same way as the <code class="language-plaintext highlighter-rouge">Map</code> directory.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">UseCase</code> folder gathers all pieces of code needed to orchestrate use cases like command, their handler and business validation.</p>
+
+<p><strong>Tip:</strong> I don’t suffix repositories by ‘Repository’ but I try to use a business concept to name them like <code class="language-plaintext highlighter-rouge">ProductCatalog</code> for a <code class="language-plaintext highlighter-rouge">Product</code> aggregate. If I can find a business concept to name it I use the plural of the aggregate because a repository is a collection of objects.</p>
+
+<h3 id="infrastructure">Infrastructure</h3>
+
+<p>I organize the root of the <code class="language-plaintext highlighter-rouge">Infrastructure</code> folder the same way as the <code class="language-plaintext highlighter-rouge">Domain</code> one.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Infrastructure <span class="nt">-L</span> 1            
+api/src/Infrastructure
+├── Application
+├── Cartographer
+└── Map
+</code></pre></div></div>
+
+<p>Now, let’s have a look at the <code class="language-plaintext highlighter-rouge">Map</code> directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Infrastructure/Map <span class="nt">-L</span> 1 
+api/src/Infrastructure/Map
+├── Storage
+└── UserInterface
+        └── Web
+        └── Cli
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Storage</code> namespace gathers everything related to data storage like repositories, queries. The <code class="language-plaintext highlighter-rouge">UserInterface</code> namespace gathers everything related to ways to interact with the application like the WEB API (controllers) called by the front application or CLI (Symfony commands).</p>
+
+<h2 id="cqrs">CQRS</h2>
+
+<p>CQRS is the acronym for Command Query Responsibility Segregation. The main idea of CQRS is that you can use different models for writing (command) or reading (query) information. I like the idea of having two small and simple models dedicated to a precise purpose: reading or writing instead of having one big model. It can prevent your aggregate from becoming a god object because as things progress you can have many write and read use cases to handle.</p>
+
+<p>From this pattern, I decided to split the domain into two areas, the first one: <code class="language-plaintext highlighter-rouge">Command</code> and the second one: <code class="language-plaintext highlighter-rouge">Query</code>. It allows me to design a model with the same name for these reading or writing purposes.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree src/Domain/ <span class="nt">-L</span> 2
+api/src/Domain/
+├── Command
+│   ├── Cartographer
+│   └── Map
+└── Query
+    ├── Cartographer
+    └── Map
+</code></pre></div></div>
+
+<p><strong>Coupling rule:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Command</code> area must not depend on the <code class="language-plaintext highlighter-rouge">Query</code> area and the other way around.</li>
+</ul>
+
+<p><strong>Note:</strong> I did not make major changes in the infrastructure, the only change I made is to split the storage into two areas like the domain.</p>
+
+<p><strong>Caution:</strong> For those projects, I did not make any projections because my database schema remained simple so I did not need them. I only decided to split my models because my codebase was simple and clearer this way.</p>
+
+<h2 id="last-word">Last word</h2>
+<p>I tried for the last few years to find the perfect architecture but it does not exist. I just tried to use some architectural concepts that make me and my teammates comfortable to work on a daily basis. This project organization has been used for two projects that are in production. One of these projects is a side project I made for fun to create maps without Google Maps. The second was a professional project, real people use it on a daily basis.</p>
+
+<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=How%20did%20I%20organize%20my%20last%20Symfony%20projects?&url=/how-did-I-organize-my-last-symfony-project.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/how-did-I-organize-my-last-symfony-project.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/how-did-I-organize-my-last-symfony-project.html&title=How%20did%20I%20organize%20my%20last%20Symfony%20projects?&summary=Return%20of%20experience:%20In%20this%20blog%20post,%20I%20will%20explain%20how%20I%20organized%20my%20last%20Symfony%20projects.%20They%20are%20mainly%20inspired%20by%20Hexagonal%20and%20CQRS%20architecture.&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/persisting-entities-without-orm.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/posts/persisting-entity-without-orm.webp" alt="How did I organize my last Symfony projects?">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Persisting entities without ORM</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/you-should-not-expose-objects-state-to-test-them.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">Why you should not expose objects' state to test them</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/test-comparison.webp" alt="How did I organize my last Symfony projects?">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/software-architecture" class="section__link related-tag">See all<span> software-architecture</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">
+        <img loading="lazy" src="/images/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp" alt="What is the difference between CQS and CQRS patterns?">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">What is the difference between CQS and CQRS patterns?</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        CQS and CQRS are misunderstood design patterns. They are more simple than people think! CQS is about dividing an object's methods into two categories: commands and queries while CQRS is about separating query and command into two objects.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-02-06T00:00:00-06:00">06 Feb 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[2]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/hexagonal-architect-by-example.html">
+        <img loading="lazy" src="/images/posts/hexagonal-architecture/hexagonal-architect-by-example.webp" alt="Hexagonal architecture by example">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/hexagonal-architect-by-example.html">Hexagonal architecture by example</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The hexagonal architecture, or ports and adapters architecture, is an architectural pattern used in software design. It aims at creating loosely coupled application components that can be easily connected to their software environment by means of ports and adapters.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-01-09T00:00:00-06:00">09 Jan 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/what-is-the-event-sourcing-pattern.html">
+        <img loading="lazy" src="/images/posts/what-is-the-event-sourcing-pattern.webp" alt="What is the event sourcing pattern?">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/what-is-the-event-sourcing-pattern.html">What is the event sourcing pattern?</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Event sourcing consists in storing all changes that happened to the application state as a sequence of events instead of only storing the current state of the application. The sum of all events makes  the current application state.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2022-11-28T00:00:00-06:00">28 Nov 2022</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+                  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>

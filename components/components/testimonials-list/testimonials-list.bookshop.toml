@@ -1,9 +1,0 @@
-[component]
-structures = [ "content_blocks" ]
-label = "testimonials List"
-description = "Lists all of the site's blog testimonials"
-icon = "wysiwyg"
-tags = ["Collections"]
-
-[props]
-show_testimonials = true

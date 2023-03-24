@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: arnolanglade.github.io
-Token: ef3389bf4d16b7dc3f9af395ea99d5b9f48a9f24c3f85051984c718f7202754b

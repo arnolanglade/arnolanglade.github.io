@@ -1,9 +1,0 @@
-{% if include.show_talks %}
-<div class="container animate">
-  <div class="row">
-    {% for talk in site.talks reversed %}
-      {% bookshop talk-card talk=talk %}
-    {% endfor %}
-  </div>
-</div>
-{% endif %}

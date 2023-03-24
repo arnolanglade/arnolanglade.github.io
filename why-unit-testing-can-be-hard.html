@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Why unit testing can be hard?</title>
+  <meta name='description' content='Testing can be really difficult for beginners. The main reason is that your code probably uses IO. This blog post gives you tips about improving your code de...'>
+  <meta name="keywords" content="software,testing,unit test,coupling,io,dependency inversion">
+  <link rel="canonical" href="/why-unit-testing-can-be-hard.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why unit testing can be hard? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="Testing can be really difficult for beginners. The main reason is that your code probably uses IO. This blog post gives you tips about improving your code design to ease testing.">
+  <meta name="twitter:image:src" content="/why-unit-testing-can-be-hard.webp">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="Why unit testing can be hard? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="Testing can be really difficult for beginners. The main reason is that your code probably uses IO. This blog post gives you tips about improving your code design to ease testing.">
+  <meta property="og:image" content="/why-unit-testing-can-be-hard.webp">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/why-unit-testing-can-be-hard.webp" alt="Why unit testing can be hard?">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/testing" class="post-tags__tag">testing</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">Why unit testing can be hard?</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2021-05-03T00:00:00-05:00">
+                03 May 2021
+              </time>
+              
+              <p class="post__image-credit">
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@craftedbygc">@craftedbygc</a>
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <blockquote>
+  <p>Unit tests are typically automated tests written and run by software developers to ensure that a section of an application (known as the “unit”) meets its design and behaves as intended</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Unit_testing">Wikipedia</a></p>
+</blockquote>
+
+<p>I remember when I started to test my code it was really hard! It was mainly because I misunderstood some basics like what testing was about and the need of well-designed code. Unit tests ensure your code works as expected, but we often forget that unit testing is also the simplest way to have quick feedback during development phase.</p>
+
+<p>In this blog post, I will share what I learned to easily unit test my codebases.</p>
+
+<h2 id="test-your-public-methods">Test your public methods</h2>
+
+<p>Objects should be seen as black boxes. Public methods are the only way to interact with objects, while private and protected methods are implementation details. We should not pay attention to how objects work internally. That’s why we don’t test private and protected methods. If you need to test them, that’s a design smell! Your objects might do too many things and they probably do not respect the <strong>S</strong>ingle <strong>R</strong>esponsibility <strong>P</strong>rinciple.</p>
+
+<blockquote>
+  <p>The single-responsibility principle (SRP) is a computer-programming principle that states that every class in a computer program should have responsibility over a single part of that program’s functionality, which it should encapsulate.</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Wikipedia</a></p>
+</blockquote>
+
+<p>Actually, it is better to have several small objects solving simple problems instead of having god objects that are doing everything the wrong way. If your objects become too big, split them into smaller ones because they are easier to maintain and to test.</p>
+
+<h2 id="do-not-unit-test-code-that-uses-ios">Do not unit test code that uses IOs</h2>
+
+<blockquote>
+  <p>Input/output (I/O, or informally io or IO) is the communication between an information processing system, such as a computer, and the outside world, possibly a human or another information processing system.</p>
+
+  <p><a href="https://press.rebus.community/programmingfundamentals/chapter/input-and-output/">Wikipedia</a></p>
+</blockquote>
+
+<p>For example, IO are side effects like: network calls, database queries, filesystem operations, actual timestamps or randomness.</p>
+
+<h3 id="do-not-deal-with-the-outside">Do not deal with the outside</h3>
+
+<p>The code covered by unit tests should not depend on the outside world like databases, external services and so on. Unit tests should not require any application setup, they have to remain as simple as possible. Their goal is to give you quick feedback by checking that a small piece of code (a unit) matches a business expectation. If you want to be sure that all application parts are well integrated with the outside world, you have to use an integration test.</p>
+
+<p>The following example shows a piece of code that depends on the external service. Here, we can’t build the <code class="language-plaintext highlighter-rouge">Map</code> object without a working database.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">HandleMarkerAddition</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">Connection</span> <span class="nv">$connection</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Connection</span> <span class="nv">$connection</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">=</span> <span class="nv">$connection</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">AddMarkerToMap</span> <span class="nv">$command</span><span class="p">):</span> <span class="kt">void</span>
+   <span class="p">{</span>
+       <span class="nv">$mapState</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">connection</span><span class="o">-&gt;</span><span class="nf">executeQuery</span><span class="p">(</span><span class="s1">'SELECT ... FROM ...'</span><span class="p">,</span> <span class="p">[</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">mapId</span><span class="p">()]);</span>
+
+       <span class="nv">$map</span> <span class="o">=</span> <span class="nc">Map</span><span class="o">::</span><span class="nf">fromState</span><span class="p">(</span><span class="nv">$mapState</span><span class="p">);</span>
+       <span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">addMarker</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(),</span> <span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">location</span><span class="p">());</span>
+
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">connection</span><span class="o">-&gt;</span><span class="nf">executeQuery</span><span class="p">(</span><span class="s1">'INSERT INTO ...'</span><span class="p">,</span> <span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">toState</span><span class="p">()]);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The goal of this piece of code is to add a marker to a <code class="language-plaintext highlighter-rouge">Map</code> object, no matter how the object is stored. Tests that cover this class should focus on business use cases instead of technical details. A solution would be to use a repository design pattern to hide the map storage logic. The class will better follow the <strong>S</strong>ingle <strong>R</strong>esponsable <strong>P</strong>rinciple because it will only handle the marker addition use case whereas the map repository will be in charge of storing data.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">HandleMarkerAddition</span>
+<span class="p">{</span>
+   <span class="k">private</span> <span class="kt">Maps</span> <span class="nv">$maps</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Maps</span> <span class="nv">$maps</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">maps</span> <span class="o">=</span> <span class="nv">$maps</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">AddMarkerToMap</span> <span class="nv">$command</span><span class="p">):</span> <span class="kt">void</span>
+   <span class="p">{</span>
+       <span class="nv">$map</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">maps</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">mapId</span><span class="p">());</span>
+       <span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">addMarker</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">name</span><span class="p">(),</span> <span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">location</span><span class="p">());</span>
+
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">maps</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$map</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>With this new design, it is easier to test this class. Thanks to the <code class="language-plaintext highlighter-rouge">Maps</code> interface , we are able to simply create test doubles for the map repository.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// `PostgreSQLMaps` is the implementation used by default on the production</span>
+<span class="nv">$maps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostgreSQLMaps</span><span class="p">();</span>
+<span class="p">(</span><span class="k">new</span> <span class="nc">HandleMarkerAddition</span><span class="p">(</span><span class="nv">$postgreSQLMaps</span><span class="p">)(</span><span class="nv">$command</span><span class="p">);</span>
+
+<span class="c1">// `InMemoryMaps` is an implementation that keeps map objects in memory for testing </span>
+<span class="nv">$maps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InMemoryMaps</span><span class="p">();</span>
+<span class="p">(</span><span class="k">new</span> <span class="nc">HandleMarkerAddition</span><span class="p">(</span><span class="nv">$inMemoryMaps</span><span class="p">)(</span><span class="nv">$command</span><span class="p">);</span>
+
+<span class="c1">// In both cases we can retrieve the Map object from the repository to check the map has the new marker.</span>
+<span class="nv">$map</span> <span class="o">=</span> <span class="nv">$maps</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">mapId</span><span class="p">());</span>
+<span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">hasSameState</span><span class="p">(</span><span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best place'</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Marker</span><span class="p">(</span><span class="cm">/* … */</span><span class="p">)))</span> <span class="c1">// should return true;</span>
+
+</code></pre></div></div>
+
+<h3 id="do-not-deal-with-randomness">Do not deal with randomness</h3>
+
+<p>Randomness makes your code unpredictable. To simply test a piece of code you should be able to predict its result. To ease unit testing your code should avoid using randomness as much as possible.</p>
+
+<p>The following example shows a piece of code that uses randomness.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">HashedPassword</span>
+<span class="p">{</span>
+   <span class="c1">// ... </span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$hash</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">hash</span> <span class="o">=</span> <span class="nv">$hash</span><span class="p">;</span>
+   <span class="p">}</span>
+
+
+   <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">fromString</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$password</span><span class="p">):</span> <span class="kt">self</span>
+   <span class="p">{</span>
+       <span class="nv">$hash</span> <span class="o">=</span> <span class="err">\</span><span class="nb">password_hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="no">PASSWORD_BCRYPT</span><span class="p">);</span>
+
+       <span class="k">return</span> <span class="k">new</span> <span class="nc">self</span><span class="p">(</span><span class="nv">$hash</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">HashedPasswordTest</span> <span class="kd">extends</span> <span class="nc">TestCase</span>
+<span class="p">{</span>
+    <span class="cd">/** @test */</span>
+    <span class="k">function</span> <span class="n">it</span><span class="err"> </span><span class="n">builds</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="n">password</span><span class="err"> </span><span class="n">from</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="nf">string</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertEquals</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">::</span><span class="nf">fromString</span><span class="p">(</span><span class="s1">'Password1'</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nc">HashedPassword</span><span class="p">(</span><span class="s1">'$2y$10$JqfiXNdcuWErfiy5pAJ4O.wKsfic14RsVnVbP/rsdMJJyA9Hg9RCu'</span><span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>When we run <code class="language-plaintext highlighter-rouge">HashedPasswordTest</code> we get an error because the <code class="language-plaintext highlighter-rouge">password_hash</code> generates a random salt to hash the password. The problem is that the <code class="language-plaintext highlighter-rouge">password_hash</code> function cannot return the same hash for a given password. Each time you call this function a different hash will be returned.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-Password</span> Object &amp;000000006e7168e60000000023b11bb2 <span class="o">(</span>
+-    <span class="s1">'hash'</span> <span class="o">=&gt;</span> <span class="s1">'$2y$10$JqfiXNdcuWErfiy5pAJ4O.wKsfic14RsVnVbP/rsdMJJyA9Hg9RCu'</span>
++Password Object &amp;000000006e7168210000000023b11bb2 <span class="o">(</span>
++    <span class="s1">'hash'</span> <span class="o">=&gt;</span> <span class="s1">'$2y$10$b/9GX4grnt4gH5cm8FzzSuUNGGQUiA/w.5HdKNEsW3dHtSUeTMXgK'</span>
+</code></pre></div></div>
+
+<p>The simplest solution would be to hardcode the salt to make sure the <code class="language-plaintext highlighter-rouge">hash_password</code> returns the same hash every time but this is not a good design. This would weaken the password generation because we need to test it. Another way would be to extract the hash generation in another place.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">HashedPassword</span>
+<span class="p">{</span>
+   <span class="c1">// ...</span>
+   <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">fromString</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$password</span><span class="p">,</span> <span class="kt">PasswordEncryptor</span> <span class="nv">$passwordEncryptor</span><span class="p">):</span> <span class="kt">self</span>
+   <span class="p">{</span>
+       <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$passwordEncryptor</span><span class="o">-&gt;</span><span class="nb">hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">);</span>
+
+       <span class="k">return</span> <span class="k">new</span> <span class="nc">self</span><span class="p">(</span><span class="nv">$hash</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">PasswordEncryptor</code> interface makes test doubles creation possible. Now, we just need to create a fake object to test this method.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">FakePawssordEncryptor</span> <span class="kd">implements</span> <span class="nc">PasswordEncryptor</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">hash</span><span class="p">():</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'$2y$10$JqfiXNdcuWErfiy5pAJ4O.wKsfic14RsVnVbP/rsdMJJyA9Hg9RCu'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">HashedPasswordTest</span> <span class="kd">extends</span> <span class="nc">TestCase</span>
+<span class="p">{</span>
+   <span class="cd">/** @test */</span>
+   <span class="k">function</span> <span class="n">it</span><span class="err"> </span><span class="n">builds</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="n">password</span><span class="err"> </span><span class="n">from</span><span class="err"> </span><span class="n">a</span><span class="err"> </span><span class="nf">string</span><span class="p">()</span>
+   <span class="p">{</span>
+        <span class="nv">$fakePasswordEncryptor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FakePasswordEncryptor</span><span class="p">();</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertEquals</span><span class="p">(</span>
+            <span class="n">this</span><span class="o">::</span><span class="nf">fromString</span><span class="p">(</span><span class="s1">'Password1'</span><span class="p">,</span> <span class="nv">$fakePasswordEncryptor</span><span class="p">),</span>
+            <span class="k">new</span> <span class="nc">HashedPassword</span><span class="p">(</span><span class="s1">'$2y$10$JqfiXNdcuWErfiy5pAJ4O.wKsfic14RsVnVbP/rsdMJJyA9Hg9RCu'</span><span class="p">)</span>
+        <span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="avoid-actual-datetimes">Avoid actual datetimes</h3>
+
+<p>With actual datetimes, we have the same problem as with randomness, neither can be predicted.</p>
+
+<p>The following example shows you that actual datetimes are not predictable like <code class="language-plaintext highlighter-rouge">hash_password</code> in the previous section.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
+<span class="p">{</span>
+   <span class="c1">// ...</span>
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="err">\</span><span class="nc">DateTimeImmutable</span> <span class="nv">$markerAddedAt</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nc">Marker</span> <span class="mf">...</span><span class="nv">$makers</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="c1">// ...</span>
+   <span class="p">}</span>
+
+   <span class="k">public</span> <span class="k">function</span> <span class="n">addMarker</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$name</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$location</span><span class="p">):</span> <span class="kt">void</span>
+   <span class="p">{</span>
+       <span class="c1">// ...</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">markerAddedAt</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">DateTimeImmutable</span><span class="p">(</span><span class="s1">'now'</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">MapTest</span> <span class="kd">extends</span> <span class="nc">TestCase</span>
+<span class="p">{</span>
+    <span class="cd">/** @test */</span>
+    <span class="k">function</span> <span class="n">it</span><span class="err"> </span><span class="n">adds</span><span class="err"> </span><span class="n">marker</span><span class="err"> </span><span class="n">to</span><span class="err"> </span><span class="n">the</span><span class="err"> </span><span class="nf">map</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Map name'</span><span class="p">);</span>
+        <span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">addMarker</span><span class="p">(</span><span class="s1">'Bubar'</span><span class="p">,</span> <span class="p">[</span><span class="mf">47.21725</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.55336</span><span class="p">]);</span>
+        
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assetTrue</span><span class="p">(</span>
+            <span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">hasSameState</span><span class="p">(</span>
+                <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span>
+                    <span class="k">new</span> <span class="nc">Marker</span><span class="p">(</span><span class="s1">'Bubar'</span><span class="p">,</span> <span class="p">[</span><span class="mf">47.21725</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.55336</span><span class="p">]),</span> 
+                    <span class="k">new</span> <span class="err">\</span><span class="nf">DateTimeImmutable</span><span class="p">(</span><span class="s1">'now'</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>When we run <code class="language-plaintext highlighter-rouge">MapTest</code> we get an error because we can predict to the millisecond when the marker was added to the map.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-Map</span> Object &amp;000000003acad975000000006b83e943 <span class="o">()</span>
++Map Object &amp;000000003acad936000000006b83e943 <span class="o">(</span>
++    <span class="s1">'markerAddedAt'</span> <span class="o">=&gt;</span> DateTimeImmutable Object &amp;000000003acad946000000006b83e943 <span class="o">(</span>
++        <span class="s1">'date'</span> <span class="o">=&gt;</span> <span class="s1">'2021-04-18 17:36:02.919004'</span>
++        <span class="s1">'timezone_type'</span> <span class="o">=&gt;</span> 3
++        <span class="s1">'timezone'</span> <span class="o">=&gt;</span> <span class="s1">'UTC'</span>
++    <span class="o">)</span>
++<span class="o">)</span>
+</code></pre></div></div>
+
+<p>To prevent this kind of problem, a good idea is to abstract time by introducing an interface that is responsible for time management.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
+<span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">addMarker</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$name</span><span class="p">,</span> <span class="kt">array</span> <span class="nv">$location</span><span class="p">,</span> <span class="kt">Clock</span> <span class="nv">$clock</span><span class="p">):</span> <span class="kt">void</span>
+  <span class="p">{</span>
+      <span class="c1">// ...</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">markerAddedAt</span> <span class="o">=</span> <span class="nv">$clock</span><span class="o">-&gt;</span><span class="nf">now</span><span class="p">();</span>
+  <span class="p">}</span>
+   <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, thanks to the <code class="language-plaintext highlighter-rouge">Clock</code> interface we will be able to create test doubles and easily test this method.</p>
+
+<h2 id="coupling-might-be-your-worst-enemy">Coupling might be your worst enemy</h2>
+
+<blockquote>
+  <p>Coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules.</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">Wikipedia</a></p>
+</blockquote>
+
+<p>As you have seen in the previous sections, objects should depend on abstractions instead of concrete implementations. Abstractions (e.g. interfaces) ease testing because your code is more modular. You can use test doubles to reduce the complexity and facilitate testing. Their goal is to mimic the behavior of real objects to replace a subpart of an algorithm.</p>
+
+<p>The following example shows that hardcoding object dependencies won’t help to create test doubles.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">ConcreteImplementation</span> <span class="nv">$concreteImplementation</span><span class="p">)</span>
+   <span class="p">{</span>
+       <span class="c1">// Here we can only use these concrete implementations, if they use IO for instance you won't be able to test it.</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">concreteImplementation</span> <span class="o">=</span> <span class="nv">$concreteImplementation</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">anotherConcreteImplementation</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AnotherConcreteImplementation</span><span class="p">();</span>
+      
+       <span class="c1">// Singleton pattern does not help because it hides object dependencies and makes them hard coded.</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">=</span> <span class="nc">Connection</span><span class="o">::</span><span class="nf">getInstance</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The solution is to use the dependency inversion pattern to remove hard coded dependencies introducing abstractions as much as possible.</p>
+
+<blockquote>
+  <p>High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces). Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.</p>
+
+  <p><a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">Wikipedia</a></p>
+</blockquote>
+
+<p>In the following example, all class dependencies are interchangeable. So, you can easily create test doubles like fake, stub, or mocks to make sure your objects meet business expectations.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MyClass</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+       <span class="kt">ImplementationInterface</span> <span class="nv">$concreteImplementation</span><span class="p">,</span>
+       <span class="kt">AnoherImplementationInterface</span> <span class="nv">$anotherConcreteImplementation</span><span class="p">,</span>
+       <span class="kt">ConnectionInterface</span> <span class="nv">$connection</span>
+   <span class="p">)</span> <span class="p">{</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">concreteImplementation</span> <span class="o">=</span> <span class="nv">$concreteImplementation</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">anotherConcreteImplementation</span> <span class="o">=</span> <span class="nv">$anotherConcreteImplementation</span><span class="p">;</span>
+       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">=</span> <span class="nv">$connection</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Caution:</strong> That does not mean you should use interfaces everywhere! Knowing when to introduce new abstractions might be hard at the beginning, there is no magic recipe!</p>
+
+<p>Thanks to my proofreaders <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a> and <a href="https://twitter.com/jjanvier_">@jjanvier_</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Why%20unit%20testing%20can%20be%20hard?&url=/why-unit-testing-can-be-hard.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/why-unit-testing-can-be-hard.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/why-unit-testing-can-be-hard.html&title=Why%20unit%20testing%20can%20be%20hard?&summary=Testing%20can%20be%20really%20difficult%20for%20beginners.%20The%20main%20reason%20is%20that%20your%20code%20probably%20uses%20IO.%20This%20blog%20post%20gives%20you%20tips%20about%20improving%20your%20code%20design%20to%20ease%20testing.&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/you-should-not-expose-objects-state-to-test-them.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/posts/test-comparison.webp" alt="Why unit testing can be hard?">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Why you should not expose objects' state to test them</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/objective-set-up-your-projects-more-easily.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">Objective: set up your projects more easily</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/set-up-your-projects-more-easily.webp" alt="Why unit testing can be hard?">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/testing" class="section__link related-tag">See all<span> testing</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[6]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/increase-your-test-quality-thanks-to-builders-or-factories.html">
+        <img loading="lazy" src="/images/posts/increase-your-test-quality-thanks-to-builders-or-factories.webp" alt="Increase your test quality thanks to builders or factories">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/increase-your-test-quality-thanks-to-builders-or-factories.html">Increase your test quality thanks to builders or factories</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Bad tests are hard to maintain and they slow down your productivity. Test code quality is as important as production code. The builder or factory patterns can help you to improve your test code quality. It will ease test refactoring and make tests more readable.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2022-10-10T00:00:00-05:00">10 Oct 2022</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[11]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/you-should-not-expose-objects-state-to-test-them.html">
+        <img loading="lazy" src="/images/posts/test-comparison.webp" alt="Why you should not expose objects' state to test them">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
+        <a href="/tag/oop" class="c-blog-card__tag">oop</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/you-should-not-expose-objects-state-to-test-them.html">Why you should not expose objects' state to test them</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2021-04-13T00:00:00-05:00">13 Apr 2021</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>

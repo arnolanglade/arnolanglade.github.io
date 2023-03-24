@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The command bus design pattern</title>
+  <meta name='description' content='The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information ...'>
+  <meta name="keywords" content="software,software architecture,design patterns,command bus,event bus,bus,middleware">
+  <link rel="canonical" href="/command-bus-design-pattern.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The command bus design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).">
+  <meta name="twitter:image:src" content="/command-bus/command-bus.svg">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="The command bus design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).">
+  <meta property="og:image" content="/command-bus/command-bus.svg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="The command bus design pattern">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/command-bus" class="post-tags__tag">command-bus</a>
+            
+              <a href="/tag/design-patterns" class="post-tags__tag">design-patterns</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">The command bus design pattern</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2022-09-12T00:00:00-05:00">
+                12 Sep 2022
+              </time>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p><strong>Note:</strong> Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read <a href="http://arnolanglade.github.io/command-handler-patterns.html">this blog post</a> I wrote about those design patterns. It will help you to understand this new article.</p>
+
+<h2 id="what-is-a-bus">What is a bus?</h2>
+
+<p>Let’s start with the basics, what is a bus? In computer science, a bus is a system that connects several components and transfers data between them. In software, those components are called middleware. A middleware processes an incoming request and returns a response. As you can see in the schema below, the main advantage of a bus is that it is highly customizable as you can add as many middleware as you want.</p>
+
+<p><img src="images/posts/command-bus/bus.svg" alt="A bus" /></p>
+
+<p>In the next sections, we will speak about the command bus which is often associated with an event bus. Using an event bus is not mandatory but we will see how it will make your application more modular and evolutive. Their goal is to deliver a command or an event to their handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).</p>
+
+<h2 id="the-command-bus">The command bus</h2>
+
+<p><strong>Quick reminder about command and command handler:</strong> A command represents a user’s intent. The data carried by the command has to be valid. It can be only handled by only one handler that is just a callable that will perform the user action.</p>
+
+<p>Now, we will build a command bus following the same architecture that I described in the previous section. The only difference is that the command bus will return void. As commands canmight be handled asynchronously, we don’t want to wait for the result of the command processing.</p>
+
+<p><img src="images/posts/command-bus/command-bus.svg" alt="A command bus" /></p>
+
+<p>Let’s see the most common middleware used to build a command bus. The first one is probably the “logging middleware”. It helps to make your application observable and it is really useful for bug hunting. Then the “validation middleware” ensures that the command is valid before giving it to the handler. Its purpose is to stop the command processing if data is invalid. It is pretty convenient because it avoids validating them manually. When your application uses a database, the “transaction middleware” wraps the handler execution into a SQL transaction. It makes sure all database changes are done, otherwise it rollbacks the transaction. Finally, the last middleware is responsible for finding and executing the handler that matches the command.</p>
+
+<h2 id="the-event-bus">The event bus</h2>
+
+<p>An event represents something that happened in the application. Unlike a command, an event can be handled by several handlers. Listening to events allows us to enhance existing features or add new ones very quickly. Several teams can listen to the same event to perform additional tasks depending on business needs. It makes applications more evolutive without adding accidental complexity and lets your team work isolated from each other.</p>
+
+<p><strong>Tip:</strong> I would like to encourage you to mainly use business-oriented events instead of technical ones. They clearly describe what happened from a business point of view. For example, <code class="language-plaintext highlighter-rouge">NewAccountHasBeenCreated</code> is more understandable than <code class="language-plaintext highlighter-rouge">ResourceCreated</code> with a resource property equal to ‘Account’</p>
+
+<p>Even if the event bus is built the same way as the command bus we don’t need all the different middleware. We don’t need the validation middleware because events are generated by the aggregates with value objects. Those objects ensure domain invariant which means they are always valid. We also don’t need the transactional middleware because the event will be processed into the transaction begun during the command processing. Moreover, depending on your business needs you may not want to process events into this transaction. Let’s take a simple example. After creating an account, an event <code class="language-plaintext highlighter-rouge">AccountCreated</code> is dispatched, then a welcome email is sent during <code class="language-plaintext highlighter-rouge">AccountCreated</code> processing. If the email sending fails, do we want to roll back the account creation? Not sure! In that case, you need to speak with your product manager to decide how to process this event.</p>
+
+<p>As I said previously, events are recorded by aggregates and they should be business oriented. I will share with you two ways to dispatch events into the event bus.</p>
+
+<p><img src="images/posts/command-bus/event-bus.svg" alt="A event bus" /></p>
+
+<p><strong>Solution 1:</strong> You can collect them from your repository if no errors have been raised during the aggregate persisting and then dispatch them.</p>
+
+<p><strong>Solution 2:</strong> The other solution is to collect events from the command handler. The handler can return them, and then the “handle command” middleware catches and dispatches them.</p>
+
+<p><strong>Note:</strong> My previous <a href="http://arnolanglade.github.io/command-handler-patterns.html">blog post</a> about the command and command handler pattern said that a command handler should return void. Here, the idea is that the command bus should return void only the “handle command” should be aware of the result of the handler execution.</p>
+
+<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=The%20command%20bus%20design%20pattern&url=/command-bus-design-pattern.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/command-bus-design-pattern.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/command-bus-design-pattern.html&title=The%20command%20bus%20design%20pattern&summary=The%20goal%20of%20command%20and%20the%20event%20bus%20is%20to%20deliver%20a%20command%20or%20an%20event%20to%20its%20handler(s).%20Events%20and%20commands%20are%20objects%20used%20to%20encapsulate%20information%20needed%20to%20achieve%20an%20action%20(a%20command)%20or%20to%20tell%20what%20happened%20in%20the%20system%20(an%20event).&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/objective-set-up-your-projects-more-easily.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/posts/set-up-your-projects-more-easily.webp" alt="The command bus design pattern">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Objective: set up your projects more easily</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">How to handle user permissions through command bus middleware</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="The command bus design pattern">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-reduce-coupling-in-your-react-app.html">
+        <img loading="lazy" src="/images/posts/how-to-reduce-coupling-in-your-react-app.webp" alt="How to reduce coupling in your React app">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/react" class="c-blog-card__tag">react</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-reduce-coupling-in-your-react-app.html">How to reduce coupling in your React app</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The dependency inversion principle is a great design pattern, it makes applications more modular and easier to test. A React Context can help to implement this pattern in a React application. Learn how in this new blog article.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-03-06T00:00:00-06:00">06 Mar 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">
+        <img loading="lazy" src="/images/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp" alt="What is the difference between CQS and CQRS patterns?">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">What is the difference between CQS and CQRS patterns?</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        CQS and CQRS are misunderstood design patterns. They are more simple than people think! CQS is about dividing an object's methods into two categories: commands and queries while CQRS is about separating query and command into two objects.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-02-06T00:00:00-06:00">06 Feb 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[7]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+        <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
+        
+        <a href="/tag/security" class="c-blog-card__tag">security</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">How to handle user permissions through command bus middleware</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2022-09-26T00:00:00-05:00">26 Sep 2022</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+                  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>

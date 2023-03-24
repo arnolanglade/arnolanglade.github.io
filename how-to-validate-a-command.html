@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How to validate a command?</title>
+  <meta name='description' content='Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating comman...'>
+  <meta name="keywords" content="oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation">
+  <link rel="canonical" href="/how-to-validate-a-command.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to validate a command? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.">
+  <meta name="twitter:image:src" content="/data-validation.webp">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="How to validate a command? – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.">
+  <meta property="og:image" content="/data-validation.webp">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+
+<body>
+
+    
+<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
+<script src="https://getinsights.io/js/insights.js"></script>
+<script>
+    insights.init('VoIrQveDE0uUwpQi');
+    insights.trackPages({
+        hash: true,
+        search: true
+    });
+</script>
+<script type="text/javascript">
+    (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+
+    mixpanel.init('ebca5edb0d7861434aefdf18e32fe9d4');
+    mixpanel.track('viewed_page');
+</script>
+
+
+
+    <!-- begin header -->
+<header class="c-header">
+  <div class="container">
+    <div class="row">
+      <div class="c-header__inner">
+
+        <div class="logo">
+          <a class="logo__link" href="/">
+          
+            Langlade Arnaud
+          
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+
+            <div class="nav__icon-close">
+              <i class="ion ion-md-close"></i>
+            </div>
+
+            <div class="nav__title">Menu</div>
+
+              <ul class="nav__list list-reset">
+
+              
+                
+                <li class="nav__item">
+                  <a href="/" class="nav__link">Home</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/about/" class="nav__link">About me</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/experiences/" class="nav__link">Experiences</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/talks/" class="nav__link">Talks</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+                
+              
+                
+                <li class="nav__item">
+                  <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+                
+              
+
+            </ul>
+          </div>
+
+          <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+        </nav>
+
+        <div class="nav-button">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+
+    <div class="post-top">
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/posts/data-validation.webp" alt="How to validate a command?">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          
+          <div class="post-tags">
+            
+              <a href="/tag/command-bus" class="post-tags__tag">command-bus</a>
+            
+              <a href="/tag/design-patterns" class="post-tags__tag">design-patterns</a>
+            
+          </div>
+          
+
+          <h1 class="post__title">How to validate a command?</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <time class="post__date" datetime="2021-03-04T00:00:00-06:00">
+                04 Mar 2021
+              </time>
+              
+              <p class="post__image-credit">
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@heapdump">@heapdump</a>
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin post -->
+<div class="container animate">
+
+  <article class="post">
+
+    <div class="post__content">
+      <p>In my previous <a href="http://arnolanglade.github.io/command-handler-patterns.html">blog post</a>, I talked about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to talk about several kinds of data validation in this blog post. We will start with domain validation, this validation ensures we can build our domain objects in a good state depending on business rules. Then, we will talk about command validation and how we can use it to give feedback to users when they submit data to the application.</p>
+
+<p>Let’s take the same example I used in my previous blog post: an account creation. To create an account, my business expert expects that I provide a username and a password. The username should have at least three characters and should be unique. The password should have at least eight characters, an uppercase letter, a lowercase letter, and a number.</p>
+
+<h2 id="domain-validation">Domain validation</h2>
+
+<p>How to make sure the domain objects follow the business rules? Value object will help us to achieve that. I <strong>strongly recommend you</strong> to wrap all primitives into value objects. It is a good way to introduce new types in your codebase, make it clearer and business-focused. And don’t forget, value objects <strong>cannot</strong> be built in a wrong state.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Username</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$username</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">\</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$username</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">InvalidArgumentException</span><span class="p">(</span><span class="s1">'The username is too short, it should contain at least 3 characters'</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">Password</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$password</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="o">!==</span> <span class="err">\</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">'#(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}#'</span><span class="p">,</span> <span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">InvalidArgumentException</span><span class="p">(</span>
+                <span class="s1">'The password must contain at least 8 characters, an uppercase letter, lowercase letter and a number'</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then we are able to modelize the <code class="language-plaintext highlighter-rouge">Account</code> aggregate using the <code class="language-plaintext highlighter-rouge">Username</code> and <code class="language-plaintext highlighter-rouge">Password</code> value objects.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Account</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">Username</span> <span class="nv">$username</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">Password</span> <span class="nv">$password</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">Username</span> <span class="nv">$username</span><span class="p">,</span>
+        <span class="kt">Password</span> <span class="nv">$password</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, we are sure that as developers we cannot instantiate the <code class="language-plaintext highlighter-rouge">Account</code> aggregate in a wrong state. In the next section, we are going to see how to use the domain objects to give users feedback about their data.</p>
+
+<h2 id="command-validation">Command validation</h2>
+
+<p>As I explained in my previous <a href="http://arnolanglade.github.io/command-handler-patterns.html">blog post</a>, an account creation is represented by a <code class="language-plaintext highlighter-rouge">CreateAnAccount</code> command with two properties: the username and the password. We need to validate them to create the account aggregate without any errors and tell users if they provided valid data to perform this action. The command validation will be done by the Symfony validator. Don’t hesitate to have a look at the <a href="https://symfony.com/doc/current/validation.html">validator documentation</a> if you are not familiar with it.</p>
+
+<p>First, we will use the callback constraint to make sure the username and password follow the patterns given by the business expert. Thanks to annotation we will configure the validator to call a static method to validate command properties. I will call them “static validators“ in this blog post.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+    <span class="cd">/** @Assert\Callback({"Domain\Account\UseCase\ValidationRule\Superficial\UsernameShouldBeValid", "validate"}) */</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
+    <span class="cd">/** @Assert\Callback({"Domain\Account\UseCase\ValidationRule\Superficial\PasswordShouldBeValid", "validate"}) */</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then, it is time to create those static validators. We just need to instantiate our value objects and check if they throw exceptions to catch them and turn them into violations.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">UsernameShouldBeValid</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$username</span><span class="p">,</span> <span class="kt">ExecutionContextInterface</span> <span class="nv">$context</span><span class="p">):</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="nc">Username</span><span class="p">(</span><span class="nv">$username</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">InvalidArgumentException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">buildViolation</span><span class="p">(</span><span class="s1">'account.usernameShouldBeValid'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">addViolation</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">PasswordShouldBeValid</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$password</span><span class="p">,</span> <span class="kt">ExecutionContextInterface</span> <span class="nv">$context</span><span class="p">):</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="nc">Password</span><span class="p">(</span><span class="nv">$password</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">InvalidArgumentException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">buildViolation</span><span class="p">(</span><span class="s1">'account.passwordShouldBeValid'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">addViolation</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For more complex use cases you can call any methods on value objects, but you need to keep in mind that you cannot inject services into those static validators.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span><span class="kt">BookFlightTicket</span> <span class="nv">$flightTicket</span><span class="p">,</span> <span class="kt">ExecutionContextInterface</span> <span class="nv">$context</span><span class="p">):</span> <span class="kt">void</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span>
+    <span class="o">!</span><span class="nc">Date</span><span class="o">::</span><span class="nf">fromString</span><span class="p">(</span><span class="nv">$flightTicket</span><span class="o">&gt;</span><span class="n">departureDate</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">laterThan</span><span class="p">(</span>
+        <span class="nc">Date</span><span class="o">::</span><span class="nf">fromString</span><span class="p">(</span><span class="nv">$flightTicket</span><span class="o">&gt;</span><span class="n">arrivalDate</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">buildViolation</span><span class="p">(</span><span class="s1">'flightTicket.dateShouldBeValid'</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="nf">addViolation</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The first step is done! Thanks to those static validators, we apply domain validation on command properties to ensure we can instantiate domain objects. But, domain validation only works with a single account because the account aggregate only represents the account of a single user. For instance, an account cannot validate if a username is unique because it needs to be aware of the rest of the created account.</p>
+
+<p>To check if a username is used by another user we will need to ask the repository if an account already exists with the given username. That’s why we will need to create a custom validation constraint because those constraints are declared as services, and they can depend on other application services.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/** @Annotation */</span>
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">UsernameShouldBeUnique</span> <span class="kd">extends</span> <span class="nc">Constraint</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">UsernameShouldBeUniqueValidator</span> <span class="kd">extends</span> <span class="nc">ConstraintValidator</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">Accounts</span> <span class="nv">$accounts</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span> <span class="o">=</span> <span class="nv">$accounts</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="kt">Constraint</span> <span class="nv">$constraint</span><span class="p">):</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$constraint</span> <span class="k">instanceof</span> <span class="nc">UsernameShouldBeUnique</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">UnexpectedTypeException</span><span class="p">(</span><span class="nv">$constraint</span><span class="p">,</span> <span class="nc">UsernameShouldBeUnique</span><span class="o">::</span><span class="n">class</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">accounts</span><span class="o">-&gt;</span><span class="nf">getByUsername</span><span class="p">(</span><span class="k">new</span> <span class="nc">Username</span><span class="p">(</span><span class="nv">$username</span><span class="p">));</span>
+
+            <span class="c1">// an exception is thrown if an account does not exist so we don’t add violation</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">context</span><span class="o">-&gt;</span><span class="nf">buildViolation</span><span class="p">(</span><span class="s1">'account.usernameShouldBeUnique'</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="nf">addViolation</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nc">UnknownAccount</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally, we need to configure the validator to apply this new constraint to the username property.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/**
+ * @Assert\GroupSequence({"CreateAnAccount", "Business"})
+ */</span>
+<span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
+<span class="p">{</span>
+    <span class="cd">/** 
+     * @Assert\Callback({"Domain\Account\UseCase\ValidationRule\Superficial\UsernameShouldBeValid", "validate"})
+     * @Domain\Account\UseCase\ValidationRule\UsernameShouldBeUnique(groups={"Business"})
+     */</span>
+    <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
+    
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Caution:</strong> we need to apply static validators before applying custom constraints because we need to be sure we can instantiate all domain objects without raising any error. For instance, the instantiation of <code class="language-plaintext highlighter-rouge">Username</code> in <code class="language-plaintext highlighter-rouge">UsernameShouldBeUniqueValidator</code> must not raise any error because the goal of this constraint is not to check if the username contains at least three characters but if the username is already used. It can be done with <a href="https://symfony.com/doc/current/validation/sequence_provider.html">GroupSequence</a>. This validator feature allows adding groups to constraints and defining the validation constraint execution order.</p>
+
+<p>Now, this is the end of the story! If commands are invalid, we just need to serialize violations, give them to your front application, and print errors to users.</p>
+
+<h2 id="last-word">Last word</h2>
+
+<p>This might not be the only way to validate data but it worked on my previous project. Even if I use a service to validate my command I try to use as many domain objects as possible to avoid reinventing the wheel. I hope it answers Baptiste Langlade’s <a href="https://twitter.com/Baptouuuu/status/1364945053236494336">question</a> on Twitter. If you wonder, Baptiste is not my brother ;).</p>
+
+<p>Thanks to my proofreaders <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a> and <a href="https://twitter.com/jjanvier_">@jjanvier_</a>.</p>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=How%20to%20validate%20a%20command?&url=/how-to-validate-a-command.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=/how-to-validate-a-command.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/how-to-validate-a-command.html&title=How%20to%20validate%20a%20command?&summary=Domain%20validation%20ensures%20your%20aggregate%20cannot%20be%20built%20in%20an%20invalid%20state%20but%20that%20is%20not%20enough%20to%20give%20good%20feedback%20to%20the%20end%20users.%20Validating%20commands%20is%20the%20best%20to%20prevent%20their%20processing%20if%20data%20given%20by%20users%20are%20wrong.&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
+
+
+  </article>
+</div>
+<!-- end post -->
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/command-handler-patterns.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/posts/command-handler.svg" alt="How to validate a command?">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Command and command handler design pattern</h2>
+    </div>
+  </a>
+  
+
+  
+  <a class="post__next" href="/oop-how-to-build-an-object.html">
+    <div class="next__box">
+      <span class="post__nav post__nav__next">Next post</span>
+      <h2 class="post__nav__title">OOP: how to build an object</h2>
+    </div>
+    <div class="next__image">
+      <img loading="lazy" src="/images/posts/build-object.webp" alt="How to validate a command?">
+    </div>
+  </a>
+  
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts is-related animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+                
+                  
+                    <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
+                  
+                
+              
+              </a>
+            </div>
+          </div>
+          <div class="row">
+
+          
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-reduce-coupling-in-your-react-app.html">
+        <img loading="lazy" src="/images/posts/how-to-reduce-coupling-in-your-react-app.webp" alt="How to reduce coupling in your React app">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/react" class="c-blog-card__tag">react</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-reduce-coupling-in-your-react-app.html">How to reduce coupling in your React app</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The dependency inversion principle is a great design pattern, it makes applications more modular and easier to test. A React Context can help to implement this pattern in a React application. Learn how in this new blog article.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-03-06T00:00:00-06:00">06 Mar 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">
+        <img loading="lazy" src="/images/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp" alt="What is the difference between CQS and CQRS patterns?">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/software-architecture" class="c-blog-card__tag">software-architecture</a>
+        
+        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">What is the difference between CQS and CQRS patterns?</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        CQS and CQRS are misunderstood design patterns. They are more simple than people think! CQS is about dividing an object's methods into two categories: commands and queries while CQRS is about separating query and command into two objects.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-02-06T00:00:00-06:00">06 Feb 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[7]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+        <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
+        
+        <a href="/tag/security" class="c-blog-card__tag">security</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">How to handle user permissions through command bus middleware</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2022-09-26T00:00:00-05:00">26 Sep 2022</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+                  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end related posts -->
+
+
+
+  <!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
+
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
+
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
+
+
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
+
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
+
+
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
+          <!--bookshop-live end-->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <!--bookshop-live name(social-link.jekyll.html) params() context() -->
+          
+<div class="social">
+  <ul class="social__list list-reset">
+    
+    <li class="social__item">
+      <a class="social__link" href="https://twitter.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-twitter icon">
+        <i class="ion ion-logo-twitter"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://github.com/arnolanglade" target="_blank" rel="noopener" aria-label="logo-github icon">
+        <i class="ion ion-logo-github"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.linkedin.com/in/arnolanglade" target="_blank" rel="noopener" aria-label="logo-linkedin icon">
+        <i class="ion ion-logo-linkedin"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="https://www.youtube.com/@arnolanglade" target="_blank" rel="noopener" aria-label="logo-youtube icon">
+        <i class="ion ion-logo-youtube"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="mailto:arnaud.langlade@gmail.com" target="_blank" rel="noopener" aria-label="md-mail icon">
+        <i class="ion ion-md-mail"></i>
+      </a>
+    </li>
+    
+    <li class="social__item">
+      <a class="social__link" href="/feed.xml" target="_blank" rel="noopener" aria-label="logo-rss icon">
+        <i class="ion ion-logo-rss"></i>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+          <!--bookshop-live end-->
+
+        <ul class="footer_nav list-reset">
+          
+          <li class="footer_nav__item">
+            <a href="/" class="footer_nav__link">Home</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/about/" class="footer_nav__link">About me</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/experiences/" class="footer_nav__link">Experiences</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/talks/" class="footer_nav__link">My talks</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/contact/" class="footer_nav__link">Contact</a>
+          </li>
+          
+          <li class="footer_nav__item">
+            <a href="/blog/" class="footer_nav__link">Blog</a>
+          </li>
+          
+        </ul>
+
+        <div class="copyright"><p> 2021 &copy; Langlade Arnaud. Template by <a href="https://cloudcannon.com/">CloudCannon</a>.</p></div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
+
+    <!--
+        load the live component for CloudCannon live previews.
+    -->
+    <script>
+(function(){
+  const bookshopLiveSetup = (CloudCannon) => {
+    CloudCannon.enableEvents();
+
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.src = `/_cloudcannon/bookshop-live.js`;
+    script.onload = function() {
+      window.bookshopLive = new window.BookshopLive({
+        remoteGlobals: ['/_cloudcannon/bookshop-site-data.json']
+      });
+      const updateBookshopLive = async () => {
+        const frontMatter = await CloudCannon.value();
+        const options = window.bookshopLiveOptions || {};
+        await window.bookshopLive.update({page: frontMatter}, options);
+        CloudCannon?.refreshInterface?.();
+      }
+      document.addEventListener('cloudcannon:update', updateBookshopLive);
+      updateBookshopLive();
+    }
+    head.appendChild(script);
+  }
+
+  document.addEventListener('cloudcannon:load', function (e) {
+    bookshopLiveSetup(e.detail.CloudCannon);
+  });
+})();
+</script>
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/common.js"></script>
+    <script id="dsq-count-scr" src="//arnaudlanglade.disqus.com/count.js" async></script>
+</body>
+</html>
