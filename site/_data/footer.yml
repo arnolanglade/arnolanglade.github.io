@@ -4,7 +4,7 @@ footer_menu__settings:
       url: '/'
     - title: 'About me'
       url: '/about/'
-    - title: 'Experiences'
+    - title: 'My experiences'
       url: '/experiences/'
     - title: 'My talks'
       url: '/talks/'
