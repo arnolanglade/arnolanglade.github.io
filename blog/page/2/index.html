@@ -85,32 +85,30 @@
                 
               
                 
-                <li class="nav__item">
-                  <a class="nav__link" href="/about/">About me</a>
+                <li class="nav__item dropdown">
+                  <span class="nav__link dropdown-toggle">About me <i class="ion ion-ios-arrow-down arrow-down"></i></span>
+                  <div class="dropdown-menu">
+                    
+                      <a class="nav__link" href="/about/">About me</a>
+                    
+                      <a class="nav__link" href="/experiences/">My experiences</a>
+                    
+                      <a class="nav__link" href="/talks/">My talks</a>
+                    
+                  </div>
                 </li>
+
                 
               
                 
                 <li class="nav__item">
-                  <a class="nav__link" href="/experiences/">Experiences</a>
-                </li>
-                
-              
-                
-                <li class="nav__item">
-                  <a class="nav__link" href="/talks/">Talks</a>
+                  <a class="nav__link active-link" href="/blog/">Blog</a>
                 </li>
                 
               
                 
                 <li class="nav__item">
                   <a class="nav__link" href="/contact/">Contact</a>
-                </li>
-                
-              
-                
-                <li class="nav__item">
-                  <a class="nav__link active-link" href="/blog/">Blog</a>
                 </li>
                 
               
@@ -188,23 +186,39 @@
 <div class="c-page">
 
 
-    <!--bookshop-live name(page-heading/page-heading.jekyll.html) params(bind=block) context(block=content_blocks[0]) -->
-          
-<div class="container">
-  <div class="c-page-heading">
-    <h1 class="c-page-heading__title">Blog</h1>
-    
-      <p class="c-page-heading__description"></p><div class="social">
-  Subscribe my RSS feed
-  <div class="social__item" style="display: block">
-    <a aria-label="logo-rss icon" class="social__link" href="/feed.xml" rel="noopener" target="_blank">
-      <i class="ion ion-logo-rss"></i>
-    </a>
+    <!--bookshop-live name(blog-header/blog-header.jekyll.html) params(bind=block) context(block=content_blocks[0]) -->
+          <!-- begin hero -->
+
+<section class="blog-header animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="blog-header__inner">
+
+          <div class="blog-header__left">
+            <h1 class="blog-header__title">Welcome to my blog</h1>
+            <div class="blog-header__description">Hi, my name is Arnaud. I am a senior software engineer, architect, and technical coach. I love sharing my knowledge about software engineering such as architectural design patterns, software testing, methodologies and so on.</div>
+            <div class="blog-header__btn">
+              <a class="cta-button c-button c-button--primary c-button--small" href="/feed.xml">
+                  <i class="ion ion-logo-rss"></i>
+                Subscribe to my RSS feed
+              </a>
+            </div>
+          </div>
+
+          <div class="blog-header__right">
+            <div class="blog-header__image">
+              <img alt="" loading="lazy" src="/images/me-home.webp">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-</div><p></p>
-    
-  </div>
-</div>
+</section>
+<!-- end hero -->
+
           <!--bookshop-live end-->
 
     <!--bookshop-live name(posts-list/posts-list.jekyll.html) params(bind=block) context(block=content_blocks[1]) -->
@@ -554,7 +568,7 @@
           </li>
           
           <li class="footer_nav__item">
-            <a class="footer_nav__link" href="/experiences/">Experiences</a>
+            <a class="footer_nav__link" href="/experiences/">My experiences</a>
           </li>
           
           <li class="footer_nav__item">
