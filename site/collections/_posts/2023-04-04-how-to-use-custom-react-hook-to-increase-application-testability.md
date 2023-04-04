@@ -1,7 +1,7 @@
 ---
 title: How to use custom React hook to increase application testability
 description: "Sometimes, we depend on libraries that provide components which cannot be well rendered in the test environment. That means we cannot test some parts of an application. Learn how to use a React hook to prevent that problem and increase the application testability in this new blog article."
-date: 2023-04-05
+date: 2023-04-04
 image: how-to-use-custom-react-hook-to-increase-application-testability.webp
 alt: How to use custom React hook to increase application testability
 image_credit: joetography
