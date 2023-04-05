@@ -79,7 +79,7 @@ final class Map
 {
    public function hasSameState(Map $map): bool
    {
-       return $this->map == $map;
+       return $this == $map;
    }
 }
 ```
