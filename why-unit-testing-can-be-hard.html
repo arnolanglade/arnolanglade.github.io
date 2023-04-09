@@ -387,7 +387,7 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">PasswordEncryptor</code> interface makes test doubles creation possible. Now, we just need to create a fake object to test this method.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">FakePawssordEncryptor</span> <span class="kd">implements</span> <span class="nc">PasswordEncryptor</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">FakePasswordEncryptor</span> <span class="kd">implements</span> <span class="nc">PasswordEncryptor</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="n">hash</span><span class="p">():</span> <span class="kt">string</span>
     <span class="p">{</span>
