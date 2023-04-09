@@ -170,7 +170,7 @@ final class HashedPassword
 The `PasswordEncryptor` interface makes test doubles creation possible. Now, we just need to create a fake object to test this method.
 
 ```php
-final class FakePawssordEncryptor implements PasswordEncryptor
+final class FakePasswordEncryptor implements PasswordEncryptor
 {
     public function hash(): string
     {
