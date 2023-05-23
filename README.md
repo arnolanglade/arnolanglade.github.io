@@ -18,7 +18,7 @@ Run the website:
 $ npm start
 ~~~
 
-Misc :
+Misc:
 
 mkdir ~/.ruby
 echo 'export GEM_HOME=~/.ruby/' >> ~/.zshrc
