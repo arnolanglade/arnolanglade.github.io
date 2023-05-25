@@ -91,7 +91,7 @@ export function Shop() {
 }
 ```
 
-The `ProductList`  has to display elements depending on the given props. This big component will help mutualize the code but it will introduce complexity. Adding too many props will make your components complex, and hard to understand and maintain. Composition will use us to get rid of those props.
+The `ProductList`  has to display elements depending on the given props. This big component will help mutualize the code but it will introduce complexity. Adding too many props will make your components complex, and hard to understand and maintain. Composition will help us to get rid of those props.
 
 **Note:** The `ProductList` component only has 3 props because I wanted to keep the example simple but guess what happens when your components have tens of props to configure them?
 
@@ -127,7 +127,7 @@ export function ProductAction({onClick, actionLabel}) {
 }
 ```
 
-In the previous code example, we created 4 new components: `ProductList`, `Product`, `ItemCheckbox` and `ItemAction`. They are like Lego bricks and we can assemble them to create the product list with or without the call to action.
+In the previous code example, we created 4 new components: `ProductList`, `Product`, `ProductCheckbox` and `ProductAction`. They are like Lego bricks and we can assemble them to create the product list with or without the call to action.
 
 **Note:** It’s not mandatory to create a dedicated component for the checkbox and the button. It can be useful to wrap generic components into more business-oriented ones. It helps to make things clearer. It’s another way to apply composition.
 
