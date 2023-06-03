@@ -5,8 +5,8 @@
         <description></description>
         <link>/</link>
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 23 May 2023 02:41:29 -0500</pubDate>
-        <lastBuildDate>Tue, 23 May 2023 02:41:29 -0500</lastBuildDate>
+        <pubDate>Sat, 03 Jun 2023 02:36:01 -0500</pubDate>
+        <lastBuildDate>Sat, 03 Jun 2023 02:36:01 -0500</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -90,7 +90,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductList&lt;/code&gt;  has to display elements depending on the given props. This big component will help mutualize the code but it will introduce complexity. Adding too many props will make your components complex, and hard to understand and maintain. Composition will use us to get rid of those props.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductList&lt;/code&gt;  has to display elements depending on the given props. This big component will help mutualize the code but it will introduce complexity. Adding too many props will make your components complex, and hard to understand and maintain. Composition will help us to get rid of those props.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductList&lt;/code&gt; component only has 3 props because I wanted to keep the example simple but guess what happens when your components have tens of props to configure them?&lt;/p&gt;
 
@@ -124,7 +124,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;In the previous code example, we created 4 new components: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductList&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Product&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ItemCheckbox&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ItemAction&lt;/code&gt;. They are like Lego bricks and we can assemble them to create the product list with or without the call to action.&lt;/p&gt;
+&lt;p&gt;In the previous code example, we created 4 new components: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductList&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Product&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductCheckbox&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductAction&lt;/code&gt;. They are like Lego bricks and we can assemble them to create the product list with or without the call to action.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It’s not mandatory to create a dedicated component for the checkbox and the button. It can be useful to wrap generic components into more business-oriented ones. It helps to make things clearer. It’s another way to apply composition.&lt;/p&gt;
 

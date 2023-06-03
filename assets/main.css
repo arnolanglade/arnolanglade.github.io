@@ -152,7 +152,7 @@
 
 @media only all and (max-width: 576px) { .post__comments { margin: 60px auto 0; } }
 
-@media all, bookshop { iframe { padding-bottom: 30px; } .highlight { margin-bottom: 30px; } /* Posts List */ .c-blog-card { margin-bottom: 20px; will-change: transform; transition: transform .2s; } .c-blog-card:hover { transform: translateY(-4px); } .c-blog-card:hover .article__inner { box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1); } }
+@media all, bookshop { .highlight { margin-bottom: 30px; } /* Posts List */ .c-blog-card { margin-bottom: 20px; will-change: transform; transition: transform .2s; } .c-blog-card:hover { transform: translateY(-4px); } .c-blog-card:hover .article__inner { box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1); } }
 
 @media only all and (max-width: 768px) { .c-blog-card:last-child { margin-bottom: 0; } }
 
