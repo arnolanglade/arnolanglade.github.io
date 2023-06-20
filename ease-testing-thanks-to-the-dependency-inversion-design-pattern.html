@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to handle user permissions through command bus middleware</title>
-  <meta name='description' content='Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your c...'>
-  <meta name="keywords" content="software,software architecture,design patterns,command bus,permissions,security,bus,middleware">
-  <link rel="canonical" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+  <title>Ease testing thanks to the dependency inversion design pattern</title>
+  <meta name='description' content='The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depe...'>
+  <meta name="keywords" content="unit test,design pattern,pattern,software,dependency inversion,dependency injection,test,typescript">
+  <link rel="canonical" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How to handle user permissions through command bus middleware – Arnaud Langlade - Senior software engineer, architect, and technical coach">
-  <meta name="twitter:description" content="Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.">
-  <meta name="twitter:image:src" content="/how-to-handle-permissions-through-command-bus-middleware.webp">
+  <meta name="twitter:title" content="Ease testing thanks to the dependency inversion design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.">
+  <meta name="twitter:image:src" content="/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="How to handle user permissions through command bus middleware – Arnaud Langlade - Senior software engineer, architect, and technical coach">
-  <meta property="og:description" content="Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.">
-  <meta property="og:image" content="/how-to-handle-permissions-through-command-bus-middleware.webp">
+  <meta property="og:title" content="Ease testing thanks to the dependency inversion design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.">
+  <meta property="og:image" content="/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -185,7 +185,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware">
+          <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern">
         </div>
       </div>
       
@@ -196,23 +196,23 @@
           
           <div class="post-tags">
             
-              <a href="/tag/command-bus" class="post-tags__tag">command-bus</a>
+              <a href="/tag/test" class="post-tags__tag">test</a>
             
-              <a href="/tag/security" class="post-tags__tag">security</a>
+              <a href="/tag/design-pattern" class="post-tags__tag">design-pattern</a>
             
           </div>
           
 
-          <h1 class="post__title">How to handle user permissions through command bus middleware</h1>
+          <h1 class="post__title">Ease testing thanks to the dependency inversion design pattern</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2022-09-26T00:00:00-05:00">
-                26 Sep 2022
+              <time class="post__date" datetime="2023-06-19T00:00:00-05:00">
+                19 Jun 2023
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@kellysikkema">@kellysikkema</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@mmayyer">@mmayyer</a>
               </p>
               
             </div>
@@ -229,73 +229,134 @@
   <article class="post">
 
     <div class="post__content">
-      <p>Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. In this blog post, I want to share with you how to do it by simply adding a middleware to your command bus.</p>
+      <p>In this new blog post, I would like to speak about the dependency inversion design pattern. This pattern makes your code more modular and helps to improve codebase testability. It’s quite simple and super powerful.</p>
+<h2 id="what-does-this-design-pattern-say">What does this design pattern say?</h2>
+<p>A class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.</p>
 
-<p><strong>Note:</strong> If you’re not familiar with this pattern, please have a look at this <a href="http://arnolanglade.github.io/command-bus-design-pattern.html">blog post</a>, it explains what a command bus and a middleware are.</p>
+<p><img src="images/posts/inversion-dependency/concrete-class-should-not-use-concrete-class.svg" alt="Concrete class should not use concrete class" /></p>
 
-<p>Let’s imagine a basic use case: an application with two kinds of users: regular ones and admins. We want to allow certain actions only to admin users.</p>
+<p>The classes should only depend on abstractions (e.g. interfaces). An interface can be implemented in several ways. It will make your code more modular because you can use a specific implementation depending on the context.</p>
 
-<p>First, I will introduce an interface <code class="language-plaintext highlighter-rouge">OnlyPerformedByAdministrator</code> that will be implemented by the command restricted to the admin users.</p>
+<p><img src="images/posts/inversion-dependency/depend-on-abstraction.svg" alt="Concrete class should depend on abstraction" /></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">OnlyPerformedByAdministrator</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span><span class="p">;</span>
-<span class="p">}</span>
+<p>The interfaces should not depend on concrete implementations to avoid coupling them to another class.</p>
 
-<span class="kd">class</span> <span class="nc">CreateNewProduct</span> <span class="kd">implements</span> <span class="nc">OnlyPerformedByAdministrator</span>
-<span class="p">{</span>
-    <span class="c1">// ...</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p><img src="images/posts/inversion-dependency/abstraction-should-not-use-concrete-class.svg" alt="Abstraction should not use concrete class" /></p>
 
-<p>Then, we will add a <code class="language-plaintext highlighter-rouge">CheckAccessPermission</code> middleware to the command bus that will check if the user can execute an action. If he/she can’t, an <code class="language-plaintext highlighter-rouge">AccessDenied</code> exception will be thrown. It will be caught later in the execution flow to be turned into something that will be understandable to the user.</p>
+<h2 id="how-does-this-pattern-improve-testability">How does this pattern improve testability?</h2>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">AccessDenied</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Exception</span>
-<span class="p">{</span>
-<span class="p">}</span>
+<p>Let’s see with a simple example how dependency inversion helps to make your code easily testable. The following class lets a cartographer add a marker on a map.</p>
 
-<span class="kd">class</span> <span class="nc">CheckAccessPermission</span> <span class="kd">implements</span> <span class="nc">Middleware</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">private</span> <span class="nc">Users</span> <span class="nv">$users</span><span class="p">)</span> <span class="p">{}</span>
+<p><strong>Note:</strong> I wrote an article about unit testing to help you to understand the main mistakes that make your codebase less testable. Here is the link https://arnolanglade.github.io/why-unit-testing-can-be-hard.html.</p>
 
-    <span class="k">final</span> <span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">(</span><span class="kt">Command</span> <span class="nv">$command</span><span class="p">,</span> <span class="kt">Middleware</span> <span class="nv">$next</span><span class="p">):</span> <span class="kt">void</span>
-    <span class="p">{</span>
-        <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">users</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="k">new</span> <span class="nc">Username</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">username</span><span class="p">()));</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$command</span> <span class="k">instanceof</span> <span class="nc">OnlyPerformedByAdministrator</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">isAdmin</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nc">AccessDenied</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="nv">$next</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>This middleware will stop the command processing if an error is raised. We need to catch this exception to return a 403 HTTP response in the web controller, or to return a status code greater than 0 in the CLI command.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">WebToggleCartographerPremiumStatus</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">private</span> <span class="nc">CommandBus</span> <span class="nv">$commandBus</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">AddMarkerToMap</span> <span class="p">{</span>
+  <span class="nx">execute</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">repository</span> <span class="o">=</span> <span class="nx">PosgresqlMaps</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">()</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
-    <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandBus</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="k">new</span> <span class="nc">CreateNewProduct</span><span class="p">(</span><span class="cd">/** ... */</span><span class="p">));</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nc">AccessDenied</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nc">Response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">'Access denied'</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">repository</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">marker</span><span class="p">.</span><span class="nx">mapId</span><span class="p">)</span>
+    
+    <span class="nx">map</span><span class="p">.</span><span class="nx">addMarker</span><span class="p">(</span>
+      <span class="nx">marker</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
+      <span class="nx">marker</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
+      <span class="nx">marker</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
+    <span class="p">)</span>
 
-        <span class="k">return</span> <span class="k">new</span> <span class="nc">Response</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="nx">repository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="why-do-i-handle-permissions-with-a-middleware">Why do I handle permissions with a middleware?</h2>
+<p>This class uses a singleton <code class="language-plaintext highlighter-rouge">PosgresqlMaps.getInstance()</code> to retrieve an instance of the <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> repository. This repository is in charge of saving map data into a PostgreSQL database. The problem is that we cannot run this code without a working database. This class is coupled to the <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> repository.</p>
 
-<p>I decided to add a middleware to the command bus because it ensures that permissions are checked no matter where commands are dispatched. For example: from the web controller or a CLI command. Moreover, I don’t depend on a security library or any framework configuration. All permission business rules are coded in the domain.</p>
+<p>We don’t want to use IO (your tools like a database) when we unit-test a piece of code because we want to avoid setting up any tools to a short feedback loop. We only want to check if a section of the application behaves as expected. We don’t want to test if the map data is well stored.</p>
+
+<p>Using the dependency inversion pattern will help us to remove the coupling between  <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> and <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> and make it easy to unit test.</p>
+
+<p>First, we need to remove the coupling between both classes. We will create an abstraction to define how to retrieve and save maps in the application.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Maps</span> <span class="p">{</span>
+  <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> When I cannot use a business term to name a repository I pluralize the name of my aggregate to name it. That’s why I name it <code class="language-plaintext highlighter-rouge">Maps</code> because I want to handle map aggregate persistence.</p>
+
+<p>Now, we can create as many implementations as we need. We will create a dedicated implementation for testing purposes. It will only keep it in memory which will avoid using a database.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">InMemoryMaps</span> <span class="k">implements</span> <span class="nx">Maps</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">maps</span><span class="p">:</span> <span class="nb">Record</span><span class="o">&lt;</span><span class="nx">MapId</span><span class="p">,</span> <span class="nb">Map</span><span class="o">&gt;</span><span class="p">;</span>
+  
+  <span class="k">async</span> <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">[</span><span class="nx">mapId</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">async</span> <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">[</span><span class="nx">map</span><span class="p">.</span><span class="nx">id</span><span class="p">()]</span> <span class="o">=</span> <span class="nx">map</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> I name all implementations with a prefix depending on what they are. If a repository uses a database, I will prefix the class with the name of the database. When I create an implementation for testing purposes, I use the <code class="language-plaintext highlighter-rouge">InMemory</code> prefix.</p>
+
+<p>As we want to create a working application, we will create an implementation which uses a database for the production environment.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">PosgresqlMaps</span> <span class="k">implements</span> <span class="nx">Maps</span> <span class="p">{</span>
+  <span class="c1">// …</span>
+  <span class="k">async</span> <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+      <span class="s2">`SELECT * FROM maps WHERE id = </span><span class="p">${</span><span class="nx">mapId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+    <span class="p">);</span>
+
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="k">async</span> <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+      <span class="s2">`INSERT INTO maps VALUES (</span><span class="p">${</span><span class="nx">map</span><span class="p">.</span><span class="nx">toState</span><span class="p">()}</span><span class="s2">)`</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We need to refactor a bit the <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> class to be able to inject an implementation of the <code class="language-plaintext highlighter-rouge">Maps</code> interface.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">AddMarkerToMap</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">maps</span><span class="p">:</span> <span class="nx">Maps</span><span class="p">)</span> <span class="p">{}</span>
+  
+  <span class="nx">execute</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">marker</span><span class="p">.</span><span class="nx">mapId</span><span class="p">)</span>
+
+
+    <span class="nx">map</span><span class="p">.</span><span class="nx">addMarker</span><span class="p">(</span>
+      <span class="nx">marker</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">marker</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span> <span class="nx">marker</span><span class="p">.</span><span class="nx">longitude</span>
+    <span class="p">)</span>
+    
+    <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally, we can test this class because we can instantiate the <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> class with the <code class="language-plaintext highlighter-rouge">InMemoryMaps</code> class. This implementation helps us to test this class because it does not use any IO. Here, we don’t want to test if the data are well persisted but we want to test the business logic of marker addition on a map.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">adds a new marker to the map</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">maps</span> <span class="o">=</span> <span class="nx">InMemoryMaps</span><span class="p">()</span>
+  
+  <span class="k">new</span> <span class="nx">AddMarkerToMap</span><span class="p">(</span><span class="nx">maps</span><span class="p">).</span><span class="nx">execute</span><span class="p">({</span>
+    <span class="na">mapId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mapId</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Le Sunset</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">latitude</span><span class="p">:</span> <span class="mf">23.252353245</span><span class="p">,</span> <span class="na">longitude</span><span class="p">:</span> <span class="mf">43.5432563457</span>
+  <span class="p">})</span>
+  
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">maps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">mapId</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span>
+      <span class="k">new</span> <span class="nx">Marker</span><span class="p">(</span><span class="dl">'</span><span class="s1">Le Sunset</span><span class="dl">'</span><span class="p">,</span> <span class="mf">23.252353245</span><span class="p">,</span> <span class="mf">43.5432563457</span><span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> We don’t use a unit test to ensure the application uses its tools well. We use integration tests for this. For instance, if we want to ensure that a repository works as expected.</p>
 
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
@@ -308,19 +369,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=How%20to%20handle%20user%20permissions%20through%20command%20bus%20middleware&url=/how-to-handle-user-permissions-through-command-bus-middleware.html"
+        href="https://twitter.com/intent/tweet?text=Ease%20testing%20thanks%20to%20the%20dependency%20inversion%20design%20pattern&url=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=/how-to-handle-user-permissions-through-command-bus-middleware.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=/how-to-handle-user-permissions-through-command-bus-middleware.html&title=How%20to%20handle%20user%20permissions%20through%20command%20bus%20middleware&summary=Applying%20user%20permissions%20might%20be%20very%20complex%20and%20can%20lead%20to%20introducing%20a%20lot%20of%20accidental%20complexity%20to%20your%20application.%20Adding%20a%20middleware%20to%20your%20command%20bus%20can%20solve%20this%20issue.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html&title=Ease%20testing%20thanks%20to%20the%20dependency%20inversion%20design%20pattern&summary=The%20inversion%20design%20pattern%20is%20quite%20simple%20and%20super%20powerful.%20It%20makes%20your%20code%20more%20modular.%20It%20lets%20you%20change%20a%20class's%20dependency%20to%20another%20one%20depending%20on%20the%20context.%20It%20is%20a%20good%20way%20to%20decouple%20your%20code%20from%20IO%20to%20make%20it%20testable.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -337,27 +398,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/command-bus-design-pattern.html">
+  <a class="post__prev" href="/use-composition-instead-of-props-drilling.html">
     <div class="prev__image">
-      <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="How to handle user permissions through command bus middleware">
+      <img loading="lazy" src="/images/posts/use-composition-instead-of-props-drilling.webp" alt="Ease testing thanks to the dependency inversion design pattern">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">The command bus design pattern</h2>
+      <h2 class="post__nav__title">Use composition instead of props drilling</h2>
     </div>
   </a>
   
 
-  
-  <a class="post__next" href="/increase-your-test-quality-thanks-to-builders-or-factories.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Increase your test quality thanks to builders or factories</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/increase-your-test-quality-thanks-to-builders-or-factories.webp" alt="How to handle user permissions through command bus middleware">
-    </div>
-  </a>
   
 </div>
 
@@ -373,7 +424,7 @@
 
 <!-- begin related posts -->
 <div class="container">
-  <section class="related-posts is-related animate">
+  <section class="related-posts  animate">
     <div class="row">
       <div class="col col-12">
         <div class="container__inner">
@@ -384,7 +435,7 @@
                 
                 
                   
-                    <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tag/test" class="section__link related-tag">See all<span> test</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -479,54 +530,6 @@
             
 
             
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[11]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/command-bus-design-pattern.html">
-        <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="The command bus design pattern">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
-        
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/command-bus-design-pattern.html">The command bus design pattern</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2022-09-12T00:00:00-05:00">12 Sep 2022</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
-            
-                
-              
             
             
             
@@ -576,54 +579,6 @@
             
 
             
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[18]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/how-to-validate-a-command.html">
-        <img loading="lazy" src="/images/posts/data-validation.webp" alt="How to validate a command?">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
-        
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/how-to-validate-a-command.html">How to validate a command?</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2021-03-04T00:00:00-06:00">04 Mar 2021</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
-            
-                
-              
             
             
             
@@ -631,54 +586,7 @@
             
 
             
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[19]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/command-handler-patterns.html">
-        <img loading="lazy" src="/images/posts/command-handler.svg" alt="Command and command handler design pattern">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
-        
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/command-handler-patterns.html">Command and command handler design pattern</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        A command is an object used to encapsulate all information needed to achieve an action. We will use this design patte...
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2021-02-25T00:00:00-06:00">25 Feb 2021</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
             
-                
-                  
           </div>
         </div>
       </div>
