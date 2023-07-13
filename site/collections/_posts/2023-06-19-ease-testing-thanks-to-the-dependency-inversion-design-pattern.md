@@ -6,7 +6,7 @@ image: inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-desi
 alt: Ease testing thanks to the dependency inversion design pattern
 image_credit: mmayyer
 keywords: "unit test,design pattern,pattern,software,dependency inversion,dependency injection,test,typescript"
-tags: [test, design-pattern]
+tags: [testing, design-pattern, oop]
 ---
 
 In this new blog post, I would like to speak about the dependency inversion design pattern. This pattern makes your code more modular and helps to improve codebase testability. It’s quite simple and super powerful.
