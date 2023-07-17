@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Ease testing thanks to the dependency inversion design pattern</title>
-  <meta name='description' content='The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depe...'>
-  <meta name="keywords" content="unit test,design pattern,pattern,software,dependency inversion,dependency injection,test,typescript">
-  <link rel="canonical" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
+  <title>Don’t test private methods</title>
+  <meta name='description' content='One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private ...'>
+  <meta name="keywords" content="unit test,design pattern,pattern,software,private method,single responsibility principle,test">
+  <link rel="canonical" href="/do-not-test-private-methods.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ease testing thanks to the dependency inversion design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
-  <meta name="twitter:description" content="The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.">
-  <meta name="twitter:image:src" content="/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp">
+  <meta name="twitter:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:description" content="One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.">
+  <meta name="twitter:image:src" content="/do-not-test-private-method/do-not-test-private-methods.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Ease testing thanks to the dependency inversion design pattern – Arnaud Langlade - Senior software engineer, architect, and technical coach">
-  <meta property="og:description" content="The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.">
-  <meta property="og:image" content="/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp">
+  <meta property="og:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:description" content="One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.">
+  <meta property="og:image" content="/do-not-test-private-method/do-not-test-private-methods.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -185,7 +185,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern">
+          <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Don’t test private methods">
         </div>
       </div>
       
@@ -198,23 +198,21 @@
             
               <a href="/tag/testing" class="post-tags__tag">testing</a>
             
-              <a href="/tag/design-pattern" class="post-tags__tag">design-pattern</a>
-            
               <a href="/tag/oop" class="post-tags__tag">oop</a>
             
           </div>
           
 
-          <h1 class="post__title">Ease testing thanks to the dependency inversion design pattern</h1>
+          <h1 class="post__title">Don’t test private methods</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2023-06-19T00:00:00-05:00">
-                19 Jun 2023
+              <time class="post__date" datetime="2023-07-17T00:00:00-05:00">
+                17 Jul 2023
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@mmayyer">@mmayyer</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@dtopkin1">@dtopkin1</a>
               </p>
               
             </div>
@@ -231,134 +229,131 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this new blog post, I would like to speak about the dependency inversion design pattern. This pattern makes your code more modular and helps to improve codebase testability. It’s quite simple and super powerful.</p>
-<h2 id="what-does-this-design-pattern-say">What does this design pattern say?</h2>
-<p>A class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.</p>
+      <p>It is pretty easy to make mistakes when you start testing your code. One of the first mistakes I made was to test private methods. Spoiler alert: it was a bad idea because I had to use reflection to make them public to access them. If you need to test a private method, it probably means that your code is not well designed</p>
 
-<p><img src="images/posts/inversion-dependency/concrete-class-should-not-use-concrete-class.svg" alt="Concrete class should not use concrete class" /></p>
+<p>We don’t test private methods. Private methods are implementation details of objects and we should not care about them. Don’t worry! They are tested in the end. When you test public methods you also test the private ones as described in the next schema.</p>
 
-<p>The classes should only depend on abstractions (e.g. interfaces). An interface can be implemented in several ways. It will make your code more modular because you can use a specific implementation depending on the context.</p>
+<p><img src="images/posts/do-not-test-private-method/test-private-methods-through-public-ones.svg" alt="Test private methods through public ones" /></p>
 
-<p><img src="images/posts/inversion-dependency/depend-on-abstraction.svg" alt="Concrete class should depend on abstraction" /></p>
+<p>I needed to test the private methods because my object was a God object (huge object). It did a lot of things. It had a few public methods and a lot of private ones because too many things happened behind the scenes.</p>
 
-<p>The interfaces should not depend on concrete implementations to avoid coupling them to another class.</p>
+<p><img src="images/posts/do-not-test-private-method/object-with-too-many-private-methods.svg" alt="Object with too many private methods" /></p>
 
-<p><img src="images/posts/inversion-dependency/abstraction-should-not-use-concrete-class.svg" alt="Abstraction should not use concrete class" /></p>
+<p>The problem with this design is this object did not follow the <strong>S</strong>ingle <strong>R</strong>esponsibility <strong>P</strong>rinciple, but what is this principle?</p>
 
-<h2 id="how-does-this-pattern-improve-testability">How does this pattern improve testability?</h2>
+<blockquote>
+  <p>There should never be more than one reason for a class to change. In other words, every class should have only one responsibility</p>
 
-<p>Let’s see with a simple example how dependency inversion helps to make your code easily testable. The following class lets a cartographer add a marker on a map.</p>
+  <p><a href="https://en.wikipedia.org/wiki/SOLID">wikipedia</a></p>
+</blockquote>
 
-<p><strong>Note:</strong> I wrote an article about unit testing to help you to understand the main mistakes that make your codebase less testable. Here is the link https://arnolanglade.github.io/why-unit-testing-can-be-hard.html.</p>
+<p>My object was super huge because it did too many things. It had too many responsibilities. Because of that, I could not test it easily. How can we avoid that?</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">AddMarkerToMap</span> <span class="p">{</span>
-  <span class="nx">execute</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">repository</span> <span class="o">=</span> <span class="nx">PosgresqlMaps</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">()</span>
+<p><img src="images/posts/do-not-test-private-method/complicated-to-test-objects-with-many-responsibilities.svg" alt="complicated to test objects with many responsibilities" /></p>
+
+<p>It’s better to work on small problems than a big one. The solution would have been to identify each responsibility to extract them into dedicated objects. We don’t need magic tricks to test small objects. It is simple to test them because they do a simple thing, and we only need to use their public API (public method) to test them. We don’t need reflection anymore.</p>
+
+<p><img src="images/posts/do-not-test-private-method/split-good-objects-into-small-classes.svg" alt="split good objects into small classes" /></p>
+
+<p>Then, we need to apply the composition pattern to assemble those classes to make them work as the God object. Composition is like playing Lego: we have many small bricks, and we put them together to make a big piece. Software is the same. You should work with small classes/functions to easily test them and piece them together to make your feature.</p>
+
+<p>Let’s take an example. The following class is in charge of importing products into an application as a PIM or an ERP. This class does several things, it gets product data from a CSV file and it imports them into a database. We need to test the whole class to ensure the product import works as expected. That’s a bit annoying because I can’t test the CSV file reading or the production saving.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Product</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="na">description</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">};</span>
+
+<span class="kd">class</span> <span class="nx">ProductImport</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">connection</span><span class="p">:</span> <span class="nx">Connection</span><span class="p">)</span> <span class="p">{}</span>
     
-    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">repository</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">marker</span><span class="p">.</span><span class="nx">mapId</span><span class="p">)</span>
-    
-    <span class="nx">map</span><span class="p">.</span><span class="nx">addMarker</span><span class="p">(</span>
-      <span class="nx">marker</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-      <span class="nx">marker</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
-      <span class="nx">marker</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="nx">repository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>This class uses a singleton <code class="language-plaintext highlighter-rouge">PosgresqlMaps.getInstance()</code> to retrieve an instance of the <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> repository. This repository is in charge of saving map data into a PostgreSQL database. The problem is that we cannot run this code without a working database. This class is coupled to the <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> repository.</p>
-
-<p>We don’t want to use IO (your tools like a database) when we unit-test a piece of code because we want to avoid setting up any tools to a short feedback loop. We only want to check if a section of the application behaves as expected. We don’t want to test if the map data is well stored.</p>
-
-<p>Using the dependency inversion pattern will help us to remove the coupling between  <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> and <code class="language-plaintext highlighter-rouge">PosgresqlMaps</code> and make it easy to unit test.</p>
-
-<p>First, we need to remove the coupling between both classes. We will create an abstraction to define how to retrieve and save maps in the application.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Maps</span> <span class="p">{</span>
-  <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><strong>Note:</strong> When I cannot use a business term to name a repository I pluralize the name of my aggregate to name it. That’s why I name it <code class="language-plaintext highlighter-rouge">Maps</code> because I want to handle map aggregate persistence.</p>
-
-<p>Now, we can create as many implementations as we need. We will create a dedicated implementation for testing purposes. It will only keep it in memory which will avoid using a database.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">InMemoryMaps</span> <span class="k">implements</span> <span class="nx">Maps</span> <span class="p">{</span>
-  <span class="k">private</span> <span class="nx">maps</span><span class="p">:</span> <span class="nb">Record</span><span class="o">&lt;</span><span class="nx">MapId</span><span class="p">,</span> <span class="nb">Map</span><span class="o">&gt;</span><span class="p">;</span>
-  
-  <span class="k">async</span> <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">[</span><span class="nx">mapId</span><span class="p">];</span>
-  <span class="p">}</span>
-
-  <span class="k">async</span> <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">[</span><span class="nx">map</span><span class="p">.</span><span class="nx">id</span><span class="p">()]</span> <span class="o">=</span> <span class="nx">map</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><strong>Note:</strong> I name all implementations with a prefix depending on what they are. If a repository uses a database, I will prefix the class with the name of the database. When I create an implementation for testing purposes, I use the <code class="language-plaintext highlighter-rouge">InMemory</code> prefix.</p>
-
-<p>As we want to create a working application, we will create an implementation which uses a database for the production environment.</p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">PosgresqlMaps</span> <span class="k">implements</span> <span class="nx">Maps</span> <span class="p">{</span>
-  <span class="c1">// …</span>
-  <span class="k">async</span> <span class="kd">get</span><span class="p">(</span><span class="nx">mapId</span><span class="p">:</span> <span class="nx">MapId</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nb">Map</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
-      <span class="s2">`SELECT * FROM maps WHERE id = </span><span class="p">${</span><span class="nx">mapId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
-    <span class="p">);</span>
-
-
-    <span class="k">return</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="k">async</span> <span class="k">import</span><span class="p">(</span><span class="nx">filePath</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">loadProductFromCsvFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
   <span class="p">}</span>
   
-  <span class="k">async</span> <span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
-      <span class="s2">`INSERT INTO maps VALUES (</span><span class="p">${</span><span class="nx">map</span><span class="p">.</span><span class="nx">toState</span><span class="p">()}</span><span class="s2">)`</span>
+  <span class="k">private</span> <span class="k">async</span> <span class="nx">loadProductFromCsvFile</span><span class="p">(</span><span class="nx">file</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="na">csvData</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">createReadStream</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">csvParser</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">data</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="na">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">csvData</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">product</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">end</span><span class="dl">'</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">data</span> <span class="k">of</span> <span class="nx">csvData</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">saveProducts</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">private</span> <span class="k">async</span> <span class="nx">saveProducts</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">INSERT INTO products (name, description) VALUES (?, ?)</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">],</span>
     <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>We need to refactor a bit the <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> class to be able to inject an implementation of the <code class="language-plaintext highlighter-rouge">Maps</code> interface.</p>
+<p>We need to split this class into smaller ones to ease testing. We will extract both private methods into dedicated classes.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">AddMarkerToMap</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">maps</span><span class="p">:</span> <span class="nx">Maps</span><span class="p">)</span> <span class="p">{}</span>
-  
-  <span class="nx">execute</span><span class="p">(</span><span class="nx">marker</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">marker</span><span class="p">.</span><span class="nx">mapId</span><span class="p">)</span>
-
-
-    <span class="nx">map</span><span class="p">.</span><span class="nx">addMarker</span><span class="p">(</span>
-      <span class="nx">marker</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">marker</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span> <span class="nx">marker</span><span class="p">.</span><span class="nx">longitude</span>
-    <span class="p">)</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CsvProductLoader</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="nx">loadProduct</span><span class="p">(</span><span class="nx">file</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Product</span><span class="p">[]</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="na">products</span><span class="p">:</span> <span class="nx">Product</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">createReadStream</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">csvParser</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">data</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="na">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">products</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">product</span><span class="p">));</span>
     
-    <span class="k">this</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">map</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">products</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">MysqlProducts</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">connection</span><span class="p">:</span> <span class="nx">Connection</span><span class="p">)</span> <span class="p">{}</span>
+    
+  <span class="k">async</span> <span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">INSERT INTO products (name, description) VALUES (?, ?)</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">[</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now, we can test them stand-alone because these classes expose public methods. We don’t need a magic trick such as reflection to change their visibility to test them.</p>
+
+<p>We still need the <code class="language-plaintext highlighter-rouge">ProductImport</code> class. It will depend on both previous classes and act as a controller. It asks <code class="language-plaintext highlighter-rouge">CsvProductLoader</code> to get the product information from the CSV file and asks <code class="language-plaintext highlighter-rouge">CsvProductLoader</code> to save them into a database.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ProductImport</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">private</span> <span class="nx">productLoader</span><span class="p">:</span> <span class="nx">CsvProductLoader</span><span class="p">,</span>
+    <span class="k">private</span> <span class="nx">products</span><span class="p">:</span> <span class="nx">MysqlProducts</span><span class="p">,</span>
+  <span class="p">)</span> <span class="p">{}</span>
+    
+  <span class="k">async</span> <span class="k">import</span><span class="p">(</span><span class="nx">filePath</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">productLoader</span><span class="p">.</span><span class="nx">loadProduct</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+    <span class="nx">products</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="na">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">));</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Finally, we can test this class because we can instantiate the <code class="language-plaintext highlighter-rouge">AddMarkerToMap</code> class with the <code class="language-plaintext highlighter-rouge">InMemoryMaps</code> class. This implementation helps us to test this class because it does not use any IO. Here, we don’t want to test if the data are well persisted but we want to test the business logic of marker addition on a map.</p>
+<p>That’s great because we extract IO usage into new classes. Both <code class="language-plaintext highlighter-rouge">MysqlProducts</code> and <code class="language-plaintext highlighter-rouge">CsvProductLoader</code> need to be tested with integration/contract tests since <code class="language-plaintext highlighter-rouge">ProductImport</code> can be unit tested.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">adds a new marker to the map</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">maps</span> <span class="o">=</span> <span class="nx">InMemoryMaps</span><span class="p">()</span>
-  
-  <span class="k">new</span> <span class="nx">AddMarkerToMap</span><span class="p">(</span><span class="nx">maps</span><span class="p">).</span><span class="nx">execute</span><span class="p">({</span>
-    <span class="na">mapId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mapId</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Le Sunset</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">latitude</span><span class="p">:</span> <span class="mf">23.252353245</span><span class="p">,</span> <span class="na">longitude</span><span class="p">:</span> <span class="mf">43.5432563457</span>
-  <span class="p">})</span>
-  
-  <span class="nx">expect</span><span class="p">(</span><span class="nx">maps</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">mapId</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span>
-    <span class="k">new</span> <span class="nb">Map</span><span class="p">(</span>
-      <span class="k">new</span> <span class="nx">Marker</span><span class="p">(</span><span class="dl">'</span><span class="s1">Le Sunset</span><span class="dl">'</span><span class="p">,</span> <span class="mf">23.252353245</span><span class="p">,</span> <span class="mf">43.5432563457</span><span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">})</span>
+<p>We need to make a last change. We cannot rely on concrete classes. We need to introduce interfaces to avoid coupling between <code class="language-plaintext highlighter-rouge">ProductImport</code> and its dependencies (<code class="language-plaintext highlighter-rouge">MysqlProducts</code> and <code class="language-plaintext highlighter-rouge">CsvProductLoader</code>).</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">ProductLoader</span> <span class="p">{</span>
+  <span class="nx">loadProduct</span><span class="p">(</span><span class="nx">file</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Product</span><span class="p">[]</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Products</span> <span class="p">{</span>
+  <span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">ProductImport</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">private</span> <span class="nx">productLoader</span><span class="p">:</span> <span class="nx">ProductLoader</span><span class="p">,</span>
+    <span class="k">private</span> <span class="nx">products</span><span class="p">:</span> <span class="nx">Products</span><span class="p">,</span>
+  <span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p><strong>Note:</strong> We don’t use a unit test to ensure the application uses its tools well. We use integration tests for this. For instance, if we want to ensure that a repository works as expected.</p>
+<p><strong>Note</strong>: I wrote an article about how the inversion dependency design pattern will ease testing. Here is the link: <a href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">Ease testing thanks to the dependency inversion design pattern</a></p>
 
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
@@ -371,19 +366,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Ease%20testing%20thanks%20to%20the%20dependency%20inversion%20design%20pattern&url=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html"
+        href="https://twitter.com/intent/tweet?text=Don%E2%80%99t%20test%20private%20methods&url=/do-not-test-private-methods.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=/do-not-test-private-methods.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html&title=Ease%20testing%20thanks%20to%20the%20dependency%20inversion%20design%20pattern&summary=The%20inversion%20design%20pattern%20is%20quite%20simple%20and%20super%20powerful.%20It%20makes%20your%20code%20more%20modular.%20It%20lets%20you%20change%20a%20class's%20dependency%20to%20another%20one%20depending%20on%20the%20context.%20It%20is%20a%20good%20way%20to%20decouple%20your%20code%20from%20IO%20to%20make%20it%20testable.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/do-not-test-private-methods.html&title=Don%E2%80%99t%20test%20private%20methods&summary=One%20of%20the%20first%20mistakes%20I%20made%20when%20I%20started%20to%20test%20my%20code%20was%20to%20test%20private%20methods.%20Spoiler%20alert:%20it%20was%20a%20bad%20idea!%20If%20you%20need%20to%20test%20a%20private%20method,%20it%20probably%20means%20that%20your%20code%20is%20not%20well%20designed.%20Private%20methods%20are%20implementation%20details%20of%20objects%20and%20we%20should%20not%20care%20about%20them.%20When%20you%20test%20public%20methods%20you%20also%20test%20the%20private%20ones.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -400,27 +395,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/use-composition-instead-of-props-drilling.html">
+  <a class="post__prev" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
     <div class="prev__image">
-      <img loading="lazy" src="/images/posts/use-composition-instead-of-props-drilling.webp" alt="Ease testing thanks to the dependency inversion design pattern">
+      <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Don’t test private methods">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Use composition instead of props drilling</h2>
+      <h2 class="post__nav__title">Ease testing thanks to the dependency inversion design pattern</h2>
     </div>
   </a>
   
 
-  
-  <a class="post__next" href="/do-not-test-private-methods.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Don’t test private methods</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Ease testing thanks to the dependency inversion design pattern">
-    </div>
-  </a>
   
 </div>
 
@@ -452,8 +437,6 @@
                 
                   
                 
-                  
-                
               
               </a>
             </div>
@@ -467,16 +450,23 @@
             
 
             
+            
+            
+            
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/do-not-test-private-methods.html">
-        <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Don’t test private methods">
+      <a class="c-blog-card__image" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
+        <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern">
       </a>
     </div>
     
@@ -488,22 +478,24 @@
         
         <a href="/tag/testing" class="c-blog-card__tag">testing</a>
         
+        <a href="/tag/design-pattern" class="c-blog-card__tag">design-pattern</a>
+        
         <a href="/tag/oop" class="c-blog-card__tag">oop</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/do-not-test-private-methods.html">Don’t test private methods</a>
+        <a href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">Ease testing thanks to the dependency inversion design pattern</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.
+        The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-07-17T00:00:00-05:00">17 Jul 2023</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-06-19T00:00:00-05:00">19 Jun 2023</time></span>
         </div>
       </div>
     </div>
@@ -515,13 +507,6 @@
             
                 
               
-            
-            
-            
-
-            
-
-            
             
             
             
