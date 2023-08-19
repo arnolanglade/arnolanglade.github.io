@@ -3,7 +3,7 @@
   "description": "Arnaud langlade's blog",
   "scripts": {
     "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site -",
-    "start": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
+    "start": "docker run --rm -p 6060:6060 -v \"$PWD:/srv/jekyll\" -e BUNDLE_GEMFILE=site/Gemfile -it jekyll/builder:4.2.0 /bin/bash -c 'chmod 777 /srv/jekyll && bundle install && bundle exec jekyll serve --host 0.0.0.0 --source site --port 6060 --trace --unpublished'",
     "install-jekyll": "BUNDLE_GEMFILE=site/Gemfile bundle install"
   },
   "author": "Arnaud Langlade",
