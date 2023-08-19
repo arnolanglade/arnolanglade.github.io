@@ -4,7 +4,7 @@ description: "This principle restricts direct access to the state of the object 
 date: 2023-09-19
 image: why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp
 alt: Why breaking encapsulation is not a good idea
-image_credit: 
+image_credit: mattseymour﻿
 keywords: "oop,encapsulation,object,tell don’t ask,object"
 tags: [testing, oop]
 ---
