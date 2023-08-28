@@ -1,9 +1,0 @@
-version: '3.4'
-
-services:
-  web:
-    image: 'httpd:2.4'
-    ports:
-      - '${BLOG_PORT:-6060}:80'
-    volumes:
-      - './_site:/usr/local/apache2/htdocs/:ro'
