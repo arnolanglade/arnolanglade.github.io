@@ -5,5 +5,5 @@ image: '/images/experiences/sunday.webp'
 tags: [Java, Node, React]
 homepage: yes
 link: "https://sundayapp.com"
-blurb: Sunday aims to simplify the payment experience for restaurant customers. You scan a QR code, pay, and walk away. In the meantime restaurateurs can focus on what matters for them.
+blurb: Sunday is a payment system designed for restaurants, enabling millions of people to save time at the end of their meals through a QR code that can be scanned to settle the bill.
 ---

@@ -5,5 +5,5 @@ image: '/images/experiences/akeneo.webp'
 tags: [PHP]
 homepage: yes
 link: "https://www.akeneo.com"
-blurb: Akeneo is an open-source PIM aims to enable small and medium-sized businesses to start centralizing, managing, enriching and distributing their product information at low cost.
+blurb: Akeneo, a global leader in Product Experience Management (PXM), empowers businesses to enhance their growth opportunities through a consistent and compelling product experience across all sales channels.
 ---

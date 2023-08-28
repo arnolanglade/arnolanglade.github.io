@@ -4,5 +4,5 @@ position: Software engineer at Galilée
 image: '/images/experiences/prisma-media.webp'
 tags: [PHP, Javascript]
 link: "https://www.prismamedia.com"
-blurb: CMonOeuvre.com was a web2print shop that allowed the creation of paintings, postcards and other content from professional photos provided by <a href="https://www.geo.fr" target="_blank">GEO</a>, RMN and <a href="https://www.nationalgeographic.fr" target="_blank">National Geographic</a>.
+blurb: CmonOeuvre is a web-to-print store that enables online creation of canvases, postcards, and other formats using high-quality professional photos provided by magazines such as GEO, RMN, and National Geographic, which are part of the Prisma Media Group.
 ---

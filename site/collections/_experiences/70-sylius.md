@@ -5,5 +5,5 @@ image: '/images/experiences/sylius.webp'
 tags: [PHP, Javascript]
 homepage: no
 link: "https://sylius.com"
-blurb: Sylius is an open source eCommerce Platform.
+blurb: As a member of the Sylius core team, I was involved in the development of Sylius. Sylius is an open-source e-commerce framework that simplifies the creation of online stores.
 ---
