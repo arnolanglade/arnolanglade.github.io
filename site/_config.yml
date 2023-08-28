@@ -1,5 +1,5 @@
 title: Arnaud Langlade
-
+url: "https://arnolanglade.github.io"
 plugins:
   - jekyll-bookshop
   - cloudcannon-jekyll-bookshop
