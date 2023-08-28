@@ -1,7 +1,7 @@
 ---
 name: Sunday
 position: Senior Software engineer
-image: '/images/experiences/sunday.png'
+image: '/images/experiences/sunday.webp'
 tags: [Java, Node, React]
 homepage: yes
 link: "https://sundayapp.com"

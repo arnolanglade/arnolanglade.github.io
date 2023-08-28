@@ -1,7 +1,7 @@
 ---
 name: Akeneo Shared Catalog
 position: Lead software engineer
-image: '/images/experiences/akeneo.jpg'
+image: '/images/experiences/akeneo.webp'
 tags: [PHP, React]
 homepage: yes
 link: "https://www.akeneo.com"

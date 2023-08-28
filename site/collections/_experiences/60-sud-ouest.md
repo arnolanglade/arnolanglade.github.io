@@ -1,7 +1,7 @@
 ---
 name: Groupe Sud Ouest Interactive
 position: Software engineer at Clever Age
-image: '/images/experiences/sud-ouest.png'
+image: '/images/experiences/sud-ouest.webp'
 tags: [PHP]
 homepage: yes
 link: "https://www.groupesudouest.com/"

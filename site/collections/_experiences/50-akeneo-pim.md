@@ -1,7 +1,7 @@
 ---
 name: Akeneo PIM
 position: (Lead) Software engineer
-image: '/images/experiences/akeneo.jpg'
+image: '/images/experiences/akeneo.webp'
 tags: [PHP]
 homepage: yes
 link: "https://www.akeneo.com"

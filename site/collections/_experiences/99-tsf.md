@@ -1,7 +1,7 @@
 ---
 name: Télécoms sans frontières
 position: Telecommunication technician 
-image: '/images/experiences/tsf.jpg'
+image: '/images/experiences/tsf.webp'
 tags: [PHP, Javascript]
 homepage: yes
 link: "https://www.tsfi.org"
