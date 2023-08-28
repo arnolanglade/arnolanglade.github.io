@@ -3,10 +3,10 @@
     <channel>
         <title>Arnaud Langlade</title>
         <description></description>
-        <link>/</link>
-        <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 19 Aug 2023 06:46:40 -0500</pubDate>
-        <lastBuildDate>Sat, 19 Aug 2023 06:46:40 -0500</lastBuildDate>
+        <link>https://arnolanglade.github.io/</link>
+        <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
+        <pubDate>Mon, 28 Aug 2023 11:50:56 -0500</pubDate>
+        <lastBuildDate>Mon, 28 Aug 2023 11:50:56 -0500</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -140,8 +140,8 @@
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 17 Jul 2023 00:00:00 -0500</pubDate>
-            <link>/do-not-test-private-methods.html?s=feed</link>
-            <guid isPermaLink="true">/do-not-test-private-methods.html</guid>
+            <link>https://arnolanglade.github.io/do-not-test-private-methods.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/do-not-test-private-methods.html</guid>
             
             <category>testing</category>
             
@@ -284,8 +284,8 @@
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 19 Jun 2023 00:00:00 -0500</pubDate>
-            <link>/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html?s=feed</link>
-            <guid isPermaLink="true">/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html</guid>
+            <link>https://arnolanglade.github.io/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html</guid>
             
             <category>testing</category>
             
@@ -462,8 +462,8 @@
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 22 May 2023 00:00:00 -0500</pubDate>
-            <link>/use-composition-instead-of-props-drilling.html?s=feed</link>
-            <guid isPermaLink="true">/use-composition-instead-of-props-drilling.html</guid>
+            <link>https://arnolanglade.github.io/use-composition-instead-of-props-drilling.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/use-composition-instead-of-props-drilling.html</guid>
             
             <category>react</category>
             
@@ -650,8 +650,8 @@
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Tue, 04 Apr 2023 00:00:00 -0500</pubDate>
-            <link>/how-to-use-custom-react-hook-to-increase-application-testability.html?s=feed</link>
-            <guid isPermaLink="true">/how-to-use-custom-react-hook-to-increase-application-testability.html</guid>
+            <link>https://arnolanglade.github.io/how-to-use-custom-react-hook-to-increase-application-testability.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-to-use-custom-react-hook-to-increase-application-testability.html</guid>
             
             <category>react</category>
             
@@ -807,8 +807,8 @@ function App() {
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 06 Mar 2023 00:00:00 -0600</pubDate>
-            <link>/how-to-reduce-coupling-in-your-react-app.html?s=feed</link>
-            <guid isPermaLink="true">/how-to-reduce-coupling-in-your-react-app.html</guid>
+            <link>https://arnolanglade.github.io/how-to-reduce-coupling-in-your-react-app.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-to-reduce-coupling-in-your-react-app.html</guid>
             
             <category>react</category>
             
@@ -909,8 +909,8 @@ CQRS can open many doors.&lt;/p&gt;
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 06 Feb 2023 00:00:00 -0600</pubDate>
-            <link>/what-is-the-difference-between-cqs-and-cqrs-patterns.html?s=feed</link>
-            <guid isPermaLink="true">/what-is-the-difference-between-cqs-and-cqrs-patterns.html</guid>
+            <link>https://arnolanglade.github.io/what-is-the-difference-between-cqs-and-cqrs-patterns.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/what-is-the-difference-between-cqs-and-cqrs-patterns.html</guid>
             
             <category>software-architecture</category>
             
@@ -1082,8 +1082,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 09 Jan 2023 00:00:00 -0600</pubDate>
-            <link>/hexagonal-architect-by-example.html?s=feed</link>
-            <guid isPermaLink="true">/hexagonal-architect-by-example.html</guid>
+            <link>https://arnolanglade.github.io/hexagonal-architect-by-example.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/hexagonal-architect-by-example.html</guid>
             
             <category>software-architecture</category>
             
@@ -1256,8 +1256,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 28 Nov 2022 00:00:00 -0600</pubDate>
-            <link>/what-is-the-event-sourcing-pattern.html?s=feed</link>
-            <guid isPermaLink="true">/what-is-the-event-sourcing-pattern.html</guid>
+            <link>https://arnolanglade.github.io/what-is-the-event-sourcing-pattern.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/what-is-the-event-sourcing-pattern.html</guid>
             
             <category>software-architecture</category>
             
@@ -1335,8 +1335,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 31 Oct 2022 00:00:00 -0500</pubDate>
-            <link>/my-feedback-about-example-mapping.html?s=feed</link>
-            <guid isPermaLink="true">/my-feedback-about-example-mapping.html</guid>
+            <link>https://arnolanglade.github.io/my-feedback-about-example-mapping.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/my-feedback-about-example-mapping.html</guid>
             
             <category>BDD</category>
             
@@ -1392,8 +1392,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 17 Oct 2022 00:00:00 -0500</pubDate>
-            <link>/how-I-have-learned-programming-by-myself.html?s=feed</link>
-            <guid isPermaLink="true">/how-I-have-learned-programming-by-myself.html</guid>
+            <link>https://arnolanglade.github.io/how-I-have-learned-programming-by-myself.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-I-have-learned-programming-by-myself.html</guid>
             
             <category>learning</category>
             
@@ -1534,8 +1534,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 10 Oct 2022 00:00:00 -0500</pubDate>
-            <link>/increase-your-test-quality-thanks-to-builders-or-factories.html?s=feed</link>
-            <guid isPermaLink="true">/increase-your-test-quality-thanks-to-builders-or-factories.html</guid>
+            <link>https://arnolanglade.github.io/increase-your-test-quality-thanks-to-builders-or-factories.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/increase-your-test-quality-thanks-to-builders-or-factories.html</guid>
             
             <category>testing</category>
             
@@ -1615,8 +1615,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 26 Sep 2022 00:00:00 -0500</pubDate>
-            <link>/how-to-handle-user-permissions-through-command-bus-middleware.html?s=feed</link>
-            <guid isPermaLink="true">/how-to-handle-user-permissions-through-command-bus-middleware.html</guid>
+            <link>https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html</guid>
             
             <category>command-bus</category>
             
@@ -1668,8 +1668,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 12 Sep 2022 00:00:00 -0500</pubDate>
-            <link>/command-bus-design-pattern.html?s=feed</link>
-            <guid isPermaLink="true">/command-bus-design-pattern.html</guid>
+            <link>https://arnolanglade.github.io/command-bus-design-pattern.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/command-bus-design-pattern.html</guid>
             
             <category>command-bus</category>
             
@@ -1815,8 +1815,8 @@ dependencies: api/vendor web/node_modules
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Wed, 02 Jun 2021 00:00:00 -0500</pubDate>
-            <link>/objective-set-up-your-projects-more-easily.html?s=feed</link>
-            <guid isPermaLink="true">/objective-set-up-your-projects-more-easily.html</guid>
+            <link>https://arnolanglade.github.io/objective-set-up-your-projects-more-easily.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/objective-set-up-your-projects-more-easily.html</guid>
             
             <category>makefile</category>
             
@@ -2133,8 +2133,8 @@ dependencies: api/vendor web/node_modules
 &lt;p&gt;Thanks to my proofreaders &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/jjanvier_&quot;&gt;@jjanvier_&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 03 May 2021 00:00:00 -0500</pubDate>
-            <link>/why-unit-testing-can-be-hard.html?s=feed</link>
-            <guid isPermaLink="true">/why-unit-testing-can-be-hard.html</guid>
+            <link>https://arnolanglade.github.io/why-unit-testing-can-be-hard.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/why-unit-testing-can-be-hard.html</guid>
             
             <category>testing</category>
             
@@ -2243,8 +2243,8 @@ dependencies: api/vendor web/node_modules
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Tue, 13 Apr 2021 00:00:00 -0500</pubDate>
-            <link>/you-should-not-expose-objects-state-to-test-them.html?s=feed</link>
-            <guid isPermaLink="true">/you-should-not-expose-objects-state-to-test-them.html</guid>
+            <link>https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html</guid>
             
             <category>testing</category>
             
@@ -2417,8 +2417,8 @@ api/src/Domain/
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Tue, 30 Mar 2021 00:00:00 -0500</pubDate>
-            <link>/how-did-I-organize-my-last-symfony-project.html?s=feed</link>
-            <guid isPermaLink="true">/how-did-I-organize-my-last-symfony-project.html</guid>
+            <link>https://arnolanglade.github.io/how-did-I-organize-my-last-symfony-project.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-did-I-organize-my-last-symfony-project.html</guid>
             
             <category>software-architecture</category>
             
@@ -2587,8 +2587,8 @@ api/src/Domain/
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Tue, 23 Mar 2021 00:00:00 -0500</pubDate>
-            <link>/persisting-entities-without-orm.html?s=feed</link>
-            <guid isPermaLink="true">/persisting-entities-without-orm.html</guid>
+            <link>https://arnolanglade.github.io/persisting-entities-without-orm.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/persisting-entities-without-orm.html</guid>
             
             <category>oop</category>
             
@@ -2673,8 +2673,8 @@ Let’s take an example with the map object. How to initialize a map without any
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Wed, 10 Mar 2021 00:00:00 -0600</pubDate>
-            <link>/oop-how-to-build-an-object.html?s=feed</link>
-            <guid isPermaLink="true">/oop-how-to-build-an-object.html</guid>
+            <link>https://arnolanglade.github.io/oop-how-to-build-an-object.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/oop-how-to-build-an-object.html</guid>
             
             <category>oop</category>
             
@@ -2866,8 +2866,8 @@ Let’s take an example with the map object. How to initialize a map without any
 &lt;p&gt;Thanks to my proofreaders &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/jjanvier_&quot;&gt;@jjanvier_&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Thu, 04 Mar 2021 00:00:00 -0600</pubDate>
-            <link>/how-to-validate-a-command.html?s=feed</link>
-            <guid isPermaLink="true">/how-to-validate-a-command.html</guid>
+            <link>https://arnolanglade.github.io/how-to-validate-a-command.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/how-to-validate-a-command.html</guid>
             
             <category>command-bus</category>
             
@@ -3010,8 +3010,8 @@ Let’s take an example with the map object. How to initialize a map without any
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Thu, 25 Feb 2021 00:00:00 -0600</pubDate>
-            <link>/command-handler-patterns.html?s=feed</link>
-            <guid isPermaLink="true">/command-handler-patterns.html</guid>
+            <link>https://arnolanglade.github.io/command-handler-patterns.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/command-handler-patterns.html</guid>
             
             <category>command-bus</category>
             

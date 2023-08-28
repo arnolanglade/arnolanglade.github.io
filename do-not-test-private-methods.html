@@ -9,18 +9,18 @@
   <title>Don’t test private methods</title>
   <meta name='description' content='One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private ...'>
   <meta name="keywords" content="unit test,design pattern,pattern,software,private method,single responsibility principle,test">
-  <link rel="canonical" href="/do-not-test-private-methods.html">
+  <link rel="canonical" href="https://arnolanglade.github.io/do-not-test-private-methods.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta name="twitter:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
   <meta name="twitter:description" content="One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.">
-  <meta name="twitter:image:src" content="/do-not-test-private-method/do-not-test-private-methods.webp">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/do-not-test-private-method/do-not-test-private-methods.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, architect, and technical coach">
+  <meta property="og:title" content="Don’t test private methods – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
   <meta property="og:description" content="One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.">
-  <meta property="og:image" content="/do-not-test-private-method/do-not-test-private-methods.webp">
+  <meta property="og:image" content="https://arnolanglade.github.io/do-not-test-private-method/do-not-test-private-methods.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -35,7 +35,6 @@
 <body>
 
     
-<script async defer data-website-id="4e06dc7b-7d39-4fc4-92cc-b20462deb018" src="https://s.abla.io/abla.js"></script>
 <script src="https://getinsights.io/js/insights.js"></script>
 <script>
     insights.init('VoIrQveDE0uUwpQi');
@@ -366,19 +365,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Don%E2%80%99t%20test%20private%20methods&url=/do-not-test-private-methods.html"
+        href="https://twitter.com/intent/tweet?text=Don%E2%80%99t%20test%20private%20methods&url=https://arnolanglade.github.io/do-not-test-private-methods.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=/do-not-test-private-methods.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/do-not-test-private-methods.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=/do-not-test-private-methods.html&title=Don%E2%80%99t%20test%20private%20methods&summary=One%20of%20the%20first%20mistakes%20I%20made%20when%20I%20started%20to%20test%20my%20code%20was%20to%20test%20private%20methods.%20Spoiler%20alert:%20it%20was%20a%20bad%20idea!%20If%20you%20need%20to%20test%20a%20private%20method,%20it%20probably%20means%20that%20your%20code%20is%20not%20well%20designed.%20Private%20methods%20are%20implementation%20details%20of%20objects%20and%20we%20should%20not%20care%20about%20them.%20When%20you%20test%20public%20methods%20you%20also%20test%20the%20private%20ones.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/do-not-test-private-methods.html&title=Don%E2%80%99t%20test%20private%20methods&summary=One%20of%20the%20first%20mistakes%20I%20made%20when%20I%20started%20to%20test%20my%20code%20was%20to%20test%20private%20methods.%20Spoiler%20alert:%20it%20was%20a%20bad%20idea!%20If%20you%20need%20to%20test%20a%20private%20method,%20it%20probably%20means%20that%20your%20code%20is%20not%20well%20designed.%20Private%20methods%20are%20implementation%20details%20of%20objects%20and%20we%20should%20not%20care%20about%20them.%20When%20you%20test%20public%20methods%20you%20also%20test%20the%20private%20ones.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
