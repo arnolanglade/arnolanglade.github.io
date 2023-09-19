@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to handle user permissions through command bus middleware</title>
-  <meta name='description' content='Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your c...'>
-  <meta name="keywords" content="software,software architecture,design patterns,command bus,permissions,security,bus,middleware">
-  <link rel="canonical" href="https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html">
+  <title>Why breaking encapsulation is not a good idea</title>
+  <meta name='description' content='This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Ac...'>
+  <meta name="keywords" content="oop,encapsulation,object,tell don’t ask,object">
+  <link rel="canonical" href="https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How to handle user permissions through command bus middleware – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/how-to-handle-permissions-through-command-bus-middleware.webp">
+  <meta name="twitter:title" content="Why breaking encapsulation is not a good idea – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="How to handle user permissions through command bus middleware – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. Adding a middleware to your command bus can solve this issue.">
-  <meta property="og:image" content="https://arnolanglade.github.io/how-to-handle-permissions-through-command-bus-middleware.webp">
+  <meta property="og:title" content="Why breaking encapsulation is not a good idea – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation.">
+  <meta property="og:image" content="https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -184,7 +184,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware">
+          <img loading="lazy" src="/images/posts/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp" alt="Why breaking encapsulation is not a good idea">
         </div>
       </div>
       
@@ -195,23 +195,23 @@
           
           <div class="post-tags">
             
-              <a href="/tag/command-bus" class="post-tags__tag">command-bus</a>
+              <a href="/tag/testing" class="post-tags__tag">testing</a>
             
-              <a href="/tag/security" class="post-tags__tag">security</a>
+              <a href="/tag/oop" class="post-tags__tag">oop</a>
             
           </div>
           
 
-          <h1 class="post__title">How to handle user permissions through command bus middleware</h1>
+          <h1 class="post__title">Why breaking encapsulation is not a good idea</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2022-09-26T00:00:00-05:00">
-                26 Sep 2022
+              <time class="post__date" datetime="2023-09-19T00:00:00-05:00">
+                19 Sep 2023
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@kellysikkema">@kellysikkema</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@mattseymour﻿">@mattseymour﻿</a>
               </p>
               
             </div>
@@ -228,73 +228,90 @@
   <article class="post">
 
     <div class="post__content">
-      <p>Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. In this blog post, I want to share with you how to do it by simply adding a middleware to your command bus.</p>
+      <p>In this blog post, I would like to speak about an important concept in Oriented Object Programming which is the encapsulation principle.</p>
 
-<p><strong>Note:</strong> If you’re not familiar with this pattern, please have a look at this <a href="http://arnolanglade.github.io/command-bus-design-pattern.html">blog post</a>, it explains what a command bus and a middleware are.</p>
+<p>Before speaking about encapsulation let’s talk a bit about OOP. What is the object’s life cycle? The first step of the object’s life cycle is to be instantiated. We give everything an object needs to initialise its internal state. Then we use its public API (public methods) to communicate with it. An object exposes a public API (behaviour) that manipulates its internal state (data).</p>
 
-<p>Let’s imagine a basic use case: an application with two kinds of users: regular ones and admins. We want to allow certain actions only to admin users.</p>
+<p><img src="images/posts/why-breaking-encapsulation-is-not-a-good-idea/object-life-cycle.svg" alt="Object life cycle" /></p>
 
-<p>First, I will introduce an interface <code class="language-plaintext highlighter-rouge">OnlyPerformedByAdministrator</code> that will be implemented by the command restricted to the admin users.</p>
+<p>So, what is encapsulation? This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secured data manipulation.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">OnlyPerformedByAdministrator</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span><span class="p">;</span>
+<p><strong>Note:</strong> An object that only has getters and setters is not an object! This is a data structure because it has no behaviour.</p>
+
+<p>I worked on many applications that used getters and setters. They are good examples of what is breaking encapsulation. It is easy to break encapsulation but it is not a good idea. It will make your code less maintainable and your applications less evolutive. Let’s take a simple example to understand why breaking encapsulation is a bad idea. I want to find the closest point of interest on a map close to a given location.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Location</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">latitude</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="na">longitude</span><span class="p">:</span> <span class="kr">number</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nc">CreateNewProduct</span> <span class="kd">implements</span> <span class="nc">OnlyPerformedByAdministrator</span>
-<span class="p">{</span>
+
+<span class="kd">type</span> <span class="nx">PointOfInterest</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="na">location</span><span class="p">:</span> <span class="nx">Location</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nb">Map</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">pointOfInterests</span><span class="p">:</span> <span class="nx">PointOfInterest</span><span class="p">[])</span> <span class="p">{}</span>
+
+
+  <span class="nx">getPointOfInterests</span><span class="p">():</span> <span class="nx">PointOfInterest</span><span class="p">[]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">pointOfInterests</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">AClassWhereWeNeedToFindClosestPOI</span> <span class="p">{</span>
+  <span class="nx">doSomething</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">pointOfInterest</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getPointOfInterests</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">pointOfInterest</span><span class="p">:</span> <span class="nx">PointOfInterest</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+      <span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
     <span class="c1">// ...</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span>
-    <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Then, we will add a <code class="language-plaintext highlighter-rouge">CheckAccessPermission</code> middleware to the command bus that will check if the user can execute an action. If he/she can’t, an <code class="language-plaintext highlighter-rouge">AccessDenied</code> exception will be thrown. It will be caught later in the execution flow to be turned into something that will be understandable to the user.</p>
+<p>The <code class="language-plaintext highlighter-rouge">Map</code> class has a <code class="language-plaintext highlighter-rouge">getPointOfInterest</code> getter that gets the class property with the same name. Then we can use this getter to access the list of points of interest to iterate them and find the closest one.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">AccessDenied</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Exception</span>
-<span class="p">{</span>
-<span class="p">}</span>
+<p>The drawback with this getter is that we will need to copy/paste this piece of code if we have to look for the closest point of interest in several places. It won’t help you to mutualize code. At best, you can extract this piece of code into a dedicated class like the following example:</p>
 
-<span class="kd">class</span> <span class="nc">CheckAccessPermission</span> <span class="kd">implements</span> <span class="nc">Middleware</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">private</span> <span class="nc">Users</span> <span class="nv">$users</span><span class="p">)</span> <span class="p">{}</span>
-
-    <span class="k">final</span> <span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">(</span><span class="kt">Command</span> <span class="nv">$command</span><span class="p">,</span> <span class="kt">Middleware</span> <span class="nv">$next</span><span class="p">):</span> <span class="kt">void</span>
-    <span class="p">{</span>
-        <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">users</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="k">new</span> <span class="nc">Username</span><span class="p">(</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="nf">username</span><span class="p">()));</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$command</span> <span class="k">instanceof</span> <span class="nc">OnlyPerformedByAdministrator</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="nf">isAdmin</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nc">AccessDenied</span><span class="p">();</span>
-        <span class="p">}</span>
-
-        <span class="nv">$next</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">POIFinder</span> <span class="p">{</span>
+  <span class="nx">find</span><span class="p">(</span><span class="nx">map</span><span class="p">:</span> <span class="nb">Map</span><span class="p">):</span> <span class="nx">PointOfInterest</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getPointOfInterests</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">pointOfInterest</span><span class="p">:</span> <span class="nx">PointOfInterest</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+      <span class="p">})[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>This middleware will stop the command processing if an error is raised. We need to catch this exception to return a 403 HTTP response in the web controller, or to return a status code greater than 0 in the CLI command.</p>
+<p>The problem with this code is that we extract the <code class="language-plaintext highlighter-rouge">Map</code> object behaviour into another class. We will turn the <code class="language-plaintext highlighter-rouge">Map</code> object into a data structure if we remove all methods that add a behaviour to it.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">WebToggleCartographerPremiumStatus</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">private</span> <span class="nc">CommandBus</span> <span class="nv">$commandBus</span><span class="p">)</span> <span class="p">{}</span>
-    
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
-    <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">commandBus</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="k">new</span> <span class="nc">CreateNewProduct</span><span class="p">(</span><span class="cd">/** ... */</span><span class="p">));</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nc">AccessDenied</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nc">Response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">'Access denied'</span><span class="p">);</span>
-        <span class="p">}</span>
+<p><strong>Note:</strong> A class that ends with -ER (like in the previous example) is a good insight into how this class does the job of another class.</p>
 
-        <span class="k">return</span> <span class="k">new</span> <span class="nc">Response</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-    <span class="p">}</span>
+<p>What happens if we need to change the internal of the POI list? Now, we don’t want to use an array anymore, we want to manage the POI list with a custom class named <code class="language-plaintext highlighter-rouge">PointOfInterestList</code>. It might be a simple refactoring for small applications but it is super painful for huge ones. If the getter method is used hundreds of times, we will have to refactor each <code class="language-plaintext highlighter-rouge">getPointOfInterest</code> usage to make them compatible with the new signature.</p>
+
+<p>To avoid this problem, we only need to apply the “Tell, don’t ask” principle. This principle says that we should tell an object to do something instead of asking for its internal state to do something in his stead.</p>
+
+<p>The solution would be to add a <code class="language-plaintext highlighter-rouge">findClosestPointOfInterest</code> method to the <code class="language-plaintext highlighter-rouge">Map</code> object. The only purpose of this method is to find the closest POI no matter how the POI list is designed. This allows you to refactor the internal state of the object as many times you want.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ListOfPointOfInterest</span> <span class="p">{</span>
+  <span class="nx">findClosest</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nb">Map</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">pointOfInterests</span><span class="p">:</span> <span class="nx">PointOfInterest</span><span class="p">[])</span> <span class="p">{}</span>
+
+
+  <span class="nx">findClosestPointOfInterest</span><span class="p">(</span><span class="nx">location</span><span class="p">:</span> <span class="nx">Location</span><span class="p">):</span> <span class="nx">PointOfInterest</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">pointOfInterests</span><span class="p">.</span><span class="nx">findClosest</span><span class="p">()</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="why-do-i-handle-permissions-with-a-middleware">Why do I handle permissions with a middleware?</h2>
-
-<p>I decided to add a middleware to the command bus because it ensures that permissions are checked no matter where commands are dispatched. For example: from the web controller or a CLI command. Moreover, I don’t depend on a security library or any framework configuration. All permission business rules are coded in the domain.</p>
+<p><strong>Note:</strong> Breaking encapsulation to test your code is a bad idea too. I wrote an article to present you with an alternative to the getter to prevent exposing the state of the objects. Here is the link <a href="https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html">Why you should not expose objects’ state to test them</a></p>
 
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
@@ -307,19 +324,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=How%20to%20handle%20user%20permissions%20through%20command%20bus%20middleware&url=https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html"
+        href="https://twitter.com/intent/tweet?text=Why%20breaking%20encapsulation%20is%20not%20a%20good%20idea&url=https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html&title=How%20to%20handle%20user%20permissions%20through%20command%20bus%20middleware&summary=Applying%20user%20permissions%20might%20be%20very%20complex%20and%20can%20lead%20to%20introducing%20a%20lot%20of%20accidental%20complexity%20to%20your%20application.%20Adding%20a%20middleware%20to%20your%20command%20bus%20can%20solve%20this%20issue.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/why-breaking-encapsulation-is-not-a-good-idea.html&title=Why%20breaking%20encapsulation%20is%20not%20a%20good%20idea&summary=This%20principle%20restricts%20direct%20access%20to%20the%20state%20of%20the%20object%20from%20outside.%20This%20means%20that%20the%20internal%20implementation%20details%20of%20a%20class%20are%20hidden.%20Accessing%20the%20state%20of%20the%20object%20is%20only%20allowed%20through%20its%20public%20API%20(public%20methods).%20This%20concept%20helps%20to%20protect%20the%20data%20from%20outside%20interference%20and%20ensures%20controlled%20and%20secure%20data%20manipulation.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -336,27 +353,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-  <a class="post__prev" href="/command-bus-design-pattern.html">
+  <a class="post__prev" href="/do-not-test-private-methods.html">
     <div class="prev__image">
-      <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="How to handle user permissions through command bus middleware">
+      <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Why breaking encapsulation is not a good idea">
     </div>
     <div class="prev__box">
       <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">The command bus design pattern</h2>
+      <h2 class="post__nav__title">Don’t test private methods</h2>
     </div>
   </a>
   
 
-  
-  <a class="post__next" href="/increase-your-test-quality-thanks-to-builders-or-factories.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Increase your test quality thanks to builders or factories</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/increase-your-test-quality-thanks-to-builders-or-factories.webp" alt="How to handle user permissions through command bus middleware">
-    </div>
-  </a>
   
 </div>
 
@@ -383,7 +390,7 @@
                 
                 
                   
-                    <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tag/testing" class="section__link related-tag">See all<span> testing</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -408,100 +415,16 @@
             
 
             
-            
-            
-            
 
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[13]) -->
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/command-bus-design-pattern.html">
-        <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="The command bus design pattern">
+      <a class="c-blog-card__image" href="/do-not-test-private-methods.html">
+        <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Don’t test private methods">
       </a>
     </div>
     
@@ -511,121 +434,24 @@
       
       <div class="c-blog-card__tags-box">
         
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
         
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/command-bus-design-pattern.html">The command bus design pattern</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2022-09-12T00:00:00-05:00">12 Sep 2022</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
-            
-                
-              
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[20]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/how-to-validate-a-command.html">
-        <img loading="lazy" src="/images/posts/data-validation.webp" alt="How to validate a command?">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
-        
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        <a href="/tag/oop" class="c-blog-card__tag">oop</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/how-to-validate-a-command.html">How to validate a command?</a>
+        <a href="/do-not-test-private-methods.html">Don’t test private methods</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
+        One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2021-03-04T00:00:00-06:00">04 Mar 2021</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-07-17T00:00:00-05:00">17 Jul 2023</time></span>
         </div>
       </div>
     </div>
@@ -645,15 +471,15 @@
 
             
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[21]) -->
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[2]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/command-handler-patterns.html">
-        <img loading="lazy" src="/images/posts/command-handler.svg" alt="Command and command handler design pattern">
+      <a class="c-blog-card__image" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
+        <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern">
       </a>
     </div>
     
@@ -663,24 +489,81 @@
       
       <div class="c-blog-card__tags-box">
         
-        <a href="/tag/command-bus" class="c-blog-card__tag">command-bus</a>
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
         
-        <a href="/tag/design-patterns" class="c-blog-card__tag">design-patterns</a>
+        <a href="/tag/design-pattern" class="c-blog-card__tag">design-pattern</a>
+        
+        <a href="/tag/oop" class="c-blog-card__tag">oop</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/command-handler-patterns.html">Command and command handler design pattern</a>
+        <a href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">Ease testing thanks to the dependency inversion design pattern</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        A command is an object used to encapsulate all information needed to achieve an action. We will use this design patte...
+        The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2021-02-25T00:00:00-06:00">25 Feb 2021</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-06-19T00:00:00-05:00">19 Jun 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/use-composition-instead-of-props-drilling.html">
+        <img loading="lazy" src="/images/posts/use-composition-instead-of-props-drilling.webp" alt="Use composition instead of props drilling">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/react" class="c-blog-card__tag">react</a>
+        
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/use-composition-instead-of-props-drilling.html">Use composition instead of props drilling</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        Adding too many props will make your components complex, hard to understand and maintain. Instead opt for several small components and apply composition. Learn how in this blog article.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-05-22T00:00:00-05:00">22 May 2023</time></span>
         </div>
       </div>
     </div>
