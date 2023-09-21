@@ -296,17 +296,17 @@
 <p>The solution would be to add a <code class="language-plaintext highlighter-rouge">findClosestPointOfInterest</code> method to the <code class="language-plaintext highlighter-rouge">Map</code> object. The only purpose of this method is to find the closest POI no matter how the POI list is designed. This allows you to refactor the internal state of the object as many times you want.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">ListOfPointOfInterest</span> <span class="p">{</span>
-  <span class="nx">findClosest</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">findClosest</span><span class="p">(</span><span class="nx">location</span><span class="p">:</span> <span class="nx">Location</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nb">Map</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">pointOfInterests</span><span class="p">:</span> <span class="nx">PointOfInterest</span><span class="p">[])</span> <span class="p">{}</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">pointOfInterests</span><span class="p">:</span> <span class="nx">ListOfPointOfInterest</span><span class="p">)</span> <span class="p">{}</span>
 
 
   <span class="nx">findClosestPointOfInterest</span><span class="p">(</span><span class="nx">location</span><span class="p">:</span> <span class="nx">Location</span><span class="p">):</span> <span class="nx">PointOfInterest</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">pointOfInterests</span><span class="p">.</span><span class="nx">findClosest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">pointOfInterests</span><span class="p">.</span><span class="nx">findClosest</span><span class="p">(</span><span class="nx">location</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
