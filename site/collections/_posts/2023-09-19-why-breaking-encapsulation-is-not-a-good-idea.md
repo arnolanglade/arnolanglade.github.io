@@ -81,17 +81,17 @@ The solution would be to add a `findClosestPointOfInterest` method to the `Map` 
 
 ```ts
 class ListOfPointOfInterest {
-  findClosest() {
+  findClosest(location: Location) {
     // ...
   }
 }
 
 class Map {
-  constructor(private pointOfInterests: PointOfInterest[]) {}
+  constructor(private pointOfInterests: ListOfPointOfInterest) {}
 
 
   findClosestPointOfInterest(location: Location): PointOfInterest {
-    return this.pointOfInterests.findClosest()
+    return this.pointOfInterests.findClosest(location)
   }
 }
 ```
