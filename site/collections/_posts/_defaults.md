@@ -1,7 +1,10 @@
 ---
-date:
-title:
-description:
-tags:
-image:
+title: 
+description: 
+date: 
+image: 
+alt: 
+image_credit: 
+keywords: 
+tags: 
 ---
