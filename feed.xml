@@ -5,9 +5,36 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 14 Oct 2023 09:24:16 -0500</pubDate>
-        <lastBuildDate>Sat, 14 Oct 2023 09:24:16 -0500</lastBuildDate>
+        <pubDate>Mon, 23 Oct 2023 03:00:33 -0500</pubDate>
+        <lastBuildDate>Mon, 23 Oct 2023 03:00:33 -0500</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
+        
+        <item>
+            <title>The pitfalls of OOP's inheritance: Why simple isn't always better</title>
+            <description>&lt;p&gt;In OOP, the simplest way to change the behavior of a class A is to create a class B that extends class A. Extensions allow you to override any public and protected methods of the parent class. That‘s quite simple, right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/pitfalls-of-oop-inheritance/simple-inheritance.svg&quot; alt=&quot;Simple object inheritance&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Furthermore, you can extend a class multiple times with several levels of inheritance. In the following example, we can see that class B has two children, and the class hierarchy has four levels of inheritance. Now let’s explore why it is not a good idea and which problem can occur?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/pitfalls-of-oop-inheritance/inheritance-with-several-levels.svg&quot; alt=&quot;Object inheritance with several levels&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Designing code like this won’t facilitate refactoring. Let’s consider a scenario where Class A has a method that is overridden in both Class B and Class E. What happens if we decide to change the signature of this method in Class A? We will need to rewrite this method in Class B and Class E to match the new signature. Another frustrating aspect is that we will have to modify all portions of the code that use this method. In a small codebase, this may be manageable, but in a large one, it’s a different story!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/pitfalls-of-oop-inheritance/refactoring-inheritance-with-several-levels.svg&quot; alt=&quot;Refactoring with object inheritance with several levels&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This code won’t ease team collaboration. Let’s consider another scenario: where we are working on a huge monolith shared with several other teams. What happens if team A needs to change class A? That means teams B, C, and D must also update their codebases. We have introduced coupling between these three teams because of the coupling between classes A, B, C, and D. That’s a shame. This design will slow down your delivery because team A will need to coordinate with three other teams if it needs to change class A.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/pitfalls-of-oop-inheritance/refactoring-inheritance-with-several-teams.svg&quot; alt=&quot;Refactoring with object inheritance with several teams&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing. I try to apply the open-closed principle as much as possible to make the code more modular and easier to evolve.&lt;/p&gt;
+</description>
+            <pubDate>Mon, 23 Oct 2023 00:00:00 -0500</pubDate>
+            <link>https://arnolanglade.github.io/oop-inheritance-pitfalls.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/oop-inheritance-pitfalls.html</guid>
+            
+            
+        </item>
         
         <item>
             <title>Why breaking encapsulation is not a good idea</title>
