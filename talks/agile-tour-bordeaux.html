@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name='description' content='Arnaud Langlade - I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further».'>
-  <meta name="keywords" content="arnaud langlade,langlade,freelancer,software engineer,architect,technical coach,software,oop,blog,talk,tdd,bdd,ddd,event storming,example mapping,arnolanglade">
-  <link rel="canonical" href="https://arnolanglade.github.io/404.html">
+  <title>Unit testing: essential and complicated at the same time</title>
+  <meta name='description' content='When I started coding I could develop for hours without executing my code. Then, I needed to debug it for hours. It wasn't funny! I discovered what was testi...'>
+  <meta name="keywords" content="test,unit,unit test,dependency inversion,encapsulation,tdd,srp,composition,coupling">
+  <link rel="canonical" href="https://arnolanglade.github.io/talks/agile-tour-bordeaux.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image:src" content="">
+  <meta name="twitter:title" content="Unit testing: essential and complicated at the same time – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="When I started coding I could develop for hours without executing my code. Then, I needed to debug it for hours. It wasn't funny! I discovered what was testing and I understood its benefits. However, it wasn't easy to write my first tests. We can make many mistakes that make tests hard to write and maintain. I would like to present to you what I have learned over the last few years to help you write tests.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/agile-tour-bordeaux.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="About – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="Unit testing: essential and complicated at the same time – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="When I started coding I could develop for hours without executing my code. Then, I needed to debug it for hours. It wasn't funny! I discovered what was testing and I understood its benefits. However, it wasn't easy to write my first tests. We can make many mistakes that make tests hard to write and maintain. I would like to present to you what I have learned over the last few years to help you write tests.">
+  <meta property="og:image" content="https://arnolanglade.github.io/agile-tour-bordeaux.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -177,288 +177,344 @@
 <!-- end header -->
 
 
-    
+    <div class="talk-top">
+  <div class="container">
+    <div class="row">
 
-    <!--
-        Bookshop components are accessed using the bookshop tag,
-        using the same syntax as the standard Jekyll include tag.
-    -->
-    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
-          
-<div class="c-page">
+      
+      <div class="col col-6 col-d-12">
+        <div class="post-image">
+          <img loading="lazy" src="/images/talks/agile-tour-bordeaux.webp" alt="Unit testing: essential and complicated at the same time">
+        </div>
+      </div>
+      
+
+      <div class="col col-6 col-d-12">
+        <div class="post__info">
+
+          <h1 class="post__title">Unit testing: essential and complicated at the same time</h1>
+
+          <div class="post__meta">
+            <div class="post__meta-bottom">
+              <a href="https://agiletourbordeaux.fr">
+                <i class="ion ion-md-globe"></i> Agile Tour Bordeaux 2023
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- begin talk -->
+<div class="container animate">
+
+  <article class="talk">
+
+    <div class="talk__content">
+      <p>When I started coding I could develop for hours without executing my code. Then, I needed to debug it for hours. It wasn’t funny! I discovered what was testing and I understood its benefits. However, it wasn’t easy to write my first tests. We can make many mistakes that make tests hard to write and maintain. I would like to present to you what I have learned over the last few years to help you write tests.</p>
+
+<h2 id="slides">Slides</h2>
+
+<iframe width="400" height="250" src="/slides/agile-tour-bordeaux.html">
+  Fallback text here for unsupporting browsers, of which there are scant few.
+</iframe>
+
+    </div>
+
+    <div class="post__share">
+  <div class="share__head">
+    <div class="share__title"><i class="ion ion-md-heart"></i> Share it if you like it!</div>
+  </div>
+  <ul class="share__list list-reset">
+    <li class="share__item">
+      <a class="share__link share__twitter"
+        href="https://twitter.com/intent/tweet?text=Unit%20testing:%20essential%20and%20complicated%20at%20the%20same%20time&url=https://arnolanglade.github.io/talks/agile-tour-bordeaux.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/talks/agile-tour-bordeaux.html"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
+    </li>
+    <li class="share__item">
+      <a class="share__link share__linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/talks/agile-tour-bordeaux.html&title=Unit%20testing:%20essential%20and%20complicated%20at%20the%20same%20time&summary=When%20I%20started%20coding%20I%20could%20develop%20for%20hours%20without%20executing%20my%20code.%20Then,%20I%20needed%20to%20debug%20it%20for%20hours.%20It%20wasn't%20funny!%20I%20discovered%20what%20was%20testing%20and%20I%20understood%20its%20benefits.%20However,%20it%20wasn't%20easy%20to%20write%20my%20first%20tests.%20We%20can%20make%20many%20mistakes%20that%20make%20tests%20hard%20to%20write%20and%20maintain.%20I%20would%20like%20to%20present%20to%20you%20what%20I%20have%20learned%20over%20the%20last%20few%20years%20to%20help%20you%20write%20tests.&source=Arnaud%20Langlade"
+        onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+        title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
+    </li>
+  </ul>
+</div>
 
 
-    <!--bookshop-live name(page-heading/page-heading.jekyll.html) params(bind=block) context(block=content_blocks[0]) -->
-          
+  </article>
+</div>
+<!-- end talk -->
+
 <div class="container">
-  <div class="c-page-heading">
-    <h1 class="c-page-heading__title">You're lost! The page does not exit.</h1>
-    
+  <div class="row">
+    <div class="col col-10 col-d-12 push-d-0 push-1">
+      <div class="post__navigation animate">
+  
+  <a class="post__prev" href="/talks/sunny-tech-2023.html">
+    <div class="prev__image">
+      <img loading="lazy" src="/images/talks/sunny-tech.webp" alt="Unit testing: essential and complicated at the same time">
+    </div>
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev talk</span>
+      <h2 class="post__nav__title">Example Mapping: ease business knowledge sharing with your team</h2>
+    </div>
+  </a>
+  
+
+  
+</div>
+
+    </div>
   </div>
 </div>
-          <!--bookshop-live end-->
 
-    <!--bookshop-live name(blog-section/blog-section.jekyll.html) params(bind=block) context(block=content_blocks[1]) -->
-          <!-- begin blog -->
-<section class="section blog">
-  <div class="container">
+
+
+
+
+
+
+<!-- begin related posts -->
+<div class="container">
+  <section class="related-posts  animate">
     <div class="row">
       <div class="col col-12">
-        <div class="contaniner__inner animate">
-
+        <div class="container__inner">
           <div class="section__info">
             <div class="section__head">
-              <h2 class="section__title">Recent Posts</h2>
-              <a class="section__link" href="/blog">View all <i class="ion ion-md-arrow-forward"></i></a>
+              <h2 class="section__title">You may also like</h2>
+              <a class="section__link" href="/blog">
+                
+              </a>
             </div>
-            <div class="section__description"> </div>
           </div>
           <div class="row">
-            
-              
-                <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+
           
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
+            
+            
 
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/oop-inheritance-pitfalls.html">
-        <img loading="lazy" src="/images/posts/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp" alt="The pitfalls of OOP's inheritance: Why simple isn't always better">
-      </a>
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
     </div>
-    
+  </section>
+</div>
+<!-- end related posts -->
 
-    <div class="c-blog-card__content">
 
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/oop-inheritance-pitfalls.html">The pitfalls of OOP's inheritance: Why simple isn't always better</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-10-23T00:00:00-05:00">23 Oct 2023</time></span>
+<!-- begin comments -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="disqus-inner">
+        <div id="disqus_thread" class="post__comments">
+          <div id="disqus_empty"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-          <!--bookshop-live end-->
-              
-                <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
+<script>
+  function load_disqus() {
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://arnaudlanglade.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
 
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/why-breaking-encapsulation-is-not-a-good-idea.html">
-        <img loading="lazy" src="/images/posts/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp" alt="Why breaking encapsulation is not a good idea">
-      </a>
-    </div>
-    
+  window.addEventListener('scroll', function (e) {
+    var currentScroll = document.scrollingElement.scrollTop;
+    var disqus_target = document.getElementById('disqus_thread');
+    var disqus_empty = document.getElementById('disqus_empty');
 
-    <div class="c-blog-card__content">
+    if (disqus_target && disqus_empty && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
+      load_disqus();
+    }
+  }, false);
 
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
-        
-        <a href="/tag/oop" class="c-blog-card__tag">oop</a>
-        
-      </div>
-      
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- end comments -->
 
-      <h2 class="c-blog-card__title">
-        <a href="/why-breaking-encapsulation-is-not-a-good-idea.html">Why breaking encapsulation is not a good idea</a>
-      </h2>
 
-      <p class="c-blog-card__excerpt">
-        This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation.
-      </p>
 
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-09-19T00:00:00-05:00">19 Sep 2023</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-              
-                <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[2]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/do-not-test-private-methods.html">
-        <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Don’t test private methods">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
-        
-        <a href="/tag/oop" class="c-blog-card__tag">oop</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/do-not-test-private-methods.html">Don’t test private methods</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-07-17T00:00:00-05:00">17 Jul 2023</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-              
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end blog -->
-
-          <!--bookshop-live end-->
-
-    <!--bookshop-live name(talks-section/talks-section.jekyll.html) params(bind=block) context(block=content_blocks[2]) -->
-          <!-- begin talks -->
-<section class="section talks" id="talks">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="contaniner__inner animate">
-
-          <div class="section__info">
-            <div class="section__head">
-              <h2 class="section__title">My talks</h2>
-              <a class="section__link" href="/talks">View all <i class="ion ion-md-arrow-forward"></i></a>
-            </div>
-            <div class="section__description"></div>
-          </div>
-          <div class="row">
-            
-              
-            
-              
-            
-              
-                <!--bookshop-live name(talk-card/talk-card.jekyll.html) params(talk=talk) context(talk=site.talks[2]) -->
-          
-<article class="c-talk-card col col-4 col-d-6 col-t-12">
-  <div class="c-talk-card__content">
-    <a href="/talks/alpes-craft-2023.html" class="c-talk-card__image">
-      <img loading="lazy" src="/images/talks/alpes-craft.png" alt="Unit testing: essential and complicated at the same time">
-    </a>
-    <div class="c-talk-card__info">
-      <div class="c-talk-card__info-wrap">
-        <h3 class="c-talk-card__title">Unit testing: essential and complicated at the same time</h3>
-      </div>
-      <div class="c-talk-card__info-wrap">
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          <!--bookshop-live end-->
-              
-            
-              
-                <!--bookshop-live name(talk-card/talk-card.jekyll.html) params(talk=talk) context(talk=site.talks[3]) -->
-          
-<article class="c-talk-card col col-4 col-d-6 col-t-12">
-  <div class="c-talk-card__content">
-    <a href="/talks/agile-tour-rennes-2022.html" class="c-talk-card__image">
-      <img loading="lazy" src="/images/talks/agile-tour-rennes.jpg" alt="Example Mapping: ease business knowledge sharing with your team">
-    </a>
-    <div class="c-talk-card__info">
-      <div class="c-talk-card__info-wrap">
-        <h3 class="c-talk-card__title">Example Mapping: ease business knowledge sharing with your team</h3>
-      </div>
-      <div class="c-talk-card__info-wrap">
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          <!--bookshop-live end-->
-              
-            
-              
-            
-              
-                <!--bookshop-live name(talk-card/talk-card.jekyll.html) params(talk=talk) context(talk=site.talks[5]) -->
-          
-<article class="c-talk-card col col-4 col-d-6 col-t-12">
-  <div class="c-talk-card__content">
-    <a href="/talks/forum-php-2018.html" class="c-talk-card__image">
-      <img loading="lazy" src="/images/talks/forum-php.png" alt="What is the difference between a good and a bad repository?">
-    </a>
-    <div class="c-talk-card__info">
-      <div class="c-talk-card__info-wrap">
-        <h3 class="c-talk-card__title">What is the difference between a good and a bad repository?</h3>
-      </div>
-      <div class="c-talk-card__info-wrap">
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          <!--bookshop-live end-->
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end talks -->
-
-          <!--bookshop-live end-->
-
-    <!--bookshop-live name(newsletter/newsletter.jekyll.html) params(bind=block) context(block=content_blocks[3]) -->
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+  newsletter_description=site.data.newsletter.newsletter_description
+  newsletter_identifier=site.data.newsletter.newsletter_identifier
+  newsletter_button=site.data.newsletter.newsletter_button) context() -->
           <!-- begin subscribe -->
 
 <section class="c-subscribe section">
@@ -497,8 +553,12 @@
           <!--bookshop-live end-->
 
 
-</div>
-
+    <!--
+        Bookshop components are accessed using the bookshop tag,
+        using the same syntax as the standard Jekyll include tag.
+    -->
+    <!--bookshop-live name(page.jekyll.html) params(content_blocks=page.content_blocks page_theme=page.page_theme) context() -->
+          
           <!--bookshop-live end-->
 
     <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
