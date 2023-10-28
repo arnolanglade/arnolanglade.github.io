@@ -1,6 +1,9 @@
 ---
-date:
-title:
-subtitle:
-image:
+title: 
+conference: 
+conference_link: 
+homepage: 
+image: 
+keywords: 
+description:
 ---
