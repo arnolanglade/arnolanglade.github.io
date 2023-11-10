@@ -1,7 +1,7 @@
 ---
 title: "The Mikado Method: Small Steps, Big Improvements"
 description: Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield development, ensure code stability and effortless feature integration. Collaborate effectively with MikadoApp and achieve rapid code enhancements through Trunk Based Development.
-date: 2023-11-28
+date: 2023-11-27
 image: mikado-method/mikado-method.webp
 alt: "The Mikado Method: Small Steps, Big Improvements"
 image_credit: tateisimikito
