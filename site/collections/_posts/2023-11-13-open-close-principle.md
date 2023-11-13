@@ -1,7 +1,7 @@
 ---
 title: "Open-Closed principle: Enhancing code modularity"
 description: Unlock the potential of the Open-Closed Principle in programming. Discover how to enhance code modularity and simplify maintenance using this SOLID concept. Learn to reduce complexity and write more flexible code.
-date: 2023-11-14
+date: 2023-11-13
 image: open-close-principle.webp
 alt: "Open-Closed principle: Enhancing code modularity"
 image_credit: madze
