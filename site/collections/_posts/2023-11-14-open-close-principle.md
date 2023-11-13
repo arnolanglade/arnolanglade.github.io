@@ -9,7 +9,9 @@ keywords: open-closed principle,SOLID principles,software engineering,design pat
 tags: [oop]
 ---
 
-In this blog post, I would like to talk about the open-closed principle. This principle is one of the SOLID principles, and I think it is super important because it allows you to write more flexible code. I wanted to explain it because its definition is quite simple, but it is not necessarily easy to grasp.
+Have you missed my last blog post about the [pitfalls of inheritance](/oop-inheritance-pitfalls.html)? I explain how it could be a bad idea to use it too much. Applying composition prevents this problem; it is better to work with small classes to easily assemble. In this blog post, I will talk about the open-closed principle. This principle facilitates composition and helps avoid relying too much on inheritance.
+
+This principle is one of the SOLID principles, and I think it is super important because it allows you to write more flexible code. I wanted to explain it because its definition is quite simple, but it is not necessarily easy to grasp.
 
 > The open closed principle states "software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification"; that is, such an entity can allow its behaviour to be extended without modifying its source code.
 >
