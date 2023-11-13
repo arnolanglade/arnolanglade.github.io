@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Fri, 10 Nov 2023 08:49:17 -0600</pubDate>
-        <lastBuildDate>Fri, 10 Nov 2023 08:49:17 -0600</lastBuildDate>
+        <pubDate>Mon, 13 Nov 2023 02:30:11 -0600</pubDate>
+        <lastBuildDate>Mon, 13 Nov 2023 02:30:11 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -27,7 +27,10 @@
 
 &lt;p&gt;&lt;img src=&quot;images/posts/pitfalls-of-oop-inheritance/refactoring-inheritance-with-several-teams.svg&quot; alt=&quot;Refactoring with object inheritance with several teams&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing. I try to apply the open-closed principle as much as possible to make the code more modular and easier to evolve.&lt;/p&gt;
+&lt;p&gt;I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing.&lt;/p&gt;
+
+&lt;p&gt;I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn’t follow this principle. Here is the link: &lt;a href=&quot;/open-close-principle.html&quot;&gt;Open-Closed principle: Enhancing code modularity&lt;/a&gt;&lt;/p&gt;
+
 </description>
             <pubDate>Mon, 23 Oct 2023 00:00:00 -0500</pubDate>
             <link>https://arnolanglade.github.io/oop-inheritance-pitfalls.html?s=feed</link>
