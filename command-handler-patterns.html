@@ -7,22 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Command and command handler design pattern</title>
-  <meta name='description' content='Arnaud Langlade - I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further».'>
+  <meta name='description' content='Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, ex...'>
   <meta name="keywords" content="design patterns,software,software architecture,command,command handler,command bus">
   <link rel="canonical" href="https://arnolanglade.github.io/command-handler-patterns.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Command and command handler design pattern – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.
-">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/command-handler.svg">
+  <meta name="twitter:description" content="Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, examples, and insights for efficient command validation.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/command-handler/command-handler.webp">
 
   <!-- Facebook OpenGraph -->
   <meta property="og:title" content="Command and command handler design pattern – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.
-">
-  <meta property="og:image" content="https://arnolanglade.github.io/command-handler.svg">
+  <meta property="og:description" content="Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, examples, and insights for efficient command validation.">
+  <meta property="og:image" content="https://arnolanglade.github.io/command-handler/command-handler.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -192,7 +190,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/command-handler.svg" alt="Command and command handler design pattern">
+          <img loading="lazy" src="/images/posts/command-handler/command-handler.webp" alt="Command and command handler design pattern">
         </div>
       </div>
       
@@ -218,6 +216,10 @@
                 25 Feb 2021
               </time>
               
+              <p class="post__image-credit">
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@redaquamedia">@redaquamedia</a>
+              </p>
+              
             </div>
           </div>
         </div>
@@ -232,55 +234,45 @@
   <article class="post">
 
     <div class="post__content">
-      <p>A command is an object used to encapsulate all information needed to achieve an action. We will use this design pattern to represent user intents and we will give it to a command handler. A command handler is just a callable that will perform every action to complete one user intent. As you may understand this design pattern is perfect to manage your business use cases.</p>
+      <p>This pattern is really interesting; it can help you handle use cases. A command represents the user’s intent, while the command handler performs the actions needed to achieve the use case. Let’s dig a bit into these two concepts.</p>
 
-<p>A command is often designed as a Data Transfer Object (an object without any behavior). The most important rule to know about its design is that a command should be easily serializable. This way it can be sent to a queue (RabbitMQ or pub-sub for instance) to be handled in an asynchronous way.</p>
+<h2 id="what-is-a-command">What is a command?</h2>
 
-<p>As you will see in the next schema, there is a one-to-one relationship between a command and a command handler because there is only a single way to handle a use case. Moreover, the command handler should receive a valid command because it gives feedback to users before handling the use case if the data given by the user is wrong. The only responsibility of a command handler is to handle use cases.</p>
+<p>A command is an object used to encapsulate all the information needed to perform an action. This design pattern is used to represent user intents, and the command is given to a command handler.</p>
 
-<p><img src="images/posts/command-handler.svg" alt="Command handler design pattern" /></p>
+<p>A command is often designed as a Data Transfer Object (DTO), which is an object without any behavior (a data structure). The most important design rule to consider is that a command should be easily serializable. This way, it can be sent to a queue such as RabbitMQ or pub-sub to be handled asynchronously.</p>
 
-<p>Let’s take a simple example: an account creation. Our business expert only expects that users need to provide an email and a password to create an account to be able to log in. We will create a command CreateAnAccount and its handler CreateAnAccountHandler.</p>
+<h2 id="what-is-a-command-handler">What is a command handler?</h2>
 
-<p>First, we need to create a command named CreateAnAccount which will represent the user intent.</p>
+<p>A command handler is just a callable that executes all the actions needed to fulfill a user’s intent. As you may understand, this design pattern is perfect for managing your business use cases.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+
+<p><img src="images/posts/command-handler/explain-command-handler.svg" alt="Command handler design pattern" /></p>
+
+<p>This pattern has some rules. The first one is that a command can be handled by a single command handler because there is only a single way to handle a use case. The second rule is that a command handler should receive a valid command. Validating the command ensures that the user provides the correct data to prevent the handling from failing. It also helps to provide early feedback to the user about the data they provided.</p>
+
+<p>The command is only a DTO that carries data while the command handler is responsible to handle use cases.</p>
+
+<h2 id="how-to-use-it">How to use it?</h2>
+
+<p>Let’s consider a simple example: creating an account. Our business expert expects users to provide an email and a password to create an account for login purposes. We will create a command named <code class="language-plaintext highlighter-rouge">CreateAnAccount</code> and its handler, <code class="language-plaintext highlighter-rouge">CreateAnAccountHandler</code>.
+First, we need to create a command named <code class="language-plaintext highlighter-rouge">CreateAnAccount</code> to represent the user’s intent.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
 <span class="p">{</span>
-   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$username</span><span class="p">;</span>
-   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">;</span>
+   <span class="k">public</span> <span class="kt">readonly</span> <span class="n">string</span> <span class="nv">$username</span><span class="p">;</span>
+   <span class="k">public</span> <span class="kt">readonly</span> <span class="n">string</span> <span class="nv">$password</span><span class="p">;</span>
    
-   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span> 
+   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$username</span><span class="p">,</span> <span class="kt">string</span> <span class="nv">$password</span><span class="p">)</span> 
    <span class="p">{</span>
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
    <span class="p">}</span>
-   
-    <span class="k">public</span> <span class="k">function</span> <span class="n">username</span><span class="p">():</span> <span class="kt">string</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">username</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="k">public</span> <span class="k">function</span> <span class="n">password</span><span class="p">():</span> <span class="kt">string</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">password</span><span class="p">;</span>
-    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p><strong>Tip:</strong> To ease the command creation you can use libraries like the Symfony Serializer component. It makes object creation from a set of data (JSON for example) easier and faster.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$createAccount</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
-    <span class="s1">'{“username”:”arnaud”, “password”:“password”}'</span><span class="p">,</span>
-    <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
-    <span class="s1">'json'</span>
-<span class="p">);</span>
-</code></pre></div></div>
-
-<p><strong>Tip:</strong> To avoid reinventing the wheel you can use libraries like the Validator Symfony component to validate the command. I wrote a dedicated <a href="/how-to-validate-a-command.html">blog post</a> to explain how to validate a command.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$violation</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$createAccount</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Then we need to create a command handler to handle this use case. The command handler is callable: a function or an invocable object for instance. It should return nothing (void) to be able to handle it asynchronously. We don’t know when it will be handled so we can’t expect a result. With the command data, we execute all actions needed to handle the use case. In our example, we create an account aggregate and give it to the account repository.</p>
+<p>Next, we need to create a command handler to manage this use case. The command handler can be a function or an invocable object. It should return nothing (void) to be handled  asynchronously as we don’t know when it will be processed and can’t expect an instant result. Using the command data, we perform all actions needed to handle the use case. In our example, we create an account aggregate and pass it to the account repository.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccountHandler</span>
 <span class="p">{</span>
@@ -303,25 +295,14 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Finally, let’s stick those pieces of code together in a controller (this example is made with a Symfony Framework). This controller receives JSON encoded data to create a command, then we validate it to give it to the handler.</p>
+<p>Finally, let’s stick those pieces of code together in a controller (this example is made with a Symfony Framework). This controller receives JSON-encoded data to create a command, which is then validated and passed to the handler</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">CreateAnAccount</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
-        <span class="kt">CreateAnAccountHandler</span> <span class="nv">$createAnAccountHandler</span><span class="p">,</span>
-        <span class="kt">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">,</span>
-        <span class="kt">ValidatorInterface</span> <span class="nv">$validator</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">createAnAccountHandler</span> <span class="o">=</span> <span class="nv">$createAnAccountHandler</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span> <span class="o">=</span> <span class="nv">$validator</span><span class="p">;</span>
-    <span class="p">}</span>
-    
     <span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
     <span class="p">{</span>
-        <span class="cd">/** @var CreateAnAccount $command */</span>
         <span class="nv">$command</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
             <span class="nv">$request</span><span class="o">-&gt;</span><span class="nf">getContent</span><span class="p">(),</span>
             <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
@@ -339,9 +320,51 @@
         <span class="k">return</span> <span class="k">new</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nc">Response</span><span class="o">::</span><span class="no">HTTP_CREATED</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+</code></pre></div></div>
+<p><strong>Tip:</strong> : To simplify command creation, you can use libraries such as the Symfony Serializer component. It eases object creation from a set of data (e.g., JSON), making the process easier and faster.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$createAccount</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="o">-&gt;</span><span class="nf">deserialize</span><span class="p">(</span>
+    <span class="s1">'{“username”:”arnaud”, “password”:“password”}'</span><span class="p">,</span>
+    <span class="nc">CreateAnAccount</span><span class="o">::</span><span class="n">class</span><span class="p">,</span>
+    <span class="s1">'json'</span>
+<span class="p">);</span>
 </code></pre></div></div>
 
-<p><strong>Tip:</strong> To simplify this controller you can use a command bus like <a href="https://symfony.com/doc/current/components/messenger.html">Symfony Messenger</a> for instance. It will be in charge of finding the right handler for a given command. If the command bus is built with middleware you can add a middleware to make sure that all commands will be valid before being given to a handler. By the way, I wrote a dedicated <a href="/command-bus-design-pattern.html">blog post</a> to explain how this pattern works.</p>
+<p>Tip: To avoid reinventing the wheel, you can leverage libraries like the Symfony Validator component to validate the command.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$violation</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$createAccount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>I’ve written a dedicated blog post explaining how to validate a command:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/how-to-validate-a-command.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/data-validation.webp" alt="How to validate a command?" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">How to validate a command?</span>
+      </span>
+   </a>
+</div>
+
+<h2 id="how-to-simplify-that">How to simplify that?</h2>
+
+<p>To simplify this controller, consider using a command bus, which is responsible for finding the right handler for a given command. For more information about this pattern, I’ve written a dedicated blog post explaining how it works:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/command-bus-design-pattern.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/command-bus/command-bus.svg" alt="The command bus design pattern" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">The command bus design pattern</span>
+      </span>
+   </a>
+</div>
+
+<p>The following example is built with <a href="https://symfony.com/doc/current/components/messenger.html">Symfony Messenger</a>.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="n">__invoke</span><span class="p">(</span><span class="kt">Request</span> <span class="nv">$request</span><span class="p">):</span> <span class="kt">Response</span>
 <span class="p">{</span>
@@ -357,9 +380,41 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><strong>Tip:</strong> Please, have a look at this <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">blog post</a> if you need to handle user permissions. Adding a middleware to the command bus will secure your application.</p>
+<p>Where is the command validation in this example? Command buses are often built with middleware, making them highly configurable. To ensure that all commands are valid before passing them to a command handler, we need to add middleware to the command bus for command validation.</p>
 
-<p><strong>In conclusion:</strong> In many applications, I have seen a lot of classes called managers or services (AccountService, AccountManager for instance) which gather all use case management in a single class. It could work at the beginning but as the development progresses those classes become bigger and bigger (a god object). It makes their maintenance harder, those classes are less readable and they can quickly become a dump. I think this pattern can solve those problems.</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ValidationMiddleware</span> <span class="kd">implements</span> <span class="nc">MiddlewareInterface</span>
+<span class="p">{</span>
+    <span class="c1">// …</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">handle</span><span class="p">(</span><span class="kt">Envelope</span> <span class="nv">$envelope</span><span class="p">,</span> <span class="kt">StackInterface</span> <span class="nv">$stack</span><span class="p">):</span> <span class="kt">Envelope</span>
+    <span class="p">{</span>
+        <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$envelope</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>        
+        <span class="nv">$violations</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$groups</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">\</span><span class="nb">count</span><span class="p">(</span><span class="nv">$violations</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">ValidationFailedException</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="nv">$violations</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$stack</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">handle</span><span class="p">(</span><span class="nv">$envelope</span><span class="p">,</span> <span class="nv">$stack</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Tip:</strong> Take a look at this blog post if you need to manage user permissions. Adding a middleware to the command bus can enhance the security of your application:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="How to handle user permissions through command bus middleware" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">How to handle user permissions through command bus middleware</span>
+      </span>
+   </a>
+</div>
+
+<h2 id="my-last-thoughts">My last thoughts</h2>
+
+<p>In many applications,I have seen a lot of classes named managers or services (e.g., AccountService, AccountManager) that gather all use case management into a single class. While this approach might be effective initially as development progresses, these classes tend to grow larger and larger, and become a “god object.” This makes maintenance challenging, reduces readability, and can quickly turn into a dump. I believe this pattern can address these issues.</p>
 
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
@@ -384,7 +439,7 @@
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/command-handler-patterns.html&title=Command%20and%20command%20handler%20design%20pattern&summary=&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/command-handler-patterns.html&title=Command%20and%20command%20handler%20design%20pattern&summary=Discover%20the%20command%20design%20pattern%20in%20software%20development.%20Learn%20how%20commands%20represent%20user%20intents,%20handled%20by%20command%20handlers.%20Learn%20practical%20tips,%20examples,%20and%20insights%20for%20efficient%20command%20validation.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
