@@ -17,7 +17,7 @@ This principle is one of the SOLID principles, and I think it is super important
 >
 > [Wikipedia](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
 
-The first time I read the definition of this principle, I understood that I should not have to modify my code to add additional behavior. This part of the definition “open for extension”was a bit confusing. What did it mean? Does it refer to OOP inheritance?  No, it doesn't refer to OOP inheritance. I have written a blog post about OOP inheritance. It explains why extending a class to change its behavior may seem simple, but is it a good idea. It introduces a lot of coupling in your codebase and between your team.
+The first time I read the definition of this principle, I understood that I should not have to modify my code to add additional behavior. This part of the definition “open for extension” was a bit confusing. What did it mean? Does it refer to OOP inheritance?  No, it doesn't refer to OOP inheritance. I have written a blog post about OOP inheritance. It explains why extending a class to change its behavior may seem simple, but is it a good idea. It introduces a lot of coupling in your codebase and between your team.
 
 Before digging into the principle, let's consider a scenario to illustrate the following example: a class called 'DiscountCalculator' is in charge of calculating discounts based on the products in the basket. We apply a 20% discount to products with the category 'sport,' a 50% discount to products with the category 'home,' and a 10% discount to products with the category 'food.
 
