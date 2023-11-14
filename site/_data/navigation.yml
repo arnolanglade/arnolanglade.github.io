@@ -12,5 +12,7 @@ menu__settings:
           url: '/talks/'
     - title: 'Blog'
       url: '/blog/'
+    - title: 'MikadoApp'
+      url: '/mikado-app/'
     - title: 'Contact'
       url: '/contact/'
