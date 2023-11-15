@@ -319,7 +319,18 @@ CQRS can open many doors.</p>
 
 <p>Depending on the number of use cases the service classes can become really huge. CQRS helps to decrease their size but I am a big fan of them. I like to separate each use case into a dedicated class.</p>
 
-<p><strong>Note:</strong> I explained this principle for commands in this <a href="/command-handler-patterns.html">blog post </a> but we can apply it to query too.</p>
+<p>I’ve written a blog post to explain what is a commands and we can apply it to query too:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/command-handler-patterns.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/command-handler/command-handler.webp" alt="Command and command handler design pattern" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">Command and command handler design pattern</span>
+      </span>
+   </a>
+</div>
 
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
@@ -356,38 +367,46 @@ CQRS can open many doors.</p>
 </div>
 <!-- end post -->
 
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      <div class="post__navigation animate">
-  
-  <a class="post__prev" href="/hexagonal-architect-by-example.html">
-    <div class="prev__image">
-      <img loading="lazy" src="/images/posts/hexagonal-architecture/hexagonal-architect-by-example.webp" alt="What is the difference between CQS and CQRS patterns?">
-    </div>
-    <div class="prev__box">
-      <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Hexagonal architecture by example</h2>
-    </div>
-  </a>
-  
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+newsletter_description=site.data.newsletter.newsletter_description
+newsletter_identifier=site.data.newsletter.newsletter_identifier
+newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
 
-  
-  <a class="post__next" href="/how-to-reduce-coupling-in-your-react-app.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">How to reduce coupling in your React app</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/how-to-reduce-coupling-in-your-react-app.webp" alt="What is the difference between CQS and CQRS patterns?">
-    </div>
-  </a>
-  
-</div>
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
 
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
 
 
 
@@ -686,46 +705,7 @@ CQRS can open many doors.</p>
 <!-- end comments -->
 
 
-<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
-  newsletter_description=site.data.newsletter.newsletter_description
-  newsletter_identifier=site.data.newsletter.newsletter_identifier
-  newsletter_button=site.data.newsletter.newsletter_button) context() -->
-          <!-- begin subscribe -->
 
-<section class="c-subscribe section">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-
-        <div class="c-subscribe__inner">
-          <div class="c-subscribe__info">
-            <h3 class="c-subscribe__title">Join my mailing list</h3>
-            <div class="c-subscribe__subtitle">
-              <span id="ityped"></span>
-            </div>
-          </div>
-
-          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
-            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
-            <input type="hidden" name="id" value="28bcb90eaa">
-            <input type="hidden" name="orig-lang" value="1">
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
-            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end subscribe -->
-
-<script>
-  var itype_text = ['Get inspiration, updates and, cool stuff!'];
-</script>
-          <!--bookshop-live end-->
 
 
     <!--

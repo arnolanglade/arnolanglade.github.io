@@ -205,6 +205,8 @@
             
               <a href="/tag/design-patterns" class="post-tags__tag">design-patterns</a>
             
+              <a href="/tag/command" class="post-tags__tag">command</a>
+            
           </div>
           
 
@@ -230,7 +232,18 @@
   <article class="post">
 
     <div class="post__content">
-      <p><strong>Note:</strong> Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read <a href="http://arnolanglade.github.io/command-handler-patterns.html">this blog post</a> I wrote about those design patterns. It will help you to understand this new article.</p>
+      <p><strong>Note:</strong> Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I’ve written about those design patterns. It will help you to understand this new article:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/command-handler-patterns.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/command-handler/command-handler.webp" alt="Command and command handler design pattern" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">Command and command handler design pattern</span>
+      </span>
+   </a>
+</div>
 
 <h2 id="what-is-a-bus">What is a bus?</h2>
 
@@ -268,6 +281,19 @@
 
 <p><strong>Note:</strong> My previous <a href="http://arnolanglade.github.io/command-handler-patterns.html">blog post</a> about the command and command handler pattern said that a command handler should return void. Here, the idea is that the command bus should return void only the “handle command” should be aware of the result of the handler execution.</p>
 
+<p>I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/tag/command">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/data-validation.webp" alt="See all blog posts about command handling." />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">See all blog posts about command handling.</span>
+      </span>
+   </a>
+</div>
+
 <p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
 
     </div>
@@ -303,38 +329,46 @@
 </div>
 <!-- end post -->
 
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      <div class="post__navigation animate">
-  
-  <a class="post__prev" href="/objective-set-up-your-projects-more-easily.html">
-    <div class="prev__image">
-      <img loading="lazy" src="/images/posts/set-up-your-projects-more-easily.webp" alt="The command bus design pattern">
-    </div>
-    <div class="prev__box">
-      <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Objective: set up your projects more easily</h2>
-    </div>
-  </a>
-  
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+newsletter_description=site.data.newsletter.newsletter_description
+newsletter_identifier=site.data.newsletter.newsletter_identifier
+newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
 
-  
-  <a class="post__next" href="/how-to-handle-user-permissions-through-command-bus-middleware.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">How to handle user permissions through command bus middleware</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/how-to-handle-permissions-through-command-bus-middleware.webp" alt="The command bus design pattern">
-    </div>
-  </a>
-  
-</div>
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
 
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
 
 
 
@@ -356,6 +390,8 @@
                 
                   
                     <a href="/tag/command-bus" class="section__link related-tag">See all<span> command-bus</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
                   
                 
                   
@@ -590,6 +626,8 @@
         
         <a href="/tag/security" class="c-blog-card__tag">security</a>
         
+        <a href="/tag/command" class="c-blog-card__tag">command</a>
+        
       </div>
       
 
@@ -665,46 +703,7 @@
 <!-- end comments -->
 
 
-<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
-  newsletter_description=site.data.newsletter.newsletter_description
-  newsletter_identifier=site.data.newsletter.newsletter_identifier
-  newsletter_button=site.data.newsletter.newsletter_button) context() -->
-          <!-- begin subscribe -->
 
-<section class="c-subscribe section">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-
-        <div class="c-subscribe__inner">
-          <div class="c-subscribe__info">
-            <h3 class="c-subscribe__title">Join my mailing list</h3>
-            <div class="c-subscribe__subtitle">
-              <span id="ityped"></span>
-            </div>
-          </div>
-
-          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
-            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
-            <input type="hidden" name="id" value="28bcb90eaa">
-            <input type="hidden" name="orig-lang" value="1">
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
-            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end subscribe -->
-
-<script>
-  var itype_text = ['Get inspiration, updates and, cool stuff!'];
-</script>
-          <!--bookshop-live end-->
 
 
     <!--

@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Tue, 14 Nov 2023 11:44:49 -0600</pubDate>
-        <lastBuildDate>Tue, 14 Nov 2023 11:44:49 -0600</lastBuildDate>
+        <pubDate>Wed, 15 Nov 2023 09:33:04 -0600</pubDate>
+        <lastBuildDate>Wed, 15 Nov 2023 09:33:04 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -182,7 +182,18 @@
 
 &lt;p&gt;I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing.&lt;/p&gt;
 
-&lt;p&gt;I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn’t follow this principle. Here is the link: &lt;a href=&quot;/open-close-principle.html&quot;&gt;Open-Closed principle: Enhancing code modularity&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn’t follow this principle. Here is the link:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/open-close-principle.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/open-close-principle.webp&quot; alt=&quot;Open-Closed principle: Enhancing code modularity&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Open-Closed principle: Enhancing code modularity&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 </description>
             <pubDate>Mon, 23 Oct 2023 00:00:00 -0500</pubDate>
@@ -279,7 +290,18 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Breaking encapsulation to test your code is a bad idea too. I wrote an article to present you with an alternative to the getter to prevent exposing the state of the objects. Here is the link &lt;a href=&quot;https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html&quot;&gt;Why you should not expose objects’ state to test them&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Breaking encapsulation to test your code is a bad idea too. I’ve written an article to present you with an alternative to the getter to prevent exposing the state of the objects. Here is the link:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/you-should-not-expose-objects-state-to-test-them.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/test-comparison.webp&quot; alt=&quot;Why you should not expose objects' state to test them&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Why you should not expose objects' state to test them&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -420,7 +442,18 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: I wrote an article about how the inversion dependency design pattern will ease testing. Here is the link: &lt;a href=&quot;/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html&quot;&gt;Ease testing thanks to the dependency inversion design pattern&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: I’ve written an article about how the inversion dependency design pattern will ease testing. Here is the link:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp&quot; alt=&quot;Ease testing thanks to the dependency inversion design pattern&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Ease testing thanks to the dependency inversion design pattern&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -1189,7 +1222,18 @@ CQRS can open many doors.&lt;/p&gt;
 
 &lt;p&gt;Depending on the number of use cases the service classes can become really huge. CQRS helps to decrease their size but I am a big fan of them. I like to separate each use case into a dedicated class.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I explained this principle for commands in this &lt;a href=&quot;/command-handler-patterns.html&quot;&gt;blog post &lt;/a&gt; but we can apply it to query too.&lt;/p&gt;
+&lt;p&gt;I’ve written a blog post to explain what is a commands and we can apply it to query too:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/command-handler-patterns.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/command-handler/command-handler.webp&quot; alt=&quot;Command and command handler design pattern&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Command and command handler design pattern&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -1255,7 +1299,18 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;Moving IO as far as possible from your domain code is really convenient because it eases unit testing. We will mainly test this part of the application with unit testing. It offers a very short feedback loop, it will help you to design your domain step by step without setting up the whole application.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; I wrote a blog post about &lt;a href=&quot;/why-unit-testing-can-be-hard.html&quot;&gt;unit testing&lt;/a&gt; that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; I’ve written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;why-unit-testing-can-be-hard.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/why-unit-testing-can-be-hard.webp&quot; alt=&quot;Why unit testing can be hard?&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Why unit testing can be hard?&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;coupling-rules&quot;&gt;Coupling rules&lt;/h3&gt;
 
@@ -1320,7 +1375,31 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;As you see, the only differences are the input and output of the adapter. We need to refactor this code to avoid duplication between both primary adapters. It should be extracted into a dedicated business service.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; These business services can be written using the command and command handler patterns. I wrote a &lt;a href=&quot;/command-handler-patterns.html&quot;&gt;blog post&lt;/a&gt; that explains these design patterns. We always need to validate their input data because we can’t trust users. I explain how to validate the user input in this &lt;a href=&quot;/how-to-validate-a-command.html&quot;&gt;blog post&lt;/a&gt;. The user permissions are still tricky, so I explain how to manage them in this &lt;a href=&quot;/how-to-handle-user-permissions-through-command-bus-middleware.html&quot;&gt;blog post&lt;/a&gt;. Finally, a bus will help you to dispatch commands. I explain this pattern in this &lt;a href=&quot;/command-bus-design-pattern.html&quot;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; These business services can be written using the command and command handler patterns. I’ve written a blog post that explains these design patterns:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/command-handler-patterns.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/command-handler/command-handler.webp&quot; alt=&quot;Command and command handler design pattern&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Command and command handler design pattern&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/data-validation.webp&quot; alt=&quot;See all blog posts about command handling.&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;See all blog posts about command handling.&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;what-about-testing-2&quot;&gt;What about testing?&lt;/h3&gt;
 
@@ -1379,7 +1458,18 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             <title>What is the event sourcing pattern?</title>
             <description>&lt;p&gt;Event sourcing consists in storing all changes that happened to an application as a sequence of events instead of only storing the current state of the application. The sum of all events is the current application state. When I heard about this pattern a few years ago, I was really confused. I used to only persist the current application state in a database and that was fine! So I asked myself do I need that?&lt;/p&gt;
 
-&lt;p&gt;I will show you an example to help you understand what this pattern stands for. People used to explain it with a bank account but I wanted to find something funnier: a table soccer game. A complete example is available on a &lt;a href=&quot;https://github.com/arnolanglade/table-soccer&quot;&gt;Github repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will show you an example to help you understand what this pattern stands for. People used to explain it with a bank account but I wanted to find something funnier: a table soccer game. A complete example is available on a Github repository:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;https://github.com/arnolanglade/table-soccer&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/github-logo.png&quot; alt=&quot;Have a look at the GitHub repository&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Have a look at the GitHub repository&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s start! A group of developers who are fans of table soccer wants to create an application to see who’s the best player. They decided to save the results of matches and rank themselves.&lt;/p&gt;
 
@@ -1534,7 +1624,18 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;Last but not least, We often associate CQRS with the event sourcing pattern even if there are two different patterns.&lt;/p&gt;
 
-&lt;p&gt;Don’t forget that a complete example is available on a &lt;a href=&quot;https://github.com/arnolanglade/table-soccer&quot;&gt;Github repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Don’t forget that a complete example is available on a Github repository.&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;https://github.com/arnolanglade/table-soccer&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/github-logo.webp&quot; alt=&quot;Have a look at the GitHub repository&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Have a look at the GitHub repository&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Any resemblance to real and actual names is purely coincidental!&lt;/p&gt;
 
@@ -1907,12 +2008,25 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             
             <category>security</category>
             
+            <category>command</category>
+            
             
         </item>
         
         <item>
             <title>The command bus design pattern</title>
-            <description>&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read &lt;a href=&quot;http://arnolanglade.github.io/command-handler-patterns.html&quot;&gt;this blog post&lt;/a&gt; I wrote about those design patterns. It will help you to understand this new article.&lt;/p&gt;
+            <description>&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I’ve written about those design patterns. It will help you to understand this new article:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/command-handler-patterns.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/command-handler/command-handler.webp&quot; alt=&quot;Command and command handler design pattern&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Command and command handler design pattern&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;what-is-a-bus&quot;&gt;What is a bus?&lt;/h2&gt;
 
@@ -1950,6 +2064,19 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; My previous &lt;a href=&quot;http://arnolanglade.github.io/command-handler-patterns.html&quot;&gt;blog post&lt;/a&gt; about the command and command handler pattern said that a command handler should return void. Here, the idea is that the command bus should return void only the “handle command” should be aware of the result of the handler execution.&lt;/p&gt;
 
+&lt;p&gt;I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/data-validation.webp&quot; alt=&quot;See all blog posts about command handling.&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;See all blog posts about command handling.&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Thanks to my proofreader &lt;a href=&quot;https://www.linkedin.com/in/laurebrosseau&quot;&gt;@LaureBrosseau&lt;/a&gt;.&lt;/p&gt;
 </description>
             <pubDate>Mon, 12 Sep 2022 00:00:00 -0500</pubDate>
@@ -1959,6 +2086,8 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             <category>command-bus</category>
             
             <category>design-patterns</category>
+            
+            <category>command</category>
             
             
         </item>
@@ -3158,6 +3287,8 @@ Let’s take an example with the map object. How to initialize a map without any
             
             <category>design-patterns</category>
             
+            <category>command</category>
+            
             
         </item>
         
@@ -3354,6 +3485,8 @@ First, we need to create a command named &lt;code class=&quot;language-plaintext
             <category>command-bus</category>
             
             <category>design-patterns</category>
+            
+            <category>command</category>
             
             
         </item>

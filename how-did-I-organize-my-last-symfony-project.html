@@ -428,38 +428,46 @@ api/src/Domain/
 </div>
 <!-- end post -->
 
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      <div class="post__navigation animate">
-  
-  <a class="post__prev" href="/persisting-entities-without-orm.html">
-    <div class="prev__image">
-      <img loading="lazy" src="/images/posts/persisting-entity-without-orm.webp" alt="How did I organize my last Symfony projects?">
-    </div>
-    <div class="prev__box">
-      <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">Persisting entities without ORM</h2>
-    </div>
-  </a>
-  
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+newsletter_description=site.data.newsletter.newsletter_description
+newsletter_identifier=site.data.newsletter.newsletter_identifier
+newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
 
-  
-  <a class="post__next" href="/you-should-not-expose-objects-state-to-test-them.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Why you should not expose objects' state to test them</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/test-comparison.webp" alt="How did I organize my last Symfony projects?">
-    </div>
-  </a>
-  
-</div>
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
 
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
 
 
 
@@ -758,46 +766,7 @@ api/src/Domain/
 <!-- end comments -->
 
 
-<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
-  newsletter_description=site.data.newsletter.newsletter_description
-  newsletter_identifier=site.data.newsletter.newsletter_identifier
-  newsletter_button=site.data.newsletter.newsletter_button) context() -->
-          <!-- begin subscribe -->
 
-<section class="c-subscribe section">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-
-        <div class="c-subscribe__inner">
-          <div class="c-subscribe__info">
-            <h3 class="c-subscribe__title">Join my mailing list</h3>
-            <div class="c-subscribe__subtitle">
-              <span id="ityped"></span>
-            </div>
-          </div>
-
-          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
-            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
-            <input type="hidden" name="id" value="28bcb90eaa">
-            <input type="hidden" name="orig-lang" value="1">
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
-            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end subscribe -->
-
-<script>
-  var itype_text = ['Get inspiration, updates and, cool stuff!'];
-</script>
-          <!--bookshop-live end-->
 
 
     <!--

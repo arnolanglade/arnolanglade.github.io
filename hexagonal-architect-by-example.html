@@ -281,7 +281,18 @@ The <strong>domain</strong> is all pieces of code that represent the problem we 
 
 <p>Moving IO as far as possible from your domain code is really convenient because it eases unit testing. We will mainly test this part of the application with unit testing. It offers a very short feedback loop, it will help you to design your domain step by step without setting up the whole application.</p>
 
-<p><strong>Tip:</strong> I wrote a blog post about <a href="/why-unit-testing-can-be-hard.html">unit testing</a> that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.</p>
+<p><strong>Tip:</strong> I’ve written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="why-unit-testing-can-be-hard.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/why-unit-testing-can-be-hard.webp" alt="Why unit testing can be hard?" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">Why unit testing can be hard?</span>
+      </span>
+   </a>
+</div>
 
 <h3 id="coupling-rules">Coupling rules</h3>
 
@@ -346,7 +357,31 @@ The <strong>domain</strong> is all pieces of code that represent the problem we 
 
 <p>As you see, the only differences are the input and output of the adapter. We need to refactor this code to avoid duplication between both primary adapters. It should be extracted into a dedicated business service.</p>
 
-<p><strong>Tip:</strong> These business services can be written using the command and command handler patterns. I wrote a <a href="/command-handler-patterns.html">blog post</a> that explains these design patterns. We always need to validate their input data because we can’t trust users. I explain how to validate the user input in this <a href="/how-to-validate-a-command.html">blog post</a>. The user permissions are still tricky, so I explain how to manage them in this <a href="/how-to-handle-user-permissions-through-command-bus-middleware.html">blog post</a>. Finally, a bus will help you to dispatch commands. I explain this pattern in this <a href="/command-bus-design-pattern.html">blog post</a>.</p>
+<p><strong>Tip:</strong> These business services can be written using the command and command handler patterns. I’ve written a blog post that explains these design patterns:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/command-handler-patterns.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/command-handler/command-handler.webp" alt="Command and command handler design pattern" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">Command and command handler design pattern</span>
+      </span>
+   </a>
+</div>
+
+<p>I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/tag/command">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/data-validation.webp" alt="See all blog posts about command handling." />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">See all blog posts about command handling.</span>
+      </span>
+   </a>
+</div>
 
 <h3 id="what-about-testing-2">What about testing?</h3>
 
@@ -425,38 +460,46 @@ The <strong>domain</strong> is all pieces of code that represent the problem we 
 </div>
 <!-- end post -->
 
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      <div class="post__navigation animate">
-  
-  <a class="post__prev" href="/what-is-the-event-sourcing-pattern.html">
-    <div class="prev__image">
-      <img loading="lazy" src="/images/posts/what-is-the-event-sourcing-pattern.webp" alt="Hexagonal architecture by example">
-    </div>
-    <div class="prev__box">
-      <span class="post__nav post__nav__prev">Prev post</span>
-      <h2 class="post__nav__title">What is the event sourcing pattern?</h2>
-    </div>
-  </a>
-  
+<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
+newsletter_description=site.data.newsletter.newsletter_description
+newsletter_identifier=site.data.newsletter.newsletter_identifier
+newsletter_button=site.data.newsletter.newsletter_button) context() -->
+          <!-- begin subscribe -->
 
-  
-  <a class="post__next" href="/what-is-the-difference-between-cqs-and-cqrs-patterns.html">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">What is the difference between CQS and CQRS patterns?</h2>
-    </div>
-    <div class="next__image">
-      <img loading="lazy" src="/images/posts/what-is-the-difference-between-cqs-and-cqrs-patterns.webp" alt="Hexagonal architecture by example">
-    </div>
-  </a>
-  
-</div>
+<section class="c-subscribe section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
 
+        <div class="c-subscribe__inner">
+          <div class="c-subscribe__info">
+            <h3 class="c-subscribe__title">Join my mailing list</h3>
+            <div class="c-subscribe__subtitle">
+              <span id="ityped"></span>
+            </div>
+          </div>
+
+          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
+            <input type="hidden" name="id" value="28bcb90eaa">
+            <input type="hidden" name="orig-lang" value="1">
+            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          </form>
+
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<!-- end subscribe -->
+
+<script>
+  var itype_text = ['Get inspiration, updates and, cool stuff!'];
+</script>
+          <!--bookshop-live end-->
 
 
 
@@ -818,46 +861,7 @@ The <strong>domain</strong> is all pieces of code that represent the problem we 
 <!-- end comments -->
 
 
-<!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
-  newsletter_description=site.data.newsletter.newsletter_description
-  newsletter_identifier=site.data.newsletter.newsletter_identifier
-  newsletter_button=site.data.newsletter.newsletter_button) context() -->
-          <!-- begin subscribe -->
 
-<section class="c-subscribe section">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-
-        <div class="c-subscribe__inner">
-          <div class="c-subscribe__info">
-            <h3 class="c-subscribe__title">Join my mailing list</h3>
-            <div class="c-subscribe__subtitle">
-              <span id="ityped"></span>
-            </div>
-          </div>
-
-          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
-            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
-            <input type="hidden" name="id" value="28bcb90eaa">
-            <input type="hidden" name="orig-lang" value="1">
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
-            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end subscribe -->
-
-<script>
-  var itype_text = ['Get inspiration, updates and, cool stuff!'];
-</script>
-          <!--bookshop-live end-->
 
 
     <!--
