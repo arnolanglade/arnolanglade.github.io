@@ -135,6 +135,9 @@ class ProductImport {
 }
 ```
 
-**Note**: I wrote an article about how the inversion dependency design pattern will ease testing. Here is the link: [Ease testing thanks to the dependency inversion design pattern](/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html)
+**Note**: I've written an article about how the inversion dependency design pattern will ease testing. Here is the link: 
+
+{% include blog-post-link.html url='/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html' image='inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp' title='Ease testing thanks to the dependency inversion design pattern' %}
+
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).
