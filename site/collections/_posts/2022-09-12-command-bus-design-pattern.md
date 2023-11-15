@@ -7,7 +7,9 @@ keywords: "software,software architecture,design patterns,command bus,event bus,
 tags: [command-bus, design-patterns, command]
 ---
 
-**Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read [this blog post](http://arnolanglade.github.io/command-handler-patterns.html) I wrote about those design patterns. It will help you to understand this new article.
+**Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I've written about those design patterns. It will help you to understand this new article:
+
+{% include blog-post-link.html url='/command-handler-patterns.html' image='command-handler/command-handler.webp' title='Command and command handler design pattern' %}
 
 ## What is a bus?
 
@@ -44,5 +46,9 @@ As I said previously, events are recorded by aggregates and they should be busin
 **Solution 2:** The other solution is to collect events from the command handler. The handler can return them, and then the “handle command” middleware catches and dispatches them.
 
 **Note:** My previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html) about the command and command handler pattern said that a command handler should return void. Here, the idea is that the command bus should return void only the “handle command” should be aware of the result of the handler execution.
+
+I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
+
+{% include blog-post-link.html url='/tag/command' image='data-validation.webp' title='See all blog posts about command handling.' %}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).
