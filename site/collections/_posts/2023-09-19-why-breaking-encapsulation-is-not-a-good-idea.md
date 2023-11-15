@@ -96,6 +96,8 @@ class Map {
 }
 ```
 
-**Note:** Breaking encapsulation to test your code is a bad idea too. I wrote an article to present you with an alternative to the getter to prevent exposing the state of the objects. Here is the link [Why you should not expose objects' state to test them](https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html)
+**Note:** Breaking encapsulation to test your code is a bad idea too. I've written an article to present you with an alternative to the getter to prevent exposing the state of the objects. Here is the link:
+
+{% include blog-post-link.html url='/you-should-not-expose-objects-state-to-test-them.html' image='test-comparison.webp' title='Why you should not expose objects\' state to test them' %}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).
