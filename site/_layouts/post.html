@@ -60,13 +60,12 @@ layout: default
 </div>
 <!-- end post -->
 
-<div class="container">
-  <div class="row">
-    <div class="col col-10 col-d-12 push-d-0 push-1">
-      {% include post-navigation.html %}
-    </div>
-  </div>
-</div>
+{% bookshop
+newsletter newsletter_title=site.data.newsletter.newsletter_title
+newsletter_description=site.data.newsletter.newsletter_description
+newsletter_identifier=site.data.newsletter.newsletter_identifier
+newsletter_button=site.data.newsletter.newsletter_button
+%}
 
 {% include related-posts.html %}
 
@@ -74,9 +73,4 @@ layout: default
   {% include disqus-comments.html %}
 {% endif %}
 
-{% bookshop
-  newsletter newsletter_title=site.data.newsletter.newsletter_title
-  newsletter_description=site.data.newsletter.newsletter_description
-  newsletter_identifier=site.data.newsletter.newsletter_identifier
-  newsletter_button=site.data.newsletter.newsletter_button
-%}
+
