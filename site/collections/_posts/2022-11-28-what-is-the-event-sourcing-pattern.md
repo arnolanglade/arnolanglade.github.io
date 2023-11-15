@@ -10,7 +10,9 @@ tags: [software-architecture]
 
 Event sourcing consists in storing all changes that happened to an application as a sequence of events instead of only storing the current state of the application. The sum of all events is the current application state. When I heard about this pattern a few years ago, I was really confused. I used to only persist the current application state in a database and that was fine! So I asked myself do I need that?
 
-I will show you an example to help you understand what this pattern stands for. People used to explain it with a bank account but I wanted to find something funnier: a table soccer game. A complete example is available on a [Github repository](https://github.com/arnolanglade/table-soccer).
+I will show you an example to help you understand what this pattern stands for. People used to explain it with a bank account but I wanted to find something funnier: a table soccer game. A complete example is available on a Github repository:
+
+{% include blog-post-link.html url='https://github.com/arnolanglade/table-soccer' image='github-logo.png' title='Have a look at the GitHub repository' %}
 
 Let’s start! A group of developers who are fans of table soccer wants to create an application to see who’s the best player. They decided to save the results of matches and rank themselves.
 
@@ -171,7 +173,9 @@ To prevent this problem, we need to create data projections. That means we will 
 
 Last but not least, We often associate CQRS with the event sourcing pattern even if there are two different patterns.
 
-Don’t forget that a complete example is available on a [Github repository](https://github.com/arnolanglade/table-soccer).
+Don’t forget that a complete example is available on a Github repository.
+
+{% include blog-post-link.html url='https://github.com/arnolanglade/table-soccer' image='github-logo.webp' title='Have a look at the GitHub repository' %}
 
 Any resemblance to real and actual names is purely coincidental!
 
