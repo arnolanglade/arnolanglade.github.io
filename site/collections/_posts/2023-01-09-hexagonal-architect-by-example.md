@@ -57,7 +57,9 @@ export interface ProductCatalog {
 
 Moving IO as far as possible from your domain code is really convenient because it eases unit testing. We will mainly test this part of the application with unit testing. It offers a very short feedback loop, it will help you to design your domain step by step without setting up the whole application.
 
-**Tip:** I wrote a blog post about [unit testing](/why-unit-testing-can-be-hard.html) that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.
+**Tip:** I've written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.
+
+{% include blog-post-link.html url='why-unit-testing-can-be-hard.html' image='why-unit-testing-can-be-hard.webp' title='Why unit testing can be hard?' %}
 
 ### Coupling rules
 
@@ -125,7 +127,14 @@ try {
 
 As you see, the only differences are the input and output of the adapter. We need to refactor this code to avoid duplication between both primary adapters. It should be extracted into a dedicated business service.
 
-**Tip:** These business services can be written using the command and command handler patterns. I wrote a [blog post](/command-handler-patterns.html) that explains these design patterns. We always need to validate their input data because we can’t trust users. I explain how to validate the user input in this [blog post](/how-to-validate-a-command.html). The user permissions are still tricky, so I explain how to manage them in this [blog post](/how-to-handle-user-permissions-through-command-bus-middleware.html). Finally, a bus will help you to dispatch commands. I explain this pattern in this [blog post](/command-bus-design-pattern.html).
+**Tip:** These business services can be written using the command and command handler patterns. I've written a blog post that explains these design patterns: 
+
+{% include blog-post-link.html url='/command-handler-patterns.html' image='command-handler/command-handler.webp' title='Command and command handler design pattern' %}
+
+I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
+
+{% include blog-post-link.html url='/tag/command' image='data-validation.webp' title='See all blog posts about command handling.' %}
+
 
 ### What about testing?
 

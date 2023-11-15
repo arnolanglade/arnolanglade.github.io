@@ -4,7 +4,7 @@ description: Domain validation ensures your aggregate cannot be built in an inva
 date: 2021-03-04
 image: data-validation.webp
 image_credit: heapdump
-tags: [command-bus, design-patterns]
+tags: [command-bus, design-patterns, command]
 keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
 ---
 

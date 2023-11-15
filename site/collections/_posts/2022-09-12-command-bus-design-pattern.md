@@ -4,7 +4,7 @@ description: "The goal of command and the event bus is to deliver a command or a
 date: 2022-09-12
 image: command-bus/command-bus.svg
 keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
-tags: [command-bus, design-patterns]
+tags: [command-bus, design-patterns, command]
 ---
 
 **Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read [this blog post](http://arnolanglade.github.io/command-handler-patterns.html) I wrote about those design patterns. It will help you to understand this new article.
