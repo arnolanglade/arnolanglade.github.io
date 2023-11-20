@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 15 Nov 2023 09:33:04 -0600</pubDate>
-        <lastBuildDate>Wed, 15 Nov 2023 09:33:04 -0600</lastBuildDate>
+        <pubDate>Mon, 20 Nov 2023 03:26:06 -0600</pubDate>
+        <lastBuildDate>Mon, 20 Nov 2023 03:26:06 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -157,7 +157,7 @@
             <link>https://arnolanglade.github.io/open-close-principle.html?s=feed</link>
             <guid isPermaLink="true">https://arnolanglade.github.io/open-close-principle.html</guid>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -200,7 +200,7 @@
             <link>https://arnolanglade.github.io/oop-inheritance-pitfalls.html?s=feed</link>
             <guid isPermaLink="true">https://arnolanglade.github.io/oop-inheritance-pitfalls.html</guid>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -311,7 +311,7 @@
             
             <category>testing</category>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -463,7 +463,7 @@
             
             <category>testing</category>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -609,7 +609,7 @@
             
             <category>design-pattern</category>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -1391,7 +1391,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:&lt;/p&gt;
 
 &lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
-   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command-bus&quot;&gt;
       &lt;span class=&quot;prev__image&quot;&gt;
          &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/data-validation.webp&quot; alt=&quot;See all blog posts about command handling.&quot; /&gt;
       &lt;/span&gt;
@@ -2008,8 +2008,6 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             
             <category>security</category>
             
-            <category>command</category>
-            
             
         </item>
         
@@ -2067,7 +2065,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;I’ve written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:&lt;/p&gt;
 
 &lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
-   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/tag/command-bus&quot;&gt;
       &lt;span class=&quot;prev__image&quot;&gt;
          &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/data-validation.webp&quot; alt=&quot;See all blog posts about command handling.&quot; /&gt;
       &lt;/span&gt;
@@ -2086,8 +2084,6 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             <category>command-bus</category>
             
             <category>design-patterns</category>
-            
-            <category>command</category>
             
             
         </item>
@@ -2662,7 +2658,7 @@ dependencies: api/vendor web/node_modules
             
             <category>testing</category>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             
         </item>
@@ -3004,7 +3000,7 @@ api/src/Domain/
             <link>https://arnolanglade.github.io/persisting-entities-without-orm.html?s=feed</link>
             <guid isPermaLink="true">https://arnolanglade.github.io/persisting-entities-without-orm.html</guid>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             <category>design-patterns</category>
             
@@ -3090,7 +3086,7 @@ Let’s take an example with the map object. How to initialize a map without any
             <link>https://arnolanglade.github.io/oop-how-to-build-an-object.html?s=feed</link>
             <guid isPermaLink="true">https://arnolanglade.github.io/oop-how-to-build-an-object.html</guid>
             
-            <category>oop</category>
+            <category>OOP</category>
             
             <category>design-patterns</category>
             
@@ -3286,8 +3282,6 @@ Let’s take an example with the map object. How to initialize a map without any
             <category>command-bus</category>
             
             <category>design-patterns</category>
-            
-            <category>command</category>
             
             
         </item>
@@ -3485,8 +3479,6 @@ First, we need to create a command named &lt;code class=&quot;language-plaintext
             <category>command-bus</category>
             
             <category>design-patterns</category>
-            
-            <category>command</category>
             
             
         </item>
