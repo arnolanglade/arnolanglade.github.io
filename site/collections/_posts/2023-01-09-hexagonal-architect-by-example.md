@@ -133,7 +133,7 @@ As you see, the only differences are the input and output of the adapter. We nee
 
 I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
 
-{% include blog-post-link.html url='/tag/command' image='data-validation.webp' title='See all blog posts about command handling.' %}
+{% include blog-post-link.html url='/tag/command-bus' image='data-validation.webp' title='See all blog posts about command handling.' %}
 
 
 ### What about testing?

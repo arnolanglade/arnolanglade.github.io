@@ -5,7 +5,7 @@ date: 2022-09-26
 image: how-to-handle-permissions-through-command-bus-middleware.webp
 image_credit: kellysikkema
 keywords: "software,software architecture,design patterns,command bus,permissions,security,bus,middleware"
-tags: [command-bus, security, command]
+tags: [command-bus, security]
 ---
 
 Applying user permissions might be very complex and can lead to introducing a lot of accidental complexity to your application. In this blog post, I want to share with you how to do it by simply adding a middleware to your command bus.

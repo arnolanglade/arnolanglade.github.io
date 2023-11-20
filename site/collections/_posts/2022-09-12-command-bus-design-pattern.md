@@ -4,7 +4,7 @@ description: "The goal of command and the event bus is to deliver a command or a
 date: 2022-09-12
 image: command-bus/command-bus.svg
 keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
-tags: [command-bus, design-patterns, command]
+tags: [command-bus, design-patterns]
 ---
 
 **Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I've written about those design patterns. It will help you to understand this new article:
@@ -49,6 +49,6 @@ As I said previously, events are recorded by aggregates and they should be busin
 
 I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
 
-{% include blog-post-link.html url='/tag/command' image='data-validation.webp' title='See all blog posts about command handling.' %}
+{% include blog-post-link.html url='/tag/command-bus' image='data-validation.webp' title='See all blog posts about command handling.' %}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).

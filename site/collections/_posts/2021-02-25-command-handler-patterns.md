@@ -3,7 +3,7 @@ title: Command and command handler design pattern
 date: 2021-02-25
 image: command-handler/command-handler.webp
 image_credit: redaquamedia
-tags: [command-bus, design-patterns, command]
+tags: [command-bus, design-patterns]
 keywords: "design patterns,software,software architecture,command,command handler,command bus"
 description: Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, examples, and insights for efficient command validation.
 ---
