@@ -4,7 +4,7 @@ description: Exposing the object's state to test them is not a good idea. Compar
 date: 2021-04-13
 image: test-comparison.webp
 image_credit: jdent
-tags: [testing, oop]
+tags: [testing, OOP]
 keywords: "software,testing,unit test,oop,encapsulation,ask don't tell"
 ---
 

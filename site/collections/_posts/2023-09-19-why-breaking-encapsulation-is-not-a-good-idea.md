@@ -6,7 +6,7 @@ image: why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-
 alt: Why breaking encapsulation is not a good idea
 image_credit: mattseymour
 keywords: "oop,encapsulation,object,tell don’t ask,object"
-tags: [testing, oop]
+tags: [testing, OOP]
 ---
 
 In this blog post, I would like to speak about an important concept in Oriented Object Programming which is the encapsulation principle.

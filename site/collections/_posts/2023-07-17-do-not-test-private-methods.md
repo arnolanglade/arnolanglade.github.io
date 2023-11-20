@@ -6,7 +6,7 @@ image: do-not-test-private-method/do-not-test-private-methods.webp
 alt: Don’t test private methods
 image_credit: dtopkin1
 keywords: "unit test,design pattern,pattern,software,private method,single responsibility principle,test"
-tags: [testing, oop]
+tags: [testing, OOP]
 ---
 
 It is pretty easy to make mistakes when you start testing your code. One of the first mistakes I made was to test private methods. Spoiler alert: it was a bad idea because I had to use reflection to make them public to access them. If you need to test a private method, it probably means that your code is not well designed

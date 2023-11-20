@@ -6,7 +6,7 @@ image: open-close-principle.webp
 alt: "Open-Closed principle: Enhancing code modularity"
 image_credit: madze
 keywords: open-closed principle,SOLID principles,software engineering,design patterns,strategy pattern,object-oriented programming,programming principles,development best practices
-tags: [oop]
+tags: [OOP]
 ---
 
 Have you missed my last blog post about the [pitfalls of inheritance](/oop-inheritance-pitfalls.html)? I explain how it could be a bad idea to use it too much. Applying composition prevents this problem; it is better to work with small classes to easily assemble. In this blog post, I will talk about the open-closed principle. This principle facilitates composition and helps avoid relying too much on inheritance.

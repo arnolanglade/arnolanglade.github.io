@@ -6,7 +6,7 @@ image: pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp
 alt: "The pitfalls of OOP's inheritance: Why simple isn't always better"
 image_credit: gabrielsanchez
 keywords: OOP,OOP inheritance,OOP principles,composition,Open-Closed principle,OOP best practices,coding tips
-tags: [oop]
+tags: [OOP]
 ---
 
 In OOP, the simplest way to change the behavior of a class A is to create a class B that extends class A. Extensions allow you to override any public and protected methods of the parent class. That‘s quite simple, right?

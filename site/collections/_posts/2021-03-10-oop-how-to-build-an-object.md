@@ -4,7 +4,7 @@ description: "Object-oriented programming: primary and secondary constructors. T
 date: 2021-03-10
 image: build-object.webp
 image_credit: danist07
-tags: [oop, design-patterns]
+tags: [OOP, design-patterns]
 keywords: "software,oop,design patterns,primary constructor, secondary constructor"
 ---
 
