@@ -5,7 +5,7 @@ date: 2022-10-31
 image: example-mapping/my-feedback-about-example-mapping.webp
 image_credit: amandagraphc
 keywords: "example mapping,bdd,behavior driven development,no estimate,team collaboration,sticky note,small story,domain problem"
-tags: [BDD, workshop]
+tags: [BDD, methodology]
 ---
 
 Example mapping is a workshop that gathers tech and non-tech people to ensure everyone has the same understanding of the domain problem. It also helps clarify the acceptance criteria for a given story. Because it’s always better to understand what is expected and raise all bottlenecks before developing a story.

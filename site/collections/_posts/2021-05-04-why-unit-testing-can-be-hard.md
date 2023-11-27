@@ -4,7 +4,7 @@ description: Testing can be really difficult for beginners. The main reason is t
 date: 2021-05-03
 image: why-unit-testing-can-be-hard.webp
 image_credit: craftedbygc
-tags: [testing]
+tags: [testing, OOP]
 keywords: "software,testing,unit test,coupling,io,dependency inversion"
 ---
 
