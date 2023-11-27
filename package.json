@@ -8,6 +8,6 @@
   },
   "author": "Arnaud Langlade",
   "devDependencies": {
-    "@bookshop/jekyll-engine": "^2.2.2"
+    "@bookshop/jekyll-engine": "^3.8.0"
   }
 }
