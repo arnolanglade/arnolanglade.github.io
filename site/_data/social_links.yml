@@ -1,11 +1,12 @@
 #-------------------------------
 # Social Links
-# Example of adding a new link to the footer - {icon: "ion-logo-facebook", link: "https://facebook.com"}
+# Example of adding a new link to the footer - {icon: "ion-facebook", link: "https://facebook.com"}
 # Other icons can be found at https://ionicons.com/v4/
 social:
-- {icon: "logo-twitter", link: "https://twitter.com/arnolanglade", contact: 'yes'}
-- {icon: "logo-github", link: "https://github.com/arnolanglade", contact: 'no'}
-- {icon: "logo-linkedin", link: "https://www.linkedin.com/in/arnolanglade", contact: 'yes'}
-- {icon: "logo-youtube", link: "https://www.youtube.com/@arnolanglade", contact: 'no'}
-- {icon: "md-mail", link: "mailto:arnaud.langlade@gmail.com", contact: 'yes'}
-- {icon: "logo-rss", link: "/feed.xml", contact: 'no'}
+- {icon: "twitter", link: "https://twitter.com/arnolanglade", alt: 'twitter'}
+- {icon: "linkedin", link: "https://www.linkedin.com/in/arnolanglade", alt: 'linkedin'}
+- {icon: "bluesky", link: "https://bsky.app/profile/arnolanglade.bsky.social", alt: 'bluesky'}
+- {icon: "mastodon", link: "https://mastodon.social/@arnolanglade", alt: 'mastodon'}
+- {icon: "github", link: "https://github.com/arnolanglade", alt: 'github'}
+- {icon: "youtube", link: "https://www.youtube.com/@arnolanglade", alt: 'youtube'}
+- {icon: "rss", link: "/feed.xml", alt: 'rss'}

@@ -10,24 +10,28 @@
     margin-bottom: 40px;
 
     .social__item {
-      margin: 0 2px;
+      margin: 0 4px;
       font-size: 0;
     }
 
     .social__link {
       display: inline-block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      font-size: 16px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
       border-radius: 50%;
       color: $primary-color;
       background: $white;
       transition: all .25s;
       will-change: transform;
 
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
       &:hover {
-        transform: scale(0.9);
+        transform: scale(1.2);
         color: $primary-color;
 
         &::after {
