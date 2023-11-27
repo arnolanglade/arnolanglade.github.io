@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 27 Nov 2023 03:12:59 -0600</pubDate>
-        <lastBuildDate>Mon, 27 Nov 2023 03:12:59 -0600</lastBuildDate>
+        <pubDate>Mon, 27 Nov 2023 05:42:42 -0600</pubDate>
+        <lastBuildDate>Mon, 27 Nov 2023 05:42:42 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -1781,7 +1781,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             
             <category>BDD</category>
             
-            <category>workshop</category>
+            <category>methodology</category>
             
             
         </item>
@@ -2060,8 +2060,6 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
             <guid isPermaLink="true">https://arnolanglade.github.io/how-to-handle-user-permissions-through-command-bus-middleware.html</guid>
             
             <category>command-bus</category>
-            
-            <category>security</category>
             
             
         </item>
@@ -2602,6 +2600,8 @@ dependencies: api/vendor web/node_modules
             <guid isPermaLink="true">https://arnolanglade.github.io/why-unit-testing-can-be-hard.html</guid>
             
             <category>testing</category>
+            
+            <category>OOP</category>
             
             
         </item>
