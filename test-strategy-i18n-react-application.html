@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Why you should not expose objects' state to test them</title>
-  <meta name='description' content='Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not ha...'>
-  <meta name="keywords" content="software,testing,unit test,oop,encapsulation,ask don't tell">
-  <link rel="canonical" href="https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html">
+  <title>Testing a React application: Secure your tests from internationalization impact</title>
+  <meta name='description' content='Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing appr...'>
+  <meta name="keywords" content="I18n,localization,React-Intl,internationalization,Lokalise,testing,React testing,Jest,React Context,React,Typescript,Javascript">
+  <link rel="canonical" href="https://arnolanglade.github.io/test-strategy-i18n-react-application.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why you should not expose objects' state to test them – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/test-comparison.webp">
+  <meta name="twitter:title" content="Testing a React application: Secure your tests from internationalization impact – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Why you should not expose objects' state to test them – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.">
-  <meta property="og:image" content="https://arnolanglade.github.io/test-comparison.webp">
+  <meta property="og:title" content="Testing a React application: Secure your tests from internationalization impact – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.">
+  <meta property="og:image" content="https://arnolanglade.github.io/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -197,7 +197,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/test-comparison.webp" alt="Why you should not expose objects' state to test them">
+          <img loading="lazy" src="/images/posts/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp" alt="Testing a React application: Secure your tests from internationalization impact">
         </div>
       </div>
       
@@ -208,23 +208,23 @@
           
           <div class="post-tags">
             
-              <a href="/tag/testing" class="post-tags__tag">testing</a>
+              <a href="/tag/react" class="post-tags__tag">react</a>
             
-              <a href="/tag/oop" class="post-tags__tag">OOP</a>
+              <a href="/tag/testing" class="post-tags__tag">testing</a>
             
           </div>
           
 
-          <h1 class="post__title">Why you should not expose objects&#39; state to test them</h1>
+          <h1 class="post__title">Testing a React application: Secure your tests from internationalization impact</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2021-04-13T00:00:00-05:00">
-                13 Apr 2021
+              <time class="post__date" datetime="2023-12-11T00:00:00-06:00">
+                11 Dec 2023
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@jdent">@jdent</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@claybanks">@claybanks</a>
               </p>
               
             </div>
@@ -241,104 +241,114 @@
   <article class="post">
 
     <div class="post__content">
-      <p>To introduce this topic, let’s have a look at the PHP documentation to understand how object comparison works using the comparison and identity operators.</p>
+      <p>In my previous company, we automated the translation process. We used Lokalise, a cloud-based localization and translation management system. The developers imported all translation keys into the system, while the OPS team was responsible for translating all the keys.</p>
 
-<blockquote>
-  <p>When using the comparison operator (==), object variables are compared in a simple manner, namely: Two object instances are equal if they have the same attributes and values (values are compared with ==), and are instances of the same class.</p>
+<p><img src="images/posts/test-strategy-i18n-react-application/translation-management-workflow.svg" alt="translation management workflow with lokalized" /></p>
 
-  <p>When using the identity operator (===), object variables are identical if and only if they refer to the same instance of the same class.</p>
+<p>This process is excellent because you don’t have to wait for translations. As a developer, you add the new translation key and provide the default language. The OPS team is notified when a new key is imported into the tool. They don’t need a developer to provide translations; they are highly autonomous. Afterward, the developers need to pull the translations into the codebase and deploy the application.</p>
 
-  <p><a href="https://www.php.net/manual/en/language.oop5.object-comparison.php">PHP documentation </a></p>
-</blockquote>
+<p>Let’s consider an example: a React Application that uses the <a href="https://github.com/formatjs/formatjs">React-Intl</a> as its internationalization system. This library provides a component called <code class="language-plaintext highlighter-rouge">FormattedMessage</code> that finds the translation for a given key and locale. This component must be used within a React Context called <code class="language-plaintext highlighter-rouge">IntlProvider</code>.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="p">();</span>
-<span class="nv">$otherObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="p">();</span>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">translations</span> <span class="o">=</span> <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">translation</span><span class="dl">'</span> <span class="p">};</span>
 
-<span class="nv">$object</span> <span class="o">==</span> <span class="nv">$otherObject</span> <span class="c1">// true</span>
-<span class="nv">$object</span> <span class="o">===</span> <span class="nv">$otherObject</span> <span class="c1">// false </span>
+
+<span class="p">&lt;</span><span class="nc">IntlProvider</span> <span class="na">locale</span><span class="p">=</span><span class="s">"en"</span> <span class="na">messages</span><span class="p">=</span><span class="si">{</span><span class="nx">translations</span><span class="si">}</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nc">FormattedMessage</span> <span class="na">id</span><span class="p">=</span><span class="s">"key"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nc">IntlProvider</span><span class="p">&gt;;</span>
 </code></pre></div></div>
 
-<p>I add an <code class="language-plaintext highlighter-rouge">equals</code> method to objects to handle object comparison. The purpose of this method is to compare an object state with another one. In the following example, I use the comparison operator (==) because I want to check if the objects have the same state no matter their references.</p>
+<p>I like wrapping the <code class="language-plaintext highlighter-rouge">IntlProvider</code> in a custom provider that allows configuring React Intl for the entire application and provides additional features like locale switching. To keep this example simple, I hardcoded the locale.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Email</span>
-<span class="p">{</span>
-   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$email</span><span class="p">;</span>
-
-   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$email</span><span class="p">)</span>
-   <span class="p">{</span>
-       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
-   <span class="p">}</span>
-
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">Email</span> <span class="nv">$email</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span> <span class="o">==</span> <span class="nv">$email</span><span class="p">;</span>
-   <span class="p">}</span>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">AppIntlProvider</span><span class="p">({</span> <span class="nx">children</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">children</span><span class="p">:</span> <span class="nx">ReactElement</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">translations</span> <span class="o">=</span> <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">translation</span><span class="dl">'</span> <span class="p">};</span>
+ 
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">IntlProvider</span>
+      <span class="na">messages</span><span class="p">=</span><span class="si">{</span><span class="nx">translations</span><span class="si">}</span>
+      <span class="na">locale</span><span class="p">=</span><span class="s">"en"</span>
+      <span class="na">defaultLocale</span><span class="p">=</span><span class="s">"en"</span>
+    <span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">IntlProvider</span><span class="p">&gt;</span>
+ <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>There is another way to compare object state. Do you know that instances of the same class can access each other’s private members?</p>
+<p>Now let’s go back to the testing problem. The following example is a test that checks if the <code class="language-plaintext highlighter-rouge">onClick</code> callback is called when the button with the label “OK” is clicked.`</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Email</span>
-<span class="p">{</span>
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">Email</span> <span class="nv">$email</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">===</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
-   <span class="p">}</span>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">MyComponent</span><span class="p">({</span> <span class="nx">onClick</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">onClick</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      // ...
+      <span class="p">&lt;</span><span class="nc">Button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">FormattedMessage</span> <span class="na">id</span><span class="p">=</span><span class="s">"validate"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//const translations = { validate: 'OK' };</span>
+
+<span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">validate something</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
+  <span class="nx">render</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span> <span class="p">/&gt;,</span>
+    <span class="p">{</span>
+      <span class="na">wrapper</span><span class="p">:</span> <span class="nx">AppIntlProvider</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">);</span>
+ 
+  <span class="nx">userEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="dl">'</span><span class="s1">OK</span><span class="dl">'</span><span class="p">));</span>
+ 
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">onClick</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>What happens if an OPS changes the translation of the ‘validate’ key from ‘OK’ to ‘GO’ for any reason? Your test will break even if the code and the test have not changed. That is a shame. Should translations break your test suites? I would like to answer this question with a no.
+The solution that I use to prevent this problem is to override each translation that the test needs. I added an extra prop to the custom React Intl provider called overriddenTranslations that lets me override the translations my test needs.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">AppIntlProvider</span><span class="p">(</span>
+  <span class="p">{</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">overriddenTranslations</span> <span class="p">}:</span>
+  <span class="p">{</span> <span class="nl">children</span><span class="p">:</span> <span class="nx">ReactElement</span><span class="p">,</span> <span class="nx">overriddenTranslations</span><span class="p">?:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">Translations</span><span class="o">&gt;</span> <span class="p">},</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">translations</span><span class="p">:</span> <span class="nx">Translations</span> <span class="o">=</span> <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">translation</span><span class="dl">'</span> <span class="p">};</span>
+ 
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">IntlProvider</span>
+      <span class="na">messages</span><span class="p">=</span>
+      <span class="na">locale</span><span class="p">=</span><span class="s">"en"</span>
+      <span class="na">defaultLocale</span><span class="p">=</span><span class="s">"en"</span>
+    <span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">IntlProvider</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><strong>Tip:</strong> This is really useful to compare Doctrine entities that have persistent collections. The error <code class="language-plaintext highlighter-rouge">Error: Nesting level too deep - recursive dependency?</code> is raised when we compare entities using the comparison operator (==). You should have a look at this <a href="https://www.richardlord.net/blog/php/php-nesting-level-too-deep-recursive-dependency.html">blog post</a> to understand why this error occured. Accessing private attributes let you use the identity operator (===) to prevent this error.</p>
+<p>Now, we only need to override the translation for the key ‘validate.’ Its value will remain ‘OK’ in the test context.</p>
 
-<p>By the way, entities are a bit special because an entity is an object that has an identity. It means that if we want to compare them we should compare their identities instead of their states.</p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// const translations = { validate: 'GO' };</span>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
-<span class="p">{</span>
-   <span class="k">private</span> <span class="kt">MapId</span> <span class="nv">$mapId</span><span class="p">;</span>
-
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">MapId</span> <span class="nv">$mapId</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">mapId</span><span class="o">-&gt;</span><span class="nf">equals</span><span class="p">(</span><span class="nv">$mapId</span><span class="p">);</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<span class="nx">it</span><span class="p">(</span><span class="dl">'</span><span class="s1">validate something</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
+  <span class="nx">render</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span> <span class="p">/&gt;,</span>
+    <span class="p">{</span>
+      <span class="na">wrapper</span><span class="p">:</span> <span class="p">(</span><span class="nx">children</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nc">AppIntlProvider</span> <span class="na">overriddenTranslations</span><span class="p">=&gt;</span>
+          <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
+        <span class="p">&lt;/</span><span class="nc">AppIntlProvider</span><span class="p">&gt;</span>
+      <span class="p">),</span>
+    <span class="p">},</span>
+  <span class="p">);</span>
+  
+  <span class="nx">userEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="dl">'</span><span class="s1">OK</span><span class="dl">'</span><span class="p">));</span>
+  
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">onClick</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
+<span class="p">});</span>
 </code></pre></div></div>
 
-<p>I add an extra method called <code class="language-plaintext highlighter-rouge">hasSameState</code> to entities to compare their states because entity state comparison remains really useful for testing.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
-<span class="p">{</span>
-   <span class="k">public</span> <span class="k">function</span> <span class="n">hasSameState</span><span class="p">(</span><span class="kt">Map</span> <span class="nv">$map</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span> <span class="o">==</span> <span class="nv">$map</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>For a long time, I used getters for testing purposes. I only knew this way to ensure objects had the right state.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Nantes'</span><span class="p">);</span>
-
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nb">rename</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">);</span>
-
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">shouldReturn</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">)</span> <span class="p">;</span>
-</code></pre></div></div>
-
-<p>It was a mistake because exposing objects’ state breaks data encapsulation. We should not know how objects work internally, we should only use their public API (public methods) to interact with them. But, if we need to build the <code class="language-plaintext highlighter-rouge">Map</code> object with something else than a string, this assertion will no longer be true. That will break all application tests and parts that use this getter! That’s not great! Object comparison I described previously helps to get rid of getters.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Nantes'</span><span class="p">);</span>
-
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nb">rename</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">);</span>
-
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">hasSameState</span><span class="p">(</span><span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">))</span><span class="o">-&gt;</span><span class="nf">shouldReturn</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Now, the <code class="language-plaintext highlighter-rouge">Map</code> object is better designed. Its state is not exposed anymore which improves data encapsulation. It follows the “Tell don’t ask” principle because I don’t need to extract its internal state to test it. I only need to use its public API to check if it meets the business exceptions.</p>
-
-<p><strong>Tip:</strong> If you don’t want or if you can’t add a method to your objects that handles comparison you can still compare their instances to avoid adding getters.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Assert</span><span class="o">::</span><span class="nf">equals</span><span class="p">(</span><span class="nv">$map</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">));</span>
-</code></pre></div></div>
-
-<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+<p>Overriding a translation makes the test more resilient; even if you change the translation, the test will still pass (be green). In this specific context, it allows the OPS team to change any translation without breaking the test suite.</p>
 
     </div>
 
@@ -349,19 +359,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Why%20you%20should%20not%20expose%20objects'%20state%20to%20test%20them&url=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html"
+        href="https://twitter.com/intent/tweet?text=Testing%20a%20React%20application:%20Secure%20your%20tests%20from%20internationalization%20impact&url=https://arnolanglade.github.io/test-strategy-i18n-react-application.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/test-strategy-i18n-react-application.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html&title=Why%20you%20should%20not%20expose%20objects'%20state%20to%20test%20them&summary=Exposing%20the%20object's%20state%20to%20test%20them%20is%20not%20a%20good%20idea.%20Comparing%20object%20instances%20is%20better%20because%20it%20avoids%20breaking%20encapsulation%20and%20it%20does%20not%20have%20any%20impact%20on%20their%20design.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/test-strategy-i18n-react-application.html&title=Testing%20a%20React%20application:%20Secure%20your%20tests%20from%20internationalization%20impact&summary=Learn%20how%20to%20prevent%20test%20suite%20breaks%20caused%20by%20translation%20changes%20through%20an%20innovative%20solution,%20ensuring%20resilience%20and%20flexibility%20in%20your%20testing%20approach.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -393,7 +403,7 @@
                 
                 
                   
-                    <a href="/tag/testing" class="section__link related-tag">See all<span> testing</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tag/react" class="section__link related-tag">See all<span> react</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -411,16 +421,44 @@
             
 
             
+            
+            
+            
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[4]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/test-strategy-i18n-react-application.html">
-        <img loading="lazy" src="/images/posts/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp" alt="Testing a React application: Secure your tests from internationalization impact">
+      <a class="c-blog-card__image" href="/why-breaking-encapsulation-is-not-a-good-idea.html">
+        <img loading="lazy" src="/images/posts/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp" alt="Why breaking encapsulation is not a good idea">
       </a>
     </div>
     
@@ -429,85 +467,25 @@
 
       
       <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/react" class="c-blog-card__tag">react</a>
         
         <a href="/tag/testing" class="c-blog-card__tag">testing</a>
         
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/test-strategy-i18n-react-application.html">Testing a React application: Secure your tests from internationalization impact</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-12-11T00:00:00-06:00">11 Dec 2023</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
-            
-                
-              
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[2]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/open-close-principle.html">
-        <img loading="lazy" src="/images/posts/open-close-principle.webp" alt="Open-Closed principle: Enhancing code modularity">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
         <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/open-close-principle.html">Open-Closed principle: Enhancing code modularity</a>
+        <a href="/why-breaking-encapsulation-is-not-a-good-idea.html">Why breaking encapsulation is not a good idea</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Unlock the potential of the Open-Closed Principle in programming. Discover how to enhance code modularity and simplify maintenance using this SOLID concept. Learn to reduce complexity and write more flexible code.
+        This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-11-13T00:00:00-06:00">13 Nov 2023</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-09-19T00:00:00-05:00">19 Sep 2023</time></span>
         </div>
       </div>
     </div>
@@ -527,15 +505,15 @@
 
             
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[5]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/oop-inheritance-pitfalls.html">
-        <img loading="lazy" src="/images/posts/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp" alt="The pitfalls of OOP's inheritance: Why simple isn't always better">
+      <a class="c-blog-card__image" href="/do-not-test-private-methods.html">
+        <img loading="lazy" src="/images/posts/do-not-test-private-method/do-not-test-private-methods.webp" alt="Don’t test private methods">
       </a>
     </div>
     
@@ -545,22 +523,81 @@
       
       <div class="c-blog-card__tags-box">
         
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
         <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/oop-inheritance-pitfalls.html">The pitfalls of OOP's inheritance: Why simple isn't always better</a>
+        <a href="/do-not-test-private-methods.html">Don’t test private methods</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.
+        One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-10-23T00:00:00-05:00">23 Oct 2023</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-07-17T00:00:00-05:00">17 Jul 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[6]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
+        <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
+        <a href="/tag/design-pattern" class="c-blog-card__tag">design-pattern</a>
+        
+        <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">Ease testing thanks to the dependency inversion design pattern</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-06-19T00:00:00-05:00">19 Jun 2023</time></span>
         </div>
       </div>
     </div>
