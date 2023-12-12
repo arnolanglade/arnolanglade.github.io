@@ -87,7 +87,7 @@ function AppIntlProvider(
  
   return (
     <IntlProvider
-      messages={{ ...translations, ...overriddenTranslations }}
+      messages={ { ...translations, ...overriddenTranslations } }
       locale="en"
       defaultLocale="en"
     >
@@ -108,7 +108,7 @@ it('validate something', () => {
     <MyComponent onClick={onClick} />,
     {
       wrapper: (children) => (
-        <AppIntlProvider overriddenTranslations={{ validate: 'OK' }}>
+        <AppIntlProvider overriddenTranslations={ { validate: 'OK' } }>
           {children}
         </AppIntlProvider>
       ),
