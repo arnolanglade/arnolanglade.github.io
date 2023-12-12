@@ -315,7 +315,7 @@ The solution that I use to prevent this problem is to override each translation 
  
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nc">IntlProvider</span>
-      <span class="na">messages</span><span class="p">=</span>
+      <span class="na">messages</span><span class="p">=</span><span class="si">{</span> <span class="p">{</span> <span class="p">...</span><span class="nx">translations</span><span class="p">,</span> <span class="p">...</span><span class="nx">overriddenTranslations</span> <span class="p">}</span> <span class="si">}</span>
       <span class="na">locale</span><span class="p">=</span><span class="s">"en"</span>
       <span class="na">defaultLocale</span><span class="p">=</span><span class="s">"en"</span>
     <span class="p">&gt;</span>
@@ -335,7 +335,7 @@ The solution that I use to prevent this problem is to override each translation 
     <span class="p">&lt;</span><span class="nc">MyComponent</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onClick</span><span class="si">}</span> <span class="p">/&gt;,</span>
     <span class="p">{</span>
       <span class="na">wrapper</span><span class="p">:</span> <span class="p">(</span><span class="nx">children</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nc">AppIntlProvider</span> <span class="na">overriddenTranslations</span><span class="p">=&gt;</span>
+        <span class="p">&lt;</span><span class="nc">AppIntlProvider</span> <span class="na">overriddenTranslations</span><span class="p">=</span><span class="si">{</span> <span class="p">{</span> <span class="na">validate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OK</span><span class="dl">'</span> <span class="p">}</span> <span class="si">}</span><span class="p">&gt;</span>
           <span class="si">{</span><span class="nx">children</span><span class="si">}</span>
         <span class="p">&lt;/</span><span class="nc">AppIntlProvider</span><span class="p">&gt;</span>
       <span class="p">),</span>
