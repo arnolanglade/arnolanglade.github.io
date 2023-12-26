@@ -82,7 +82,7 @@
 
 @media only all and (max-width: 1024px) { .nav-button { margin-left: auto; } .nav-button .nav__icon-menu { display: block; } }
 
-@media all, bookshop { /* Pagination */ .pagination__inner { margin: 40px 0 44px; } .pagination__list { display: flex; justify-content: center; align-items: center; } .pagination__prev, .pagination__count, .pagination__next { padding: 16px 20px; font-size: 16px; font-weight: 700; line-height: 16px; border-radius: 16px; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07); background-color: #fff; } }
+@media all, bookshop { /* MikadoApp Links */ .mikadoAppLink { text-align: center; margin-bottom: 30px; } .mikadoAppLink a { padding: 10px 20px; } .mikadoAppLink i { margin-right: 10px; font-size: 30px; } /* Pagination */ .pagination__inner { margin: 40px 0 44px; } .pagination__list { display: flex; justify-content: center; align-items: center; } .pagination__prev, .pagination__count, .pagination__next { padding: 16px 20px; font-size: 16px; font-weight: 700; line-height: 16px; border-radius: 16px; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07); background-color: #fff; } }
 
 @media only all and (max-width: 576px) { .pagination__prev, .pagination__count, .pagination__next { padding: 16px; } }
 
