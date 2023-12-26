@@ -119,7 +119,7 @@ class ProductImport {
 ```
 I’ve written an article about the Dependency Inversion Principle (DIP), which explains the principle and how it helps to make testing easier:
 
-{% include blog-post-link.html url='/solid-dependency-inversion-principle.html' image='TODO' title='TODO' %}
+{% include blog-post-link.html url='/solid-dependency-inversion-principle.html' image='dependency-inversion-principle/dependency-inversion-principle.webp' title='SOLID principles: Understanding the dependency inversion principle' %}
 
 The biggest benefit of working with small classes is that it eases testing. The original `ProductImport` class needed a working database and the ability to read files on the file system. It does not help to have a short feedback loop. Testing code that uses IO is more complicated because the code cannot be run without the tools required by the application. Splitting the massive classes into small ones helps isolate the IO and make your code more testable.
 
