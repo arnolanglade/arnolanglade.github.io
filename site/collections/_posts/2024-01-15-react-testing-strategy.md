@@ -27,16 +27,18 @@ function Dropdown({label}) {
       <button onClick={() => setIsOpened(true)}>{label}</button>
       {isOpened && <p>dropdown content</p> ? null}
     </>
-  );
+  )
 }
+```
 
+```tsx
 it("shows the content of the dropdown when I click on it", () => {
-  render(<Dropdown label=”open me” />);
+  render(<Dropdown label="open me" />)
     
-  fireEvent.click(screen.getByText('open me'));
+  fireEvent.click(screen.getByText('open me'))
   
-  expect(screen.getByText('dropdown content')).toBeInTheDocument();
-});
+  expect(screen.getByText('dropdown content')).toBeInTheDocument()
+})
 ```
 If your application is internationalized, you should not translate these types of components. Here, we only want components to build a UI no matter the context of their usage. If, for any reason, you need to create your own design system, it is better to avoid coupling your design to the translation system and let each project choose the library that matches their needs.
 ## Business components
@@ -44,7 +46,6 @@ Business components are also dumb components. Their goal is to render a sub-part
 
 ```tsx
 // translations: {available: 'Product available'}
-
 function Product({product}) {
   const {translate} = useIntl()
   return (
@@ -52,14 +53,16 @@ function Product({product}) {
       <p>{product.name} {product.stock > 0 ? translate('available') : ''}</p>
       <p>{product.description}</p>
     </div>
-  );
+  )
 }
+```
 
+```tsx
 it("shows to the customer if the product is in stock", () => {
-  render(<Product product={{name: 'TV', description: 'super TV', stock: 10}} />);
+  render(<Product product={ {name: 'TV', description: 'super TV', stock: 10} } />)
 
-  expect(screen.getByText('Product available')).toBeInTheDocument();
-});
+  expect(screen.getByText('Product available')).toBeInTheDocument()
+})
 ```
 
 We only use those components in a single application as they are business-oriented. There's no need to share them, so we can translate them. Testing these components can be a bit challenging due to the translation system; translations can change and break your tests. I’ve written a blog post about how to test an application that is localized:
@@ -93,19 +96,21 @@ function ProductPage() {
   const {product} = useProductPage()
   return (
     <Product product={product} />
-  );
+  )
 }
-
-it("shows product information to the customer", () => {
-  render(<ProductPage />);
-  
-  expect('TV').toBeInTheDocument();
-  expect('super TV').toBeInTheDocument();
-  expect('available').toBeInTheDocument();
-});
 ```
 
-**Cauton:** Depending on which libraries you are using in your project, Jest may not be the best tool for testing pages. If you use a library that can only be rendered in the browser context, you should consider using tools such as [cypress](https://www.cypress.io)
+```tsx
+it("shows product information to the customer", () => {
+  render(<ProductPage />)
+  
+  expect('TV').toBeInTheDocument()
+  expect('super TV').toBeInTheDocument()
+  expect('available').toBeInTheDocument()
+})
+```
+
+**Caution:** Depending on which libraries you are using in your project, Jest may not be the best tool for testing pages. If you use a library that can only be rendered in the browser context, you should consider using tools such as [cypress](https://www.cypress.io)
 
 ## The big picture
 
