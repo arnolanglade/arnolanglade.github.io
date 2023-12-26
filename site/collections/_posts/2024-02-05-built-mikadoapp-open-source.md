@@ -8,32 +8,17 @@ image_credit:
 keywords: MikadoApp, Mikado Method, Next.js, Supabase, React Flow, React-toastify, software development, open source, event storming, example mapping, deployment
 tags: [methodology]
 ---
-
-# How I built MikadoApp, an open-source application for the Mikado Method
-
 In this blog post, I will explain how I built MikadoApp and the choices I made. If you are not familiar with the Mikado Method, I encourage you to read the blog I’ve written to understand how you can break down a big task into smaller ones:
 
 {% include blog-post-link.html url='/mikado-method.html' image='mikado-method/mikado-method.webp' title='The Mikado Method: Small Steps, Big Improvements' %}
 
 MikadoApp is an open-source application. Don't hesitate to contribute to the application to improve it. Submit issues if you find bugs or have ideas for improvement. Pull requests (PRs) for enhancing or adding additional features are also very welcome.
 
-<div style="text-align: center;margin-bottom: 30px">
-    <a href="https://github.com/arnolanglade/mikado-app" class="cta-button c-button c-button--primary c-button--small">
-        <i class="ion ion-logo-github" style="margin-right: 6px"></i>
-        Sources on GitHub
-    </a>
-</div>
+{% include mikado-method-source.html %}
 
 Try the self hosted version of the MikadoApp, here is the link:
 
-<div style="text-align: center;margin-bottom: 30px">
-    <a href="https://mikado-method-teal.vercel.app" class="cta-button c-button c-button--primary c-button--small">
-        <span class="circle-bg">
-          <i class="ion ion-open-outline"></i>
-        </span>
-        Try the MikadoApp
-    </a>
-</div>
+{% include mikado-method-link.html %}
 
 ## Step 1: Define what I want?
 
