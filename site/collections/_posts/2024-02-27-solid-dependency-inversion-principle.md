@@ -1,7 +1,7 @@
 ---
 title: "SOLID principles: Understanding the dependency inversion principle"
 description: Explore the Dependency Inversion Principle (DIP), a key SOLID principle in object-oriented programming (OOP). Learn how to enhance code modularity, flexibility, and maintainability by decoupling high-level and low-level modules.
-date: 2024-03-19
+date: 2024-02-27
 image: dependency-inversion-principle/dependency-inversion-principle.webp
 alt: "SOLID principles: Understanding the dependency inversion principle"
 image_credit: gndclouds
