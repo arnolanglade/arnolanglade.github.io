@@ -6,7 +6,7 @@ image: dependency-inversion-principle/dependency-inversion-principle.webp
 alt: "SOLID principles: Understanding the dependency inversion principle"
 image_credit: gndclouds
 keywords: SOLID principles,Dependency Inversion Principle,DIP,Object-Oriented Programming,OOP, Abstractions, Interfaces, Dependency Injection
-tags: [OOP]
+tags: [OOP, SOLID]
 ---
 
 The dependency inversion principle (DIP) is one of the SOLID principles. It is a crucial concept in object-oriented programming (OOP) because it highlights the importance of decoupling high-level modules from low-level modules. It helps to make code more modular, flexible, and maintainable by ensuring that high-level modules depend on abstractions rather than concrete implementations. Let’s have a look at the wikipedia definition and understand its meaning:

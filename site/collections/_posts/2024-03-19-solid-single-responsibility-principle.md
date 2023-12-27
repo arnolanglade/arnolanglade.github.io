@@ -6,7 +6,7 @@ image: single-responsibility-principle/single-responsibility-principle.webp
 alt: "SOLID principles: Understanding the single responsibility principle"
 image_credit: designedbyflores
 keywords: Single Responsibility Principle,SRP,SOLID Principles,SOLID,Code Modularity,Software Development,Object-Oriented Programming,OOP,software design,code quality
-tags: [OOP]
+tags: [OOP, SOLID]
 ---
 
 The single responsibility principle (SRP) is the first of the five SOLID principles. It may be the simplest SOLID principles to understand, but it is not always easy to apply, especially if you’re a junior developer. What does this principle say?
