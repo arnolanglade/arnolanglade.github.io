@@ -132,6 +132,11 @@
 		align-items: center;
 		margin-top: 40px;
 
+		i {
+			margin-right: 10px;
+			font-size: 30px;
+		}
+
 		.cta-button {
 			margin-right: 8px;
 		}
@@ -159,7 +164,7 @@
 			}
 
 			.button-arrow {
-				color: $white;
+				color: $primary-color;
 			}
 		}
 
