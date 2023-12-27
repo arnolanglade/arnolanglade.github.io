@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Wed, 27 Dec 2023 04:42:55 -0600</pubDate>
-        <lastBuildDate>Wed, 27 Dec 2023 04:42:55 -0600</lastBuildDate>
+        <pubDate>Wed, 27 Dec 2023 04:43:54 -0600</pubDate>
+        <lastBuildDate>Wed, 27 Dec 2023 04:43:54 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -335,6 +335,8 @@ The solution that I use to prevent this problem is to override each translation 
             <guid isPermaLink="true">https://arnolanglade.github.io/open-close-principle.html</guid>
             
             <category>OOP</category>
+            
+            <category>SOLID</category>
             
             
         </item>
