@@ -268,7 +268,7 @@
 
 @media only all and (max-width: 1024px) { .c-hero__description p { font-size: 16px; } }
 
-@media all, bookshop { .c-hero__btn { display: flex; align-items: center; margin-top: 40px; } .c-hero__btn .cta-button { margin-right: 8px; } .c-hero__btn .works-button:hover .circle-bg { transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); transform: scale(0.94); } .c-hero__btn .works-button .circle-bg { display: flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; margin-right: 8px; font-size: 14px; border-radius: 50%; will-change: transform; background: linear-gradient(90deg, #1495a7 0%, #003687 167%); transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); } .c-hero__btn .works-button .button-arrow { color: #fff; } }
+@media all, bookshop { .c-hero__btn { display: flex; align-items: center; margin-top: 40px; } .c-hero__btn i { margin-right: 10px; font-size: 30px; } .c-hero__btn .cta-button { margin-right: 8px; } .c-hero__btn .works-button:hover .circle-bg { transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); transform: scale(0.94); } .c-hero__btn .works-button .circle-bg { display: flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; margin-right: 8px; font-size: 14px; border-radius: 50%; will-change: transform; background: linear-gradient(90deg, #1495a7 0%, #003687 167%); transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); } .c-hero__btn .works-button .button-arrow { color: #1495a7; } }
 
 @media only all and (max-width: 1024px) { .c-hero__btn { margin-top: 32px; } }
 
