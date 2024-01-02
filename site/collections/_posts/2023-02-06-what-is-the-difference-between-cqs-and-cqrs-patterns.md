@@ -51,7 +51,7 @@ This ensures there is no inconsistency in the codebase. The business services us
 
 > Starting with CQRS, CQRS is simply the creation of two objects where there was previously only one. The separation occurs based upon whether the methods are a command or a query (the same definition that is used by Meyer in Command and Query Separation, a command is any method that mutates state and a query is any method that returns a value).
 >
-> [Greg young](https://web.archive.org/web/20190211113420/http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/)
+> [Greg Young](https://web.archive.org/web/20190211113420/http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/)
 
 **Note:** Greg Young’s blog does not exist anymore but his blog posts are still available thanks to archived.org.
 
@@ -71,17 +71,29 @@ That’s pretty simple, right? Anyway, we don’t need to introduce complicated 
 a command and query bus, an event sourcing architecture or multiple databases. Greg Young published this blog post in 2012 to explain what CQRS was not about.
 
 > CQRS is not a silver bullet
+> 
 > CQRS is not a top level architecture
+> 
 > CQRS is not new
+> 
 > CQRS is not shiny
+> 
 > CQRS will not make your jump shot any better
+> 
 > CQRS is not intrinsically linked to DDD
+> 
 > CQRS is not Event Sourcing
+> 
 > CQRS does not require a message bus
+> 
 > CQRS is not a guiding principle / CQS is
+> 
 > CQRS is not a good wife
+> 
 > CQRS is learnable in 5 minutes
+> 
 > CQRS is a small tactical pattern
+> 
 > CQRS can open many doors.
 
 **Note:** This blog does not exist anymore but it has been archived by archived.org. The post is available [here](https://web.archive.org/web/20160729165044/https://goodenoughsoftware.net/2012/03/02/cqrs/)
