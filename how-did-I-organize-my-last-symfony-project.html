@@ -749,9 +749,7 @@ api/src/Domain/
 
 
 <!--bookshop-live name(newsletter/newsletter.jekyll.html) params(newsletter_title=site.data.newsletter.newsletter_title
-newsletter_description=site.data.newsletter.newsletter_description
-newsletter_identifier=site.data.newsletter.newsletter_identifier
-newsletter_button=site.data.newsletter.newsletter_button) context() -->
+newsletter_description=site.data.newsletter.newsletter_description) context() -->
           <!-- begin subscribe -->
 
 <section class="c-subscribe section">
@@ -767,14 +765,19 @@ newsletter_button=site.data.newsletter.newsletter_button) context() -->
             </div>
           </div>
 
-          <form class="c-subscribe__form validate" action="https://gmail.us13.list-manage.com/subscribe/post"
-            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
-            <input type="hidden" name="u" value="d7313775f348f8c8d39a841a0">
-            <input type="hidden" name="id" value="28bcb90eaa">
-            <input type="hidden" name="orig-lang" value="1">
-            <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-            <input class="c-subscribe__form-email required email" id="mce-EMAIL" type="text" name="MERGE0" placeholder="Your email address">
-            <button class="c-button c-button--primary c-button--large" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+          <form class="c-subscribe__form validate"
+                action="https://github.us13.list-manage.com/subscribe/post?u=d7313775f348f8c8d39a841a0&amp;id=28bcb90eaa&amp;f_id=00550ee4f0"
+                method="POST"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+                validate
+          >
+            <label class="screen-reader-text" for="EMAIL">Email address</label>
+            <input class="c-subscribe__form-email required email" id="EMAIL" type="email" name="EMAIL" placeholder="Your email address">
+            <button class="c-button c-button--primary c-button--large" id="mc-embedded-subscribe" type="submit" name="subscribe">
+              Subscribe
+            </button>
           </form>
 
         </div>
@@ -782,7 +785,6 @@ newsletter_button=site.data.newsletter.newsletter_button) context() -->
     </div>
   </div>
 </section>
-<!-- end subscribe -->
 
           <!--bookshop-live end-->
 
