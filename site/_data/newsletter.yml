@@ -2,5 +2,3 @@
 # Newsletter Settings
 newsletter_title: "Newsletter: Be the first to know!"
 newsletter_description: "Subscribe to my newsletter for updates on my latest blog posts, tech releases, and exclusive content. Stay ahead in the coding game!" # Add descriptions to the form.
-newsletter_identifier: "https://gmail.us13.list-manage.com/subscribe/post" # Add your MailChimp form identifier.
-newsletter_button: "Subscribe"
