@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>The pitfalls of OOP's inheritance: Why simple isn't always better</title>
-  <meta name='description' content='Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potentia...'>
-  <meta name="keywords" content="OOP,OOP inheritance,OOP principles,composition,Open-Closed principle,OOP best practices,coding tips">
-  <link rel="canonical" href="https://arnolanglade.github.io/oop-inheritance-pitfalls.html">
+  <title>Three types of React components for an effective testing strategy</title>
+  <meta name='description' content='Discover an effective strategy for testing React components by categorizing them into UI, Business, and Page components. Learn how to organize your codebase ...'>
+  <meta name="keywords" content="react,javascript,typescript,testing,testing strategies,code maintainability">
+  <link rel="canonical" href="https://arnolanglade.github.io/react-testing-strategy.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The pitfalls of OOP's inheritance: Why simple isn't always better – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp">
+  <meta name="twitter:title" content="Three types of React components for an effective testing strategy – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="Discover an effective strategy for testing React components by categorizing them into UI, Business, and Page components. Learn how to organize your codebase to facilitate testing for maintainable code.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/react-testing-strategy/react-testing-strategy.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="The pitfalls of OOP's inheritance: Why simple isn't always better – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.">
-  <meta property="og:image" content="https://arnolanglade.github.io/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp">
+  <meta property="og:title" content="Three types of React components for an effective testing strategy – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="Discover an effective strategy for testing React components by categorizing them into UI, Business, and Page components. Learn how to organize your codebase to facilitate testing for maintainable code.">
+  <meta property="og:image" content="https://arnolanglade.github.io/react-testing-strategy/react-testing-strategy.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -197,7 +197,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp" alt="The pitfalls of OOP's inheritance: Why simple isn't always better">
+          <img loading="lazy" src="/images/posts/react-testing-strategy/react-testing-strategy.webp" alt="Three types of React components for an effective testing strategy">
         </div>
       </div>
       
@@ -208,21 +208,23 @@
           
           <div class="post-tags">
             
-              <a href="/tag/oop" class="post-tags__tag">OOP</a>
+              <a href="/tag/react" class="post-tags__tag">react</a>
+            
+              <a href="/tag/testing" class="post-tags__tag">testing</a>
             
           </div>
           
 
-          <h1 class="post__title">The pitfalls of OOP&#39;s inheritance: Why simple isn&#39;t always better</h1>
+          <h1 class="post__title">Three types of React components for an effective testing strategy</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2023-10-23T00:00:00-05:00">
-                23 Oct 2023
+              <time class="post__date" datetime="2024-01-15T00:00:00-06:00">
+                15 Jan 2024
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@gabrielsanchez">@gabrielsanchez</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@roman_lazygeek">@roman_lazygeek</a>
               </p>
               
             </div>
@@ -239,33 +241,143 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In OOP, the simplest way to change the behavior of a class A is to create a class B that extends class A. Extensions allow you to override any public and protected methods of the parent class. That‘s quite simple, right?</p>
+      <p>Automated tests are crucial for building robust software. They allow you to enhance existing features or add new ones without pressure because they ensure the application works without regression.</p>
 
-<p><img src="images/posts/pitfalls-of-oop-inheritance/simple-inheritance.svg" alt="Simple object inheritance" /></p>
+<p>I did not feel comfortable when I first started working with React. Applying a strong test strategy was complicated, and it was painful for me as a TDD practitioner. I am not efficient without tests as I use them to design code step by step.</p>
 
-<p>Furthermore, you can extend a class multiple times with several levels of inheritance. In the following example, we can see that class B has two children, and the class hierarchy has four levels of inheritance. Now let’s explore why it is not a good idea and which problem can occur?</p>
+<p>After making several mistakes, I found a way to organize my React applications to make me comfortable with testing. Now, I categorize React components into three groups: page components, business components, and UI components. In the following sections, I will explain what they are and how to test them.</p>
 
-<p><img src="images/posts/pitfalls-of-oop-inheritance/inheritance-with-several-levels.svg" alt="Object inheritance with several levels" /></p>
+<h2 id="ui-components-design-system">UI components (design system)</h2>
 
-<p>Designing code like this won’t facilitate refactoring. Let’s consider a scenario where Class A has a method that is overridden in both Class B and Class E. What happens if we decide to change the signature of this method in Class A? We will need to rewrite this method in Class B and Class E to match the new signature. Another frustrating aspect is that we will have to modify all portions of the code that use this method. In a small codebase, this may be manageable, but in a large one, it’s a different story!</p>
+<p>UI components are dumb components, meaning they don’t have any business logic. Their only purpose is to represent UI elements, such as buttons, typography, or dropdowns. You can create these components from scratch to brand your own design system or use existing libraries like <a href="https://mui.com/">Material UI</a>.</p>
 
-<p><img src="images/posts/pitfalls-of-oop-inheritance/refactoring-inheritance-with-several-levels.svg" alt="Refactoring with object inheritance with several levels" /></p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Dropdown</span><span class="p">({</span><span class="nx">label</span><span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">isOpened</span><span class="p">,</span> <span class="nx">setIsOpened</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setIsOpened</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">label</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">isOpened</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>dropdown content<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">?</span> <span class="kc">null</span><span class="p">}</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>This code won’t ease team collaboration. Let’s consider another scenario: where we are working on a huge monolith shared with several other teams. What happens if team A needs to change class A? That means teams B, C, and D must also update their codebases. We have introduced coupling between these three teams because of the coupling between classes A, B, C, and D. That’s a shame. This design will slow down your delivery because team A will need to coordinate with three other teams if it needs to change class A.</p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">shows the content of the dropdown when I click on it</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Dropdown</span> <span class="na">label</span><span class="p">=</span><span class="s">"open me"</span> <span class="p">/&gt;)</span>
+    
+  <span class="nx">fireEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="dl">'</span><span class="s1">open me</span><span class="dl">'</span><span class="p">))</span>
+  
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="dl">'</span><span class="s1">dropdown content</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBeInTheDocument</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>If your application is internationalized, you should not translate these types of components. Here, we only want components to build a UI no matter the context of their usage. If, for any reason, you need to create your own design system, it is better to avoid coupling your design to the translation system and let each project choose the library that matches their needs.</p>
+<h2 id="business-components">Business components</h2>
+<p>Business components are also dumb components. Their goal is to render a sub-part of a page without any business orchestration, meaning no side effects like HTTP calls. They are built with UI components or other business components.</p>
 
-<p><img src="images/posts/pitfalls-of-oop-inheritance/refactoring-inheritance-with-several-teams.svg" alt="Refactoring with object inheritance with several teams" /></p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// translations: {available: 'Product available'}</span>
+<span class="kd">function</span> <span class="nx">Product</span><span class="p">({</span><span class="nx">product</span><span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">translate</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useIntl</span><span class="p">()</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span> <span class="si">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">stock</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nx">translate</span><span class="p">(</span><span class="dl">'</span><span class="s1">available</span><span class="dl">'</span><span class="p">)</span> <span class="p">:</span> <span class="dl">''</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">product</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing.</p>
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">shows to the customer if the product is in stock</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">(&lt;</span><span class="nc">Product</span> <span class="na">product</span><span class="p">=</span><span class="si">{</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TV</span><span class="dl">'</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">super TV</span><span class="dl">'</span><span class="p">,</span> <span class="na">stock</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span> <span class="si">}</span> <span class="p">/&gt;)</span>
 
-<p>I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn’t follow this principle. Here is the link:</p>
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="dl">'</span><span class="s1">Product available</span><span class="dl">'</span><span class="p">)).</span><span class="nx">toBeInTheDocument</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>We only use those components in a single application as they are business-oriented. There’s no need to share them, so we can translate them. Testing these components can be a bit challenging due to the translation system; translations can change and break your tests. I’ve written a blog post about how to test an application that is localized:</p>
 
 <div class="post__navigation blog-post-link">
-   <a class="post__prev" href="/open-close-principle.html">
+   <a class="post__prev" href="/test-strategy-i18n-react-application.html">
       <span class="prev__image">
-         <img loading="lazy" src="/images/posts/open-close-principle.webp" alt="Open-Closed principle: Enhancing code modularity" />
+         <img loading="lazy" src="/images/posts/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp" alt="Testing a React application: Secure your tests from internationalization impact" />
       </span>
       <span class="prev__box">
-         <span class="post__nav__title">Open-Closed principle: Enhancing code modularity</span>
+         <span class="post__nav__title">Testing a React application: Secure your tests from internationalization impact</span>
+      </span>
+   </a>
+</div>
+
+<h2 id="page-components">Page components</h2>
+
+<p>Page components are a kind of controller. They delegate the orchestration of business logic to a custom hook. The hook is responsible for handling all side effects and managing the current state of the page. We can retrieve data from the hook to pass to the business components for rendering the page.</p>
+
+<p>I’ve written a blog post to explain how a custom hook helps improve testability. Take a look at it to understand how it can enhance your code quality and help decouple concerns:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/how-to-use-custom-react-hook-to-increase-application-testability.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/how-to-use-custom-react-hook-to-increase-application-testability.webp" alt="How to use custom React hook to increase application testability" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">How to use custom React hook to increase application testability</span>
+      </span>
+   </a>
+</div>
+
+<p>We can call them screen components as well. This term makes more sense, particularly in a mobile application.</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useProductPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">product</span><span class="p">,</span> <span class="nx">setProduct</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">()</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setProduct</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TV</span><span class="dl">'</span><span class="p">,</span> <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">super TV</span><span class="dl">'</span><span class="p">,</span> <span class="na">stock</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+  <span class="p">})</span>
+    
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">product</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ProductPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span><span class="nx">product</span><span class="p">}</span> <span class="o">=</span> <span class="nx">useProductPage</span><span class="p">()</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Product</span> <span class="na">product</span><span class="p">=</span><span class="si">{</span><span class="nx">product</span><span class="si">}</span> <span class="p">/&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">shows product information to the customer</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">(&lt;</span><span class="nc">ProductPage</span> <span class="p">/&gt;)</span>
+  
+  <span class="nx">expect</span><span class="p">(</span><span class="dl">'</span><span class="s1">TV</span><span class="dl">'</span><span class="p">).</span><span class="nx">toBeInTheDocument</span><span class="p">()</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="dl">'</span><span class="s1">super TV</span><span class="dl">'</span><span class="p">).</span><span class="nx">toBeInTheDocument</span><span class="p">()</span>
+  <span class="nx">expect</span><span class="p">(</span><span class="dl">'</span><span class="s1">available</span><span class="dl">'</span><span class="p">).</span><span class="nx">toBeInTheDocument</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><strong>Caution:</strong> Depending on which libraries you are using in your project, Jest may not be the best tool for testing pages. If you use a library that can only be rendered in the browser context, you should consider using tools such as <a href="https://www.cypress.io">cypress</a></p>
+
+<h2 id="the-big-picture">The big picture</h2>
+
+<p>The purpose of having these different types of components is to isolate responsibilities. As you can see in the following diagram, there are three responsibilities: rendering the user interface (view), bridging the gap between the view and the business logic (orchestrator), and handling the business logic (business logic).</p>
+
+<p><img src="images/posts/react-testing-strategy/big-picture.svg" alt="Big picture" /></p>
+
+<p>Business and UI components are responsible for rendering the user interface. The custom hook contains the business logic, retrieving or sending data to the server and managing the state of the page. The page component acts as a bridge between the hook and the view.</p>
+
+<p>Now, new React frameworks provide server-side rendering (SSR), allowing you to render your page on the server side. This is an excellent way to improve performance as it prevents querying the API to retrieve data.</p>
+
+<p>How can we apply what I explained in the previous section to an application that uses SSR? Since the page component is initialized with all the data, the hook won’t need to query the data anymore.</p>
+
+<p><img src="images/posts/react-testing-strategy/big-picture-with-ssr.svg" alt="Big picture with SSR" /></p>
+
+<p>Lastly, coupling will prevent you from easily testing your code. The solution to avoid this kind of problem is to apply the Dependency Inversion Principle from the SOLID principles. It will help you make your code more modular and easy to test. I’ve written a blog post to explain how to apply it to a React application:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/how-to-reduce-coupling-in-your-react-app.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/how-to-reduce-coupling-in-your-react-app.webp" alt="How to reduce coupling in your React app" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">How to reduce coupling in your React app</span>
       </span>
    </a>
 </div>
@@ -280,19 +392,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=The%20pitfalls%20of%20OOP's%20inheritance:%20Why%20simple%20isn't%20always%20better&url=https://arnolanglade.github.io/oop-inheritance-pitfalls.html"
+        href="https://twitter.com/intent/tweet?text=Three%20types%20of%20React%20components%20for%20an%20effective%20testing%20strategy&url=https://arnolanglade.github.io/react-testing-strategy.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/oop-inheritance-pitfalls.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/react-testing-strategy.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/oop-inheritance-pitfalls.html&title=The%20pitfalls%20of%20OOP's%20inheritance:%20Why%20simple%20isn't%20always%20better&summary=Discover%20the%20complexities%20of%20excessive%20inheritance%20in%20object-oriented%20programming%20(OOP)%20and%20understand%20why%20careful%20consideration%20is%20crucial%20to%20avoid%20potential%20problems%20and%20pitfalls.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/react-testing-strategy.html&title=Three%20types%20of%20React%20components%20for%20an%20effective%20testing%20strategy&summary=Discover%20an%20effective%20strategy%20for%20testing%20React%20components%20by%20categorizing%20them%20into%20UI,%20Business,%20and%20Page%20components.%20Learn%20how%20to%20organize%20your%20codebase%20to%20facilitate%20testing%20for%20maintainable%20code.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -324,7 +436,9 @@
                 
                 
                   
-                    <a href="/tag/OOP" class="section__link related-tag">See all<span> OOP</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tag/react" class="section__link related-tag">See all<span> react</span> <i class="ion ion-md-arrow-forward"></i></a>
+                  
+                
                   
                 
               
@@ -347,30 +461,16 @@
             
 
             
-            
-            
-            
 
-            
-
-            
-            
-            
-            
-
-            
-
-            
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[1]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/open-close-principle.html">
-        <img loading="lazy" src="/images/posts/open-close-principle.webp" alt="Open-Closed principle: Enhancing code modularity">
+      <a class="c-blog-card__image" href="/test-strategy-i18n-react-application.html">
+        <img loading="lazy" src="/images/posts/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp" alt="Testing a React application: Secure your tests from internationalization impact">
       </a>
     </div>
     
@@ -380,24 +480,24 @@
       
       <div class="c-blog-card__tags-box">
         
-        <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
+        <a href="/tag/react" class="c-blog-card__tag">react</a>
         
-        <a href="/tag/solid" class="c-blog-card__tag">SOLID</a>
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/open-close-principle.html">Open-Closed principle: Enhancing code modularity</a>
+        <a href="/test-strategy-i18n-react-application.html">Testing a React application: Secure your tests from internationalization impact</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Unlock the potential of the Open-Closed Principle in programming. Discover how to enhance code modularity and simplify maintenance using this SOLID concept. Learn to reduce complexity and write more flexible code.
+        Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-11-13T00:00:00-06:00">13 Nov 2023</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-12-11T00:00:00-06:00">11 Dec 2023</time></span>
         </div>
       </div>
     </div>
@@ -409,6 +509,20 @@
             
                 
               
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
             
             
             
