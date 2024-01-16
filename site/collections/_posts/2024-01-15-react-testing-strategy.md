@@ -85,7 +85,7 @@ const useProductPage = () => {
   const [product, setProduct] = useState()
   useEffect(() => {
     setProduct({name: 'TV', description: 'super TV', stock: 10})
-  })
+  }, [])
     
   return {
     product
