@@ -4,7 +4,7 @@ description: The repository pattern provides a good abstraction to manage object
 date: 2021-03-23
 image: persisting-entity-without-orm.webp
 image_credit: tofi
-tags: [OOP, design-patterns]
+tags: [design-patterns, OOP, repository]
 keywords: "software,oop,repository,design patterns,orm,persistence,sql,database"
 ---
 

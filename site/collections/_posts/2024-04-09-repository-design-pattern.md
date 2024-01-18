@@ -6,7 +6,7 @@ image: repository-design-pattern/repository-design-pattern.webp
 alt: The repository design pattern
 image_credit: ningshi
 keywords: Repository Pattern,Persistence Model,Aggregate,Domain-Driven Design,DDD,Design Pattern,DDD tactical patterns
-tags: [design-patterns, OOP]
+tags: [design-patterns, OOP, repository]
 ---
 The repository is a valuable design pattern for managing the persistence and retrieval of domain objects. It ensures a clean separation between the domain model and the persistence model, aiming to hide the complexity of the object’s state storing.
 
