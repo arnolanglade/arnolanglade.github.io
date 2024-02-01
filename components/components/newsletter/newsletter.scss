@@ -5,6 +5,10 @@
 		max-width: 580px;
 		margin: 0 auto;
 	}
+	&__innerlanding-page {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
 
 	&__info {
 		margin-bottom: 44px;
@@ -34,6 +38,12 @@
 	&__subtitle {
 		margin: 0 auto;
 		max-width: 480px;
+	}
+
+	&__subtitlelanding-page {
+		margin: 0 auto;
+		max-width: 600px;
+		padding-bottom: 24px;
 	}
 
 	&__form {

@@ -5,12 +5,15 @@
     <div class="row">
       <div class="col col-12">
 
-        <div class="{{c}}__inner">
+        <div class="{{c}}__inner{{ include.type }}">
           <div class="{{c}}__info">
             <h3 class="{{c}}__title">{{ site.data.newsletter.newsletter_title }}</h3>
-            <div class="{{c}}__subtitle">
+            <div class="{{c}}__subtitle{{ include.type }}">
               <span id="ityped">{{ site.data.newsletter.newsletter_description }}</span>
             </div>
+            {% if include.type == 'landing-page' %}
+            <img class="{{c}}__image" src="/images/blog-newsletter.webp" alt="{{ site.data.newsletter.newsletter_title }}">
+            {% endif %}
           </div>
 
           <form class="{{c}}__form validate"
