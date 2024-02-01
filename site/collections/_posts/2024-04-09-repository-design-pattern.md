@@ -48,39 +48,55 @@ final class DoctrineMaps implements Maps
 
    public function get(MapId $mapId): Map
    {
-       try {
-           $doctrineMap = $this->entityManager->find(DoctrineMap::class, $mapId);
-           if (null === $doctrineMap) {
-               throw new UnknownMap($mapId);
-           }
-           
-           return Map::fromState($doctrineMap);
-       } catch (ORMInvalidArgumentException | ORMException) {
-           throw new \LogicException('Cannot get the map');
-       }
+        try {
+            $doctrineMap = $this->entityManager->find(
+                DoctrineMap::class, 
+                (string) $id
+            );
+            
+            if (!$doctrineMap) {
+                throw UnknownMap::fromId($id);
+            }
+
+            return Map::fromState($doctrineMap);
+        } catch (ORMInvalidArgumentException|ORMException $e) {
+            throw new LogicException('Cannot retrieve a map', 0, $e);
+        }
    }
 
    public function add(Map $map): void
    {
-       try {
-           $this->entityManager->persist($map->getState());
-           $this->entityManager->flush($map);
-       } catch (ORMInvalidArgumentException | ORMException) {
-           throw new \LogicException('Cannot add the map');
-       }
+        try {
+            $doctrineMap = $this->entityManager->find(
+                DoctrineMap::class, 
+                (string) $map->id
+            );
+            
+            if (!$doctrineMap) {
+                $doctrineMap = new DoctrineMap();
+            }
+            
+            $map->mapTo($doctrineMap);
+            $this->entityManager->persist($doctrineMap);
+            $this->entityManager->flush();
+        } catch (ORMInvalidArgumentException|ORMException $e) {
+            throw new LogicException('Cannot persist a map', 0, $e);
+        }
    }
 
 
    public function remove(MapId $mapId): void
    {
        try {
-           $doctrineMap = $this->entityManager
-               ->getReference(DoctrineMap::class, (string) $mapId);
+           $doctrineMap = $this->entityManager->getReference(
+               DoctrineMap::class, 
+               (string) $mapId
+           );
            
            $this->entityManager->remove($doctrineMap);
-           $this->entityManager->flush($doctrineMap);
-       } catch (ORMInvalidArgumentException | ORMException) {
-           throw new \LogicException('Cannot remove the map');
+           $this->entityManager->flush();
+       } catch (ORMInvalidArgumentException|ORMException $e) {
+           throw new LogicException('Cannot remove the map', 0, $e);
        }
    }
 }
@@ -92,8 +108,7 @@ Using an ORM is not mandatory to implement this design pattern. I’ve written a
 
 What happens under the hood? Domain objects are abstractions of the domain problem, they are rich models that handle business logic. In contrast, the persistence model consists of data structures only used for storing data.
 
-![Understand how the repository works](images/posts/repository-design-pattern
-/repository-overview.svg)
+![Understand how the repository works](images/posts/repository-design-pattern/repository-overview.svg)
 
 When a domain object is added to the repository, it's converted into a persistence model that is used to persist the object's state. During retrieval, the repository gets data from storage to recreate the domain model from the persistent model.
 
@@ -101,8 +116,7 @@ Do the functions 'get, add, and remove' ring a bell? Perhaps, they remind you of
 
 {% include mikado-method-source.html %}
 
-![Repository acts as acl](images/posts/repository-design-pattern
-/repository-acts-as-acl.svg)
+![Repository acts as acl](images/posts/repository-design-pattern/repository-acts-as-acl.svg)
 
 The repository design pattern is ideal for isolating the domain from Input/Output operations. I’ve written an article about hexagonal architecture, an architectural pattern that helps in building sustainable software and ease testing too:
 
@@ -115,7 +129,11 @@ For instance, to change a marker's location on a map, we won’t use a marker re
 ```php
 $maps = new PostgreSqlMaps(/** ... */);
 $map = $maps->get(new MapId('2d3e4f5g-6h7i-8j9k-0l1m-2n3o4p5q6r7s'));
-$map->move(new MarkerId('2d3e4f5g-6h7i-8j9k-0l1m-2n3o4p5q6r7s'), new Coordinates(43.48333, -1.53333));
+
+$map->move(
+    new MarkerId('2d3e4f5g-6h7i-8j9k-0l1m-2n3o4p5q6r7s'), 
+    new Coordinates(43.48333, -1.53333)
+);
 ``` 
 
 **Note:** I like using this naming convention for retrieval methods: methods starting with 'get' aim to fetch the aggregate or throw an exception, while those beginning with 'find' attempt to retrieve the aggregate but return an empty result if there is no aggregate found.
