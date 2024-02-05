@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>The Mikado Method: Small Steps, Big Improvements</title>
-  <meta name='description' content='Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield develo...'>
-  <meta name="keywords" content="mikado method, refactoring, small steps development, brownfield development, trunk based development, mikado graph, continuous code improvement">
-  <link rel="canonical" href="https://arnolanglade.github.io/mikado-method.html">
+  <title>How I built MikadoApp, an open-source application for the Mikado Method</title>
+  <meta name='description' content='Discover how I built theMikadoApp, an open-source application leveraging the Mikado Method. Learn about technical choices, practices, and the steps to deploy...'>
+  <meta name="keywords" content="MikadoApp, Mikado Method, Next.js, Supabase, React Flow, React-toastify, software development, open source, event storming, example mapping, deployment">
+  <link rel="canonical" href="https://arnolanglade.github.io/built-mikadoapp-open-source.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Mikado Method: Small Steps, Big Improvements – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield development, ensure code stability and effortless feature integration. Collaborate effectively with MikadoApp and achieve rapid code enhancements through Trunk Based Development.">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/mikado-method/mikado-method.webp">
+  <meta name="twitter:title" content="How I built MikadoApp, an open-source application for the Mikado Method – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="Discover how I built theMikadoApp, an open-source application leveraging the Mikado Method. Learn about technical choices, practices, and the steps to deploy an MVP. Discover the challenges faced and lessons learned in the development process.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/build-mikado-app/build-mikado-app.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="The Mikado Method: Small Steps, Big Improvements – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield development, ensure code stability and effortless feature integration. Collaborate effectively with MikadoApp and achieve rapid code enhancements through Trunk Based Development.">
-  <meta property="og:image" content="https://arnolanglade.github.io/mikado-method/mikado-method.webp">
+  <meta property="og:title" content="How I built MikadoApp, an open-source application for the Mikado Method – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="Discover how I built theMikadoApp, an open-source application leveraging the Mikado Method. Learn about technical choices, practices, and the steps to deploy an MVP. Discover the challenges faced and lessons learned in the development process.">
+  <meta property="og:image" content="https://arnolanglade.github.io/build-mikado-app/build-mikado-app.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -197,7 +197,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/mikado-method/mikado-method.webp" alt="The Mikado Method: Small Steps, Big Improvements">
+          <img loading="lazy" src="/images/posts/build-mikado-app/build-mikado-app.webp" alt="How I built MikadoApp, an open-source application for the Mikado Method">
         </div>
       </div>
       
@@ -213,17 +213,13 @@
           </div>
           
 
-          <h1 class="post__title">The Mikado Method: Small Steps, Big Improvements</h1>
+          <h1 class="post__title">How I built MikadoApp, an open-source application for the Mikado Method</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2023-11-27T00:00:00-06:00">
-                27 Nov 2023
+              <time class="post__date" datetime="2024-02-05T00:00:00-06:00">
+                05 Feb 2024
               </time>
-              
-              <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@tateisimikito">@tateisimikito</a>
-              </p>
               
             </div>
           </div>
@@ -239,49 +235,153 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In this blog post, I will introduce the Mikado Method. This method helps solve complex problems without breaking your codebase, even if you need to introduce significant changes.</p>
+      <p>In this blog post, I will explain how I built MikadoApp and the choices I made. If you are not familiar with the Mikado Method, I encourage you to read the blog I’ve written to understand how you can break down a big task into smaller ones:</p>
 
-<p>It is common to work using PR (Pull Request), you can work on your task without breaking your application and disturbing the rest of the team. However, when you start working on a task without maintaining something that works, you end up adding too many changes that are not production-ready. The drawback of this approach is that your PRs will be large and hard to merge.</p>
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/mikado-method.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/mikado-method/mikado-method.webp" alt="The Mikado Method: Small Steps, Big Improvements" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">The Mikado Method: Small Steps, Big Improvements</span>
+      </span>
+   </a>
+</div>
 
-<p>It often happens when you refactor your codebase. You start refactoring something but it breaks another part of this application, then you fix it but it introduces a new problem elsewhere. As a result, you accumulate many changes without being able to merge them.</p>
+<p>MikadoApp is an open-source application. Don’t hesitate to contribute to the application to improve it. Submit issues if you find bugs or have ideas for improvement. Pull requests (PRs) for enhancing or adding additional features are also very welcome.</p>
 
-<p>Merging big PR is more complicated than simple changes. First, we need to ask for code reviews, but it can be challenging for your teammate to understand what you did when your PR includes too many things. Then, another drawback is the need to rebase your PR several times due to other PRs being pushed to the main branch.</p>
+<div class="mikadoAppLink">
+   <a href="https://github.com/arnolanglade/mikado-app" class="cta-button c-button c-button--primary c-button--small" target="_blank">
+      <i class="ion ion-logo-github"></i>
+      Sources on GitHub
+   </a>
+</div>
 
-<p>Now, you understand why it’s difficult to introduce big changes in your codebase. It is better to work on small steps that can be mergeable at any time. The Mikado method takes its name from the Mikado game, where the goal is to remove one stick without disturbing the others. The Mikado method has the same philosophy. It aims to make small incremental improvements to a project without breaking the existing codebase. This way, you can push your changes at any time and they won’t break your application even if you did not finish your task.</p>
+<p>Try the self hosted version of the MikadoApp, here is the link:</p>
 
-<p>This method simplifies refactoring. You can continuously improve your codebase instead of stacking changes in a huge PR which can’t be merged because the test suites are broken. It’s better to regularly merge small changes that improve your codebase quality. This method is ideal for brownfield development. It enables you to add new features or alter existing ones without breaking the rest of the application. Moreover, it facilitates the improvement of the application’s architecture while allowing the delivery of new features concurrently.</p>
+<div class="mikadoAppLink">
+   <a href="https://mikado-method-teal.vercel.app" class="cta-button c-button c-button--primary c-button--small" target="_blank">
+        <span class="circle-bg">
+          <i class="ion ion-md-open"></i>
+        </span>
+      Try the MikadoApp
+   </a>
+</div>
 
-<p>How does it work? Let’s take an example: MySQL doesn’t match the project’s needs; we need to use PostgreSQL. First, we need to define a goal that is clear and understandable for everyone. In our case, it is “Migrate the application from MySQL to PostgreSQL,” as you can see in the following example.</p>
+<h2 id="step-1-define-what-i-want">Step 1: Define what I want?</h2>
 
-<p><img src="images/posts/mikado-method/define-goal.webp" alt="define a goal" /></p>
+<p>Before starting to code the application, it is better to define what you want. An event storming workshop is a great tool to get the big picture of the project, and then we can start designing the application. This workshop is a good way to gather both technical and non-technical people in the same room to facilitate communication. Non-technical people can share their knowledge with technical people to ensure mutual understanding of expectations.</p>
 
-<p><strong>Note:</strong> A goal can be what you want to improve in your application such as refactoring a section of the application to  enhance its clarity or improving an existing feature.</p>
+<p>Even though I’m the only developer on the project, I decided to do an Event Storming workshop. It helps me challenge my ideas, even when working alone. Starting to code without having the big picture in mind can be complicated. When you are alone on a project, you play several roles such as a UX designer, product manager, and developer, for instance.In other words, I have several people in my head that I need to align.</p>
 
-<p>There are less chances that you can achieve your goal in a single attempt and quickly but we will try to solve it. Based on what we learn in this initial experimentation, we will split a big task (our goal) into smaller ones, which we call prerequisites. As mentioned earlier, this approach prevents ending up with a large pull request that is difficult to merge.</p>
+<p>I like this workshop because it allows you to think without any limitations. I collected every domain event that seemed relevant, even if they were not immediately important. Then, I defined the minimal scope of the application to ship the first version quickly. I think it is better to release something working with a few features and then improve it instead of trying to ship everything at the same time. It decreases the risk of delivering nothing in production.</p>
 
-<p>To migrate the application to PostgreSQL, we first need to install the database. Then, we need to update our repositories because they use SQL queries specific to MySQL.</p>
+<p><img src="images/posts/build-mikado-app/mikadoapp-event-storming.webp" alt="Mikado method - event storming" /></p>
 
-<p><img src="images/posts/mikado-method/add-prerequisites.webp" alt="add prerequisites to the mikado graph" /></p>
+<p>The business of the application was not complicated, so I decided to break down the event storming into a way where each domain event corresponds to a user story. I didn’t spend time writing user stories but I wanted to dig a bit into each user story before coding them. I did an example mapping workshop. Similar to the event storming workshop, it is a good way to share knowledge between non-tech and tech people. Doing an example mapping alone is not the most efficient way to do it, but I wanted to challenge my thoughts on specific stories to have a clear vision of what I’m going to code.</p>
 
-<p>Now, you will start exploring all the prerequisites. Select a prerequisite from the list and start an experimentation to solve it. If you can easily achieve it, that’s excellent! Commit your changes, mark the prerequisite as completed, and proceed to the next one on the list.</p>
+<p><img src="images/posts/build-mikado-app/mikadoapp-example-mapping.webp" alt="Mikado method - example mapping" /></p>
 
-<p><img src="images/posts/mikado-method/prerequisite-completed.webp" alt="prerequisite completed" /></p>
+<p>Before starting the project, the only technical choice I made was to use the Next.js framework. I had only worked on a POC for a few days during my previous experience. I didn’t know it well, but it looked promising. Another reason for this choice was its ease of deployment on Vercel. I didn’t want to spend time configuring the application deployment. I only wanted to focus on delivering features instead of configuring a server.</p>
 
-<p>If you cannot easily solve it, you need to revert your changes and define a sublist of prerequisites to achieve the original prerequisite. The purpose is to avoid making big changes but to focus on working on small steps while keeping the codebase stable. Reverting changes may not be natural to a developer, but it’s an important step in the process. It allows you to continue working in smaller steps, while the exploration helps you learn what is necessary to solve a prerequisite.</p>
+<h2 id="step-2-start-working-on-the-first-version-of-the-mvp">Step 2: Start working on the first version of the MVP.</h2>
 
-<p><img src="images/posts/mikado-method/add-prerequisite-to-prerequisite.webp" alt="add prerequisite to prerequisite" /></p>
+<p>Then I started working on the first feature. My goal was to ship an MVP that works to validate whether what I imagined during the workshops was good or not. This means I did not focus on a fancy user interface. I am not a designer, and I didn’t want to spend too much time on it. Moreover, I wanted to delay the choice of the storage system as much as possible. It’s good to learn a maximum of things before making any decisions.</p>
 
-<p>Continue to resolve all prerequisites until the end. When all prerequisites are done, your goal is completed!</p>
+<p>Let’s dig a bit into my tech choices. I began working on MikadoApp in July 2023. I choi for the latest stable version of Next.js (v13) with the new app routing system. I didn’t use server actions due to their instability at the time.</p>
 
-<p><img src="images/posts/mikado-method/goal-completed.webp" alt="goal completed" /></p>
+<p>As a TDD practitioner, understanding how to test my code when starting work on a new technology is crucial. The backend part was relatively straightforward for me, given my experience in creating backend applications for over a decade. Let me explain what I’ve done.</p>
 
-<p>As you can see in the previous sections of the blog post, we can represent your progress as a graph. This is a useful way to communicate the progress of your task with the rest of the team.  For example, you can show the mikado graph at the daily meeting to easily explain what you did. If, for any reason, you cannot complete your task, you can share the mikado graph with a colleague to explain what you’ve done and what remains to be done. Organizing your work becomes easier, especially when you are working on complex tasks. The Mikado graph is more visual than a simple to-do list because it allows you to see dependencies between prerequisites.</p>
+<p><img src="images/posts/build-mikado-app/backend-overview.svg" alt="Mikado method - backend overview" /></p>
 
-<p>I wrote a small application called MikadoApp to easily create and share your Mikado graphs. All the images in the blog posts are screenshots from the application. You can start using it thanks to this <a href="https://mikado-method-teal.vercel.app">link</a>, and you can find the source code on <a href="https://github.com/arnolanglade/mikado-app">GitHub</a>. Don’t hesitate to contribute to the application to improve it.</p>
+<p>As described in the previous diagram, I created a new Next.js API route which is a controller to handle HTTP requests and return an HTTP response. A command is then created with the data received by the controller and is passed to a command handler that executes all the actions needed to perform the use case. The command handler uses a repository to persist and retrieve data from the storage system, building the <code class="language-plaintext highlighter-rouge">MikadoGraph</code> aggregate.</p>
 
-<p>Since I started using this method, my way of working has changed. I try to break down my work into small steps, and each commit can be pushed into production. If I refactor something, it’s great because I regularly push improvements. If I work on a feature, I can refactor what I need to create my feature without breaking the rest of the application.</p>
+<p><strong>Note:</strong> An aggregate is a collection of objects that represents a domain concept.</p>
 
-<p>Now,I like working directly on the main branch, but I ensure that I only push stable commits. That’s what we call Trunk Based Development. This approach allows delivering small improvements to production quickly and frequently. Even though it can be practiced with PRs, I no longer prefer working with them due to the many associated processes that slow down the delivery.</p>
+<p>It was a bit different for the frontend part as Next.js has a Server Side Rendering mechanism that I had not used before. Let me explain what I’ve done.</p>
+
+<p><img src="images/posts/build-mikado-app/frontend-overview.svg" alt="Mikado method - frontend overview" /></p>
+
+<p>As described in the previous diagram, the SSR (Server-Side Rendering) page is responsible for retrieving all the necessary data to initialize the page. Then, the pre-rendered page is sent to the browser to render the ‘page component’. The purpose of this component is to orchestrate use case handling. It acts as a bridge between the custom hooks, which manage business logic, and the view (Business and UI components) responsible for rendering the user interface.</p>
+
+<p>I’ve written a blog post about how to organize a React application to facilitate testing. Please, have a look at the article to understand why I made those choices:</p>
+
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/react-testing-strategy.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/" alt="" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title"></span>
+      </span>
+   </a>
+</div>
+
+<p>Finally, I had a working application, great! As you can see in the following video, the first version of the application was ugly, toast messages were displayed in the console, the mikado graph data was stored in memory but that was fine. I checked that the functional choices were good and now I just needed to focus on the next steps which are design and storage.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yoD9XWcJ-RA?si=c1MFgwKl7Ae3WUak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+<h2 id="step-3-finalize-the-mvp">Step 3: Finalize the MVP</h2>
+
+<p>From my point of view, it is really important to be able to deploy an application in production or in an environment where users can try the application. It is a good way to get feedback from them. Even though I was alone, it was interesting to test the application in production mode. That’s why I decided to implement the storage system. I used Supabase, which provides an open-source alternative to Firebase. To be honest, I mainly chose it because I wanted to try it.</p>
+
+<p>The next and final step was to make the user interface fancy. I chose several libraries to prevent reinventing the wheel. As we represent the Mikado Method as a graph, I needed a powerful library that eases the creation of a node-based UI. I found <a href="https://reactflow.dev/">React Flow</a>. At this step, the notification system only used the console, which wasn’t user-friendly. I decided to use React-toastify to handle that part. The last thing I needed to improve was the form management, especially the error management. In the early first version, I used HTML5 validation, but it didn’t provide a good user experience. I didn’t use a library to handle that because my forms are really simple.</p>
+
+<p><img src="images/posts/build-mikado-app/mikado-graph.webp" alt="Mikado method - frontend overview" /></p>
+
+<p>The previous image is a screenshot of the first version of the <code class="language-plaintext highlighter-rouge">MikadoApp</code>. Try the self hosted version of the MikadoApp:</p>
+
+<div style="text-align: center;margin-bottom: 30px">
+    <a href="https://mikado-method-teal.vercel.app" class="cta-button c-button c-button--primary c-button--small">
+        <span class="circle-bg">
+          <i class="ion ion-open-outline"></i>
+        </span>
+        Try the MikadoApp
+    </a>
+</div>
+
+<p>Don’t forget, MikadoApp is an open-source application. Don’t hesitate to contribute to the application to improve. Any help is very welcome.</p>
+
+<div style="text-align: center;margin-bottom: 30px">
+    <a href="https://github.com/arnolanglade/mikado-app" class="cta-button c-button c-button--primary c-button--small">
+        <i class="ion ion-logo-github" style="margin-right: 6px"></i>
+        Sources on GitHub
+    </a>
+</div>
+
+<p>Deploying the initial version of an application as soon as possible is great, but it’s even better when you can observe what happens in production. With a robust alerting system, we can react promptly and address issues before they become visible to too many users. I use Vercel’s free plan, which provides some basic logs, but it is not enough. I decided to use Sentry as an incident manager. It gathers all errors that occur in production and sends me an email when something goes wrong.</p>
+
+<h2 id="what-went-wrong">What went wrong?</h2>
+
+<h3 id="in-memory-repository">In memory repository</h3>
+
+<p>Using in-memory repositories is useful for deferring choices, allowing you to prioritize delivering business value over dealing with technical aspects. Once you’ve a clear understanding and confidence, you can make the best choices. I recommend working this way when building software. However, in this project, I encountered some problems.</p>
+
+<p>In development mode, Next.js doesn’t compute the entire application. It only computes a page when you display it the first time. That means each time you go on another page the in memory repository is reset. It’s a bit annoying when you want to do manual testing but it works well in production mode.</p>
+
+<p>Moreover, it doesn’t work on Vercel because each API route is deployed as a serverless function. This means your routes have to be stateless, and you can’t keep anything in memory.</p>
+
+<h3 id="nextjs-cache">Next.js cache</h3>
+
+<p>I encountered another issue that took some time to resolve. The prerequisites didn’t appear after adding them to the Mikado graph, even if I manually refreshed the page. I didn’t understand what happened initially, but I found out that Next.js has a caching mechanism.</p>
+
+<p>To disable the cache on a specific page, export the following const:</p>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">revalidate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">async</span> <span class="kd">function</span> <span class="nx">MikadoGraphPage</span><span class="p">({</span> <span class="na">params</span><span class="p">:</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">params</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">mikadoGraphView</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="nx">getMikadoGraphById</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
+ 
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">dashboard</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Page</span> <span class="na">mikadoGraphView</span><span class="p">=</span><span class="si">{</span><span class="nx">mikadoGraphView</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When starting a new project, prioritize delivering business value over technical aspects. Deploy your application as soon as possible to gather feedback from internal or external users. Then, iterate to improve your product.</p>
 
     </div>
 
@@ -292,19 +392,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=The%20Mikado%20Method:%20Small%20Steps,%20Big%20Improvements&url=https://arnolanglade.github.io/mikado-method.html"
+        href="https://twitter.com/intent/tweet?text=How%20I%20built%20MikadoApp,%20an%20open-source%20application%20for%20the%20Mikado%20Method&url=https://arnolanglade.github.io/built-mikadoapp-open-source.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/mikado-method.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/built-mikadoapp-open-source.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/mikado-method.html&title=The%20Mikado%20Method:%20Small%20Steps,%20Big%20Improvements&summary=Enhance%20your%20codebase%20with%20the%20Mikado%20Method%20%E2%80%93%20a%20focused%20approach%20for%20incremental%20improvements%20without%20breaking%20your%20codebase.%20Tailored%20for%20brownfield%20development,%20ensure%20code%20stability%20and%20effortless%20feature%20integration.%20Collaborate%20effectively%20with%20MikadoApp%20and%20achieve%20rapid%20code%20enhancements%20through%20Trunk%20Based%20Development.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/built-mikadoapp-open-source.html&title=How%20I%20built%20MikadoApp,%20an%20open-source%20application%20for%20the%20Mikado%20Method&summary=Discover%20how%20I%20built%20theMikadoApp,%20an%20open-source%20application%20leveraging%20the%20Mikado%20Method.%20Learn%20about%20technical%20choices,%20practices,%20and%20the%20steps%20to%20deploy%20an%20MVP.%20Discover%20the%20challenges%20faced%20and%20lessons%20learned%20in%20the%20development%20process.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -352,16 +452,37 @@
             
 
             
+            
+            
+            
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/built-mikadoapp-open-source.html">
-        <img loading="lazy" src="/images/posts/build-mikado-app/build-mikado-app.webp" alt="How I built MikadoApp, an open-source application for the Mikado Method">
+      <a class="c-blog-card__image" href="/mikado-method.html">
+        <img loading="lazy" src="/images/posts/mikado-method/mikado-method.webp" alt="The Mikado Method: Small Steps, Big Improvements">
       </a>
     </div>
     
@@ -377,16 +498,16 @@
       
 
       <h2 class="c-blog-card__title">
-        <a href="/built-mikadoapp-open-source.html">How I built MikadoApp, an open-source application for the Mikado Method</a>
+        <a href="/mikado-method.html">The Mikado Method: Small Steps, Big Improvements</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Discover how I built theMikadoApp, an open-source application leveraging the Mikado Method. Learn about technical choices, practices, and the steps to deploy an MVP. Discover the challenges faced and lessons learned in the development process.
+        Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield development, ensure code stability and effortless feature integration. Collaborate effectively with MikadoApp and achieve rapid code enhancements through Trunk Based Development.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2024-02-05T00:00:00-06:00">05 Feb 2024</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-11-27T00:00:00-06:00">27 Nov 2023</time></span>
         </div>
       </div>
     </div>
@@ -398,27 +519,6 @@
             
                 
               
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
             
             
             
