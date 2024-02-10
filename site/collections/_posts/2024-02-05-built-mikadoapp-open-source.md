@@ -58,7 +58,7 @@ As described in the previous diagram, the SSR (Server-Side Rendering) page is re
 
 I’ve written a blog post about how to organize a React application to facilitate testing. Please, have a look at the article to understand why I made those choices:
 
-{% include blog-post-link.html url='/react-testing-strategy.html' image='' title='' %}
+{% include blog-post-link.html url='/react-testing-strategy.html' image='react-testing-strategy/react-testing-strategy.webp' title='Three types of React components for an effective testing strategy' %}
 
 Finally, I had a working application, great! As you can see in the following video, the first version of the application was ugly, toast messages were displayed in the console, the mikado graph data was stored in memory but that was fine. I checked that the functional choices were good and now I just needed to focus on the next steps which are design and storage.
 
