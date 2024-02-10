@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 05 Feb 2024 02:15:59 -0600</pubDate>
-        <lastBuildDate>Mon, 05 Feb 2024 02:15:59 -0600</lastBuildDate>
+        <pubDate>Sat, 10 Feb 2024 03:51:42 -0600</pubDate>
+        <lastBuildDate>Sat, 10 Feb 2024 03:51:42 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -85,10 +85,10 @@
 &lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
    &lt;a class=&quot;post__prev&quot; href=&quot;/react-testing-strategy.html&quot;&gt;
       &lt;span class=&quot;prev__image&quot;&gt;
-         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/&quot; alt=&quot;&quot; /&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/react-testing-strategy/react-testing-strategy.webp&quot; alt=&quot;Three types of React components for an effective testing strategy&quot; /&gt;
       &lt;/span&gt;
       &lt;span class=&quot;prev__box&quot;&gt;
-         &lt;span class=&quot;post__nav__title&quot;&gt;&lt;/span&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Three types of React components for an effective testing strategy&lt;/span&gt;
       &lt;/span&gt;
    &lt;/a&gt;
 &lt;/div&gt;
