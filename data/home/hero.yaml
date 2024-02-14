@@ -1,0 +1,15 @@
+enabled: true
+id: "hero"
+
+content:
+  title: "Hi, I'm **Arnaud Langlade**"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est faucibus tellus leo non pellentesque lorem vel. Arcu magna eros, potenti duis."
+
+  buttonPrimary:
+    label: "Hire me"
+    url: "/contact"
+
+  buttonSecondary:
+    label: "About me"
+    url: "/about"
+
