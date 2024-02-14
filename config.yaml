@@ -10,6 +10,27 @@ summaryLength: 20
 
 paginate: 1
 
+defaultContentLanguage: en
+languages:
+  fr:
+    disabled: false
+    languageCode: fr
+    languageDirection: ltr
+    languageName: Français
+    params:
+      title: "Arnaud Langlade"
+      description: "Ingéniere logiciel, formateur et conférencier"
+    weight: 1
+  en:
+    disabled: false
+    languageCode: en
+    languageDirection: ltr
+    languageName: English
+    params:
+      title: "Up Business"
+      description: "We specialize in providing services to desing websites, applications, build and maintain business for customers."
+    weight: 2
+
 params:
   title: "Up Business"
   description: "We specialize in providing services to desing websites, applications, build and maintain business for customers."
@@ -33,7 +54,7 @@ params:
   contact:
     - "contact@arnaudlanglade.com"
 
-  copyright: "© 2024 Arnaud Langlade All Rights Reserved"
+  copyright: "© 2024 Arnaud Langlade"
 
 menus:
   main:
