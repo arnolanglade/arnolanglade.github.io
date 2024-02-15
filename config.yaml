@@ -12,23 +12,23 @@ paginate: 1
 
 defaultContentLanguage: en
 languages:
-  fr:
-    disabled: false
-    languageCode: fr
-    languageDirection: ltr
-    languageName: Français
-    params:
-      title: "Arnaud Langlade"
-      description: "Ingéniere logiciel, formateur et conférencier"
-    weight: 1
   en:
     disabled: false
     languageCode: en
     languageDirection: ltr
-    languageName: English
+    languageName: "🇺🇸"
     params:
-      title: "Up Business"
-      description: "We specialize in providing services to desing websites, applications, build and maintain business for customers."
+      title: "Arnaud Langlade"
+      description: ""
+    weight: 1
+  fr:
+    disabled: false
+    languageCode: fr
+    languageDirection: ltr
+    languageName: "🇨🇵"
+    params:
+      title: "Arnaud Langlade"
+      description: ""
     weight: 2
 
 params:
