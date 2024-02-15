@@ -17,6 +17,62 @@ languages:
     languageCode: en
     languageDirection: ltr
     languageName: "🇺🇸"
+    menus:
+      main:
+        - name: "Home"
+          url: "/#hero"
+          weight: 1
+
+        - name: "Training"
+          url: "/#"
+          weight: 2
+
+        - name: "Projects"
+          url: "/projects"
+          weight: 3
+
+        - name: "Blog"
+          url: "/blog"
+          weight: 4
+
+        - name: "Contact"
+          url: "/contact"
+          weight: 5
+
+      buttons:
+        - name: "Hire me"
+          url: "/contact"
+          weight: 5
+          pre: "btn btn-primary text-light"
+
+      footer:
+        - name: "Home"
+          url: "/#hero"
+          weight: 1
+
+        - name: "About"
+          url: "/about"
+          weight: 2
+
+        - name: "Talks"
+          url: "/talks"
+          weight: 3
+
+        - name: "Training"
+          url: "/#"
+          weight: 4
+
+        - name: "Projects"
+          url: "/projects"
+          weight: 5
+
+        - name: "Blog"
+          url: "/blog"
+          weight: 6
+
+        - name: "Contact"
+          url: "/contact"
+          weight: 7
     params:
       title: "Arnaud Langlade"
       description: ""
@@ -26,6 +82,62 @@ languages:
     languageCode: fr
     languageDirection: ltr
     languageName: "🇨🇵"
+    menus:
+      main:
+        - name: "Accueil"
+          url: "/#hero"
+          weight: 1
+
+        - name: "Formation"
+          url: "/#"
+          weight: 2
+
+        - name: "Projets"
+          url: "/projects"
+          weight: 3
+
+        - name: "Blog"
+          url: "/blog"
+          weight: 4
+
+        - name: "Contact"
+          url: "/contact"
+          weight: 5
+
+      buttons:
+        - name: "Me contacter"
+          url: "/contact"
+          weight: 5
+          pre: "btn btn-primary text-light"
+
+      footer:
+        - name: "Accueil"
+          url: "/#hero"
+          weight: 1
+
+        - name: "À propos"
+          url: "/about"
+          weight: 2
+
+        - name: "Conférences"
+          url: "/talks"
+          weight: 3
+
+        - name: "Formation"
+          url: "/#"
+          weight: 4
+
+        - name: "Projets"
+          url: "/projects"
+          weight: 5
+
+        - name: "Blog"
+          url: "/blog"
+          weight: 6
+
+        - name: "Contact"
+          url: "/contact"
+          weight: 7
     params:
       title: "Arnaud Langlade"
       description: ""
@@ -55,63 +167,6 @@ params:
     - "contact@arnaudlanglade.com"
 
   copyright: "© 2024 Arnaud Langlade"
-
-menus:
-  main:
-    - name: "Home"
-      url: "/#hero"
-      weight: 1
-
-    - name: "Training"
-      url: "/#"
-      weight: 2
-
-    - name: "Projects"
-      url: "/projects"
-      weight: 3
-
-    - name: "Blog"
-      url: "/blog"
-      weight: 4
-
-    - name: "Contact"
-      url: "/contact"
-      weight: 5
-
-  buttons:
-    - name: "Hire me"
-      url: "/contact"
-      weight: 5
-      pre: "btn btn-primary text-light"
-
-  footer:
-    - name: "Home"
-      url: "/#hero"
-      weight: 1
-
-    - name: "About"
-      url: "/about"
-      weight: 2
-
-    - name: "Talks"
-      url: "/talks"
-      weight: 3
-
-    - name: "Training"
-      url: "/#"
-      weight: 4
-
-    - name: "Projects"
-      url: "/projects"
-      weight: 5
-
-    - name: "Blog"
-      url: "/blog"
-      weight: 6
-
-    - name: "Contact"
-      url: "/contact"
-      weight: 7
 
 taxonomies:
   series: "series"
