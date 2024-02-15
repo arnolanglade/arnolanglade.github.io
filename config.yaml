@@ -149,8 +149,6 @@ params:
   images:
     - "images/hero-image.png"
 
-  logo: "arrow-up.png"
-
   favicons:
     themeColor: "#FFFFFF"
     backgroundColor: "#FFFFFF"

@@ -1,3 +1,4 @@
-{{ with resources.Get . }}
-  <img class="" src="{{ .Permalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }}
+{{ $image := resources.Get .src }}
+{{ $resizedImage := $image.Resize .format }}
+
+<img class="" src="{{ $resizedImage.Permalink }}" alt="{{ .alt }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}">
