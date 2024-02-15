@@ -1,3 +1,5 @@
-+++
-author = "Hugo Authors"
-+++
+---
+title: ""
+slug: ""
+description: ""
+---

@@ -1,9 +1,7 @@
-+++
-title = "A propos"
-description = "Arnaud Langlade, développeur"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo"]
-author = "Hugo Authors"
-+++
+---
+title: "A propos de moi"
+slug: "a-propos-de-moi"
+description: ""
+---
 
-C'est en français
+TODO
