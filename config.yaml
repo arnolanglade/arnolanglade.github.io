@@ -24,7 +24,7 @@ languages:
           weight: 1
 
         - name: "Training"
-          url: "/#"
+          url: ""
           weight: 2
 
         - name: "Projects"
@@ -34,10 +34,6 @@ languages:
         - name: "Blog"
           url: "/blog"
           weight: 4
-
-        - name: "Contact"
-          url: "/contact"
-          weight: 5
 
       buttons:
         - name: "Hire me"
@@ -59,7 +55,7 @@ languages:
           weight: 3
 
         - name: "Training"
-          url: "/#"
+          url: ""
           weight: 4
 
         - name: "Projects"
@@ -85,24 +81,20 @@ languages:
     menus:
       main:
         - name: "Accueil"
-          url: "/#hero"
+          url: "/fr/#hero"
           weight: 1
 
         - name: "Formation"
-          url: "/#"
+          url: ""
           weight: 2
 
         - name: "Projets"
-          url: "/projects"
+          url: "/fr/projets"
           weight: 3
 
         - name: "Blog"
           url: "/blog"
           weight: 4
-
-        - name: "Contact"
-          url: "/contact"
-          weight: 5
 
       buttons:
         - name: "Me contacter"
@@ -112,23 +104,23 @@ languages:
 
       footer:
         - name: "Accueil"
-          url: "/#hero"
+          url: "/fr/#hero"
           weight: 1
 
         - name: "À propos"
-          url: "/about"
+          url: "/fr/a-propos-de-moi"
           weight: 2
 
         - name: "Conférences"
-          url: "/talks"
+          url: "/fr/conferences"
           weight: 3
 
         - name: "Formation"
-          url: "/#"
+          url: ""
           weight: 4
 
         - name: "Projets"
-          url: "/projects"
+          url: "/fr/projets"
           weight: 5
 
         - name: "Blog"
@@ -136,7 +128,7 @@ languages:
           weight: 6
 
         - name: "Contact"
-          url: "/contact"
+          url: "/fr/contactez-moi"
           weight: 7
     params:
       title: "Arnaud Langlade"
