@@ -67,7 +67,7 @@ languages:
           weight: 6
 
         - name: "Contact"
-          url: "/contact"
+          url: "/contact-me"
           weight: 7
     params:
       title: "Arnaud Langlade"

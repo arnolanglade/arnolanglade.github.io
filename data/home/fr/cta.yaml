@@ -1,0 +1,9 @@
+enabled: true
+id: "cta"
+
+content:
+  title: "Faisons avancer vos projets, discutons-en ensemble !"
+  image: "images/services-web-development.png"
+  button:
+    label: "Parlons-en"
+    url: "/fr/contactez-moi"
