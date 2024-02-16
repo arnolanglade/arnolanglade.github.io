@@ -2,14 +2,13 @@ enabled: true
 id: "hero"
 
 content:
-  title: "Salut je suis **Arnaud Langlade**"
-  text: "Lofgfghjfjhfnon pellentesque lorem vel. Arcu magna eros, potenti duis."
+  title: "Salut, je m'appelle **Arnaud**!"
+  text: ""
 
   buttonPrimary:
-    label: "Hire me"
-    url: "/contact"
+    label: "Travaillons ensemble"
+    url: "/fr/contactez-moi"
 
   buttonSecondary:
-    label: "About me"
-    url: "/about"
-
+    label: "À propos de moi"
+    url: "/fr/a-propos-de-moi"

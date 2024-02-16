@@ -1,4 +1,4 @@
 {{ $image := resources.Get .src }}
 {{ $resizedImage := $image.Resize .format }}
 
-<img class="" src="{{ $resizedImage.Permalink }}" alt="{{ .alt }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}">
+<img class="{{ .class }}" src="{{ $resizedImage.Permalink }}" alt="{{ .alt }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}">
