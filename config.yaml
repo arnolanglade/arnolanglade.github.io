@@ -17,6 +17,8 @@ languages:
     languageCode: en
     languageDirection: ltr
     languageName: "🇺🇸"
+    permalinks:
+      blog: "/:title"
     menus:
       main:
         - name: "Home"
@@ -78,6 +80,8 @@ languages:
     languageCode: fr
     languageDirection: ltr
     languageName: "🇨🇵"
+    permalinks:
+      blog: "/:title"
     menus:
       main:
         - name: "Accueil"
