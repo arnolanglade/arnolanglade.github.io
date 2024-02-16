@@ -1,6 +1,13 @@
 +++
-aliases = ["posts", "articles", "blog", "showcase", "docs"]
-title = "Posts fr"
-author = "Hugo Authors"
-tags = ["index"]
+title = "Conférernces"
+author = ""
 +++
+
+
+fsqfqsdf
+qsdf
+sqdf
+sqdf
+qsd
+fsdf
+
