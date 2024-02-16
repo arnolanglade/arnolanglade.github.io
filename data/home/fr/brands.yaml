@@ -1,0 +1,21 @@
+enabled: true
+id: "brands"
+
+content:
+  title: "J'ai travaillé pour ces entreprises et startups"
+  items:
+    akeneo:
+      src: "images/brand/akeneo.png"
+      alt: "Akeneo"
+    sunday:
+      src: "images/brand/sunday.png"
+      alt: "Sunday"
+    royal-canin:
+      src: "images/brand/royal-canin.png"
+      alt: "Royal Canin"
+    sud-ouest:
+      src: "images/brand/sud-ouest.jpg"
+      alt: "Sud Ouest"
+    iogk:
+      src: "images/brand/iogk.png"
+      alt: "IOGK"

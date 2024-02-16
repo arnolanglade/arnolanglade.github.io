@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/hero.html" .hero }}{{ end }}
-  {{ with .Site.Data.home.brands }}{{ partial "sections/brands.html" . }}{{ end }}
+  {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/brands.html" .brands }}{{ end }}
   {{ with .Site.Data.home.portfolio }}{{ partial "sections/portfolio.html" . }}{{ end }}
   {{ with .Site.Data.home.services }}{{ partial "sections/services.html" . }}{{ end }}
   {{ with .Site.Data.home.testimonials }}{{ partial "sections/testimonials.html" . }}{{ end }}
