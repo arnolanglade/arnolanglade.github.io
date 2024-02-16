@@ -1,12 +1,12 @@
 <div class="row">
   {{ with .featured }}
   <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-    {{ with .image }}
-      {{ partial "utilities/image-fluid.html" . }}
-    {{ end }}
+    {{ partial "utilities/image" (dict "src" "images/testimonials-awards.png" "format" "500x webp" "class" "img-fluid" "alt" "Testimonials awards") }}
   </div>
   <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
-    <div class="pb-4">{{ partial "utilities/image-third.html" "images/testimonials-left-quote.png" }}</div>
+    <div class="pb-4">
+      {{ partial "utilities/image" (dict "src" "images/testimonials-left-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+    </div>
     <div class="card d-flex flex-row align-items-start border-0 shadow p-5">
       <div class="bg-green rounded-circle size-64 me-4"></div>
       <p class="card-text text-black-61">
@@ -14,7 +14,9 @@
         <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-primary text-nowrap">{{ .name }} ({{ .position }})</a>
       </p>
     </div>
-    <div class="pt-4 text-end">{{ partial "utilities/image-third.html" "images/testimonials-right-quote.png" }}</div>
+    <div class="pt-4 text-end">
+      {{ partial "utilities/image" (dict "src" "images/testimonials-right-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+    </div>
   </div>
   {{ end }}
 </div>
