@@ -97,7 +97,7 @@ languages:
           weight: 4
 
       buttons:
-        - name: "Me contacter"
+        - name: "Travaillons ensemble"
           url: "/contact"
           weight: 5
           pre: "btn btn-primary text-light"
@@ -127,7 +127,7 @@ languages:
           url: "/blog"
           weight: 6
 
-        - name: "Contact"
+        - name: "Travaillons ensemble"
           url: "/fr/contactez-moi"
           weight: 7
     params:
