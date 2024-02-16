@@ -3,7 +3,6 @@ id: "cta"
 
 content:
   title: "Let's move your projects forward, let's discuss it together!"
-  image: "images/services-web-development.png"
   button:
     label: "Let's talk"
     url: "/contact-me"
