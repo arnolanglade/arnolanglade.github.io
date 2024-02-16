@@ -1,4 +1,6 @@
 {{ $image := resources.Get .src }}
-{{ $resizedImage := $image.Resize .format }}
 
-<img class="{{ .class }}" src="{{ $resizedImage.Permalink }}" alt="{{ .alt }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}">
+{{ $format := default "1320x webp" .format }}
+{{ $image := $image.Resize $format }}
+
+<img class="{{ .class }}" src="{{ $image.Permalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}">

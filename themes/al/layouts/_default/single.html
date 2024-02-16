@@ -2,12 +2,15 @@
   <section class="section blog-single py-5">
     <div class="container">
       <div class="row justify-content-center pb-5">
-        <div class="col-12">
+        <div class="col-12 text-center">
           {{ with .Title }}
             <h2 class="display-1 fw-bold text-center text-primary pb-3">{{ . }}</h2>
           {{ end }}
           {{ with .Params.description }}
             <p class="text-black-61 text-center pb-3">{{ . }}</p>
+          {{ end }}
+          {{ with .Params.image }}
+            {{ partial "utilities/image.html" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
           {{ end }}
         </div>
       </div>
