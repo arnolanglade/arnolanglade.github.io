@@ -1,0 +1,46 @@
+enabled: true
+id: "testimonials"
+
+content:
+  title: "They liked working with me"
+  cta:
+    label: "All testimonials"
+    url: "/testimonials"
+
+  featured:
+    image: "images/testimonials-awards.png"
+    text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
+    name: "Arnaud LEMAIRE"
+    position: "VP/Chief Architect at Sunday"
+    linkedin: "https://www.linkedin.com/in/lilobase/"
+
+  list:
+    - text: "J'ai eu la chance de travailler avec Arnaud pendant plusieurs mois au sein de Sunday. Je dis bien 'chance' car j'ai appris beaucoup à ses côtés, que ce soit sur l'exercice de son métier que sur l'environnement nécessaire au bon exercice de son métier. Je recommande donc chaudement Arnaud qui, au-delà de ses connaissances multiples et de son expertise profonde, est un collègue très agréable avec qui travailler !"
+      name: "Denis Migot"
+      position: "Engineer Manager at Sunday"
+      linkedin: "https://www.linkedin.com/in/denis-migot"
+
+    - text: "It was my pleasure to work in pair-programming with Arnaud for 3 months. His mastery of TDD and his ability to guide his teammates into it made the whole experience extremely profitable and allowed to produce a very well-decoupled, expressive code. We could rely a lot on his ability to split a big feature into smaller steps, without being confused by the general complexity of the task at hand. Finally, his constant focus on building iteratively things that work and bring value make him a 5* asset in a software development team."
+      name: "Laurent Verdier"
+      position: "Web developer at Palo IT"
+      linkedin: "https://www.linkedin.com/in/lverdier/"
+
+    - text: "Arnaud is a very talentuous senior software engineer with robust and proven experience. Arnaud, as leader of a development squad, has successfully delivered a SaaS native platform from first steps of product ideation all the way to the SaaS platform in production. Thanks to Arnaud broad technical expertise and smart human touch, he has been able to lead, coach and grow multiple members of the squad (product manager, software engineer, DevOps). While being very demanding for himself, Arnaud is very pleasant toward his team members and fun to work with."
+      name: "Arnaud Faissolle"
+      position: "Engineer Manager at Akeneo"
+      linkedin: "https://www.linkedin.com/in/arnaud-faissolle-249315"
+
+    - text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
+      name: "Nicolas Dupont"
+      position: "Co-founder at Akeneo"
+      linkedin: "https://www.linkedin.com/in/nicolasdupontakeneo"
+
+    - text: "Arnaud has been a great Open Source collaborator and developer in the early days of Sylius. Skilled with BDD tools and modern development techniques. Highly recommended!"
+      name: "Paweł Jędrzejewski"
+      position: "Founder at Sylius"
+      linkedin: "https://www.linkedin.com/in/pjedrzejewski"
+
+    - text: "J'ai travaillé pendant plusieurs années chez Clever Age en même temps qu'Arnaud. Nous avons souvent évolué sur des projets différents, mais avons eu quelques occasions de travailler ensemble, notamment sur des démarrages de projets Symfony où l'expertise d'Arnaud était très appréciée, puisqu'il était capable de comprendre les problématiques métiers que nous rencontrions et de nous proposer la juste couche d'abstraction pour y répondre, afin de partir sur une architecture logicielle dont la complexité était adaptée. Si l'occasion venait à ne présenter, je travaillerais à nouveau avec Arnaud avec plaisir, et confiance."
+      name: "Boris Schapira"
+      position: "Chef de projet technique chez Clever Age"
+      linkedin: "https://www.linkedin.com/in/borisschapira"
