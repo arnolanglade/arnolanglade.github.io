@@ -151,11 +151,12 @@ params:
     faviconColor: "#000000"
 
   social:
-    linkedin: "#"
-    twitter: "#"
-    bluesky: "#"
-    youtube: "#"
-    mastodon: "#"
+    linkedin: "https://www.linkedin.com/in/arnolanglade"
+    x: "https://twitter.com/arnolanglade"
+    bluesky: "https://bsky.app/profile/arnolanglade.bsky.social"
+    github: "https://github.com/arnolanglade"
+    mastodon: "https://www.youtube.com/@arnolanglade"
+    youtube: "https://www.youtube.com/@arnolanglade"
 
   contact:
     - "contact@arnaudlanglade.com"
