@@ -10,7 +10,7 @@
     <div class="row align-items-center justify-content-center">
       {{ range .content.items }}
       <div class="col px-3 my-2 text-center">
-        {{ partial "utilities/image" (dict "src" .src "alt" .alt "format" "150x webp") }}
+        {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" "150x webp") }}
       </div>
       {{ end }}
     </div>

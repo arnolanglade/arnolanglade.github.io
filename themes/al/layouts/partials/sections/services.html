@@ -4,7 +4,7 @@
     <div class="row portfolio-feature">
       <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
         {{ with .image }}
-        {{ partial "utilities/image" (dict "src" .src "alt" .alt "format" "600x webp") }}
+        {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" "600x webp") }}
         {{ end }}
       </div>
       <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">

@@ -1,21 +1,21 @@
 <div class="row">
   {{ with .featured }}
   <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-    {{ partial "utilities/image" (dict "src" "images/testimonials-awards.png" "format" "500x webp" "class" "img-fluid" "alt" "Testimonials awards") }}
+    {{ partial "utilities/resized-image" (dict "src" "images/testimonials-awards.png" "format" "500x webp" "class" "img-fluid" "alt" "Testimonials awards") }}
   </div>
   <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
     <div class="pb-4">
-      {{ partial "utilities/image" (dict "src" "images/testimonials-left-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+      {{ partial "utilities/resized-image" (dict "src" "images/testimonials-left-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
     </div>
     <div class="card d-flex flex-row align-items-start border-0 shadow p-5">
-      {{ partial "utilities/image" (dict "src" .image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" .name) }}
+      {{ partial "utilities/resized-image" (dict "src" .image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" .name) }}
       <p class="card-text text-black-61 ps-2">
         "{{ .text }}"
         <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-primary text-nowrap">{{ .name }} ({{ .position }})</a>
       </p>
     </div>
     <div class="pt-4 text-end">
-      {{ partial "utilities/image" (dict "src" "images/testimonials-right-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+      {{ partial "utilities/resized-image" (dict "src" "images/testimonials-right-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
     </div>
   </div>
   {{ end }}
@@ -25,7 +25,7 @@
     <div class="col-12 col-xl-4">
       <div class="card border-0 border-radius-34 p-4">
         {{ with $e.image }}
-        {{ partial "utilities/image" (dict "src" $e.image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" $e.name) }}
+        {{ partial "utilities/resized-image" (dict "src" $e.image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" $e.name) }}
           <div class="card-body">
             <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
           </div>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light bg-light py-4">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="{{ .Site.BaseURL }}">
-      {{ partial "utilities/image" (dict "src" "images/logo.png" "format" "48x48 webp" "alt" "Logo") }}
+      {{ partial "utilities/resized-image" (dict "src" "images/logo.png" "format" "48x48 webp" "alt" "Logo") }}
       <span class="fs-3 fw-semibold text-uppercase text-primary">{{ .Site.Title }}</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">

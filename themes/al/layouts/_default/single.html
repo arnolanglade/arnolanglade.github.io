@@ -10,7 +10,7 @@
             <p class="text-black-61 text-center pb-3">{{ . }}</p>
           {{ end }}
           {{ with .Params.image }}
-            {{ partial "utilities/image.html" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
+            {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
           {{ end }}
         </div>
       </div>
