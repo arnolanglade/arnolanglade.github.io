@@ -2,7 +2,6 @@ enabled: true
 id: "brands"
 
 content:
-  title: "I have worked for these companies and startups"
   items:
     akeneo:
       src: "images/brand/akeneo.png"
