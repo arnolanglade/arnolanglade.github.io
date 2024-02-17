@@ -3,7 +3,7 @@ title: "About me"
 slug: "about-me"
 description: ""
 image: 
-  src: "images/me/home.jpg"
+  src: "images/me/about.jpg"
   alt: "Arnaud Langlade"
   format: "x600 webp"
 ---
