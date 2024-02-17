@@ -26,7 +26,7 @@
       <div class="card border-0 border-radius-34 p-4">
         {{ with $e.image }}
         {{ partial "utilities/image" (dict "src" $e.image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" $e.name) }}
-        <div class="card-body">
+          <div class="card-body">
             <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
           </div>
         {{ else }}
