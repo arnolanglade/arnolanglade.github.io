@@ -3,7 +3,7 @@
     <div class="row pb-5">
       <div class="col-12">
           <h3 class="fs-1 fw-bold text-center text-primary pb-3">
-            {{ i18n "home.section.testimonials.title" }}
+            {{ i18n "home.section.testimonials.title" | markdownify }}
           </h3>
       </div>
     </div>
@@ -12,7 +12,7 @@
 
     <div class="row">
       <a class="btn btn-primary text-light px-4 my-1" href="{{ "testimonials" | relLangURL }}">
-        {{ i18n "home.section.testimonials.button" }}
+        {{ i18n "home.section.testimonials.button" | markdownify }}
       </a>
     </div>
   </div>
