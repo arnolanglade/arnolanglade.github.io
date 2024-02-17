@@ -8,8 +8,8 @@
       {{ partial "utilities/image" (dict "src" "images/testimonials-left-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
     </div>
     <div class="card d-flex flex-row align-items-start border-0 shadow p-5">
-      <div class="bg-green rounded-circle size-64 me-4"></div>
-      <p class="card-text text-black-61">
+      {{ partial "utilities/image" (dict "src" .image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" .name) }}
+      <p class="card-text text-black-61 ps-2">
         "{{ .text }}"
         <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-primary text-nowrap">{{ .name }} ({{ .position }})</a>
       </p>
@@ -25,15 +25,15 @@
     <div class="col-12 col-xl-4">
       <div class="card border-0 border-radius-34 p-4">
         {{ with $e.image }}
-          {{ partial "utilities/image-fluid.html" $e.image }}
-          <div class="card-body">
-            <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ .linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
+        {{ partial "utilities/image" (dict "src" $e.image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" $e.name) }}
+        <div class="card-body">
+            <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
           </div>
         {{ else }}
           <div class="card-body">
             {{ $colors := (slice "bg-green" "bg-yellow" "bg-red" "bg-purple") }}
             <div class="{{ index $colors (mod $i 4) }} rounded-circle size-90 mb-4"></div>
-            <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ .linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
+            <p class="card-text text-black-61">"{{ $e.text }}" <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a></p>
           </div>
         {{ end }}
       </div>
