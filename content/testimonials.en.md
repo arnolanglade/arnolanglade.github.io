@@ -5,3 +5,5 @@ description: ""
 ---
 
 {{< testimonials >}}
+
+{{< partial path="sections/hire-me" >}}

@@ -5,3 +5,5 @@ description: ""
 ---
 
 TODO
+
+{{< partial path="sections/hire-me" >}}

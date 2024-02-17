@@ -53,3 +53,5 @@ The second option is to click on 'Commit your changes' when you finish it and pr
 Continue resolving all prerequisites until the end. When all prerequisites are done, your objective is completed!
 
 {{< image src="/images/project/mikado-app/objective-completed.webp" alt="objective completed" >}}
+
+{{< partial path="sections/hire-me" >}}
