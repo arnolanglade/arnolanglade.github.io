@@ -25,3 +25,5 @@ I focus my technical watch on topics that let me build robust and maintainable s
 > [Kent Beck](https://www.linkedin.com/in/kentbeck/)
 
 I try to find the simplest solution that solves a business problem to ship it to production as quickly as possible. Any feedback is key in software development, it ensures we take the right decision. Agile, «This is the way».
+
+{{< partial path="sections/hire-me" >}}
