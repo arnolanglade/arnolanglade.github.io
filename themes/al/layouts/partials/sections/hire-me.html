@@ -1,19 +1,19 @@
-<section class="section cta py-5">
+<section class="section hire-me py-5">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-xl-6">
-          <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ i18n "home.section.cta.title" | markdownify }}</h3>
+          <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ i18n "home.section.hire-me.title" | markdownify }}</h3>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-xl-6 text-center">
-        {{ partial "utilities/image" (dict "src" "images/services-web-development.png" "alt" "Let's move your projects forward, let's discuss it together!" "format" "600x webp") }}
+        {{ partial "utilities/image" (dict "src" "images/services-web-development.png" "alt" (i18n "home.section.hire-me.title") "format" "600x webp") }}
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-xl-6 text-center">
           <a class="btn btn-outline-primary px-4" href="{{ "contact-me" | relLangURL }}">
-            {{ i18n "home.section.cta.button" | markdownify }}
+            {{ i18n "home.section.hire-me.button" | markdownify }}
             <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
           </a>
       </div>
