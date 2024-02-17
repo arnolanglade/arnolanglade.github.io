@@ -41,29 +41,28 @@ GitHub.
 Let’s take an example: MySQL doesn’t match the project's needs; you want to migrate your application to PostgreSQL.
 On the homepage of the Mikado App, enter your objective. Explain what you want to do and click on the “Start” button to begin working.
 
-![describe objective](images/project/mikado-app/describe-objective.webp)
-![describe objective](/images/project/mikado-app/add-prerequisite.webp)
+{{< image src="/images/project/mikado-app/describe-objective.webp" alt="describe objective" >}}
 
 Then you arrive on the mikado graph page. You can split your objective into small steps called prerequisites. To achieve the database migration, we first need to install the database and  update the repositories due to the usage of SQL queries specific to MySQL.
 
 Click on the 'Add a prerequisite' button to open the prerequisite addition form. Then, describe the actions required to complete the prerequisite. Finally, click on the 'Add' button to add the prerequisite to the Mikado Graph:
 
-![add prerequisite](/images/project/mikado-app/add-prerequisite.webp)
+{{< image src="/images/project/mikado-app/add-prerequisite.webp" alt="add prerequisite" >}}
 
 You can create as many prerequisites as you want. Don’t forget that small steps are easier to take! As you can see in the following screenshot, the prerequisite bubble has an orange background, indicating indicating the prerequisites have the status ‘To do’:
 
-![prerequisite list](/images/project/mikado-app/prerequisite-list.webp)
+{{< image src="/images/project/mikado-app/prerequisite-list.webp" alt="prerequisite list" >}}
 
 After adding prerequisites, select one from the list and click on the “Start exploring” button to start experimenting with things to solve it. The background color of the prerequisite changes to blue, indicating that the prerequisite status is now “Experimenting,” meaning you are actively working on it.
 
 Now, you have two choices: the first one is to click on the “Add a prerequisite” button to split the prerequisite into smaller steps.
 
-![prequisite buble](/images/project/mikado-app/prequisite-buble.webp)
+{{< image src="/images/project/mikado-app/prequisite-buble.webp" alt="prequisite buble" >}}
 
 The second option is to click on 'Commit your changes' when you finish it and proceed to the next one on the list.
 
-![prerequisite completed](/images/project/mikado-app/prerequisite-completed.webp)
+{{< image src="/images/project/mikado-app/prerequisite-completed.webp" alt="prerequisite completed" >}}
 
 Continue resolving all prerequisites until the end. When all prerequisites are done, your objective is completed!
 
-![objective completed](/images/project/mikado-app/objective-completed.webp)
+{{< image src="/images/project/mikado-app/objective-completed.webp" alt="objective completed" >}}
