@@ -1,0 +1,10 @@
+home:
+  section:
+    testimonials:
+      title: "What people say about me"
+      button: "See more testimonials"
+    brands:
+      title: "I have worked for these companies and startups"
+    cta:
+      title: "Let's move your projects forward, let's discuss it together!"
+      button: "Let's talk"

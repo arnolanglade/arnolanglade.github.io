@@ -2,9 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-xl-6">
-        {{ with .content.title }}
-          <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ . }}</h3>
-        {{ end }}
+          <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ i18n "home.section.cta.title" }}</h3>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -14,9 +12,10 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-12 col-xl-6 text-center">
-        {{ with .content.button }}
-          <a class="btn btn-outline-primary px-4" href="{{ .url }}">{{ .label }}<span class="ms-2">{{ partial "icons/arrow-right.html" }}</span></a>
-        {{ end }}
+          <a class="btn btn-outline-primary px-4" href="{{ "contact-me" | relLangURL }}">
+            {{ i18n "home.section.cta.button" }}
+            <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
+          </a>
       </div>
     </div>
   </div>

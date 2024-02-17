@@ -1,8 +1,0 @@
-enabled: true
-id: "cta"
-
-content:
-  title: "Faisons avancer vos projets, discutons-en ensemble !"
-  button:
-    label: "Parlons-en"
-    url: "/fr/contactez-moi"

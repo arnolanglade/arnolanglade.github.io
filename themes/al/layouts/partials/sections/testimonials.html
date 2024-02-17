@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-12">
-        {{ with .content.title }}
-          <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ . }}</h3>
-        {{ end }}
+          <h3 class="fs-1 fw-bold text-center text-primary pb-3">
+            {{ i18n "home.section.testimonials.title" }}
+          </h3>
       </div>
     </div>
 
     {{ partial "testimonials" (dict "featured" .content.featured "list" (first 3 .content.list)) }}
 
     <div class="row">
-      {{ with .content.cta }}
-      <a class="btn btn-primary text-light px-4 my-1" href="{{ .url }}">{{ .label }}</a>
-      {{ end }}
+      <a class="btn btn-primary text-light px-4 my-1" href="{{ "testimonials" | relLangURL }}">
+        {{ i18n "home.section.testimonials.button" }}
+      </a>
     </div>
   </div>
 </section>

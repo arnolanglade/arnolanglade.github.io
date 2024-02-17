@@ -1,7 +1,7 @@
 <section class="section testimonials py-5">
   <div class="container">
-    {{ with index .Site.Data.home .Site.Language.Lang }}
-    {{ partial "testimonials" (dict "featured" .testimonials.content.featured "list" .testimonials.content.list) }}
+    {{ with index .Site.Data.home.testimonials.content  }}
+    {{ partial "testimonials" (dict "featured" .featured "list" .list) }}
     {{ end }}
   </div>
 </section>

@@ -1,8 +1,0 @@
-enabled: true
-id: "cta"
-
-content:
-  title: "Let's move your projects forward, let's discuss it together!"
-  button:
-    label: "Let's talk"
-    url: "/contact-me"

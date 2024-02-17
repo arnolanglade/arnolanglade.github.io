@@ -2,6 +2,6 @@
   {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/hero.html" .hero }}{{ end }}
   {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/brands.html" .brands }}{{ end }}
   {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/services.html" .services }}{{ end }}
-  {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/testimonials.html" .testimonials }}{{ end }}
+  {{ with index .Site.Data.home.testimonials }}{{ partial "sections/testimonials.html" . }}{{ end }}
   {{ with index .Site.Data.home .Site.Language.Lang  }}{{ partial "sections/cta.html" .cta }}{{ end }}
 {{ end }}
