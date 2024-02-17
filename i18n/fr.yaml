@@ -13,3 +13,5 @@ home:
     hire-me:
       title: "Faisons avancer vos projets, discutons-en ensemble !"
       button: "Discutons-en"
+  footer:
+    social: "Suivez-moi sur les réseaux sociaux, je partage beaucoup de choses sur le développement logiciel, et plus."
