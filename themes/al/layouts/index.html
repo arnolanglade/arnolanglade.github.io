@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ partial "sections/hero.html" }}
+  {{ partial "sections/me.html" }}
   {{ with index .Site.Data.home.brands }}{{ partial "sections/brands.html" . }}{{ end }}
   {{ with index .Site.Data.home .Site.Language.Lang }}{{ partial "sections/services.html" .services }}{{ end }}
   {{ with index .Site.Data.home.testimonials }}{{ partial "sections/testimonials.html" . }}{{ end }}

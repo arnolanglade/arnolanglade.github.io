@@ -1,6 +1,6 @@
 home:
   section:
-    hero:
+    me:
       title: "Hi there, I am **Arnaud!**"
       text: "I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further»"
       buttonPrimary: "Hire me"

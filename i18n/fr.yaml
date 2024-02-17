@@ -1,6 +1,6 @@
 home:
   section:
-    hero:
+    me:
       title: "Bonjour, je suis **Arnaud!**"
       text: "Je suis architecte logiciel et coach technique. Je me concentre sur la compréhension des besoins métier pour trouver la meilleure solution. J'aime tout ce qui se termine par *DD comme DDD, BDD et TDD. Ces outils et toutes les valeurs de l'eXtreme Programming m'aident à construire des logiciels robustes et maintenables. Enfin, le travail d'équipe est essentiel : «seul on va plus vite, ensemble on va plus loin»"
       buttonPrimary: "Travaillons ensemble"
