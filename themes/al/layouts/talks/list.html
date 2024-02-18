@@ -21,10 +21,12 @@
           {{ end }}
           <div class="card-body text-center">
             <h4 class="card-title text-center text-primary pb-4">{{ .Title }}</h4>
+            {{ with .Params.conference }}
+            <p class="text-center">
+              {{ .title }}
+            <p>
+            {{ end }}
           </div>
-          {{ with .Params.conference.title }}
-            <p class="text-center">{{ . }}<p>
-          {{ end }}
         </div>
         </a>
       </div>
