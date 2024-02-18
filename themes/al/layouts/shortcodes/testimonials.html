@@ -1,7 +1,25 @@
 <section class="section testimonials py-5">
   <div class="container">
-    {{ with index .Site.Data.home.testimonials.content  }}
-    {{ partial "testimonials" (dict "featured" .featured "list" .list) }}
-    {{ end }}
+    <div class="row">
+      {{ range $i, $e := .Site.Data.home.testimonials.content.list }}
+      <div class="col-12 col-xl-12 d-flex flex-column justify-content-center mb-5">
+        <div class="pb-4">
+          {{ partial "utilities/resized-image" (dict "src" "images/testimonials-left-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+        </div>
+        <div class="card d-flex flex-row align-items-start border-0 shadow p-5">
+          <p class="card-text text-black-61 ps-2">
+            "{{ .text }}"
+            <br>
+            <br>
+            {{ partial "utilities/resized-image" (dict "src" .image "format" "70x webp" "class" "img-fluid rounded-circle" "alt" .name) }}
+            <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-primary text-nowrap">{{ .name }} ({{ .position }})</a>
+          </p>
+        </div>
+        <div class="pt-4 text-end">
+          {{ partial "utilities/resized-image" (dict "src" "images/testimonials-right-quote.png"  "class" "img-fluid" "format" "64x webp" ) }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </section>

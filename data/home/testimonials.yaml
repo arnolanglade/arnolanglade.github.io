@@ -2,14 +2,13 @@ enabled: true
 id: "testimonials"
 
 content:
-  featured:
-    image: "images/testimonial/arnaud-lemaire.jpeg"
-    text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
-    name: "Arnaud LEMAIRE"
-    position: "VP/Chief Architect at Sunday"
-    linkedin: "https://www.linkedin.com/in/lilobase/"
-
   list:
+    - image: "images/testimonial/arnaud-lemaire.jpeg"
+      text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
+      name: "Arnaud LEMAIRE"
+      position: "VP/Chief Architect at Sunday"
+      linkedin: "https://www.linkedin.com/in/lilobase/"
+
     - text: "J'ai eu la chance de travailler avec Arnaud pendant plusieurs mois au sein de Sunday. Je dis bien 'chance' car j'ai appris beaucoup à ses côtés, que ce soit sur l'exercice de son métier que sur l'environnement nécessaire au bon exercice de son métier. Je recommande donc chaudement Arnaud qui, au-delà de ses connaissances multiples et de son expertise profonde, est un collègue très agréable avec qui travailler !"
       name: "Denis Migot"
       position: "Engineer Manager at Sunday"
