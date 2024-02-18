@@ -16,12 +16,15 @@
       <div class="col-12 col-xl-4">
         <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
         <div class="card bg-blue-16 border-0 border-radius-34 p-4">
-          {{ with ( partial "utilities/get-featured-image.html" . ) }}
-          {{ partial "utilities/card-img-top" . }}
+          {{ with .Params.conference.image }}
+            {{ partial "utilities/resized-image" (dict "src" . "class" "img-fluid" "format" "400x webp" ) }}
           {{ end }}
           <div class="card-body text-center">
             <h4 class="card-title text-center text-primary pb-4">{{ .Title }}</h4>
           </div>
+          {{ with .Params.conference.title }}
+            <p class="text-center">{{ . }}<p>
+          {{ end }}
         </div>
         </a>
       </div>
