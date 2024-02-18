@@ -16,8 +16,9 @@
         <div class="col-12 col-md-6 col-lg-4">
           <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
             <div class="aspect-ratio-62-5">
-              {{ with ( partial "utilities/get-featured-image.html" . ) }}
-                {{ partial "utilities/card-img-top" . }}
+              {{ with .Params }}
+              {{.image}}
+                {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "382x webp") }}
               {{ end }}
             </div>
             <div class="card-body">
@@ -28,6 +29,9 @@
                 {{ end }}
               </p>
               <p class="card-text text-black-61">{{ .Params.description | plainify }}</p>
+              {{ with .Params.date }}
+              <p class="text-black-61 mb-0">{{ . | time.Format ":date_medium" }}</p>
+              {{ end }}
             </div>
           </a>
         </div>

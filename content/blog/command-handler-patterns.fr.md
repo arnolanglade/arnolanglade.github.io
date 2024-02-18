@@ -1,12 +1,14 @@
-+++
-author = "Hugo Authors"
-title = "Emoji Support fr"
-date = "2019-03-05"
-description = "Guide to emoji usage in Hugo"
-tags = [
-    "emoji",
+---
+author: "Arnaud Langlade"
+title: "Command and command handler design pattern"
+date: "2021-02-25"
+image: "/images/post/command-handler/command-handler.webp"
+description: "Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, examples, and insights for efficient command validation."
+tags: [
+  "command-bus",
+  "design-patterns",
 ]
-+++
+---
 
 Emoji can be enabled in a Hugo project in a number of ways. 
 <!--more-->
