@@ -12,8 +12,10 @@
         <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
           <div>
             <p class="py-2">
-              {{ range .Params.tags }}
-              <span class="badge bg-primary">{{ . }}</span>
+              {{ with .GetTerms "tags" }}
+                {{ range . }}
+                  <a class="text-light badge bg-primary text-decoration-none" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
               {{ end }}
             </p>
             {{ with .Title }}
