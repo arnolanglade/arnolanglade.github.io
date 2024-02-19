@@ -1,0 +1,13 @@
+.newsletter {
+  form {
+    @media only screen and (min-width: 1200px) {
+      width: 500px;
+    }
+  }
+  .title {
+    font-size: 58px;
+  }
+  .privacy {
+    font-size: 12px;
+  }
+}
