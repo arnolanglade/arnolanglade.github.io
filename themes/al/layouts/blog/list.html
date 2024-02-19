@@ -17,7 +17,6 @@
           <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
             <div class="aspect-ratio-62-5">
               {{ with .Params }}
-              {{.image}}
                 {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "382x webp") }}
               {{ end }}
             </div>

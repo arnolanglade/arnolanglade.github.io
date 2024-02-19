@@ -1,8 +1,46 @@
 .blog-content {
+  max-width: 1000px;
+  font-size: 18px;
   .highlight {
     pre {
       padding: 16px;
       border-radius: 8px;
     }
+  }
+}
+.post-header-left {
+  @media only screen and (min-width: 1200px) {
+    padding-left: 48px;
+  }
+}
+
+.post-title {
+  font-size: 58px;
+  @media only screen and (max-width: 1200px) {
+    font-size: 44px;
+  }
+}
+
+.post-image {
+  position: relative;
+  transform: translate(0);
+  padding-top: 100%;
+  min-height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding-top: 65%;
+    margin-bottom: 20px;
   }
 }

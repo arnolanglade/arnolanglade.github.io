@@ -15,3 +15,6 @@ home:
       button: "Discutons-en"
   footer:
     social: "Suivez-moi sur les réseaux sociaux, je partage beaucoup de choses sur le développement logiciel, et plus."
+post:
+  image-credit: "Image par"
+  published-at: "Publié le"

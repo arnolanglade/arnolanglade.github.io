@@ -1,0 +1,45 @@
+{{ define "main" }}
+  <section class="section blog-single py-5">
+    <div class="container">
+      <div class="row pb-5">
+        <div class="col-xl-6 col-12">
+          <div class="post-image">
+            {{ with .Params }}
+            {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "600x webp") }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+          <div>
+            <p class="py-2">
+              {{ range .Params.tags }}
+              <span class="badge bg-primary">{{ . }}</span>
+              {{ end }}
+            </p>
+            {{ with .Title }}
+              <h1 class="post-title display-1 fw-bold text-primary pb-3">{{ . }}</h1>
+            {{ end }}
+            {{ with .Params.date }}
+              <p class="text-black-61 "> {{ i18n "post.published-at" }} {{ . | time.Format ":date_medium" }}</p>
+            {{ end }}
+            {{ with .Params.image_credit }}
+              <p class="text-black-61 mb-0">
+                {{ i18n "post.image-credit" }}
+                <a href="https://unsplash.com/@{{ . }}"><strong>@{{ . }}</strong></a>
+              </p>
+            {{ end }}
+        </div>
+        </div>
+      </div>
+      <div class="row pb-5">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="blog-content w-100">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      <div class="row pb-5">
+      </div>
+    </div>
+  </section>
+{{ end }}
