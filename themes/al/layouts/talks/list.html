@@ -17,7 +17,7 @@
         <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
         <div class="card bg-blue-16 border-0 border-radius-34 p-4">
           {{ with .Params.conference.image }}
-            {{ partial "utilities/resized-image" (dict "src" . "class" "img-fluid" "format" "400x webp" ) }}
+            {{ partial "utilities/resized-image" (dict "src" . "format" "400x webp" ) }}
           {{ end }}
           <div class="card-body text-center">
             <h4 class="card-title text-center text-primary pb-4">{{ .Title }}</h4>

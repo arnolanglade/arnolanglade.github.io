@@ -3,4 +3,4 @@
 {{ $format := default "1320x webp" .format }}
 {{ $image := $image.Resize $format }}
 
-<img class="{{ .class }}" src="{{ $image.Permalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+<img class="{{ .class }} img-fluid" src="{{ $image.Permalink }}" alt="{{ .alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
