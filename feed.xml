@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 19 Feb 2024 06:12:44 -0600</pubDate>
-        <lastBuildDate>Mon, 19 Feb 2024 06:12:44 -0600</lastBuildDate>
+        <pubDate>Mon, 19 Feb 2024 06:25:54 -0600</pubDate>
+        <lastBuildDate>Mon, 19 Feb 2024 06:25:54 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -74,7 +74,7 @@
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How I built MikadoApp, an open-source application for the Mikado Method'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'How I built MikadoApp, an open-source application for the Mikado Method'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -485,7 +485,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The Mikado Method: Small Steps, Big Improvements'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'The Mikado Method: Small Steps, Big Improvements'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -608,7 +608,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Open-Closed principle: Enhancing code modularity'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Open-Closed principle: Enhancing code modularity'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -733,7 +733,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The pitfalls of OOP's inheritance: Why simple isn't always better'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'The pitfalls of OOP's inheritance: Why simple isn't always better'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -819,7 +819,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why breaking encapsulation is not a good idea'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Why breaking encapsulation is not a good idea'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -929,7 +929,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Don’t test private methods'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Don’t test private methods'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -1087,7 +1087,7 @@ The solution that I use to prevent this problem is to override each translation 
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Ease testing thanks to the dependency inversion design pattern'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Ease testing thanks to the dependency inversion design pattern'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -1783,7 +1783,7 @@ k&lt;/p&gt;
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'What is the difference between CQS and CQRS patterns?'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'What is the difference between CQS and CQRS patterns?'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -1942,7 +1942,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Hexagonal architecture by example'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Hexagonal architecture by example'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2162,7 +2162,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'What is the event sourcing pattern?'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'What is the event sourcing pattern?'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2343,7 +2343,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'My feedback about example mapping'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'My feedback about example mapping'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2440,7 +2440,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How I have learned programming by myself'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'How I have learned programming by myself'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2552,7 +2552,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Increase your test quality thanks to builders or factories'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Increase your test quality thanks to builders or factories'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2659,7 +2659,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How to handle user permissions through command bus middleware'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'How to handle user permissions through command bus middleware'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2775,7 +2775,7 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The command bus design pattern'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'The command bus design pattern'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -2889,7 +2889,7 @@ cache: .env
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Objective: set up your projects more easily'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Objective: set up your projects more easily'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -3040,7 +3040,7 @@ dependencies: api/vendor web/node_modules
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why unit testing can be hard?'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Why unit testing can be hard?'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -3388,7 +3388,7 @@ dependencies: api/vendor web/node_modules
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why you should not expose objects' state to test them'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Why you should not expose objects' state to test them'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -3538,7 +3538,7 @@ api/src/Infrastructure/Application
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How did I organize my last Symfony projects?'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'How did I organize my last Symfony projects?'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -3730,7 +3730,7 @@ api/src/Domain/
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Persisting entities without ORM'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Persisting entities without ORM'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -3875,7 +3875,7 @@ api/src/Domain/
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'OOP: how to build an object'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'OOP: how to build an object'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -4006,7 +4006,7 @@ Let’s take an example with the map object. How to initialize a map without any
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How to validate a command?'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'How to validate a command?'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
@@ -4177,7 +4177,7 @@ Let’s take an example with the map object. How to initialize a map without any
     and kickstart your journey toward mastering advanced development techniques.
   &lt;/p&gt;
   &lt;p class=&quot;link&quot;&gt;
-    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Command and command handler design pattern'}})&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'Command and command handler design pattern'}})&quot;&gt;
       🚀 Start your journey here!
     &lt;/a&gt;
   &lt;/p&gt;
