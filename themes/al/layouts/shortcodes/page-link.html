@@ -1,0 +1,13 @@
+{{ with site.GetPage (.Get "page")}}
+<p class="text-center">
+  <a class="btn btn-primary text-light p-3 my-3" href="{{ .Permalink }}">
+    {{ with .Params }}
+    {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "140x webp") }}
+    {{ end }}
+    <span class="ps-3 fs-4">{{ .Title }}</span>
+  </a>
+</p>
+{{ end }}
+
+
+

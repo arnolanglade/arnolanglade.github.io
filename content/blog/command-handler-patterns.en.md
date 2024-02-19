@@ -120,7 +120,7 @@ $violation = $validator->validate($createAccount);
 
 I've written a dedicated blog post explaining how to validate a command:
 
-{% include blog-post-link.html url='/how-to-validate-a-command.html' image='data-validation.webp' title='How to validate a command?' %}
+{{< page-link page="how-to-validate-a-command" >}}
 
 ## How to simplify that?
 
