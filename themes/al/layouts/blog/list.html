@@ -13,27 +13,7 @@
       </div>
       <div class="row g-4 pb-5">
         {{ range (.Paginate .RegularPages).Pages }}
-        <div class="col-12 col-md-6 col-lg-4">
-          <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
-            <div class="aspect-ratio-62-5">
-              {{ with .Params }}
-                {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "382x webp") }}
-              {{ end }}
-            </div>
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">{{ .Title }}</h5>
-              <p class="py-2">
-                {{ range .Params.tags }}
-                  <span class="badge bg-primary">{{ . }}</span>
-                {{ end }}
-              </p>
-              <p class="card-text text-black-61">{{ .Params.description | plainify }}</p>
-              {{ with .Params.date }}
-              <p class="text-black-61 mb-0">{{ . | time.Format ":date_medium" }}</p>
-              {{ end }}
-            </div>
-          </a>
-        </div>
+          {{ partial "blog-post-card.html" . }}
         {{ end }}
       </div>
       <div class="row pb-5">

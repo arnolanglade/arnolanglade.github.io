@@ -18,6 +18,7 @@ home:
 post:
   image-credit: "Image by"
   published-at: "Published at"
+  related-posts: "Related posts"
 newsletter:
   title: "Newsletter: Be the first to know!"
   text: "Subscribe to my newsletter for updates on my latest blog posts, tech releases, and exclusive content. Stay ahead in the coding game!"
