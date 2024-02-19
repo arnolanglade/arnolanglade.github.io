@@ -318,6 +318,19 @@
 	}
 }
 
+.training-card {
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	border: 1px solid #e0e0e0;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	.link {
+		text-align: center;
+		margin: 0;
+	}
+}
+
 .post__navigation {
 	display: flex;
 	justify-content: space-between;

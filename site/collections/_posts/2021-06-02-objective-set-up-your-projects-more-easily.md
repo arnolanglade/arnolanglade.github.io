@@ -55,6 +55,8 @@ For instance, a project orchestrated by docker-compose having:
 
 **Caution:** I will only speak about projects setup for dev purposes. I won’t talk about making docker images ready for production.
 
+{% include training-link.html %}
+
 Let’s start installing the project dependencies. The following targets install project dependencies if they have not been downloaded yet. They can guess if they are outdated to upgrade them thanks to target prerequisites. Another interesting thing is that nothing will be done if dependencies are already installed and up to date.
 
 ```bash

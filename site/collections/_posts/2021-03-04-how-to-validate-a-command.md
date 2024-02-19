@@ -68,6 +68,8 @@ final class Account
 
 Now, we are sure that as developers we cannot instantiate the `Account` aggregate in a wrong state. In the next section, we are going to see how to use the domain objects to give users feedback about their data.
 
+{% include training-link.html %}
+
 ## Command validation
 
 As I explained in my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), an account creation is represented by a `CreateAnAccount` command with two properties: the username and the password. We need to validate them to create the account aggregate without any errors and tell users if they provided valid data to perform this action. The command validation will be done by the Symfony validator. Don’t hesitate to have a look at the [validator documentation](https://symfony.com/doc/current/validation.html) if you are not familiar with it.

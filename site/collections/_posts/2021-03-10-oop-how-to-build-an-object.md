@@ -38,6 +38,8 @@ final class Map
 
 **Tip:** If your objects encapsulate a collection of a specific type (like the `Marker` in this example), you can use variadic arguments to automatically validate each item of this collection. Here, we don’t need to iterate the collection to check the type of its items, the language does it for us.
 
+{% include training-link.html %}
+
 ## Secondary constructor
 
 The PHP language does not ease the data encapsulation because it only provides a single way to build objects but we should be able to define several constructors depending on all our use cases. How to solve this problem? Named constructors! Named constructors are static factories, in other words static methods that build the object itself.

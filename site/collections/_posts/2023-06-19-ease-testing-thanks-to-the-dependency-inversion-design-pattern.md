@@ -27,6 +27,8 @@ The interfaces should not depend on concrete implementations to avoid coupling t
 
 Let's see with a simple example how dependency inversion helps to make your code easily testable. The following class lets a cartographer add a marker on a map.
 
+{% include training-link.html %}
+
 **Note:** I wrote an article about unit testing to help you to understand the main mistakes that make your codebase less testable. Here is the link https://arnolanglade.github.io/why-unit-testing-can-be-hard.html.
 
 ```ts

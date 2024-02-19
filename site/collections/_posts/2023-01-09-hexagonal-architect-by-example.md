@@ -57,9 +57,12 @@ export interface ProductCatalog {
 
 Moving IO as far as possible from your domain code is really convenient because it eases unit testing. We will mainly test this part of the application with unit testing. It offers a very short feedback loop, it will help you to design your domain step by step without setting up the whole application.
 
+{% include training-link.html %}
+
 **Tip:** I've written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.
 
 {% include blog-post-link.html url='why-unit-testing-can-be-hard.html' image='why-unit-testing-can-be-hard.webp' title='Why unit testing can be hard?' %}
+
 
 ### Coupling rules
 

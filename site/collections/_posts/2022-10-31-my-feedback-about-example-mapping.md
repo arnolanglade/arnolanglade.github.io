@@ -24,6 +24,8 @@ During my last year at Akeneo, I worked on a new product called Shared Catalogs.
 
 From my experience, a 30-minute slot is a good tradeoff. It’s not too long and you can easily illustrate the main business rules of the story and detect all bottlenecks. With a 30-minute meeting, you’re sure that your teammates will stay focused, especially when you work remotely. Having regular and short workshops is better than doing a big and long one.
 
+{% include training-link.html %}
+
 Depending on their roles, some team members can be really busy. For instance, I worked with several PMs who were often in meetings and it was really hard to catch them. To be sure that everyone can be available, each team member booked a 30 minutes slot after the daily meeting. Doing an example mapping was not mandatory, we only did the workshop if we needed to prepare stories.
 
 ## How organize the team

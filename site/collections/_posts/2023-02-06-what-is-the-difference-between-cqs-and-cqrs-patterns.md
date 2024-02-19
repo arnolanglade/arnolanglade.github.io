@@ -36,6 +36,8 @@ class Map {
 
 The `addMarker` method is in charge of mutating the object state without returning any result, while the ‘findClosestMarkers’ method finds the right markers without changing the object’s state. This object follows the CQS definition.
 
+{% include training-link.html %}
+
 Let’s go further. If we design our aggregates following the CQS pattern, we should apply it to the classes that handle use cases.
 
 ```ts

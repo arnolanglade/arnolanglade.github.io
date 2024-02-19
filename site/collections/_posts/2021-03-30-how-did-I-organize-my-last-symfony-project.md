@@ -78,6 +78,8 @@ api/src/Infrastructure/Application
 ```
 In this example, `Exception` and `Security` folders contain framework customizations.
 
+{% include training-link.html %}
+
 ## Business first
 
 A really important thing for me is to drive codebase organization by business concepts. I don’t want to name folders and classes with technical patterns like factory or repository for instance. Non-tech people should be able to understand what a class does thanks to its name.

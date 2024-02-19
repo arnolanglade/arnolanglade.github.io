@@ -40,6 +40,8 @@ Before starting the project, the only technical choice I made was to use the Nex
 
 Then I started working on the first feature. My goal was to ship an MVP that works to validate whether what I imagined during the workshops was good or not. This means I did not focus on a fancy user interface. I am not a designer, and I didn't want to spend too much time on it. Moreover, I wanted to delay the choice of the storage system as much as possible. It's good to learn a maximum of things before making any decisions.
 
+{% include training-link.html %}
+
 Let’s dig a bit into my tech choices. I began working on MikadoApp in July 2023. I choi for the latest stable version of Next.js (v13) with the new app routing system. I didn’t use server actions due to their instability at the time.
 
 As a TDD practitioner, understanding how to test my code when starting work on a new technology is crucial. The backend part was relatively straightforward for me, given my experience in creating backend applications for over a decade. Let me explain what I’ve done.

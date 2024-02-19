@@ -51,6 +51,8 @@ class CreateNewProduct {
 ```
 I remember using it a lot when I was a junior developer. It seemed powerful because we didn't need to inject anything. However, the problem with this piece of code is that it couples `CreateNewProduct` to `DatabaseConnection`. Here, we need a working database to test or run this piece of code. That’s a shame because it avoids quickly checking if the product creation logic works or not.
 
+{% include training-link.html %}
+
 ## Rule 2: A class should only depend on abstractions
 
 The second rule is that a class should only depend on abstractions (e.g., interfaces). In OOP, an interface is like a contract. It describes a set of methods that an object needs to implement. This is great because it can be implemented in several ways. It makes your code more modular as you can use a specific implementation depending on the context.
