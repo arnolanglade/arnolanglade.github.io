@@ -277,6 +277,22 @@
 
 <p>The code covered by unit tests should not depend on the outside world like databases, external services and so on. Unit tests should not require any application setup, they have to remain as simple as possible. Their goal is to give you quick feedback by checking that a small piece of code (a unit) matches a business expectation. If you want to be sure that all application parts are well integrated with the outside world, you have to use an integration test.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'Why unit testing can be hard?'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>The following example shows a piece of code that depends on the external service. Here, we can’t build the <code class="language-plaintext highlighter-rouge">Map</code> object without a working database.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">HandleMarkerAddition</span>

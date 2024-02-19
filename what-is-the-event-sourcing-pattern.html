@@ -286,6 +286,22 @@
 
 <p>That works perfectly for the one versus one games but what happens for two versus two games? Let’s focus on one of the players, we will call him Popeye. Actually, Popeye is not a really good player even if he is full of goodwill. He is smart, he always wants to play with the best player to have more chances to win. We cannot know who is the best player with only the result of the game. Who has really scored? Popeye or its teammate?</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'What is the event sourcing pattern?'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>Event sourcing is the solution. Instead of saving the score of the game, we will store what really happens. We will refactor the <code class="language-plaintext highlighter-rouge">Game</code> aggregate to make it compliant with the event sourcing pattern.</p>
 
 <p>First, we will rework the aggregate construction. We still want to encapsulate its current state but we want to record all events that happened too. In the following example, we added an <code class="language-plaintext highlighter-rouge">events</code> argument to the primary constructor and a named constructor (secondary construct) called <code class="language-plaintext highlighter-rouge">start</code> to the <code class="language-plaintext highlighter-rouge">Game</code> class. From a business point of view, its goal is to initialize the game and from a technical point of view, it lets us record the <code class="language-plaintext highlighter-rouge">GameStarted</code> event.</p>

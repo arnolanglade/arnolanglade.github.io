@@ -305,6 +305,22 @@
 
 <p>This code does not follow the open-close principle because we need to modify this <code class="language-plaintext highlighter-rouge">DiscountCalculator</code> class every time we want to add or remove a discount rule. The problem is that<code class="language-plaintext highlighter-rouge">DiscountCalculator</code> may become really large if the business asks us to add a lot of discount rules. Large objects are hard to understand, so it won’t facilitate its maintenance and testability.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'Open-Closed principle: Enhancing code modularity'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>Let’s refactor this code to enhance its modularity and align it with the Open-Closed principle. We will use the strategy pattern to rewrite the calculator to remove the hard-coded rules. First, we will introduce a new interface that specifies how a discount works. This interface has two methods: the first one is <code class="language-plaintext highlighter-rouge">isApplicable</code>, which determines if a discount can be applied to a product, while the second one <code class="language-plaintext highlighter-rouge">calculate</code> calculates the amount of the discount.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Discount</span> <span class="p">{</span>

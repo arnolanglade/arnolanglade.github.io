@@ -245,6 +245,22 @@
 
 <p>Let’s imagine a basic use case: an application with two kinds of users: regular ones and admins. We want to allow certain actions only to admin users.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'How to handle user permissions through command bus middleware'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>First, I will introduce an interface <code class="language-plaintext highlighter-rouge">OnlyPerformedByAdministrator</code> that will be implemented by the command restricted to the admin users.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">OnlyPerformedByAdministrator</span>

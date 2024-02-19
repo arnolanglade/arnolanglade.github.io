@@ -5,8 +5,8 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Sat, 10 Feb 2024 03:51:42 -0600</pubDate>
-        <lastBuildDate>Sat, 10 Feb 2024 03:51:42 -0600</lastBuildDate>
+        <pubDate>Mon, 19 Feb 2024 06:12:44 -0600</pubDate>
+        <lastBuildDate>Mon, 19 Feb 2024 06:12:44 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
         
         <item>
@@ -63,6 +63,22 @@
 &lt;h2 id=&quot;step-2-start-working-on-the-first-version-of-the-mvp&quot;&gt;Step 2: Start working on the first version of the MVP.&lt;/h2&gt;
 
 &lt;p&gt;Then I started working on the first feature. My goal was to ship an MVP that works to validate whether what I imagined during the workshops was good or not. This means I did not focus on a fancy user interface. I am not a designer, and I didn’t want to spend too much time on it. Moreover, I wanted to delay the choice of the storage system as much as possible. It’s good to learn a maximum of things before making any decisions.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How I built MikadoApp, an open-source application for the Mikado Method'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s dig a bit into my tech choices. I began working on MikadoApp in July 2023. I choi for the latest stable version of Next.js (v13) with the new app routing system. I didn’t use server actions due to their instability at the time.&lt;/p&gt;
 
@@ -459,6 +475,22 @@ The solution that I use to prevent this problem is to override each translation 
 
 &lt;p&gt;This method simplifies refactoring. You can continuously improve your codebase instead of stacking changes in a huge PR which can’t be merged because the test suites are broken. It’s better to regularly merge small changes that improve your codebase quality. This method is ideal for brownfield development. It enables you to add new features or alter existing ones without breaking the rest of the application. Moreover, it facilitates the improvement of the application’s architecture while allowing the delivery of new features concurrently.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The Mikado Method: Small Steps, Big Improvements'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;How does it work? Let’s take an example: MySQL doesn’t match the project’s needs; we need to use PostgreSQL. First, we need to define a goal that is clear and understandable for everyone. In our case, it is “Migrate the application from MySQL to PostgreSQL,” as you can see in the following example.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;images/posts/mikado-method/define-goal.webp&quot; alt=&quot;define a goal&quot; /&gt;&lt;/p&gt;
@@ -565,6 +597,22 @@ The solution that I use to prevent this problem is to override each translation 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This code does not follow the open-close principle because we need to modify this &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DiscountCalculator&lt;/code&gt; class every time we want to add or remove a discount rule. The problem is that&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DiscountCalculator&lt;/code&gt; may become really large if the business asks us to add a lot of discount rules. Large objects are hard to understand, so it won’t facilitate its maintenance and testability.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Open-Closed principle: Enhancing code modularity'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s refactor this code to enhance its modularity and align it with the Open-Closed principle. We will use the strategy pattern to rewrite the calculator to remove the hard-coded rules. First, we will introduce a new interface that specifies how a discount works. This interface has two methods: the first one is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isApplicable&lt;/code&gt;, which determines if a discount can be applied to a product, while the second one &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;calculate&lt;/code&gt; calculates the amount of the discount.&lt;/p&gt;
 
@@ -675,6 +723,22 @@ The solution that I use to prevent this problem is to override each translation 
 
 &lt;p&gt;I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I’ve described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The pitfalls of OOP's inheritance: Why simple isn't always better'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn’t follow this principle. Here is the link:&lt;/p&gt;
 
 &lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
@@ -744,6 +808,22 @@ The solution that I use to prevent this problem is to override each translation 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt; class has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPointOfInterest&lt;/code&gt; getter that gets the class property with the same name. Then we can use this getter to access the list of points of interest to iterate them and find the closest one.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why breaking encapsulation is not a good idea'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The drawback with this getter is that we will need to copy/paste this piece of code if we have to look for the closest point of interest in several places. It won’t help you to mutualize code. At best, you can extract this piece of code into a dedicated class like the following example:&lt;/p&gt;
 
@@ -838,6 +918,22 @@ The solution that I use to prevent this problem is to override each translation 
 &lt;p&gt;&lt;img src=&quot;images/posts/do-not-test-private-method/split-good-objects-into-small-classes.svg&quot; alt=&quot;split good objects into small classes&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then, we need to apply the composition pattern to assemble those classes to make them work as the God object. Composition is like playing Lego: we have many small bricks, and we put them together to make a big piece. Software is the same. You should work with small classes/functions to easily test them and piece them together to make your feature.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Don’t test private methods'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s take an example. The following class is in charge of importing products into an application as a PIM or an ERP. This class does several things, it gets product data from a CSV file and it imports them into a database. We need to test the whole class to ensure the product import works as expected. That’s a bit annoying because I can’t test the CSV file reading or the production saving.&lt;/p&gt;
 
@@ -980,6 +1076,22 @@ The solution that I use to prevent this problem is to override each translation 
 &lt;h2 id=&quot;how-does-this-pattern-improve-testability&quot;&gt;How does this pattern improve testability?&lt;/h2&gt;
 
 &lt;p&gt;Let’s see with a simple example how dependency inversion helps to make your code easily testable. The following class lets a cartographer add a marker on a map.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Ease testing thanks to the dependency inversion design pattern'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I wrote an article about unit testing to help you to understand the main mistakes that make your codebase less testable. Here is the link https://arnolanglade.github.io/why-unit-testing-can-be-hard.html.&lt;/p&gt;
 
@@ -1661,6 +1773,22 @@ k&lt;/p&gt;
 
 &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addMarker&lt;/code&gt; method is in charge of mutating the object state without returning any result, while the ‘findClosestMarkers’ method finds the right markers without changing the object’s state. This object follows the CQS definition.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'What is the difference between CQS and CQRS patterns?'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Let’s go further. If we design our aggregates following the CQS pattern, we should apply it to the classes that handle use cases.&lt;/p&gt;
 
 &lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MapService&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1803,6 +1931,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;h3 id=&quot;what-about-testing&quot;&gt;What about testing?&lt;/h3&gt;
 
 &lt;p&gt;Moving IO as far as possible from your domain code is really convenient because it eases unit testing. We will mainly test this part of the application with unit testing. It offers a very short feedback loop, it will help you to design your domain step by step without setting up the whole application.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Hexagonal architecture by example'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; I’ve written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.&lt;/p&gt;
 
@@ -2008,6 +2152,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;That works perfectly for the one versus one games but what happens for two versus two games? Let’s focus on one of the players, we will call him Popeye. Actually, Popeye is not a really good player even if he is full of goodwill. He is smart, he always wants to play with the best player to have more chances to win. We cannot know who is the best player with only the result of the game. Who has really scored? Popeye or its teammate?&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'What is the event sourcing pattern?'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Event sourcing is the solution. Instead of saving the score of the game, we will store what really happens. We will refactor the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; aggregate to make it compliant with the event sourcing pattern.&lt;/p&gt;
 
 &lt;p&gt;First, we will rework the aggregate construction. We still want to encapsulate its current state but we want to record all events that happened too. In the following example, we added an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;events&lt;/code&gt; argument to the primary constructor and a named constructor (secondary construct) called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start&lt;/code&gt; to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; class. From a business point of view, its goal is to initialize the game and from a technical point of view, it lets us record the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GameStarted&lt;/code&gt; event.&lt;/p&gt;
@@ -2173,6 +2333,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;From my experience, a 30-minute slot is a good tradeoff. It’s not too long and you can easily illustrate the main business rules of the story and detect all bottlenecks. With a 30-minute meeting, you’re sure that your teammates will stay focused, especially when you work remotely. Having regular and short workshops is better than doing a big and long one.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'My feedback about example mapping'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Depending on their roles, some team members can be really busy. For instance, I worked with several PMs who were often in meetings and it was really hard to catch them. To be sure that everyone can be available, each team member booked a 30 minutes slot after the daily meeting. Doing an example mapping was not mandatory, we only did the workshop if we needed to prepare stories.&lt;/p&gt;
 
 &lt;h2 id=&quot;how-organize-the-team&quot;&gt;How organize the team&lt;/h2&gt;
@@ -2253,6 +2429,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;h2 id=&quot;contribute-to-an-open-source-project&quot;&gt;Contribute to an open-source project&lt;/h2&gt;
 
 &lt;p&gt;I worked on &lt;a href=&quot;https://sylius.com&quot;&gt;Sylius&lt;/a&gt; which is an open-source e-commerce framework. The community of Sylius is great. I learned a lot of good practices like testing, code review and behaviour-driven development for instance. I mainly worked on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SyliusResourceBundle&lt;/code&gt; which is a library that eases CRUD management. During this period, I was working for a web agency, it helped me to be more efficient at work and ship projects faster.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How I have learned programming by myself'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Caution:&lt;/strong&gt; Many companies use open-source projects but they don’t contribute to them. I was happy to contribute to this project during my free time, but you should negotiate allocated time with your company to help those projects if they help you deliver value to your customers.&lt;/p&gt;
 
@@ -2350,6 +2542,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; I like to add a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@internal&lt;/code&gt; annotation to remind all teammates that the object constructor should only be used in tests.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Increase your test quality thanks to builders or factories'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;The value object instantiation is delegated to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whatever&lt;/code&gt; constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it’s easier to read. All constructor arguments have a default value, then I can override a given value depending on the needs thanks to the named argument feature.&lt;/p&gt;
 
 &lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;whatever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bordeaux city'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2440,6 +2648,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you’re not familiar with this pattern, please have a look at this &lt;a href=&quot;http://arnolanglade.github.io/command-bus-design-pattern.html&quot;&gt;blog post&lt;/a&gt;, it explains what a command bus and a middleware are.&lt;/p&gt;
 
 &lt;p&gt;Let’s imagine a basic use case: an application with two kinds of users: regular ones and admins. We want to allow certain actions only to admin users.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How to handle user permissions through command bus middleware'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;First, I will introduce an interface &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OnlyPerformedByAdministrator&lt;/code&gt; that will be implemented by the command restricted to the admin users.&lt;/p&gt;
 
@@ -2541,6 +2765,22 @@ The &lt;strong&gt;domain&lt;/strong&gt; is all pieces of code that represent the
 
 &lt;p&gt;&lt;strong&gt;Quick reminder about command and command handler:&lt;/strong&gt; A command represents a user’s intent. The data carried by the command has to be valid. It can be only handled by only one handler that is just a callable that will perform the user action.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'The command bus design pattern'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Now, we will build a command bus following the same architecture that I described in the previous section. The only difference is that the command bus will return void. As commands canmight be handled asynchronously, we don’t want to wait for the result of the command processing.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;images/posts/command-bus/command-bus.svg&quot; alt=&quot;A command bus&quot; /&gt;&lt;/p&gt;
@@ -2638,6 +2878,22 @@ cache: .env
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Caution:&lt;/strong&gt; I will only speak about projects setup for dev purposes. I won’t talk about making docker images ready for production.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Objective: set up your projects more easily'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Let’s start installing the project dependencies. The following targets install project dependencies if they have not been downloaded yet. They can guess if they are outdated to upgrade them thanks to target prerequisites. Another interesting thing is that nothing will be done if dependencies are already installed and up to date.&lt;/p&gt;
 
@@ -2773,6 +3029,22 @@ dependencies: api/vendor web/node_modules
 &lt;h3 id=&quot;do-not-deal-with-the-outside&quot;&gt;Do not deal with the outside&lt;/h3&gt;
 
 &lt;p&gt;The code covered by unit tests should not depend on the outside world like databases, external services and so on. Unit tests should not require any application setup, they have to remain as simple as possible. Their goal is to give you quick feedback by checking that a small piece of code (a unit) matches a business expectation. If you want to be sure that all application parts are well integrated with the outside world, you have to use an integration test.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why unit testing can be hard?'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The following example shows a piece of code that depends on the external service. Here, we can’t build the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Map&lt;/code&gt; object without a working database.&lt;/p&gt;
 
@@ -3106,6 +3378,22 @@ dependencies: api/vendor web/node_modules
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; This is really useful to compare Doctrine entities that have persistent collections. The error &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Error: Nesting level too deep - recursive dependency?&lt;/code&gt; is raised when we compare entities using the comparison operator (==). You should have a look at this &lt;a href=&quot;https://www.richardlord.net/blog/php/php-nesting-level-too-deep-recursive-dependency.html&quot;&gt;blog post&lt;/a&gt; to understand why this error occured. Accessing private attributes let you use the identity operator (===) to prevent this error.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Why you should not expose objects' state to test them'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;p&gt;By the way, entities are a bit special because an entity is an object that has an identity. It means that if we want to compare them we should compare their identities instead of their states.&lt;/p&gt;
 
 &lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;
@@ -3239,6 +3527,22 @@ api/src/Infrastructure/Application
 └── Kernel
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;In this example, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Exception&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Security&lt;/code&gt; folders contain framework customizations.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How did I organize my last Symfony projects?'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;business-first&quot;&gt;Business first&lt;/h2&gt;
 
@@ -3416,6 +3720,22 @@ api/src/Domain/
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Thanks to the clause &lt;a href=&quot;https://www.postgresql.org/docs/9.5/sql-insert.html&quot;&gt;ON CONFLICT&lt;/a&gt; we can easily insert or update data with a single query.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Persisting entities without ORM'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;entity-design-impacts&quot;&gt;Entity design impacts&lt;/h2&gt;
 
 &lt;p&gt;Now we are able to persist and retrieve our map entity. Let’s study the impact on entity design.&lt;/p&gt;
@@ -3545,6 +3865,22 @@ api/src/Domain/
 
 &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; If your objects encapsulate a collection of a specific type (like the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Marker&lt;/code&gt; in this example), you can use variadic arguments to automatically validate each item of this collection. Here, we don’t need to iterate the collection to check the type of its items, the language does it for us.&lt;/p&gt;
 
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'OOP: how to build an object'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;secondary-constructor&quot;&gt;Secondary constructor&lt;/h2&gt;
 
 &lt;p&gt;The PHP language does not ease the data encapsulation because it only provides a single way to build objects but we should be able to define several constructors depending on all our use cases. How to solve this problem? Named constructors! Named constructors are static factories, in other words static methods that build the object itself.
@@ -3659,6 +3995,22 @@ Let’s take an example with the map object. How to initialize a map without any
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now, we are sure that as developers we cannot instantiate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Account&lt;/code&gt; aggregate in a wrong state. In the next section, we are going to see how to use the domain objects to give users feedback about their data.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'How to validate a command?'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;command-validation&quot;&gt;Command validation&lt;/h2&gt;
 
@@ -3814,6 +4166,22 @@ Let’s take an example with the map object. How to initialize a map without any
 &lt;p&gt;This pattern has some rules. The first one is that a command can be handled by a single command handler because there is only a single way to handle a use case. The second rule is that a command handler should receive a valid command. Validating the command ensures that the user provides the correct data to prevent the handling from failing. It also helps to provide early feedback to the user about the data they provided.&lt;/p&gt;
 
 &lt;p&gt;The command is only a DTO that carries data while the command handler is responsible to handle use cases.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; onclick=&quot;track({id: 'training-link-clicked', parameters: { page: 'Command and command handler design pattern'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;how-to-use-it&quot;&gt;How to use it?&lt;/h2&gt;
 

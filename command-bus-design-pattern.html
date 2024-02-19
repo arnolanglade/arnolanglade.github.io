@@ -262,6 +262,22 @@
 
 <p><strong>Quick reminder about command and command handler:</strong> A command represents a user’s intent. The data carried by the command has to be valid. It can be only handled by only one handler that is just a callable that will perform the user action.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'The command bus design pattern'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>Now, we will build a command bus following the same architecture that I described in the previous section. The only difference is that the command bus will return void. As commands canmight be handled asynchronously, we don’t want to wait for the result of the command processing.</p>
 
 <p><img src="images/posts/command-bus/command-bus.svg" alt="A command bus" /></p>

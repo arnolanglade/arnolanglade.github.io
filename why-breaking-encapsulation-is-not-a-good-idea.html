@@ -286,6 +286,22 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">Map</code> class has a <code class="language-plaintext highlighter-rouge">getPointOfInterest</code> getter that gets the class property with the same name. Then we can use this getter to access the list of points of interest to iterate them and find the closest one.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'Why breaking encapsulation is not a good idea'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>The drawback with this getter is that we will need to copy/paste this piece of code if we have to look for the closest point of interest in several places. It won’t help you to mutualize code. At best, you can extract this piece of code into a dedicated class like the following example:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">POIFinder</span> <span class="p">{</span>

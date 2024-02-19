@@ -289,6 +289,22 @@
 
 <p><strong>Tip:</strong> This is really useful to compare Doctrine entities that have persistent collections. The error <code class="language-plaintext highlighter-rouge">Error: Nesting level too deep - recursive dependency?</code> is raised when we compare entities using the comparison operator (==). You should have a look at this <a href="https://www.richardlord.net/blog/php/php-nesting-level-too-deep-recursive-dependency.html">blog post</a> to understand why this error occured. Accessing private attributes let you use the identity operator (===) to prevent this error.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'Why you should not expose objects' state to test them'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>By the way, entities are a bit special because an entity is an object that has an identity. It means that if we want to compare them we should compare their identities instead of their states.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>

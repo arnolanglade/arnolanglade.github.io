@@ -296,6 +296,22 @@
 
 <p><strong>Tip:</strong> I like to add a <code class="language-plaintext highlighter-rouge">@internal</code> annotation to remind all teammates that the object constructor should only be used in tests.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'Increase your test quality thanks to builders or factories'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <p>The value object instantiation is delegated to the <code class="language-plaintext highlighter-rouge">whatever</code> constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it’s easier to read. All constructor arguments have a default value, then I can override a given value depending on the needs thanks to the named argument feature.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$map</span> <span class="o">=</span>  <span class="nc">Map</span><span class="o">::</span><span class="nf">whatever</span><span class="p">(</span><span class="n">name</span><span class="o">:</span> <span class="s1">'Bordeaux city'</span><span class="p">);</span>

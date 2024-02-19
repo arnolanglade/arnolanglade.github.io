@@ -299,6 +299,22 @@
 
 <p>Now, we are sure that as developers we cannot instantiate the <code class="language-plaintext highlighter-rouge">Account</code> aggregate in a wrong state. In the next section, we are going to see how to use the domain objects to give users feedback about their data.</p>
 
+<div class="training-card">
+  <p>
+    <strong>Do you speak French ?</strong> Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  </p>
+  <p>
+    Discover the power of <strong>Hexagonal Architecture</strong> and <strong>DDD</strong> to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  </p>
+  <p class="link">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" onclick="track({id: 'training-link-clicked', parameters: { page: 'How to validate a command?'}})">
+      🚀 Start your journey here!
+    </a>
+  </p>
+</div>
+
 <h2 id="command-validation">Command validation</h2>
 
 <p>As I explained in my previous <a href="http://arnolanglade.github.io/command-handler-patterns.html">blog post</a>, an account creation is represented by a <code class="language-plaintext highlighter-rouge">CreateAnAccount</code> command with two properties: the username and the password. We need to validate them to create the account aggregate without any errors and tell users if they provided valid data to perform this action. The command validation will be done by the Symfony validator. Don’t hesitate to have a look at the <a href="https://symfony.com/doc/current/validation.html">validator documentation</a> if you are not familiar with it.</p>
