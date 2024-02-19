@@ -1,0 +1,4 @@
+{{ $name := print "icons/" (.Get "name") }}
+<span class="{{ .Get "class" }}">
+  {{ partial $name }}
+</span>
