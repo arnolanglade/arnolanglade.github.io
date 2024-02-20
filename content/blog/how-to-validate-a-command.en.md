@@ -68,7 +68,7 @@ final class Account
 
 Now, we are sure that as developers we cannot instantiate the `Account` aggregate in a wrong state. In the next section, we are going to see how to use the domain objects to give users feedback about their data.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 ## Command validation
 

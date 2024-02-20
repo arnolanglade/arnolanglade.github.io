@@ -19,6 +19,12 @@ post:
   image-credit: "Image par"
   published-at: "Publié le"
   related-posts: "Articles similaires"
+  training-link:
+    text: |
+      Fatigué des mêmes vieilles applications CRUD, luttant avec votre framework, ou ressentant la pression des mises en production ? Il est temps de faire évoluer votre carrière vers le niveau supérieur.
+  
+      Découvrez la puissance de l'**Architecture Hexagonale** et du **DDD** pour construire des applications Symfony robustes et durables. Rejoignez-moi et lancez votre voyage vers la maîtrise des techniques de développement avancées.
+    button: 🚀 Commencez votre voyage ici !
 newsletter:
   title: "Newsletter : Soyez le premier à savoir !"
   text: "Abonnez-vous à ma newsletter pour être informé de mes derniers articles de blog, des sorties techniques et du contenu exclusif. Restez en avance dans le jeu du code !"

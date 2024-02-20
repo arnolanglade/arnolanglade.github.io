@@ -1,0 +1,13 @@
+<div class="training-link">
+  {{ i18n "post.training-link.text" | markdownify }}
+  <p class="text-center mb-0">
+    <a
+      class="btn btn-primary text-light px-5 py-3 my-3 mb-0"
+      href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
+      target="_blank"
+      onclick="insights.track({id: 'training-link-clicked', parameters: { page: '{{ $.Page.Title }}'}})"
+    >
+      {{ i18n "post.training-link.button" }}
+    </a>
+  </p>
+</div>

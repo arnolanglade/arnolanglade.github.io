@@ -19,6 +19,12 @@ post:
   image-credit: "Image by"
   published-at: "Published at"
   related-posts: "Related posts"
+  training-link:
+    text: |
+      **Do you speak French ?** Tired of the same old CRUD applications, struggling with your framework, or feeling the pressure of production releases? It's time to take your career to the next level.
+
+      Discover the power of **Hexagonal Architecture** and **DDD** to build robust and sustainable Symfony applications. Join me and kickstart your journey toward mastering advanced development techniques.
+    button: 🚀 Start your journey here!
 newsletter:
   title: "Newsletter: Be the first to know!"
   text: "Subscribe to my newsletter for updates on my latest blog posts, tech releases, and exclusive content. Stay ahead in the coding game!"

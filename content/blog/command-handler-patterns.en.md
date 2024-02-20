@@ -31,6 +31,8 @@ This pattern has some rules. The first one is that a command can be handled by a
 
 The command is only a DTO that carries data while the command handler is responsible to handle use cases.
 
+{{< training-link >}}
+
 ## How to use it?
 
 Let’s consider a simple example: creating an account. Our business expert expects users to provide an email and a password to create an account for login purposes. We will create a command named `CreateAnAccount` and its handler, `CreateAnAccountHandler`.
@@ -38,7 +40,7 @@ First, we need to create a command named `CreateAnAccount` to represent the user
 
 ```php
 final class CreateAnAccount
-{
+{   
    public readonly string $username;
    public readonly string $password;
    
