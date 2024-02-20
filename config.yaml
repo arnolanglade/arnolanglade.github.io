@@ -71,6 +71,10 @@ languages:
         - name: "Contact"
           url: "/contact-me"
           weight: 7
+
+        - name: "Newsletter"
+          url: "/newsletter"
+          weight: 8
     params:
       title: "Arnaud Langlade"
       description: ""
@@ -134,6 +138,10 @@ languages:
         - name: "Travaillons ensemble"
           url: "/fr/contactez-moi"
           weight: 7
+
+        - name: "Newsletter"
+          url: "/fr/newsletter"
+          weight: 8
     params:
       title: "Arnaud Langlade"
       description: ""
