@@ -4,8 +4,8 @@ languageCode: "en-us"
 
 title: "Arnaud Langlade"
 
+enableRobotsTXT: true
 summaryLength: 20
-
 paginate: 10
 
 defaultContentLanguage: en
