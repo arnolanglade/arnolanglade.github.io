@@ -15,10 +15,12 @@ home:
       button: "Let's talk"
   footer:
     social: "Follow me on social networks, I share a lot of things about software development, and more."
+
 blog:
   button:
     subscribe: "Subscribe my newsletter"
     feed: "RSS feed"
+
 post:
   image-credit: "Image by"
   published-at: "Published at"
@@ -35,3 +37,7 @@ newsletter:
   button: "Subscribe"
   placeholder: "Your email address"
   privacy: "Your data will remain strictly confidential and will be used exclusively to communicate with you. Be assured that it will never be sold to third parties."
+
+footer:
+  links: "Learn more"
+  newsletter: "Subscribe to my newsletter"

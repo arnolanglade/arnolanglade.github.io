@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
-        <h4 class="fs-4 fw-semibold text-uppercase text-primary">{{ .Site.Title }}</h4>
-        <p class="small text-black-61">{{ i18n "home.footer.social" }}</p>
+        <h4 class="fs-5 fw-semibold text-uppercase text-primary mb-2">{{ .Site.Title }}</h4>
+        <p class="small text-black-61 mb-0">{{ i18n "home.footer.social" }}</p>
         {{ with .Site.Params.social }}
-        <ul class="d-flex justify-content-center justify-content-xl-start list-unstyled">
+        <ul class="d-flex justify-content-center justify-content-xl-start list-unstyled mt-4">
           {{ with .linkedin }}
           <li class="rounded-circle bg-blue-63 me-2 p-2">
             <a class="d-flex align-items-center justify-content-center size-16" href="{{ . }}">
@@ -58,32 +58,28 @@
         </ul>
         {{ end }}
       </div>
-      <div class="col-12 col-xl-2 text-center text-xl-start pb-4">
-        <h5 class="fs-6 fw-semibold text-primary">About us</h5>
-        <ul class="list-unstyled">
+      <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
+        <h5 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.links" }}</h5>
+        <ul class="list-unstyled row">
           {{ range .Site.Menus.footer }}
-            <li class="">
+            <li class="col-6">
               <a class="small text-black-61 text-decoration-none" href="{{ .URL }}">{{ .Name }}</a>
             </li>
           {{ end }}
         </ul>
       </div>
-      <div class="col-12 col-xl-3 text-center text-xl-start pb-4">
-        <h5 class="fs-6 fw-semibold text-primary">Location</h5>
-        <ul class="list-unstyled">
-          {{ range .Site.Params.location }}
-            <li class="d-flex justify-content-center justify-content-xl-start mb-2">
-              <div class="d-flex align-items-center text-primary">{{ partial "icons/geo-alt.html" }}</div>
-              <p class="small text-black-61 m-0 ps-2">{{ . }}</p>
-            </li>
-          {{ end }}
-        </ul>
-      </div>
-      <div class="col-12 col-xl-3 text-center text-xl-start pb-4">
-        <h5 class="fs-6 fw-semibold text-primary">Contact us</h5>
-        {{ range .Site.Params.contact }}
-          <p class="small text-black-61 mb-1">{{ . }}</p>
-        {{ end }}
+      <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
+        <form
+          action="https://github.us13.list-manage.com/subscribe/post?u=d7313775f348f8c8d39a841a0&id=28bcb90eaa&f_id=00550ee4f0"
+          method="post"
+        >
+          <h5 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.newsletter" }}</h5>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="{{ i18n "newsletter.placeholder" }}" id="EMAIL" name="EMAIL">
+            <button type="submit" class="btn btn-primary text-light">{{ i18n "newsletter.button" }}</button>
+          </div>
+          <p class="privacy mt-4">{{ i18n "newsletter.privacy" }}</p>
+        </form>
       </div>
     </div>
     <div class="row">
