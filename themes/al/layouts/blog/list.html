@@ -7,14 +7,12 @@
                 {{ partial "utilities/resized-image" (dict "src" "images/me/home.jpg" "format" "500x webp" "alt" "Arnaud Langlade") }}
               </div>
               <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
-
                 {{ with .Title }}
                 <h2 class="me-title fw-bold display-1 text-primary text-center text-xl-start pb-4">{{ . }}</h2>
                 {{ end }}
                 {{ with .Params.description }}
                 <p class="text-center text-black-61 text-xl-start pb-4">{{ . }}</p>
                 {{ end }}
-
                 <div class="d-flex flex-column flex-xl-row">
                   <a class="btn btn-primary text-light px-4 my-1" href="{{ "/newsletter" | relLangURL }}">
                   {{ i18n "blog.button.subscribe" | markdownify }}
@@ -27,6 +25,18 @@
               </div>
             </div>
           </div>
+      </div>
+      <div class="row g-4 pb-5">
+        {{range $name, $taxonomy := .Site.Taxonomies.tags}}
+          {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+              <a class="text-light w-auto badge bg-primary text-decoration-none position-relative mx-2" href={{ .RelPermalink }}>
+                {{$name}}
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ $taxonomy.Count }}
+                </span>
+              </a>
+          {{end}}
+        {{end}}
       </div>
       <div class="row g-4 pb-5">
         {{ range (.Paginate .RegularPages).Pages }}
