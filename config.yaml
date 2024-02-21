@@ -163,18 +163,19 @@ params:
     youtube: "https://www.youtube.com/@arnolanglade"
     rss: "/blog/index.xml"
 
+  author:
+    name: "Arnaud Langlade"
+    email: "contact@arnaudlanglade.com"
+
   contact:
     - "contact@arnaudlanglade.com"
 
 taxonomies:
   tags: "tags"
 
-author:
-  name: "Arnaud Langlade"
-  email: "contact@arnaudlanglade.com"
-
 outputs:
-  blog:
+  section:
     - html
     - rss
+
 copyright: "© 2024 Arnaud Langlade"
