@@ -1,7 +1,9 @@
-+++
-title = "Talks"
-author = "Hugo Authors"
-+++
+---
+title: "Talks"
+author: "Hugo Authors"
+menu:
+  - footer
+---
 
 fsqfqsdf
 qsdf

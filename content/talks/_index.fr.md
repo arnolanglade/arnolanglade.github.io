@@ -1,7 +1,9 @@
-+++
-title = "Conférernces"
-author = ""
-+++
+---
+title: "Conférernces"
+author: ""
+menu:
+  - footer
+---
 
 
 fsqfqsdf

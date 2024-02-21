@@ -19,60 +19,19 @@ languages:
       blog: "/:title"
     menus:
       main:
-        - name: "Home"
-          url: "/#hero"
-          weight: 1
-
         - name: "Training"
           url: ""
           weight: 2
-
-        - name: "Projects"
-          url: "/projects"
-          weight: 3
-
-        - name: "Blog"
-          url: "/blog"
-          weight: 4
-
       buttons:
         - name: "Hire me"
-          url: "/contact"
+          url: "/contact-me"
           weight: 5
           pre: "btn btn-primary text-light"
-
       footer:
-        - name: "Home"
-          url: "/#hero"
-          weight: 1
-
-        - name: "About"
-          url: "/about"
-          weight: 2
-
-        - name: "Talks"
-          url: "/talks"
-          weight: 3
-
         - name: "Training"
           url: ""
-          weight: 4
+          weight: 2
 
-        - name: "Projects"
-          url: "/projects"
-          weight: 5
-
-        - name: "Blog"
-          url: "/blog"
-          weight: 6
-
-        - name: "Contact"
-          url: "/contact-me"
-          weight: 7
-
-        - name: "Newsletter"
-          url: "/newsletter"
-          weight: 8
     params:
       title: Arnaud Langlade - Senior software engineer, software architect, and technical coach
       description: "Arnaud Langlade - I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further»."
@@ -87,60 +46,18 @@ languages:
       blog: "/:title"
     menus:
       main:
-        - name: "Accueil"
-          url: "/fr/#hero"
-          weight: 1
-
         - name: "Formation"
           url: ""
           weight: 2
-
-        - name: "Projets"
-          url: "/fr/projets"
-          weight: 3
-
-        - name: "Blog"
-          url: "/blog"
-          weight: 4
-
       buttons:
         - name: "Travaillons ensemble"
-          url: "/contact"
+          url: "/fr/contactez-moi"
           weight: 5
           pre: "btn btn-primary text-light"
-
       footer:
-        - name: "Accueil"
-          url: "/fr/#hero"
-          weight: 1
-
-        - name: "À propos"
-          url: "/fr/a-propos-de-moi"
-          weight: 2
-
-        - name: "Conférences"
-          url: "/fr/conferences"
-          weight: 3
-
         - name: "Formation"
           url: ""
-          weight: 4
-
-        - name: "Projets"
-          url: "/fr/projets"
-          weight: 5
-
-        - name: "Blog"
-          url: "/blog"
-          weight: 6
-
-        - name: "Travaillons ensemble"
-          url: "/fr/contactez-moi"
-          weight: 7
-
-        - name: "Newsletter"
-          url: "/fr/newsletter"
-          weight: 8
+          weight: 2
     params:
       title: "Arnaud Langlade - Ingénieur logiciel senior, architecte logiciel et coach technique"
       description: "Arnaud Langlade - Je suis un architecte logiciel et un coach technique. Je me concentre sur la compréhension des besoins métier pour trouver la meilleure solution. J'adore tout ce qui se termine par *DD comme DDD, BDD et TDD. Ces outils et toutes les valeurs de l'eXtreme Programming m'aident à construire des logiciels robustes et maintenables. Enfin, le travail d'équipe est essentiel : «seul nous allons plus vite, ensemble nous allons plus loin»."

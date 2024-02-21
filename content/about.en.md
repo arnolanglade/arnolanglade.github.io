@@ -2,6 +2,8 @@
 title: "About me"
 slug: "about-me"
 description: ""
+menu: 
+  - footer
 image: 
   src: "images/me/about.jpg"
   alt: "Arnaud Langlade"

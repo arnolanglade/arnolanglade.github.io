@@ -2,6 +2,9 @@
 title: "Projects"
 slug: "projects"
 description: ""
+menu:
+  - main
+  - footer
 ---
 
 ## The mikado method
