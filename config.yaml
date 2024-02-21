@@ -161,12 +161,20 @@ params:
     github: "https://github.com/arnolanglade"
     mastodon: "https://www.youtube.com/@arnolanglade"
     youtube: "https://www.youtube.com/@arnolanglade"
+    rss: "/blog/index.xml"
 
   contact:
     - "contact@arnaudlanglade.com"
 
-  copyright: "© 2024 Arnaud Langlade"
-
 taxonomies:
-  series: "series"
   tags: "tags"
+
+author:
+  name: "Arnaud Langlade"
+  email: "contact@arnaudlanglade.com"
+
+outputs:
+  blog:
+    - html
+    - rss
+copyright: "© 2024 Arnaud Langlade"
