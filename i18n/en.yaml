@@ -15,6 +15,10 @@ home:
       button: "Let's talk"
   footer:
     social: "Follow me on social networks, I share a lot of things about software development, and more."
+blog:
+  button:
+    subscribe: "Subscribe my newsletter"
+    feed: "RSS feed"
 post:
   image-credit: "Image by"
   published-at: "Published at"
