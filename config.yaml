@@ -74,8 +74,9 @@ languages:
           url: "/newsletter"
           weight: 8
     params:
-      title: "Arnaud Langlade"
-      description: ""
+      title: Arnaud Langlade - Senior software engineer, software architect, and technical coach
+      description: "Arnaud Langlade - I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further»."
+      keywords: "arnaud langlade,langlade,freelancer,software engineer,software architect,technical coach,software craftsmanship,oop,blog,talk,tdd,bdd,ddd,event storming,example mapping,arnolanglade"
     weight: 1
   fr:
     disabled: false
@@ -141,8 +142,9 @@ languages:
           url: "/fr/newsletter"
           weight: 8
     params:
-      title: "Arnaud Langlade"
-      description: ""
+      title: "Arnaud Langlade - Ingénieur logiciel senior, architecte logiciel et coach technique"
+      description: "Arnaud Langlade - Je suis un architecte logiciel et un coach technique. Je me concentre sur la compréhension des besoins métier pour trouver la meilleure solution. J'adore tout ce qui se termine par *DD comme DDD, BDD et TDD. Ces outils et toutes les valeurs de l'eXtreme Programming m'aident à construire des logiciels robustes et maintenables. Enfin, le travail d'équipe est essentiel : «seul nous allons plus vite, ensemble nous allons plus loin»."
+      keywords: "arnaud langlade,langlade,freelancer,ingénieur logiciel,architecte logiciel,coach technique,artisan logiciel,oop,blog,conférence,tdd,bdd,ddd,event storming,example mapping,arnolanglade"
     weight: 2
 
 params:

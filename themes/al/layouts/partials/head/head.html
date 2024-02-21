@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{end}}" />
+  <meta name="keywords" content="{{ if .IsHome }}{{ .Site.Params.keywords }}{{ else if .Keywords }}{{ delimit .Keywords ", " }}{{ else }}{{ .Site.Params.keywords }}{{end}}" />
 
   <!-- Analytics -->
   {{ partial "head/_analytics.html" . }}
