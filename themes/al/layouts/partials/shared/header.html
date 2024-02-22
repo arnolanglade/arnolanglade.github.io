@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-xl navbar-light bg-dark py-4">
+<nav class="navbar navbar-expand-xl bg-dark py-4">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="{{ .Site.BaseURL }}">
       {{ partial "utilities/resized-image" (dict "src" "images/logo.png" "format" "48x48 webp" "alt" "Logo") }}
@@ -18,12 +18,14 @@
       <ul class="navbar-nav mb-2 mb-xl-0">
         {{ range .Site.Menus.buttons }}
           <li class="nav-item">
-            <a class="nav-link btn btn-primary text-light px-4" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="nav-link btn btn-primary text-dark px-4" href="{{ .URL }}">{{ .Name }}</a>
           </li>
         {{ end }}
         <li class="nav-item text-center">
           {{ range $.Translations }}
-          <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" class="fs-3 text-decoration-none mx-auto mx-xl-4">{{ .Language.LanguageName }}</a>
+          <a title="{{ .Language.LanguageName }}" href="{{ .Permalink }}" class="fs-3 text-decoration-none mx-auto mx-xl-4">
+            {{ .Language.LanguageName }}
+          </a>
           {{ end }}
         </li>
       </ul>
