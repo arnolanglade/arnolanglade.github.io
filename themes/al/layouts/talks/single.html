@@ -1,19 +1,26 @@
 {{ define "main" }}
   <section class="section blog-single py-5">
     <div class="container">
-      <div class="row justify-content-center pb-5">
-        <div class="col-12 text-center">
-          {{ with .Title }}
-            <h2 class="display-1 fw-bold text-center text-primary pb-3">{{ . }}</h2>
-          {{ end }}
-          {{ with .Params.description }}
-            <p class="text-black-61 text-center pb-3">{{ . }}</p>
-          {{ end }}
-          {{ with .Params.image }}
-            {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
-          {{ end }}
+      <div class="row pb-5">
+        <div class="col-xl-6 col-12">
+          <div class="post-image">
+            {{ with .Params.conference }}
+            {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "600x webp") }}
+            {{ end }}
+          </div>
         </div>
-      </div>
+        <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+          <div>
+            {{ with .Title }}
+            <h1 class="post-title display-1 fw-bold text-primary pb-3">{{ . }}</h1>
+            {{ end }}
+            {{ with .Params.conference }}
+            <p class="text-black-61 mb-0">
+              <a href="{{ .link }}"><strong>{{ .title }}</strong></a>
+            </p>
+            {{ end }}
+          </div>
+        </div>
       <div class="row pb-5">
         <div class="col-12 d-flex justify-content-center">
           <div class="blog-content fs-5">
