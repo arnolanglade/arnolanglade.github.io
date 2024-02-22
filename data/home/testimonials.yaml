@@ -3,11 +3,23 @@ id: "testimonials"
 
 content:
   list:
+    - text: "Arnaud is a very talentuous senior software engineer with robust and proven experience. Arnaud, as leader of a development squad, has successfully delivered a SaaS native platform from first steps of product ideation all the way to the SaaS platform in production. Thanks to Arnaud broad technical expertise and smart human touch, he has been able to lead, coach and grow multiple members of the squad (product manager, software engineer, DevOps). While being very demanding for himself, Arnaud is very pleasant toward his team members and fun to work with."
+      name: "Arnaud Faissolle"
+      position: "Engineer Manager at Akeneo"
+      linkedin: "https://www.linkedin.com/in/arnaud-faissolle-249315"
+      image: "images/testimonial/arnaud-faisolle.jpeg"
+
     - image: "images/testimonial/arnaud-lemaire.jpeg"
       text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
       name: "Arnaud LEMAIRE"
       position: "VP/Chief Architect at Sunday"
       linkedin: "https://www.linkedin.com/in/lilobase/"
+
+    - text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
+      name: "Nicolas Dupont"
+      position: "Co-founder at Akeneo"
+      linkedin: "https://www.linkedin.com/in/nicolasdupontakeneo"
+      image: "images/testimonial/nicolas-dupont.jpeg"
 
     - text: "J'ai eu la chance de travailler avec Arnaud pendant plusieurs mois au sein de Sunday. Je dis bien 'chance' car j'ai appris beaucoup à ses côtés, que ce soit sur l'exercice de son métier que sur l'environnement nécessaire au bon exercice de son métier. Je recommande donc chaudement Arnaud qui, au-delà de ses connaissances multiples et de son expertise profonde, est un collègue très agréable avec qui travailler !"
       name: "Denis Migot"
@@ -15,17 +27,6 @@ content:
       linkedin: "https://www.linkedin.com/in/denis-migot"
       image: "images/testimonial/denis-migot.jpeg"
 
-    - text: "Arnaud is a very talentuous senior software engineer with robust and proven experience. Arnaud, as leader of a development squad, has successfully delivered a SaaS native platform from first steps of product ideation all the way to the SaaS platform in production. Thanks to Arnaud broad technical expertise and smart human touch, he has been able to lead, coach and grow multiple members of the squad (product manager, software engineer, DevOps). While being very demanding for himself, Arnaud is very pleasant toward his team members and fun to work with."
-      name: "Arnaud Faissolle"
-      position: "Engineer Manager at Akeneo"
-      linkedin: "https://www.linkedin.com/in/arnaud-faissolle-249315"
-      image: "images/testimonial/arnaud-faisolle.jpeg"
-
-    - text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
-      name: "Nicolas Dupont"
-      position: "Co-founder at Akeneo"
-      linkedin: "https://www.linkedin.com/in/nicolasdupontakeneo"
-      image: "images/testimonial/nicolas-dupont.jpeg"
 
     - text: |
         J’ai eu le plaisir et le privilège de travailler avec Arnaud durant près de dix ans au sein de trois entreprises différentes. C'est sans conteste la personne avec qui et de qui j'ai appris le plus dans ce métier.
