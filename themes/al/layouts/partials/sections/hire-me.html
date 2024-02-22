@@ -1,17 +1,17 @@
 <section class="section hire-me py-5">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-xl-6">
+      <div class="col-12 col-xl-8">
           <h3 class="fs-1 fw-bold text-center text-primary pb-3">{{ i18n "home.section.hire-me.title" | markdownify }}</h3>
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-12 col-xl-6 text-center">
+      <div class="col-12 col-xl-8 text-center">
         {{ partial "utilities/resized-image" (dict "src" "images/services-web-development.png" "alt" (i18n "home.section.hire-me.title") "format" "600x webp") }}
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-12 col-xl-6 text-center">
+      <div class="col-12 col-xl-8 text-center">
           <a class="btn btn-outline-primary px-4" href="{{ "contact-me" | relLangURL }}">
             {{ i18n "home.section.hire-me.button" | markdownify }}
             <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
