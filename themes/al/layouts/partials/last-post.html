@@ -1,0 +1,9 @@
+<section class="section blog-single py-5">
+  <div class="container">
+    <div class="row pb-5">
+      {{ range ( where .Site.RegularPages "Section" "blog" | first 3 ) }}
+      {{ partial "blog-post-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>

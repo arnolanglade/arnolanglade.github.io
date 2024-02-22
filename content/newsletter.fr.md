@@ -2,9 +2,8 @@
 title: "Newsletter"
 slug: "newsletter"
 description: ""
-hire_me: false
+layout: "newsletter"
 menu:
   - footer
 ---
 
-{{< partial path="sections/newsletter" >}}
