@@ -1,9 +1,25 @@
-
+{{ define "main" }}
+<section class="section blog-single py-5 bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-12">
+        <div class="post-image">
+          {{ partial "utilities/resized-image" (dict "src" "images/testimonials-awards.png" "alt" "" "format" "600x webp") }}
+        </div>
+      </div>
+      <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+        {{ with .Title }}
+        <h1 class="post-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ . }}</h1>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section testimonials py-5">
   <div class="container p-2">
     <div class="row">
       {{ range $i, $e := .Site.Data.home.testimonials.content.list }}
-      <div class="col-12 col-xl-12 d-flex flex-column justify-content-center mb-5 p-0">
+      <div class="col-12 col-xl-12 d-flex flex-column justify-content-center mb-5 px-3">
         <div class="pb-4">
           {{ partial "utilities/resized-image" (dict "src" "images/testimonials-left-quote.png" "format" "64x webp" ) }}
         </div>
@@ -24,3 +40,5 @@
     </div>
   </div>
 </section>
+{{ end }}
+
