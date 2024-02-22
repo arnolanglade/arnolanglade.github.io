@@ -20,12 +20,12 @@ For more information, have a look at my blog post on the [Mikado Method](/mikado
 ## Try the MikadoApp
 Try the Mikado App online. For now, I am only using the Vercel free plan, meaning the application may be slow.
 
-{{<link href="https://mikado-method-teal.vercel.app" label="Try the MikadoApp" >}}
+{{<external-link href="https://mikado-method-teal.vercel.app" label="Try the MikadoApp" >}}
 
 This project is open source, so don’t hesitate to contribute to the application to improve it! Submit an issue for bugs and share your ideas to enhance the application. Pull requests are very welcome too. The source code is available on
 GitHub.
 
-{{<link href="https://github.com/arnolanglade/mikado-app" label="Sources on GitHub" >}}
+{{<external-link href="https://github.com/arnolanglade/mikado-app" label="Sources on GitHub" >}}
 
 ## How to use the MikadoApp
 Let’s take an example: MySQL doesn’t match the project's needs; you want to migrate your application to PostgreSQL.
