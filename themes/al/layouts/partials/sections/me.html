@@ -5,10 +5,14 @@
         {{ partial "utilities/resized-image" (dict "src" "images/me/home.jpg" "format" "500x webp" "alt" "Arnaud Langlade") }}
       </div>
       <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
-          <h3 class="me-title fw-bold display-1 text-primary text-center text-xl-start pb-4">{{ i18n "home.section.me.title" | markdownify }}</h3>
-          <p class="text-center text-black-61 text-xl-start pb-4">{{ i18n "home.section.me.text"  | markdownify }}</p>
+          <h3 class="me-title fw-bold display-1 text-primary text-center text-xl-start pb-4">
+            {{ i18n "home.section.me.title" | markdownify }}
+          </h3>
+          <p class="text-center text-black-61 text-xl-start pb-4 text-light">
+            {{ i18n "home.section.me.text"  | markdownify }}
+          </p>
         <div class="d-flex flex-column flex-xl-row">
-          <a class="btn btn-primary text-light px-4 my-1" href="{{ "/contact-me" | relLangURL }}">
+          <a class="btn btn-primary px-4 my-1" href="{{ "/contact-me" | relLangURL }}">
           {{ i18n "home.section.me.buttonPrimary" | markdownify }}
           </a>
           <a class="btn btn-outline-primary px-4 my-1 ms-xl-4" href="{{ "/about-me" | relLangURL }}">
