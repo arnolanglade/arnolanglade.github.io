@@ -1,6 +1,7 @@
 .blog-content {
-  max-width: 1000px;
+  max-width: 1100px;
   font-size: 18px;
+  padding: 0;
   .highlight {
     pre {
       padding: 16px;
@@ -13,6 +14,34 @@
     border: 1px solid #fd7e14;
     padding: 20px;
     margin-bottom: 20px;
+  }
+  .post-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  .content {
+    flex-grow: 1;
+    max-width:800px;
+    overflow-y: auto;
+    padding-top: 20px;
+  }
+  .sidebar {
+    flex-basis: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .post-container {
+      flex-direction: column;
+    }
+    .sidebar {
+      height: auto;
+      position: relative;
+    }
   }
 }
 .post-header-left {

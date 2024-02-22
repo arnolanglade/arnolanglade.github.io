@@ -31,6 +31,9 @@ post:
   
       Découvrez la puissance de l'**Architecture Hexagonale** et du **DDD** pour construire des applications Symfony robustes et durables. Rejoignez-moi et lancez votre voyage vers la maîtrise des techniques de développement avancées.
     button: 🚀 Commencez votre voyage ici !
+  about:
+    title: "Bonjour je suis Arnaud"
+    text: "J'adore partager mes connaissances sur l'ingénierie logicielle tels que les modèles de conception architecturaux, les tests logiciels, les méthodologies et bien plus encore. Suivez-moi sur les réseaux sociaux, je partage beaucoup de choses sur le développement logiciel, et plus."
 
 newsletter:
   title: "Newsletter : Soyez le premier à savoir !"
