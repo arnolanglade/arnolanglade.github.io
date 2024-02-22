@@ -1,19 +1,24 @@
 {{ define "main" }}
-  <section class="section blog-single py-5">
+  <section class="section blog-single py-5 bg-dark">
     <div class="container">
-      <div class="row justify-content-center pb-5">
-        <div class="col-12 text-center">
-          {{ with .Title }}
-            <h2 class="display-1 fw-bold text-center text-primary pb-3">{{ . }}</h2>
-          {{ end }}
-          {{ with .Params.description }}
-            <p class="text-black-61 text-center pb-3">{{ . }}</p>
-          {{ end }}
-          {{ with .Params.image }}
+      <div class="row">
+        <div class="col-xl-6 col-12">
+          <div class="post-image">
+            {{ with .Params.image }}
             {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+          {{ with .Title }}
+          <h1 class="post-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ . }}</h1>
           {{ end }}
         </div>
       </div>
+    </div>
+  </section>
+  <section class="section blog-single py-5">
+    <div class="container">
       <div class="row pb-5">
         <div class="col-12 d-flex justify-content-center">
           <div class="blog-content fs-5">
@@ -25,8 +30,8 @@
       </div>
     </div>
   </section>
-    {{ $hireMe := .Params.hire_me | default "true" }}
-    {{ if eq $hireMe "true" }}
-    {{ partial "sections/hire-me.html" }}
-    {{ end }}
+  {{ $hireMe := .Params.hire_me | default "true" }}
+  {{ if eq $hireMe "true" }}
+  {{ partial "sections/hire-me.html" }}
+  {{ end }}
 {{ end }}
