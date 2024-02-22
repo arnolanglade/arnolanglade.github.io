@@ -56,24 +56,23 @@
       </div>
     </div>
   </section>
-<section class="section blog-single py-5">
-  <div class="container">
-    <div class="row pb-5">
-      {{- range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) -}}
-      {{- $.Scratch.Set "has_related" true -}}
-      {{- end -}}
+  {{ partial "sections/newsletter" }}
+  <section class="section blog-single py-5">
+    <div class="container">
+      <div class="row pb-5">
+        {{- range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) -}}
+        {{- $.Scratch.Set "has_related" true -}}
+        {{- end -}}
 
-      {{ if $.Scratch.Get "has_related" }}
-      <div class="related-content">
-        <h3>{{ i18n "post.related-posts"}}</h3>
-          {{ range first 3 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-            {{ partial "blog-post-card.html" . }}
-          {{ end }}
+        {{ if $.Scratch.Get "has_related" }}
+        <div class="related-content">
+          <h3>{{ i18n "post.related-posts"}}</h3>
+            {{ range first 3 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+              {{ partial "blog-post-card.html" . }}
+            {{ end }}
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
     </div>
-  </div>
-</section>
-
-{{ partial "sections/newsletter" }}
+  </section>
 {{ end }}
