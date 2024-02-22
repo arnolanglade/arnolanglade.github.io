@@ -1,0 +1,4 @@
+{{- $title := .title | default "YouTube Video" }}
+<div {{ with .class }}class="{{ . }}"{{ else }}style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;padding-top: 3rem;"{{ end }}>
+  <iframe src="https://www.youtube-nocookie.com/embed/{{.id}}{{ with .autoplay }}{{ if eq . "true" }}?autoplay=1{{ end }}{{ end }}" {{ if not .class }}style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;padding-top: 3rem;" {{ end }}allowfullscreen title="{{ $title }}"></iframe>
+</div>

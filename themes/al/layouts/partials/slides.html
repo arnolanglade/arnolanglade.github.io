@@ -1,0 +1,6 @@
+{{ $url := (printf "%s%s%s" "slides/" . "/" ) }}
+<div class="py-5">
+  <iframe src="{{ $url | absLangURL}}" height="700" width="100%">
+    Fallback text here for unsupporting browsers, of which there are scant few.
+  </iframe>
+</div>

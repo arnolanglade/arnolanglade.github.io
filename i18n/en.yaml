@@ -35,6 +35,12 @@ post:
     title: "Hello I'am Arnaud"
     text: "I love sharing my knowledge about software engineering such as architectural design patterns, software testing, methodologies and so on. Follow me on social networks, I share a lot of things about software development, and more."
 
+talks:
+  video: "Watch the video"
+  slides:
+    title: "See the slides"
+    button: "View slides in full screen"
+
 newsletter:
   title: "Newsletter: Be the first to know!"
   text: "Subscribe to my newsletter for updates on my latest blog posts, tech releases, and exclusive content. Stay ahead in the coding game!"

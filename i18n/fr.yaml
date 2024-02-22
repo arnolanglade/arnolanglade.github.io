@@ -35,6 +35,12 @@ post:
     title: "Bonjour je suis Arnaud"
     text: "J'adore partager mes connaissances sur l'ingénierie logicielle tels que les modèles de conception architecturaux, les tests logiciels, les méthodologies et bien plus encore. Suivez-moi sur les réseaux sociaux, je partage beaucoup de choses sur le développement logiciel, et plus."
 
+talks:
+  video: "Regarder la vidéo"
+  slides:
+    title: "Voir les slides"
+    button: "Voir les slides en plein écran"
+
 newsletter:
   title: "Newsletter : Soyez le premier à savoir !"
   text: "Abonnez-vous à ma newsletter pour être informé de mes derniers articles de blog, des sorties techniques et du contenu exclusif. Restez en avance dans le jeu du code !"

@@ -329,7 +329,7 @@
     // Assert
     expect(map).toEqual(
       new Map(
-        new Name('Anglet'), 
+        new Name('Anglet'),
         [new Marker('Le Sunset', 23.252353245, 43.5432563457)]
       )
     )
@@ -379,7 +379,7 @@ class MyClass {
 
   myMethod() {
     const repository = PosgresqlRepository.getInstance()
-    
+
     repository.save(new MyObject())
   }
 }
@@ -392,7 +392,7 @@ class MyClass {
 
   constructor(private repository: PosgresqlRepository) {}
 
-  myMethod() {    
+  myMethod() {
     this.repository.save(new MyObject())
   }
 }
@@ -484,15 +484,15 @@ class MyClass {
 <div class="sl-block" data-block-type="shape" style="width: 44px; height: 43.5px; left: 458px; top: 407px;" data-name="shape-da24d4" data-block-id="46d513c91c6dc80d75441aee6d746c53"><div class="sl-block-content fragment fade-out" data-shape-type="symbol-minus-circle" data-shape-fill-color="rgb(255, 0, 0)" data-shape-stretch="true" style="z-index: 24;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 32 32"><g class="shape-element" fill="rgb(255, 0, 0)" data-viewbox="0 0 32 32"><path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM24 18h-16v-4h16v4z"></path></g></svg></div></div></section><section data-id="7523ca72767d06272fe2f3fb2f064857"><div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 217px;" data-name="code-292d5c" data-block-id="ba28b9b8101cb79fd04523682a693ec8"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 24px; line-height: 29px;" class="typescript"><code data-line-numbers="1-15|3|5|7-11|13|3">class AddMarkerToMap {
   execute(marker) {
     const repository = PosgresqlMaps.getInstance()
-    
+
     const map = repository.get(marker.mapId)
-    
+
     map.addMarker(
-      marker.name, 
-      marker.longitude, 
-      marker.latitude, 
+      marker.name,
+      marker.longitude,
+      marker.latitude,
     )
-    
+
     repository.save(map)
   }
 }</code></pre></div></div>
@@ -508,7 +508,7 @@ class MyClass {
 
 // Test
 class InMemoryMaps implements Maps {
-  // Keep map objects in memory 
+  // Keep map objects in memory
 }
 
 // Production
@@ -521,14 +521,14 @@ class PosgresqlMaps implements Maps {
 
 </section><section data-id="cded1110ba596c5c50b9ba8a74df55f1"><div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 1px; top: 266px;" data-name="code-292d5c" data-block-id="390ddde67a0fa59cbe81fc27c1958ff2"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 23px; line-height: 28px;" class="typescript"><code data-line-numbers="1-13|2|5,11">class AddMarkerToMap {
   constructor(private maps: Maps) {}
-  
+
   execute(marker) {
     const map = this.maps.get(marker.mapId)
-    
+
     map.addMarker(
       marker.name, marker.latitude, marker.longitude
     )
-    
+
     this.maps.save(map)
   }
 }
@@ -539,9 +539,9 @@ class PosgresqlMaps implements Maps {
 
 </section><section data-id="44112f46481e67a2b06fa252f1301bf0"><div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 245px;" data-name="code-292d5c" data-block-id="f4afb705256922ddb2b9d98e3598af81"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 23px; line-height: 28px;" class="typescript"><code data-line-numbers="1-15|2-3">it('adds a new marker to the map', () =&gt; {
   const maps = InMemoryMaps()
-  
+
   new AddMarkerToMap(maps).execute({
-    mapId: 'mapId', name: 'Le Sunset', 
+    mapId: 'mapId', name: 'Le Sunset',
     latitude: 23.252353245, longitude: 43.5432563457
   })
 
@@ -1144,8 +1144,8 @@ class PosgresqlMaps implements Maps {
 
 class RegisterCartographer {
   constructor(private accounts: Accounts) {}
-  
-  execute(account) {    
+
+  execute(account) {
     this.accounts.save(
       new Account(account.username, account.password)
     )
@@ -1158,7 +1158,7 @@ class RegisterCartographer {
 <grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 11;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 11;" class="cGcvT"></grammarly-extension>
 </div></section><section data-id="8b3e17f8b0bb9552c7a2bc0164a1d85a"><div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 270.5px;" data-name="code-292d5c" data-block-id="c93aeae0500454ac3f882fba9cdd0305"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 23px; line-height: 28px;" class="typescript"><code data-line-numbers="1-13|4-6|8-11">it('creates a cartographer account', () =&gt; {
   const accounts = InMemoryAccounts()
-  
+
   new RegisterCartographer(accounts).execute({
     usename: 'Pepito', password: 'password1'
   })
@@ -1200,10 +1200,10 @@ class RegisterCartographer {
     private accounts: Accounts,
     private passwordEncryptor: PasswordEncryptor
   )
-  
+
   execute(account) {
     this.accounts.save(new Account(
-      account.username, 
+      account.username,
       this.passwordEncryptor.hash(account.password)
     ))
   }
@@ -1213,15 +1213,15 @@ class RegisterCartographer {
 </h1></div></div></section><section data-id="542e2ca917adbbb856ce043e00020227">
 <div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 227px;" data-name="code-292d5c" data-block-id="76caa07f975dbadd7802a2c6e653f836"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 24px; line-height: 29px;" class="typescript"><code data-line-numbers="1-14|9">class AddMarkerToMap {
   constructor(private maps: Maps) {}
-  
+
   execute(marker) {
     const map = this.maps.get(marker.mapId)
-    
+
     map.addMarker(
-      marker.name, marker.latitude, marker.longitude, 
+      marker.name, marker.latitude, marker.longitude,
       new Date()
     )
-    
+
     this.maps.save(map)
   }
 }
@@ -1234,9 +1234,9 @@ class RegisterCartographer {
 </h1></div></div>
 <div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: -1px; top: 242px;" data-name="code-292d5c" data-block-id="7302a2e0a12475aa6b29bbc2bfd37a0e"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 11;" data-code-autoheight="true"><pre style="font-size: 22px; line-height: 26px;" class="typescript"><code data-line-numbers="1-16|4-7|9-14">it('adds a new marker to the map', () =&gt; {
   const maps = InMemoryMaps()
-  
+
   new AddMarkerToMap(maps).execute({
-    mapId: 'mapId', name: 'Le Sunset', 
+    mapId: 'mapId', name: 'Le Sunset',
     latitude: 23.252353245, longitude: 43.5432563457
   })
 
@@ -1268,13 +1268,13 @@ class SystemClock implements Clock {
 <span style="color:#000000">Create an</span> <strong>abstraction<span style="color:#000000"> </span></strong>
 </h1></div></div></section><section data-id="71df84e9565cb6520dc4f17be76a0a90"><div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 219px;" data-name="code-292d5c" data-block-id="480b96c55a16607218ed20580578daa4"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 10;" data-code-autoheight="true"><pre style="font-size: 23px; line-height: 28px;" class="typescript"><code data-line-numbers="1-13|10,2">class AddMarkerToMap {
   constructor(private clock: Clock) {}
-  
+
   execute(marker): void {
     // ...
     map.addMarker(
-      marker.name, 
-      marker.longitude, 
-      marker.latitude, 
+      marker.name,
+      marker.longitude,
+      marker.latitude,
       this.clock.now()
     )
     // ...
@@ -1431,11 +1431,11 @@ it('rename a map', () =&gt; {
 </h1></div></div>
 <div class="sl-block" data-block-type="code" style="width: 960px; height: auto; left: 0px; top: 350px;" data-name="code-40474d" data-block-id="e7062eedd142154175ea92be0ac40867"><div class="sl-block-content notranslate" data-highlight-theme="darcula" data-code-frame="none" style="z-index: 11;" data-code-autoheight="true"><pre style="font-size: 18px; line-height: 22px;" class="typescript"><code data-line-numbers="2-8|9-11">
 describe('Map', () =&gt; {
-  // What happens if the method signature change? 
+  // What happens if the method signature change?
   it('returns the Location type of the closest marker', () =&gt; {
     // ...
   })
-  
+
   // What happens if the method implementation change?
   it('calls the the method Repository.save method', () =&gt; {
     // ...
@@ -1684,7 +1684,7 @@ it('finds the latest added marker', () =&gt; {
   const marker = Marker.whatever({
     makerId: 'a7bda4a5-8f79-41d6-92e6-f0bb2197d086'
   })
-  
+
   const map = Map.whatever({markers: [marker]})
 
   expect(map.latestAddedMarker()).toEqual(marker)
@@ -1766,7 +1766,7 @@ it('finds the latest added marker', () =&gt; {
 			</div>
 		</div>
 
-		
+
 <script>
 	var SLConfig = {"current_user":{"id":2239072,"username":"arnolanglade","name":"Arnaud Langlade","description":"Software engineer. I really enjoy understanding business problems and solving them #BDD #TDD #DDD","thumbnail_url":"https://www.gravatar.com/avatar/3566a0bf63ad474de1e2d8c35c5d76a1?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":55903795,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":false,"speaker_layout":null,"speaker_theme":"dark","phone_number":null,"phone_country_code":null,"media_sources":"giphy","export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null,"auto_animate_tutorial_completed":true,"profile_sorting":"created","profile_layout":"grid"},"email":"arnaud.langlade@gmail.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":3212442,"storage_limit":262144000,"image_upload_limit":10485760,"video_upload_limit":104857600},"deck":{"id":3026606,"slug":"v2-unit-testing-essential-and-complicated-at-the-same-time","title":"[V3]Unit testing: essential and complicated at the same time","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2023-10-04T15:35:04.725Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/a012f58af4cee6a872d7cf088544072f/thumb.jpg?1698055185","view_count":0,"user":{"id":2239072,"username":"arnolanglade","name":"Arnaud Langlade","description":"Software engineer. I really enjoy understanding business problems and solving them #BDD #TDD #DDD","thumbnail_url":"https://www.gravatar.com/avatar/3566a0bf63ad474de1e2d8c35c5d76a1?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":55903795,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"quicksand","theme_color":"sky-blue","auto_slide_interval":0,"comments_enabled":false,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":74,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":null,"data_updated_at":1698480934631,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"language":"en","notes":{"1e4244461f31a329f661d43fb5a836ab":"https://unsplash.com/fr/@thisisengineering","3dc8245baf93474a7650b09a7dd7505a":"Pas simple pour moi au début (autodidacte)\nEssentiel Outils de travail\nje vois encore pas mal de gens pas tester","11050f6c40508edd5f546e1d57c8b723":"On en reparlera après","0cae3bf79ac853116a59d7ee0c6c01b6":"recette plus facile","9a668392f761f946a36bfdc14ba43576":"Given / When / Then","3a2413f3590c234c2f49177deb6c6c6a":"Explique convention Aggregate + InMemory","afd1e555363bfa3d2f9ce2e9c0ac9c7c":"Animation method publique","10b9491017cc4a0f4b60c666998605d0":"prend soin outils hache qui coupe pas"}},"user":{"id":2239072,"username":"arnolanglade","name":"Arnaud Langlade","description":"Software engineer. I really enjoy understanding business problems and solving them #BDD #TDD #DDD","thumbnail_url":"https://www.gravatar.com/avatar/3566a0bf63ad474de1e2d8c35c5d76a1?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"default","team_id":null,"settings":{"id":55903795,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
@@ -1838,7 +1838,7 @@ var Tl={id:"highlight",HIGHLIGHT_STEP_DELIMITER:"|",HIGHLIGHT_LINE_DELIMITER:","
 				width: SLConfig.deck.width,
 				height: SLConfig.deck.height,
 				margin: 0.05,
-				
+
 
 				hash: true,
 				controls: true,
@@ -1875,7 +1875,7 @@ var Tl={id:"highlight",HIGHLIGHT_STEP_DELIMITER:"|",HIGHLIGHT_LINE_DELIMITER:","
 			});
 		</script>
 
-		
+
 
 	</body>
 </html>
