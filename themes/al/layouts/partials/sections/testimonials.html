@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-12">
-          <h3 class="fs-1 fw-bold text-center text-primary">
+          <h2 class="fs-1 fw-bold text-center text-dark">
             {{ i18n "home.section.testimonials.title" | markdownify }}
-          </h3>
+          </h2>
       </div>
     </div>
     <div class="row">
@@ -22,7 +22,7 @@
             "{{ .text }}"
             <br>
             <br>
-            <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-primary text-nowrap">{{ .name }} ({{ .position }})</a>
+            <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-dark text-decoration-none">{{ .name }} ({{ .position }})</a>
           </p>
         </div>
         <div class="pt-4 text-end">
@@ -38,22 +38,26 @@
           {{ with $e.image }}
           <div class="card-body">
             {{ partial "utilities/resized-image" (dict "src" $e.image "format" "70x webp" "class" "rounded-circle mb-3" "alt" $e.name) }}
-            <p class="card-text text-black-61">
+            <p class="card-text text-dark">
               "{{ $e.text }}"
               <br>
               <br>
-              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a>
+              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
+                {{ $e.name }} ({{ $e.position }})
+              </a>
             </p>
           </div>
           {{ else }}
           <div class="card-body">
             {{ $colors := (slice "bg-green" "bg-yellow" "bg-red" "bg-purple") }}
             <div class="{{ index $colors (mod $i 4) }} rounded-circle size-90 mb-4"></div>
-            <p class="card-text text-black-61">"
+            <p class="card-text text-dark">"
               {{ $e.text }}"
               <br>
               <br>
-              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-primary text-nowrap">{{ $e.name }} ({{ $e.position }})</a>
+              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
+                {{ $e.name }} ({{ $e.position }})
+              </a>
             </p>
           </div>
           {{ end }}
@@ -62,7 +66,7 @@
       {{ end }}
     </div>
     <div class="row">
-      <a class="btn btn-outline-primary mx-auto w-auto mt-4 px-5" href="{{ "testimonials" | relLangURL }}">
+      <a class="btn btn-outline-dark mx-auto w-auto mt-4 px-5" href="{{ "testimonials" | relLangURL }}">
         {{ i18n "home.section.testimonials.button" | markdownify }}
         <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
       </a>
