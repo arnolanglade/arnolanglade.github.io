@@ -25,4 +25,8 @@
       </div>
     </div>
   </section>
+    {{ $hireMe := .Params.hire_me | default "true" }}
+    {{ if eq $hireMe "true" }}
+    {{ partial "sections/hire-me.html" }}
+    {{ end }}
 {{ end }}

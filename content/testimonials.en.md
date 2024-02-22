@@ -8,5 +8,3 @@ menus:
 ---
 
 {{< testimonials >}}
-
-{{< partial path="sections/hire-me" >}}

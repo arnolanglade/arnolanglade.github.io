@@ -8,5 +8,3 @@ menu:
 ---
 
 TODO
-
-{{< partial path="sections/hire-me" >}}

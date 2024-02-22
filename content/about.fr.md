@@ -27,6 +27,3 @@ Je concentre ma veille technique sur des sujets qui me permettent de construire 
 > [Kent Beck](https://www.linkedin.com/in/kentbeck/)
 
 J'essaie de trouver la solution la plus simple qui résout un problème commercial pour l'expédier en production le plus rapidement possible. Tout retour d'information est essentiel dans le développement logiciel, il garantit que nous prenons la bonne décision. Agile, «C'est la voie».
-
-{{< partial path="sections/hire-me" >}}
-
