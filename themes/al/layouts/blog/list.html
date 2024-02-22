@@ -31,18 +31,7 @@
 </section>
 <section class="section py-5">
   <div class="container">
-    <div class="row g-4 pb-5 justify-content-center">
-      {{range $name, $taxonomy := .Site.Taxonomies.tags}}
-        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-          <a class="text-light w-auto badge bg-primary text-decoration-none position-relative mx-2" href={{ .RelPermalink }}>
-            {{$name}}
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ $taxonomy.Count }}
-            </span>
-          </a>
-        {{end}}
-      {{end}}
-    </div>
+    {{ partial "tags-list" . }}
     <div class="row g-4 pb-3">
       {{ range (.Paginate .RegularPages).Pages }}
         {{ partial "blog-post-card.html" . }}
