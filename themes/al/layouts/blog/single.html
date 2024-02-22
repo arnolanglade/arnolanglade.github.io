@@ -14,7 +14,7 @@
             <p class="py-2">
               {{ with .GetTerms "tags" }}
                 {{ range . }}
-                  <a class="text-light badge bg-primary text-decoration-none" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                  <a class="text-dark badge bg-primary text-decoration-none" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
                 {{ end }}
               {{ end }}
             </p>
