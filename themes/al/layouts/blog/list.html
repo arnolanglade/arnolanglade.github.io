@@ -12,10 +12,10 @@
             <h2 class="me-title fw-bold display-1 text-primary text-center text-xl-start pb-4">{{ . }}</h2>
             {{ end }}
             {{ with .Params.description }}
-            <p class="text-center text-black-61 text-xl-start pb-4">{{ . }}</p>
+            <p class="text-center text-black-61 text-light text-xl-start pb-4">{{ . }}</p>
             {{ end }}
             <div class="d-flex flex-column flex-xl-row">
-              <a class="btn btn-primary text-light px-4 my-1" href="{{ "/newsletter" | relLangURL }}">
+              <a class="btn btn-primary px-4 my-1" href="{{ "/newsletter" | relLangURL }}">
               {{ i18n "blog.button.subscribe" | markdownify }}
               </a>
               <a class="btn btn-outline-primary px-4 my-1 ms-xl-4" href="{{ "/blog/index.xml" | relLangURL }}">
