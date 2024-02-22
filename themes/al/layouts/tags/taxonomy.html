@@ -1,0 +1,31 @@
+{{ define "main" }}
+    <div class="container">
+      <div class="row g-4 pb-5">
+        {{ with .Title }}
+        <h2 class="me-title fw-bold display-1 text-primary text-center pb-4">{{ . }}</h2>
+        {{ end }}
+      </div>
+      <div class="row g-4 pb-5">
+        {{range $name, $taxonomy := .Site.Taxonomies.tags}}
+          {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+              <a class="text-light w-auto badge bg-primary text-decoration-none position-relative mx-2" href={{ .RelPermalink }}>
+                {{$name}}
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ $taxonomy.Count }}
+                </span>
+              </a>
+          {{end}}
+        {{end}}
+      </div>
+      <div class="row g-4 pb-5">
+        {{ range (.Paginate .RegularPages).Pages }}
+          {{ partial "blog-post-card.html" . }}
+        {{ end }}
+      </div>
+      <div class="row pb-5">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+  </section>
+  {{ partial "sections/newsletter" }}
+{{ end }}
