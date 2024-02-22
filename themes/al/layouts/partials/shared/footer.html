@@ -1,9 +1,9 @@
-<footer class="shared footer bg-blue-light py-5">
+<footer class="shared footer bg-dark py-5">
   <div class="container">
     <div class="row pb-5">
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
         <h4 class="fs-5 fw-semibold text-uppercase text-primary mb-2">{{ .Site.Title }}</h4>
-        <p class="small text-black-61 mb-0">{{ i18n "home.footer.social" }}</p>
+        <p class="small text-light mb-0">{{ i18n "home.footer.social" }}</p>
         {{ partial "social-media-link" . }}
       </div>
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
@@ -11,7 +11,7 @@
         <ul class="list-unstyled row">
           {{ range .Site.Menus.footer }}
             <li class="col-6">
-              <a class="small text-black-61 text-decoration-none" href="{{ .URL }}">{{ .Name }}</a>
+              <a class="small text-light text-decoration-none" href="{{ .URL }}">{{ .Name }}</a>
             </li>
           {{ end }}
         </ul>
@@ -24,16 +24,16 @@
           <h5 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.newsletter" }}</h5>
           <div class="input-group">
             <input type="email" class="form-control" placeholder="{{ i18n "newsletter.placeholder" }}" id="EMAIL" name="EMAIL">
-            <button type="submit" class="btn btn-primary text-light">{{ i18n "newsletter.button" }}</button>
+            <button type="submit" class="btn btn-primary text-dark">{{ i18n "newsletter.button" }}</button>
           </div>
-          <p class="privacy mt-4">{{ i18n "newsletter.privacy" }}</p>
+          <p class="privacy mt-4 text-light">{{ i18n "newsletter.privacy" }}</p>
         </form>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         {{ with .Site.Copyright }}
-          <p class="small text-black-61 text-center">{{ . }}</p>
+          <p class="small text-light text-center">{{ . }}</p>
         {{ end }}
       </div>
     </div>
