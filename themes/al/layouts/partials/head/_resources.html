@@ -4,7 +4,7 @@
 {{- $sharedSCSS := $sharedSCSS | resources.ExecuteAsTemplate "main.scss" . -}}
 
 <!-- Load Shared JS -->
-{{- $sharedJS := resources.Get "js/shared/shared.js" -}}
+{{- $sharedJS := resources.Get "js/blog.js" -}}
 {{- $sharedJS := $sharedJS | js.Build (dict "minify" "true") -}}
 
 <style type="text/css" media="all">{{ $sharedSCSS.Content | safeCSS }}</style>
