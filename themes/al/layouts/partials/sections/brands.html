@@ -9,7 +9,7 @@
     </div>
     <div class="row justify-content-center">
       {{ range .content.items }}
-      <div class="col px-3 my-2 text-center align-items-end">
+      <div class="col px-3 my-2 text-center d-flex align-items-center">
         {{ $src := (printf "%s%s" "brand/" .src ) }}
         {{ partial "asset-image" (dict "context" . "src" $src "alt" .alt "size" "180x") }}
       </div>
