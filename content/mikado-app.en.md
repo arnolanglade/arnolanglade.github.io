@@ -1,13 +1,15 @@
 ---
-title: "Projects"
-slug: "projects"
+title: "The MikadoApp"
+slug: "mikadao-app"
 description: ""
 image:
   src: "images/project/mikado-game.png"
   alt: "Mikado game"
-menu:
-  - main
-  - footer
+menus:
+  main:
+    name: "MikadoApp"
+  footer:
+    name: "MikadoApp"
 ---
 
 ## The mikado method
