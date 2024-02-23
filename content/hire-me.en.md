@@ -4,12 +4,9 @@ slug: "hire-me"
 aliases: ["contact", "contact-me", "work-with-me"]
 description: ""
 hire_me: false
-image: 
-  src: "images/me/alpes-craft.jpg"
-  alt: "Arnaud Langlade"
+layout: "hire-me"
 menus:
   footer:
     name: "Hire me"
 ---
 
-TODO
