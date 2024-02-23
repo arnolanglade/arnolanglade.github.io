@@ -1,6 +1,7 @@
 ---
-title: "Conférernces"
-author: ""
+title: "Mes conférernces"
+slug: "conferences"
+author: "Arnaud Langlade"
 menu:
   - footer
 ---

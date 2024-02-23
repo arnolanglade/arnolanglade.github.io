@@ -1,6 +1,6 @@
 ---
-title: "Talks"
-author: "Hugo Authors"
+title: "My talks"
+slug: "talks"
 menu:
   - footer
 ---
