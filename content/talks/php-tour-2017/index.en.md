@@ -14,5 +14,4 @@ slideshare: obRjEzRff2NuIv
 
 ## Resources
 
-<a href=" https://gitlab.com/arnolanglade/code-me-hr">
-    <i class="ion ion-logo-github"> Code example
+{{< external-link href="https://github.com/arnolanglade/code-me-hr" label="Code example" >}}

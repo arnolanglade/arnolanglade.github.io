@@ -25,8 +25,8 @@
   <section class="section blog-single py-5">
     <div class="container">
       <div class="row pb-5">
-        {{ with .Params.abstract }}
-        {{ . }}
+        {{ with .Params.description }}
+        {{ . | markdownify }}
         {{ end }}
 
         {{ with .Params.video }}
@@ -43,7 +43,9 @@
         {{ partial "slideshare" . }}
         {{ end }}
 
-        {{ .Content | markdownify }}
+        {{ with .Content }}
+        {{ . }}
+        {{ end }}
       </div>
       {{ partial "sections/hire-me.html" }}
     </div>

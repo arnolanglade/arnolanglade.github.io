@@ -14,8 +14,6 @@ slideshare: xabkD2kTXmUm9A
 
 ## Resources
 
-<a href=" https://gitlab.com/arnolanglade/bad-or-good-repository">
-    <i class="ion ion-logo-github"> Code example
+{{< external-link href="https://gitlab.com/arnolanglade/bad-or-good-repository" label="Code example" >}}
 
-<a href="https://event.afup.org/forumphp2018-interview-arnaud-langlade">
-    <i class="ion ion-md-microphone"> Speaker interview
+{{< external-link href="https://event.afup.org/forumphp2018-interview-arnaud-langlade" label="Speaker interview" >}}
