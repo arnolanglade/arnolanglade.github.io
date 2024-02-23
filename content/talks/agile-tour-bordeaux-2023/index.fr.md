@@ -8,4 +8,5 @@ video:
   id: AOhqbqvVBs0
   title: "Tests unitaires : essentiels et compliqués à la fois"
 slides: "agile-tour-bordeaux-2023"
+date: 2023-10-26
 ---

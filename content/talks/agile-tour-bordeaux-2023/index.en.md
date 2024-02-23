@@ -8,4 +8,5 @@ video:
   id: AOhqbqvVBs0
   title: "Unit testing: essential and complicated at the same time"
 slides: "agile-tour-bordeaux-2023"
+date: 2023-10-26
 ---
