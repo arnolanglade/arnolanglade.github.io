@@ -36,7 +36,7 @@
     <div class="row">
       {{ range $i, $e :=  first 3 (after 1 .content.list) }}
       <div class="col-12 col-xl-4">
-        <div class="card border-radius-34 px-1 py-4 h-100 border-0">
+        <div class="card px-1 py-4 h-100 border-0">
           {{ with $e.image }}
           <div class="card-body">
             {{ $src := (printf "%s%s" "testimonial/"  $e.image ) }}
