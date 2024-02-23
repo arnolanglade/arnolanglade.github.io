@@ -1,10 +1,10 @@
 ---
 title: How to validate a command?
-description: Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
 date: 2021-03-04
 image_credit: heapdump
-tags: [command-bus, design-patterns]
+description: Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
 keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
+tags: [command-bus, design-patterns]
 ---
 
 In my previous [blog post](http://arnolanglade.github.io/command-handler-patterns.html), I talked about command and command handler design patterns. I got several questions about data validation and how to give feedback to users. We are going to talk about several kinds of data validation in this blog post. We will start with domain validation, this validation ensures we can build our domain objects in a good state depending on business rules. Then, we will talk about command validation and how we can use it to give feedback to users when they submit data to the application.
