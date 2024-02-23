@@ -66,12 +66,10 @@
         {{- end -}}
 
         {{ if $.Scratch.Get "has_related" }}
-        <div class="related-content">
-          <h3 class="fw-bold text-center">{{ i18n "post.related-posts"}}</h3>
-            {{ range first 3 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-              {{ partial "blog-post-card.html" . }}
-            {{ end }}
-        </div>
+          <h2 class="fw-bold display-5 text-center mb-4">{{ i18n "post.related-posts"}}</h2>
+          {{ range first 3 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+            {{ partial "blog-post-card.html" . }}
+          {{ end }}
         {{ end }}
       </div>
     </div>
