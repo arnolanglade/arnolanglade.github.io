@@ -2,6 +2,9 @@
 title: "Projects"
 slug: "projects"
 description: ""
+image:
+  src: "images/project/mikado-game.png"
+  alt: "Mikado game"
 menu:
   - main
   - footer
@@ -55,4 +58,4 @@ The second option is to click on 'Commit your changes' when you finish it and pr
 
 Continue resolving all prerequisites until the end. When all prerequisites are done, your objective is completed!
 
-{{< image src="/images/project/mikado-app/objective-completed.webp" alt="objective completed" >}}
+{{< image src="/images/project/mikado-app/objective-completed.webp" alt="objective completed" class="mb-0" >}}
