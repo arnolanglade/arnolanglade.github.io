@@ -25,33 +25,29 @@
   <section class="section blog-single py-5">
     <div class="container">
       <div class="row pb-5">
-        <div class="col-12 d-flex justify-content-center">
-          <div class="blog-content fs-5">
-            {{ with .Params.abstract }}
-            {{ . }}
-            {{ end }}
+        {{ with .Params.abstract }}
+        {{ . }}
+        {{ end }}
 
-            {{ with .Params.video }}
-            <h3 class="mt-5">{{ i18n "talks.video" }}</h3>
-            {{ partial "youtube" (dict "id" .id "title" .title) }}
-            {{ end }}
+        {{ with .Params.video }}
+        <h3 class="mt-5">{{ i18n "talks.video" }}</h3>
+        {{ partial "youtube" (dict "id" .id "title" .title) }}
+        {{ end }}
 
-            {{ with .Params.slides }}
-            <h3 class="mt-5">{{ i18n "talks.slides.title" }}</h3>
-            {{ partial "slides" . }}
-            {{ $url := (printf "%s%s%s" "/slides/" . "/" ) }}
-            <p class="text-center">
-              <a href="{{ $url }}" class="btn btn-primary mt-3 text-light" target="_blank">{{ i18n "talks.slides.button" }}</a>
-            </p>
+        {{ with .Params.slides }}
+        <h3 class="mt-5">{{ i18n "talks.slides.title" }}</h3>
+        {{ partial "slides" . }}
+        {{ $url := (printf "%s%s%s" "/slides/" . "/" ) }}
+        <p class="text-center">
+          <a href="{{ $url }}" class="btn btn-primary mt-3 text-light" target="_blank">{{ i18n "talks.slides.button" }}</a>
+        </p>
 
-            {{ end }}
+        {{ end }}
 
-            {{ with .Params.social }}
-            {{ end }}
+        {{ with .Params.social }}
+        {{ end }}
 
-            {{ .Content }}
-          </div>
-        </div>
+        {{ .Content }}
       </div>
       {{ partial "sections/hire-me.html" }}
     </div>
