@@ -18,8 +18,8 @@
           {{ partial "asset-image" (dict "context" . "src" "testimonials-left-quote.png" "alt" "" "size" "64x") }}
         </div>
         <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
-          {{ partial "asset-image" (dict "context" . "src" .image "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
-
+          {{ $src := (printf "%s%s" "testimonial/" .image ) }}
+          {{ partial "asset-image" (dict "context" . "src" $src "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
           <p class="card-text text-black-61 ps-2">
             "{{ .text }}"
             <br>
@@ -39,7 +39,8 @@
         <div class="card border-radius-34 px-1 py-4 h-100 border-0">
           {{ with $e.image }}
           <div class="card-body">
-            {{ partial "asset-image" (dict "context" . "src" $e.image "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
+            {{ $src := (printf "%s%s" "testimonial/"  $e.image ) }}
+            {{ partial "asset-image" (dict "context" . "src" $src "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
             <p class="card-text text-dark">
               "{{ $e.text }}"
               <br>

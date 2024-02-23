@@ -28,7 +28,8 @@
             "{{ .text }}"
           </p>
           <p class="card-text text-dark w-100 text-center mt-3">
-            {{ partial "utilities/resized-image" (dict "src" .image "format" "70x webp" "class" "rounded-circle" "alt" .name) }}
+            {{ $src := (printf "%s%s" "testimonial/"  .image ) }}
+            {{ partial "asset-image" (dict "context" . "src" $src "class" "rounded-circle" "alt" .name "format" "70x") }}
             <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-dark text-decoration-none">{{ .name }} ({{ .position }})</a>
           </p>
         </div>
