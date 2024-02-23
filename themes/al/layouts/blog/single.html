@@ -21,7 +21,7 @@
               {{ end }}
             </p>
             {{ with .Title }}
-              <h1 class="post-title display-1 fw-bold text-primary pb-3">{{ . }}</h1>
+              <h1 class="page-title display-1 fw-bold text-primary pb-3">{{ . }}</h1>
             {{ end }}
             {{ with .Params.date }}
               <p class="text-light"> {{ i18n "post.published-at" }} <strong>{{ . | time.Format ":date_medium" }}</strong></p>
