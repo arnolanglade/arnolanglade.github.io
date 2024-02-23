@@ -1,6 +1,7 @@
 <section class="section blog-single py-5">
   <div class="container">
     <div class="row pb-5">
+      <h2 class="fw-bold mb-3 text-center">{{ i18n "post.last-posts" }}</h2>
       {{ range ( where .Site.RegularPages "Section" "blog" | first 3 ) }}
       {{ partial "blog-post-card.html" . }}
       {{ end }}

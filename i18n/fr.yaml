@@ -25,6 +25,7 @@ post:
   image-credit: "Image par"
   published-at: "Publié le"
   related-posts: "Articles similaires"
+  last-posts: "Derniers articles"
   training-link:
     text: |
       Fatigué des mêmes vieilles applications CRUD, luttant avec votre framework, ou ressentant la pression des mises en production ? Il est temps de faire évoluer votre carrière vers le niveau supérieur.

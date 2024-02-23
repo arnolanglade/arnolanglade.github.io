@@ -25,6 +25,7 @@ post:
   image-credit: "Image by"
   published-at: "Published at"
   related-posts: "Related posts"
+  last-posts: "Last posts"
   training-link:
     text: |
       **Do you speak French ?** Tired of the same old CRUD applications, struggling with your framework, or feeling the pressure of production releases? It's time to take your career to the next level.
