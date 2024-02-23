@@ -21,7 +21,7 @@
   }
   .content {
     flex-grow: 1;
-    max-width:800px;
+    max-width: 800px;
     overflow-y: auto;
     padding-top: 20px;
   }
@@ -37,6 +37,9 @@
   @media only screen and (max-width: 1200px) {
     .post-container {
       flex-direction: column;
+    }
+    .content {
+      max-width: 100%;
     }
     .sidebar {
       height: auto;

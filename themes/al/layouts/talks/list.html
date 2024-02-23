@@ -22,7 +22,7 @@
       <div class="col-12 col-xl-4">
         <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
         <div class="card bg-blue-16 border-0 border-radius-34 p-4">
-          {{ partial "asset-image" (dict "context" . "src" .Params.conference.image "alt" "" "size" "400x") }}
+          {{ partial "content-image" (dict "context" . "src" "talk-header" "alt" .Title "format" "382x") }}
           <div class="card-body text-center">
             <h4 class="card-title text-center text-primary pb-4">{{ .Title }}</h4>
             {{ with .Params.conference }}
