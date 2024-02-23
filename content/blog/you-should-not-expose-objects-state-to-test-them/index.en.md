@@ -57,7 +57,7 @@ final class Email
 
 **Tip:** This is really useful to compare Doctrine entities that have persistent collections. The error `Error: Nesting level too deep - recursive dependency?` is raised when we compare entities using the comparison operator (==). You should have a look at this [blog post](https://www.richardlord.net/blog/php/php-nesting-level-too-deep-recursive-dependency.html) to understand why this error occured. Accessing private attributes let you use the identity operator (===) to prevent this error.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 By the way, entities are a bit special because an entity is an object that has an identity. It means that if we want to compare them we should compare their identities instead of their states.
 

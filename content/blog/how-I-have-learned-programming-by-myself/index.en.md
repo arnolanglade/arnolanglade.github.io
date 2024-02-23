@@ -23,7 +23,7 @@ You can have strong constraints at work, so it can be really hard to try new thi
 
 I worked on [Sylius](https://sylius.com) which is an open-source e-commerce framework. The community of Sylius is great. I learned a lot of good practices like testing, code review and behaviour-driven development for instance. I mainly worked on the `SyliusResourceBundle` which is a library that eases CRUD management. During this period, I was working for a web agency, it helped me to be more efficient at work and ship projects faster.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 **Caution:** Many companies use open-source projects but they don’t contribute to them. I was happy to contribute to this project during my free time, but you should negotiate allocated time with your company to help those projects if they help you deliver value to your customers.
 

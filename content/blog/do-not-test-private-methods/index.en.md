@@ -33,7 +33,7 @@ It’s better to work on small problems than a big one. The solution would have 
 
 Then, we need to apply the composition pattern to assemble those classes to make them work as the God object. Composition is like playing Lego: we have many small bricks, and we put them together to make a big piece. Software is the same. You should work with small classes/functions to easily test them and piece them together to make your feature.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 Let’s take an example. The following class is in charge of importing products into an application as a PIM or an ERP. This class does several things, it gets product data from a CSV file and it imports them into a database. We need to test the whole class to ensure the product import works as expected. That’s a bit annoying because I can’t test the CSV file reading or the production saving.
 

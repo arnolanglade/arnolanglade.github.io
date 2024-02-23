@@ -22,7 +22,7 @@ In the next sections, we will speak about the command bus which is often associa
 
 **Quick reminder about command and command handler:** A command represents a user's intent. The data carried by the command has to be valid. It can be only handled by only one handler that is just a callable that will perform the user action.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 Now, we will build a command bus following the same architecture that I described in the previous section. The only difference is that the command bus will return void. As commands canmight be handled asynchronously, we don’t want to wait for the result of the command processing.
 

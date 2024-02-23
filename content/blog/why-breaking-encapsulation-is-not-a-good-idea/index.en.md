@@ -53,7 +53,7 @@ class AClassWhereWeNeedToFindClosestPOI {
 
 The `Map` class has a `getPointOfInterest` getter that gets the class property with the same name. Then we can use this getter to access the list of points of interest to iterate them and find the closest one. 
 
-{% include training-link.html %}
+{{< training-link >}}
 
 The drawback with this getter is that we will need to copy/paste this piece of code if we have to look for the closest point of interest in several places. It won’t help you to mutualize code. At best, you can extract this piece of code into a dedicated class like the following example:
 

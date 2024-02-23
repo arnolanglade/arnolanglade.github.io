@@ -20,7 +20,7 @@ Now, you understand why it’s difficult to introduce big changes in your codeba
 
 This method simplifies refactoring. You can continuously improve your codebase instead of stacking changes in a huge PR which can’t be merged because the test suites are broken. It’s better to regularly merge small changes that improve your codebase quality. This method is ideal for brownfield development. It enables you to add new features or alter existing ones without breaking the rest of the application. Moreover, it facilitates the improvement of the application's architecture while allowing the delivery of new features concurrently.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 How does it work? Let’s take an example: MySQL doesn’t match the project's needs; we need to use PostgreSQL. First, we need to define a goal that is clear and understandable for everyone. In our case, it is “Migrate the application from MySQL to PostgreSQL,” as you can see in the following example.
 

@@ -77,7 +77,7 @@ api/src/Infrastructure/Application
 ```
 In this example, `Exception` and `Security` folders contain framework customizations.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 ## Business first
 

@@ -46,7 +46,7 @@ The `Game` Aggregate has a `recordScore` method to record the score at the end o
 
 That works perfectly for the one versus one games but what happens for two versus two games? Let’s focus on one of the players, we will call him Popeye. Actually, Popeye is not a really good player even if he is full of goodwill. He is smart, he always wants to play with the best player to have more chances to win. We cannot know who is the best player with only the result of the game. Who has really scored? Popeye or its teammate?
 
-{% include training-link.html %}
+{{< training-link >}}
 
 Event sourcing is the solution. Instead of saving the score of the game, we will store what really happens. We will refactor the `Game` aggregate to make it compliant with the event sourcing pattern.
 

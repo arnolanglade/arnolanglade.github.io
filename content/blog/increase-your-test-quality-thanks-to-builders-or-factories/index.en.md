@@ -66,7 +66,7 @@ class Map
 
 **Tip:** I like to add a `@internal` annotation to remind all teammates that the object constructor should only be used in tests.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 The value object instantiation is delegated to the `whatever` constructor. I try to use primitive data types like arguments as much as possible, it makes me write less code and it’s easier to read. All constructor arguments have a default value, then I can override a given value depending on the needs thanks to the named argument feature.
 

@@ -110,7 +110,7 @@ What happens under the hood? Domain objects are abstractions of the domain probl
 
 When a domain object is added to the repository, it's converted into a persistence model that is used to persist the object's state. During retrieval, the repository gets data from storage to recreate the domain model from the persistent model.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 Do the functions 'get, add, and remove' ring a bell? Perhaps, they remind you of CRUD operations? However, a repository isn’t a tool for simplifying CRUD. The example given earlier is straightforward and illustrates some common methods a repository might include. Beyond this, a repository acts as an Anti-Corruption Layer (ACL), allowing for the design of domain problems without worrying about persistence. Personally, I prefer using in-memory repositories at the beginning of a new project. This approach allows me to postpone the database choice. This is a strategy I applied in the MikadoApp project. Have a look at the GitHub sources:
 

@@ -37,7 +37,7 @@ For example, IO are side effects like: network calls, database queries, filesyst
 
 The code covered by unit tests should not depend on the outside world like databases, external services and so on. Unit tests should not require any application setup, they have to remain as simple as possible. Their goal is to give you quick feedback by checking that a small piece of code (a unit) matches a business expectation. If you want to be sure that all application parts are well integrated with the outside world, you have to use an integration test.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 The following example shows a piece of code that depends on the external service. Here, we can’t build the `Map` object without a working database.
 

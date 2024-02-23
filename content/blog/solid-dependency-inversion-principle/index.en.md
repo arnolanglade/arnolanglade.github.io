@@ -49,7 +49,7 @@ class CreateNewProduct {
 ```
 I remember using it a lot when I was a junior developer. It seemed powerful because we didn't need to inject anything. However, the problem with this piece of code is that it couples `CreateNewProduct` to `DatabaseConnection`. Here, we need a working database to test or run this piece of code. That’s a shame because it avoids quickly checking if the product creation logic works or not.
 
-{% include training-link.html %}
+{{< training-link >}}
 
 ## Rule 2: A class should only depend on abstractions
 
