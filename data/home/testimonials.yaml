@@ -18,7 +18,7 @@ content:
     - text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
       name: "Nicolas Dupont"
       position: "Co-founder at Akeneo"
-      linkedin: "https://www.linkedin.com/in/nicolasdupontakeneo"
+      linkedin: "https://www.linkedin.com/in/nidup/"
       image: "images/testimonial/nicolas-dupont.jpeg"
 
     - text: "J'ai eu la chance de travailler avec Arnaud pendant plusieurs mois au sein de Sunday. Je dis bien 'chance' car j'ai appris beaucoup à ses côtés, que ce soit sur l'exercice de son métier que sur l'environnement nécessaire au bon exercice de son métier. Je recommande donc chaudement Arnaud qui, au-delà de ses connaissances multiples et de son expertise profonde, est un collègue très agréable avec qui travailler !"
@@ -26,7 +26,6 @@ content:
       position: "Engineer Manager at Sunday"
       linkedin: "https://www.linkedin.com/in/denis-migot"
       image: "images/testimonial/denis-migot.jpeg"
-
 
     - text: |
         J’ai eu le plaisir et le privilège de travailler avec Arnaud durant près de dix ans au sein de trois entreprises différentes. C'est sans conteste la personne avec qui et de qui j'ai appris le plus dans ce métier.
