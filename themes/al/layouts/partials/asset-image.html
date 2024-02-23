@@ -1,0 +1,19 @@
+{{ $src := (printf "%s%s" "images/" .src ) }}
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $format := "webp" }}
+
+{{ if not (strings.Contains .src ".") }}
+{{ $src = (printf "%s%s" .src ".*" ) }}
+{{ end }}
+
+{{ with .size }}
+{{ $format = (printf "%s%s%s" "resize " . " webp" ) }}
+{{ end }}
+
+{{ with resources.Get $src }}
+  {{ with .Process $format }}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="$alt" class="{{ $class }} img-fluid">
+  {{ end }}
+{{ end }}
+

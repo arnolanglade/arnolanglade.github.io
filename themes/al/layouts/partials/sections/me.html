@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row flex-column flex-xl-row-reverse">
       <div class="col-12 col-xl-6 d-flex flex-column justify-content-center me-image align-items-center">
-        {{ partial "utilities/resized-image" (dict "src" "images/me/alpes-craft.jpg" "format" "500x webp" "alt" "Arnaud Langlade") }}
+        {{ partial "asset-image" (dict "context" . "src" "me/alpes-craft.jpg" "alt" "Arnaud Langlade" "size" "500x") }}
       </div>
       <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
           <h3 class="me-title fw-bold display-1 text-primary text-center text-xl-start pb-4">

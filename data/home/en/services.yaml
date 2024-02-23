@@ -3,7 +3,7 @@ id: "portfolio"
 
 content:
   - image:
-      src: "images/portfolio-ecommerce.png"
+      src: "portfolio-ecommerce.png"
       alt: ""
     title: "We developed an eCommerce website"
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
@@ -16,7 +16,7 @@ content:
         url: "#"
 
   - image:
-      src: "images/portfolio-ecommerce.png"
+      src: "portfolio-ecommerce.png"
       alt: ""
     title: "We developed an eCommerce website"
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
@@ -29,7 +29,7 @@ content:
         url: "#"
 
   - image:
-      src: "images/portfolio-ecommerce.png"
+      src: "portfolio-ecommerce.png"
       alt: ""
     pretitle: "Portfolio Service"
     title: "We developed an eCommerce website"

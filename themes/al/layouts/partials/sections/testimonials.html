@@ -10,14 +10,16 @@
     <div class="row">
       {{ range $i, $e := first 1 .content.list }}
       <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-        {{ partial "utilities/resized-image" (dict "src" "images/testimonials-awards.png" "format" "500x webp" "alt" "Testimonials awards") }}
+        {{ partial "asset-image" (dict "context" . "src" "testimonials-awards.png" "alt" "" "size" "500x") }}
+
       </div>
       <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         <div class="pb-2">
-          {{ partial "utilities/resized-image" (dict "src" "images/testimonials-left-quote.png"  "format" "64x webp" ) }}
+          {{ partial "asset-image" (dict "context" . "src" "testimonials-left-quote.png" "alt" "" "size" "64x") }}
         </div>
         <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
-          {{ partial "utilities/resized-image" (dict "src" .image "format" "70x webp" "class" "rounded-circle mb-3" "alt" .name) }}
+          {{ partial "asset-image" (dict "context" . "src" .image "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
+
           <p class="card-text text-black-61 ps-2">
             "{{ .text }}"
             <br>
@@ -26,7 +28,7 @@
           </p>
         </div>
         <div class="pt-2 text-end">
-          {{ partial "utilities/resized-image" (dict "src" "images/testimonials-right-quote.png"  "format" "64x webp" ) }}
+          {{ partial "asset-image" (dict "context" . "src" "testimonials-right-quote.png" "alt" "" "size" "64x") }}
         </div>
       </div>
       {{ end }}
@@ -37,7 +39,7 @@
         <div class="card border-radius-34 px-1 py-4 h-100 border-0">
           {{ with $e.image }}
           <div class="card-body">
-            {{ partial "utilities/resized-image" (dict "src" $e.image "format" "70x webp" "class" "rounded-circle mb-3" "alt" $e.name) }}
+            {{ partial "asset-image" (dict "context" . "src" $e.image "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
             <p class="card-text text-dark">
               "{{ $e.text }}"
               <br>
