@@ -24,7 +24,7 @@ languages:
           weight: 2
       buttons:
         - name: "Hire me"
-          url: "/contact-me"
+          url: "/hire-me"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
@@ -51,7 +51,7 @@ languages:
           weight: 2
       buttons:
         - name: "Travaillons ensemble"
-          url: "/fr/contactez-moi"
+          url: "/fr/travaillons-ensemble"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
