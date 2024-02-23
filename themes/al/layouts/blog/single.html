@@ -60,8 +60,7 @@
       </div>
     </div>
   </section>
-  {{ partial "sections/newsletter" }}
-  <section class="section blog-single py-5">
+  <section class="section blog-single py-2">
     <div class="container">
       <div class="row pb-5">
         {{- range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) -}}
@@ -70,7 +69,7 @@
 
         {{ if $.Scratch.Get "has_related" }}
         <div class="related-content">
-          <h3>{{ i18n "post.related-posts"}}</h3>
+          <h3 class="fw-bold text-center">{{ i18n "post.related-posts"}}</h3>
             {{ range first 3 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
               {{ partial "blog-post-card.html" . }}
             {{ end }}
@@ -79,4 +78,5 @@
       </div>
     </div>
   </section>
+  {{ partial "sections/newsletter" }}
 {{ end }}
