@@ -1,23 +1,23 @@
 {{ define "main" }}
-<section class="section blog-single py-5 bg-dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-6 col-12">
-        <div class="post-image">
-          {{ with .Params.image }}
-          {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
+  <section class="section blog-single py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-12">
+          <div class="post-image">
+            {{ with .Params.image }}
+            {{ partial "utilities/resized-image" (dict "src" .src "alt" .alt "format" .format "class" .class) }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+          {{ with .Title }}
+          <h1 class="post-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ replace . "-"  " "}}</h1>
           {{ end }}
         </div>
       </div>
-      <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
-        {{ with .Title }}
-        <h1 class="post-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ replace . "-"  " "}}</h1>
-        {{ end }}
-      </div>
     </div>
-  </div>
-</section>
-<section class="section blog-list py-5">
+  </section>
+  <section class="section blog-list pt-5">
     <div class="container">
       {{ partial "tags-list" . }}
       <div class="row g-4 pb-5">
@@ -25,7 +25,7 @@
           {{ partial "blog-post-card.html" . }}
         {{ end }}
       </div>
-      <div class="row pb-5">
+      <div class="row">
         {{ template "_internal/pagination.html" . }}
       </div>
     </div>
