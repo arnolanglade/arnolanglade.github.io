@@ -3,7 +3,7 @@ title: "The MikadoApp"
 slug: "mikadao-app"
 description: ""
 image:
-  src: "images/project/mikado-game.png"
+  src: "project/mikado-game.png"
   alt: "Mikado game"
 menus:
   main:
