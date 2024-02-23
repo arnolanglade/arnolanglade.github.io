@@ -47,7 +47,7 @@ newsletter:
   text: "Abonnez-vous à ma newsletter pour être informé de mes derniers articles de blog, des sorties techniques et du contenu exclusif. Restez en avance dans le jeu du code !"
   button: "S'abonner"
   placeholder: "Votre adresse email"
-  privacy: "Tes données resteront strictement confidentielles et seront exclusivement utilisées pour communiquer avec toi. Sois assuré(e) qu'elles ne seront jamais vendues à des tiers."
+  privacy: "Tes données resteront strictement confidentielles et seront exclusivement utilisées pour communiquer avec vous. Soyez assuré(e) qu'elles ne seront jamais vendues à des tiers."
 
 footer:
   links: "En savoir plus"
