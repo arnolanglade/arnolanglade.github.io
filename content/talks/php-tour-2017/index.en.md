@@ -9,11 +9,8 @@ video:
   id: h0Upir7bg1o
   title: "Code me a HR!"
 date: 2017-06-23
+slideshare: obRjEzRff2NuIv
 ---
-
-## Slides
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/obRjEzRff2NuIv" width="400" height="250" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen> </iframe>
 
 ## Resources
 

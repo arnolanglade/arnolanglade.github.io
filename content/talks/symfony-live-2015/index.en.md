@@ -13,19 +13,13 @@ video:
   id: O8jzsNVFQHg
   title: "Développer avec le sylius resourcebundle"
 date: 2015-03-01
+slideshare: p8KjWf2PyoB94R
 ---
-
-## Slides
-
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/p8KjWf2PyoB94R" width="400" height="250" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen> </iframe> 
 
 ## Resources
 
-<a href="https://sylius.com/blog/syliusresourcebundle-how-to-develop-your-crud-apps-faster/">
-    <i class="ion ion-md-document"> Bundle documentation
+{{< external-link href=https://sylius.com/blog/syliusresourcebundle-how-to-develop-your-crud-apps-faster/ label="Bundle documentation" >}}
 
-<a href="https://github.com/Sylius/SyliusResourceBundle">
-    <i class="ion ion-logo-github"> Github repository
+{{< external-link href="https://github.com/Sylius/SyliusResourceBundle" label="Github repository" >}}
 
-<a href="https://sylius.com/">
-    <i class="ion ion-md-globe"> Sylius website
+{{< external-link href="https://sylius.com/" label="Sylius website" >}}

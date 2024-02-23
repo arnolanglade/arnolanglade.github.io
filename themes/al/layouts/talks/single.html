@@ -34,20 +34,16 @@
         {{ partial "youtube" (dict "id" .id "title" .title) }}
         {{ end }}
 
-        {{ with .Params.slides }}
         <h3 class="mt-5">{{ i18n "talks.slides.title" }}</h3>
+        {{ with .Params.slides }}
         {{ partial "slides" . }}
-        {{ $url := (printf "%s%s%s" "/slides/" . "/" ) }}
-        <p class="text-center">
-          <a href="{{ $url }}" class="btn btn-primary mt-3 text-light" target="_blank">{{ i18n "talks.slides.button" }}</a>
-        </p>
-
         {{ end }}
 
-        {{ with .Params.social }}
+        {{ with .Params.slideshare }}
+        {{ partial "slideshare" . }}
         {{ end }}
 
-        {{ .Content }}
+        {{ .Content | markdownify }}
       </div>
       {{ partial "sections/hire-me.html" }}
     </div>

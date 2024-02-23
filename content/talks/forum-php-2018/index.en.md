@@ -9,11 +9,8 @@ video:
   id: cYFKkhtIr8w
   title: "What is the difference between a good and a bad repository?"
 date: 2018-10-26
+slideshare: xabkD2kTXmUm9A
 ---
-
-## Slides
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/xabkD2kTXmUm9A" width="400" height="250" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen> </iframe>
 
 ## Resources
 
