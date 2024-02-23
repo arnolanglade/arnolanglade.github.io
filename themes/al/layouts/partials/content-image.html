@@ -13,7 +13,7 @@
 
 {{ with .context.Resources.GetMatch $src }}
   {{ with .Process $format }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="$alt" class="{{ $class }} img-fluid">
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" class="{{ $class }} img-fluid">
   {{ end }}
 {{ else }}
   <img class="{{ $class }} img-fluid" src="{{ .src }}" alt="{{ .alt }}" />

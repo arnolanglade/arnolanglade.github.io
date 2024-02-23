@@ -13,7 +13,7 @@
 
 {{ with resources.Get $src }}
   {{ with .Process $format }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="$alt" class="{{ $class }} img-fluid">
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" class="{{ $class }} img-fluid">
   {{ end }}
 {{ end }}
 
