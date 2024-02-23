@@ -11,7 +11,7 @@
       {{ range .content.items }}
       <div class="col px-3 my-2 text-center d-flex align-items-center">
         {{ $src := (printf "%s%s" "brand/" .src ) }}
-        {{ partial "asset-image" (dict "context" . "src" $src "alt" .alt "size" "180x") }}
+        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "180x") }}
       </div>
       {{ end }}
     </div>

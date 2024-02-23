@@ -10,16 +10,16 @@
     <div class="row">
       {{ range $i, $e := first 1 .content.list }}
       <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-        {{ partial "asset-image" (dict "context" . "src" "testimonials-awards.png" "alt" "" "size" "500x") }}
+        {{ partial "asset-image" (dict "src" "testimonials-awards.png" "alt" "" "size" "500x") }}
 
       </div>
       <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         <div class="pb-2">
-          {{ partial "asset-image" (dict "context" . "src" "testimonials-left-quote.png" "alt" "" "size" "64x") }}
+          {{ partial "asset-image" (dict "src" "testimonials-left-quote.png" "alt" "" "size" "64x") }}
         </div>
         <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
           {{ $src := (printf "%s%s" "testimonial/" .image ) }}
-          {{ partial "asset-image" (dict "context" . "src" $src "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
+          {{ partial "asset-image" (dict "src" $src "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
           <p class="card-text text-black-61 ps-2">
             "{{ .text }}"
             <br>
@@ -28,7 +28,7 @@
           </p>
         </div>
         <div class="pt-2 text-end">
-          {{ partial "asset-image" (dict "context" . "src" "testimonials-right-quote.png" "alt" "" "size" "64x") }}
+          {{ partial "asset-image" (dict "src" "testimonials-right-quote.png" "alt" "" "size" "64x") }}
         </div>
       </div>
       {{ end }}
@@ -40,7 +40,7 @@
           {{ with $e.image }}
           <div class="card-body">
             {{ $src := (printf "%s%s" "testimonial/"  $e.image ) }}
-            {{ partial "asset-image" (dict "context" . "src" $src "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
+            {{ partial "asset-image" (dict "src" $src "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
             <p class="card-text text-dark">
               "{{ $e.text }}"
               <br>

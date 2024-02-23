@@ -5,7 +5,7 @@ description: ""
 menu:
   - footer
 image:
-  src: "images/me/voyage.jpg"
+  src: "me/voyage.jpg"
   alt: "Arnaud Langlade"
   format: "x600 webp"
 ---
