@@ -2,7 +2,6 @@
 author: "Arnaud Langlade"
 title: "Command and command handler design pattern"
 date: "2021-02-25"
-image: "/images/post/command-handler/command-handler.webp"
 image_credit: redaquamedia
 description: "Discover the command design pattern in software development. Learn how commands represent user intents, handled by command handlers. Learn practical tips, examples, and insights for efficient command validation."
 keywords: "design patterns,software,software architecture,command,command handler,command bus"
@@ -26,7 +25,7 @@ A command handler is just a callable that executes all the actions needed to ful
 
 ## How does it work?
 
-{{< image src="/images/post/command-handler/explain-command-handler.svg" alt="Command handler design pattern" >}}
+{{< image src="explain-command-handler.svg" alt="Command handler design pattern" >}}
 
 This pattern has some rules. The first one is that a command can be handled by a single command handler because there is only a single way to handle a use case. The second rule is that a command handler should receive a valid command. Validating the command ensures that the user provides the correct data to prevent the handling from failing. It also helps to provide early feedback to the user about the data they provided.
 

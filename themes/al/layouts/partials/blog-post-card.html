@@ -1,9 +1,7 @@
 <div class="col-12 col-md-6 col-lg-4">
   <a class="card text-decoration-none h-100" href="{{ .Permalink }}">
     <div class="aspect-ratio-62-5">
-      {{ with .Params }}
-      {{ partial "utilities/resized-image" (dict "src" .image "alt" .title "format" "382x webp") }}
-      {{ end }}
+      {{ partial "image" (dict "context" . "src" "post-header" "alt" .Title "size" "382x") }}
     </div>
     <div class="card-body">
       <h5 class="card-title fw-semibold">{{ .Title }}</h5>
