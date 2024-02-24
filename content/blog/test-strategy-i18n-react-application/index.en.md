@@ -9,7 +9,7 @@ tags: [react, testing]
 
 In my previous company, we automated the translation process. We used Lokalise, a cloud-based localization and translation management system. The developers imported all translation keys into the system, while the OPS team was responsible for translating all the keys.
 
-![translation management workflow with lokalized](images/posts/test-strategy-i18n-react-application/translation-management-workflow.svg)
+{{< image src="translation-management-workflow.svg" alt="Translation management workflow with Lokalize" >}}
 
 This process is excellent because you don't have to wait for translations. As a developer, you add the new translation key and provide the default language. The OPS team is notified when a new key is imported into the tool. They don't need a developer to provide translations; they are highly autonomous. Afterward, the developers need to pull the translations into the codebase and deploy the application.
 

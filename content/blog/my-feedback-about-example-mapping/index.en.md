@@ -49,11 +49,11 @@ Don’t try to write gherkins scenarios at all costs because it can be time-cons
 
 The simplest format I used to define the example looked like the Given / When / Then but a really simplified version.
 
-![Simplified gherkins](images/posts/example-mapping/write-simple-exmaple.webp)
+{{< image src="write-simple-exmaple.webp" alt="Simplified gherkins" >}}
 
 Sometimes it can be more readable to draw something.
 
-![Draw examples](images/posts/example-mapping/draw-example.webp)
+{{< image src="draw-example.webp" alt="Draw examples" >}}
 
 Don’t limit yourself, if you prefer another format, use it. The most important thing is that everyone understands what is expected.
 
@@ -67,7 +67,7 @@ I like to talk with the PM when the story is ready to be developed (when there a
 
 **Tip:** If your story has too many business rules, it's a smell! That means you should split it into small ones. It will be easier to ship several small stories than a big one. If a business rule has too many examples, that's a smell too. You might have missed some business rules.
 
-![Split story into small ones](images/posts/example-mapping/split-story.webp)
+{{< image src="split-story.webp" alt="Split story into small ones" >}}
 
 I am not a big fan of estimates, it’s a waste of time. We should focus on understanding the problem we want to solve, instead of giving figures that will probably be wrong. Having a really small story will help you to be more predictive. You can count the stories done during a time frame and easily forecast what your team will be able to do during the next iteration.
 

@@ -11,7 +11,7 @@ In this blog post, I would like to speak about an important concept in Oriented 
 
 Before speaking about encapsulation let's talk a bit about OOP. What is the object's life cycle? The first step of the object’s life cycle is to be instantiated. We give everything an object needs to initialise its internal state. Then we use its public API (public methods) to communicate with it. An object exposes a public API (behaviour) that manipulates its internal state (data).
 
-![Object life cycle](images/posts/why-breaking-encapsulation-is-not-a-good-idea/object-life-cycle.svg)
+{{< image src="object-life-cycle.svg" alt="Object life cycle" >}}
 
 So, what is encapsulation? This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secured data manipulation.
 

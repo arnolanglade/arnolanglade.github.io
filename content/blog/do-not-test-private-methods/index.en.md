@@ -11,11 +11,11 @@ It is pretty easy to make mistakes when you start testing your code. One of the 
 
 We don’t test private methods. Private methods are implementation details of objects and we should not care about them. Don’t worry! They are tested in the end. When you test public methods you also test the private ones as described in the next schema.
 
-![Test private methods through public ones](images/posts/do-not-test-private-method/test-private-methods-through-public-ones.svg)
+{{< image src="test-private-methods-through-public-ones.svg" alt="Test private methods through public ones" >}}
 
 I needed to test the private methods because my object was a God object (huge object). It did a lot of things. It had a few public methods and a lot of private ones because too many things happened behind the scenes.
 
-![Object with too many private methods](images/posts/do-not-test-private-method/object-with-too-many-private-methods.svg)
+{{< image src="object-with-too-many-private-methods.svg" alt="Object with too many private methods" >}}
 
 The problem with this design is this object did not follow the **S**ingle **R**esponsibility **P**rinciple, but what is this principle?
 
@@ -25,11 +25,11 @@ The problem with this design is this object did not follow the **S**ingle **R**e
 
 My object was super huge because it did too many things. It had too many responsibilities. Because of that, I could not test it easily. How can we avoid that?
 
-![complicated to test objects with many responsibilities](images/posts/do-not-test-private-method/complicated-to-test-objects-with-many-responsibilities.svg)
+{{< image src="complicated-to-test-objects-with-many-responsibilities.svg" alt="Complicated to test objects with many responsibilities" >}}
 
 It’s better to work on small problems than a big one. The solution would have been to identify each responsibility to extract them into dedicated objects. We don't need magic tricks to test small objects. It is simple to test them because they do a simple thing, and we only need to use their public API (public method) to test them. We don't need reflection anymore.
 
-![split good objects into small classes](images/posts/do-not-test-private-method/split-good-objects-into-small-classes.svg)
+{{< image src="split-good-objects-into-small-classes.svg" alt="Split good objects into small classes" >}}
 
 Then, we need to apply the composition pattern to assemble those classes to make them work as the God object. Composition is like playing Lego: we have many small bricks, and we put them together to make a big piece. Software is the same. You should work with small classes/functions to easily test them and piece them together to make your feature.
 

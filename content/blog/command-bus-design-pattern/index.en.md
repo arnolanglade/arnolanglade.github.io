@@ -1,6 +1,7 @@
 ---
 title: The command bus design pattern
 date: 2022-09-12
+image_credit: rockstaar_
 description: "The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event)."
 keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware"
 tags: [command-bus, design-patterns]
@@ -14,7 +15,7 @@ tags: [command-bus, design-patterns]
 
 Let’s start with the basics, what is a bus? In computer science, a bus is a system that connects several components and transfers data between them. In software, those components are called middleware. A middleware processes an incoming request and returns a response. As you can see in the schema below, the main advantage of a bus is that it is highly customizable as you can add as many middleware as you want.
 
-![A bus](images/posts/command-bus/bus.svg)
+{{< image src="bus.svg" alt="A bus" >}}
 
 In the next sections, we will speak about the command bus which is often associated with an event bus. Using an event bus is not mandatory but we will see how it will make your application more modular and evolutive. Their goal is to deliver a command or an event to their handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event).
 
@@ -26,7 +27,7 @@ In the next sections, we will speak about the command bus which is often associa
 
 Now, we will build a command bus following the same architecture that I described in the previous section. The only difference is that the command bus will return void. As commands canmight be handled asynchronously, we don’t want to wait for the result of the command processing.
 
-![A command bus](images/posts/command-bus/command-bus.svg)
+{{< image src="command-bus.svg" alt="A command bus" >}}
 
 Let’s see the most common middleware used to build a command bus. The first one is probably the “logging middleware”. It helps to make your application observable and it is really useful for bug hunting. Then the “validation middleware” ensures that the command is valid before giving it to the handler. Its purpose is to stop the command processing if data is invalid. It is pretty convenient because it avoids validating them manually. When your application uses a database, the “transaction middleware” wraps the handler execution into a SQL transaction. It makes sure all database changes are done, otherwise it rollbacks the transaction. Finally, the last middleware is responsible for finding and executing the handler that matches the command.
 
@@ -40,7 +41,7 @@ Even if the event bus is built the same way as the command bus we don't need all
 
 As I said previously, events are recorded by aggregates and they should be business oriented. I will share with you two ways to dispatch events into the event bus.
 
-![A event bus](images/posts/command-bus/event-bus.svg)
+{{< image src="event-bus.svg" alt="A event bus" >}}
 
 **Solution 1:** You can collect them from your repository if no errors have been raised during the aggregate persisting and then dispatch them.
 

@@ -20,7 +20,7 @@ What does it mean exactly? To be compliant with this principle,your code needs t
 
 The first one is that a class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.
 
-![Dependency Inversion Principle: Concrete class](images/posts/dependency-inversion-principle/concrete-class.svg)
+{{< image src="concrete-class.svg" alt="Dependency Inversion Principle: Concrete class" >}}
 
 Let's take an example. The most common example of coupling is when we use the singleton pattern. This pattern allows you to create a unique instance of a class and make it global. It is useful to create a database connection, we don’t need to create it each time we need to query the database.
 
@@ -55,7 +55,7 @@ I remember using it a lot when I was a junior developer. It seemed powerful beca
 
 The second rule is that a class should only depend on abstractions (e.g., interfaces). In OOP, an interface is like a contract. It describes a set of methods that an object needs to implement. This is great because it can be implemented in several ways. It makes your code more modular as you can use a specific implementation depending on the context.
 
-![Dependency Inversion Principle: use abstraction](images/posts/dependency-inversion-principle/use-abstraction.svg)
+{{< image src="use-abstraction.svg" alt="Dependency Inversion Principle: Concrete class should depend on abstraction" >}}
 
 Let’s see how an interface can prevent coupling issues between the `CreateNewProduct` and the `DatabaseConnection` class. First, we will introduce a new interface called `ProductRepository` to define how to save a product in the application.
 
@@ -92,7 +92,7 @@ class CreateNewProduct {
 
 By introducing the `ProductRepository` interface and using dependency injection, the `CreateNewProduct` class becomes more flexible as it works with any implementation of `ProductRepository`. If we need to switch from MySQL to PostgreSQL for any reason, we only need to create a new `ProductRepository` implementation for PostgreSQL and inject it into `CreateNewProduct`. This approach decouples the ``CreateNewProduct` class from a specific database implementation, making it easier to maintain and update the code in the future.
 
-![Dependency Inversion Principle: use abstraction concrete example](images/posts/dependency-inversion-principle/use-abstraction-concrete-example.svg)
+{{< image src="use-abstraction-concrete-example.svg" alt="Dependency Inversion Principle: use abstraction concrete example" >}}
 
 Testing chunks of code that interacts with Input/Output (IO) can be challenging, especially when we only want to test the business logic . Now, it is easy to test the product creation because we can replace the mysql repository but a fake one. I’ve written a blog post to explain how the dependency inversion principle can ease testing:
 
@@ -102,4 +102,4 @@ Testing chunks of code that interacts with Input/Output (IO) can be challenging,
 
 The last rule is an interface should not depend on concrete implementations to avoid coupling them to another class.
 
-![Dependency Inversion Principle: abstraction should-not use concrete class](images/posts/dependency-inversion-principle/abstraction-should-not-use-concrete-class.svg)
+{{< image src="abstraction-should-not-use-concrete-class.svg" alt="Dependency Inversion Principle: abstraction should-not use concrete class" >}}

@@ -106,7 +106,7 @@ Using an ORM is not mandatory to implement this design pattern. I’ve written a
 
 What happens under the hood? Domain objects are abstractions of the domain problem, they are rich models that handle business logic. In contrast, the persistence model consists of data structures only used for storing data.
 
-![Understand how the repository works](images/posts/repository-design-pattern/repository-overview.svg)
+{{< image src="repository-overview.svg" alt="Understand how the repository works" >}}
 
 When a domain object is added to the repository, it's converted into a persistence model that is used to persist the object's state. During retrieval, the repository gets data from storage to recreate the domain model from the persistent model.
 
@@ -116,7 +116,7 @@ Do the functions 'get, add, and remove' ring a bell? Perhaps, they remind you of
 
 {% include mikado-method-source.html %}
 
-![Repository acts as acl](images/posts/repository-design-pattern/repository-acts-as-acl.svg)
+{{< image src="repository-acts-as-acl.svg" alt="Repository acts as acl" >}}
 
 The repository design pattern is ideal for isolating the domain from Input/Output operations. I’ve written an article about hexagonal architecture, an architectural pattern that helps in building sustainable software and ease testing too:
 

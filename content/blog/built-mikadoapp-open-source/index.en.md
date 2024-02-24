@@ -26,11 +26,11 @@ Even though I'm the only developer on the project, I decided to do an Event Stor
 
 I like this workshop because it allows you to think without any limitations. I collected every domain event that seemed relevant, even if they were not immediately important. Then, I defined the minimal scope of the application to ship the first version quickly. I think it is better to release something working with a few features and then improve it instead of trying to ship everything at the same time. It decreases the risk of delivering nothing in production.
 
-![Mikado method - event storming](images/posts/build-mikado-app/mikadoapp-event-storming.webp)
+{{< image src="mikadoapp-event-storming.webp" alt="Mikado method - event storming" >}}
 
 The business of the application was not complicated, so I decided to break down the event storming into a way where each domain event corresponds to a user story. I didn't spend time writing user stories but I wanted to dig a bit into each user story before coding them. I did an example mapping workshop. Similar to the event storming workshop, it is a good way to share knowledge between non-tech and tech people. Doing an example mapping alone is not the most efficient way to do it, but I wanted to challenge my thoughts on specific stories to have a clear vision of what I'm going to code.
 
-![Mikado method - example mapping](images/posts/build-mikado-app/mikadoapp-example-mapping.webp)
+{{< image src="mikadoapp-example-mapping.webp" alt="Mikado method - example mapping" >}}
 
 Before starting the project, the only technical choice I made was to use the Next.js framework. I had only worked on a POC for a few days during my previous experience. I didn't know it well, but it looked promising. Another reason for this choice was its ease of deployment on Vercel. I didn't want to spend time configuring the application deployment. I only wanted to focus on delivering features instead of configuring a server.
 
@@ -44,7 +44,7 @@ Let’s dig a bit into my tech choices. I began working on MikadoApp in July 202
 
 As a TDD practitioner, understanding how to test my code when starting work on a new technology is crucial. The backend part was relatively straightforward for me, given my experience in creating backend applications for over a decade. Let me explain what I’ve done.
 
-![Mikado method - backend overview](images/posts/build-mikado-app/backend-overview.svg)
+{{< image src="backend-overview.svg" alt="Mikado method - backend overview" >}}
 
 As described in the previous diagram, I created a new Next.js API route which is a controller to handle HTTP requests and return an HTTP response. A command is then created with the data received by the controller and is passed to a command handler that executes all the actions needed to perform the use case. The command handler uses a repository to persist and retrieve data from the storage system, building the `MikadoGraph` aggregate.
 
@@ -52,7 +52,7 @@ As described in the previous diagram, I created a new Next.js API route which is
 
 It was a bit different for the frontend part as Next.js has a Server Side Rendering mechanism that I had not used before. Let me explain what I’ve done.
 
-![Mikado method - frontend overview](images/posts/build-mikado-app/frontend-overview.svg)
+{{< image src="frontend-overview.svg" alt="Mikado method - frontend overview" >}}
 
 As described in the previous diagram, the SSR (Server-Side Rendering) page is responsible for retrieving all the necessary data to initialize the page. Then, the pre-rendered page is sent to the browser to render the 'page component’. The purpose of this component is to orchestrate use case handling. It acts as a bridge between the custom hooks, which manage business logic, and the view (Business and UI components) responsible for rendering the user interface.
 
@@ -70,7 +70,7 @@ From my point of view, it is really important to be able to deploy an applicatio
 
 The next and final step was to make the user interface fancy. I chose several libraries to prevent reinventing the wheel. As we represent the Mikado Method as a graph, I needed a powerful library that eases the creation of a node-based UI. I found [React Flow](https://reactflow.dev/). At this step, the notification system only used the console, which wasn’t user-friendly. I decided to use React-toastify to handle that part. The last thing I needed to improve was the form management, especially the error management. In the early first version, I used HTML5 validation, but it didn't provide a good user experience. I didn’t use a library to handle that because my forms are really simple.
 
-![Mikado method - frontend overview](images/posts/build-mikado-app/mikado-graph.webp)
+{{< image src="mikado-graph.webp" alt="Mikado method - frontend overview" >}}
 
 The previous image is a screenshot of the first version of the `MikadoApp`. Try the self hosted version of the MikadoApp:
 

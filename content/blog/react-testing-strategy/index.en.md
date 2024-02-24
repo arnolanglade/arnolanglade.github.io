@@ -114,7 +114,7 @@ it("shows product information to the customer", () => {
 
 The purpose of having these different types of components is to isolate responsibilities. As you can see in the following diagram, there are three responsibilities: rendering the user interface (view), bridging the gap between the view and the business logic (orchestrator), and handling the business logic (business logic).
 
-![Big picture](images/posts/react-testing-strategy/big-picture.svg)
+{{< image src="big-picture.svg" alt="Big picture" >}}
 
 Business and UI components are responsible for rendering the user interface. The custom hook contains the business logic, retrieving or sending data to the server and managing the state of the page. The page component acts as a bridge between the hook and the view.
 
@@ -122,7 +122,7 @@ Now, new React frameworks provide server-side rendering (SSR), allowing you to r
 
 How can we apply what I explained in the previous section to an application that uses SSR? Since the page component is initialized with all the data, the hook won’t need to query the data anymore.
 
-![Big picture with SSR](images/posts/react-testing-strategy/big-picture-with-ssr.svg)
+{{< image src="big-picture-with-ssr.svg" alt="Big picture with SSR" >}}
 
 Lastly, coupling will prevent you from easily testing your code. The solution to avoid this kind of problem is to apply the Dependency Inversion Principle from the SOLID principles. It will help you make your code more modular and easy to test. I’ve written a blog post to explain how to apply it to a React application:
 

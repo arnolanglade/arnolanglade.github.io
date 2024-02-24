@@ -11,15 +11,15 @@ In this new blog post, I would like to speak about the dependency inversion desi
 ## What does this design pattern say?
 A class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.
 
-![Concrete class should not use concrete class](images/posts/inversion-dependency/concrete-class-should-not-use-concrete-class.svg)
+{{< image src="concrete-class-should-not-use-concrete-class.svg" alt="Concrete class should not use concrete class" >}}
 
 The classes should only depend on abstractions (e.g. interfaces). An interface can be implemented in several ways. It will make your code more modular because you can use a specific implementation depending on the context.
 
-![Concrete class should depend on abstraction](images/posts/inversion-dependency/depend-on-abstraction.svg)
+{{< image src="depend-on-abstraction.svg" alt="Concrete class should depend on abstraction" >}}
 
 The interfaces should not depend on concrete implementations to avoid coupling them to another class.
 
-![Abstraction should not use concrete class](images/posts/inversion-dependency/abstraction-should-not-use-concrete-class.svg)
+{{< image src="abstraction-should-not-use-concrete-class.svg" alt="Abstraction should not use concrete class" >}}
 
 ## How does this pattern improve testability?
 

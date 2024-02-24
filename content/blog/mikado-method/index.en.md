@@ -24,7 +24,7 @@ This method simplifies refactoring. You can continuously improve your codebase i
 
 How does it work? Let’s take an example: MySQL doesn’t match the project's needs; we need to use PostgreSQL. First, we need to define a goal that is clear and understandable for everyone. In our case, it is “Migrate the application from MySQL to PostgreSQL,” as you can see in the following example.
 
-![define a goal](images/posts/mikado-method/define-goal.webp)
+{{< image src="define-goal.webp" alt="Define a goal" >}}
 
 **Note:** A goal can be what you want to improve in your application such as refactoring a section of the application to  enhance its clarity or improving an existing feature.
 
@@ -32,19 +32,19 @@ There are less chances that you can achieve your goal in a single attempt and qu
 
 To migrate the application to PostgreSQL, we first need to install the database. Then, we need to update our repositories because they use SQL queries specific to MySQL.
 
-![add prerequisites to the mikado graph](images/posts/mikado-method/add-prerequisites.webp)
+{{< image src="add-prerequisites.webp" alt="Add prerequisites to the Mikado graph" >}}
 
 Now, you will start exploring all the prerequisites. Select a prerequisite from the list and start an experimentation to solve it. If you can easily achieve it, that's excellent! Commit your changes, mark the prerequisite as completed, and proceed to the next one on the list.
 
-![prerequisite completed](images/posts/mikado-method/prerequisite-completed.webp)
+{{< image src="prerequisite-completed.webp" alt="Prerequisite completed" >}}
 
 If you cannot easily solve it, you need to revert your changes and define a sublist of prerequisites to achieve the original prerequisite. The purpose is to avoid making big changes but to focus on working on small steps while keeping the codebase stable. Reverting changes may not be natural to a developer, but it's an important step in the process. It allows you to continue working in smaller steps, while the exploration helps you learn what is necessary to solve a prerequisite.
 
-![add prerequisite to prerequisite](images/posts/mikado-method/add-prerequisite-to-prerequisite.webp)
+{{< image src="add-prerequisite-to-prerequisite.webp" alt="Add prerequisite to prerequisite" >}}
 
 Continue to resolve all prerequisites until the end. When all prerequisites are done, your goal is completed!
 
-![goal completed](images/posts/mikado-method/goal-completed.webp)
+{{< image src="goal-completed.webp" alt="Goal completed" >}}
 
 As you can see in the previous sections of the blog post, we can represent your progress as a graph. This is a useful way to communicate the progress of your task with the rest of the team.  For example, you can show the mikado graph at the daily meeting to easily explain what you did. If, for any reason, you cannot complete your task, you can share the mikado graph with a colleague to explain what you've done and what remains to be done. Organizing your work becomes easier, especially when you are working on complex tasks. The Mikado graph is more visual than a simple to-do list because it allows you to see dependencies between prerequisites.
 

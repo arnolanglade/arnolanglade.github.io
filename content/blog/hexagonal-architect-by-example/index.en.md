@@ -11,7 +11,7 @@ In this blog post, I would like to explain the basics of hexagonal architecture 
 
 Before going deeper into hexagonal architecture, let’s see what we need to create the product management application. We need two entry points: the first one will be consumed by the graphical client and the other one will be used by the cron task. Then, we will need another piece of code which will be in charge of persisting product data into storage.
 
-![Application architecture](images/posts/hexagonal-architecture/application-architecture.svg)
+{{< image src="application-architecture.svg" alt="Application architecture" >}}
 
 ## What is hexagonal architecture?
 
@@ -152,7 +152,7 @@ The user interface code only depends on the domain code.
 
 ## Flow of control
 
-![Hexgonal architecture: flow control](images/posts/hexagonal-architecture/hexgonal-architecture-flow-control.svg)
+{{< image src="hexgonal-architecture-flow-control.svg" alt="Hexgonal architecture: flow control" >}}
 
 The application flow goes from the user interface **(1)** through the domain **(2)** to the infrastructure **(3)** then goes back through the domain **(2)** to the user interface **(4)**.
 

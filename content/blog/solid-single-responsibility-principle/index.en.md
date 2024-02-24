@@ -53,7 +53,7 @@ class ProductImport {
 
 This `ProductImport` class does several things, it gets product data from a CSV file and imports them into a database. That means it has multiple responsibilities which violates the single responsibility principle (SRP).
 
-![Product import responsibilities](images/posts/single-responsibility-principle/product-import-responsibilities.svg)
+{{< image src="product-import-responsibilities.svg" alt="Product import responsibilities" >}}
 
 We need to break down this class into smaller ones to isolate responsibilities and make it compliant with the single responsibility principle. We will create a new class called  `CsvProductLoader ` that will load the product data from the CSV file, and we will create a second class called  `MysqlProducts` that will be responsible for saving product data into the database."
 
