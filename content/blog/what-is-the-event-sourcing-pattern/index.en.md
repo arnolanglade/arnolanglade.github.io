@@ -11,7 +11,7 @@ Event sourcing consists in storing all changes that happened to an application a
 
 I will show you an example to help you understand what this pattern stands for. People used to explain it with a bank account but I wanted to find something funnier: a table soccer game. A complete example is available on a Github repository:
 
-{% include blog-post-link.html url='https://github.com/arnolanglade/table-soccer' image='github-logo.png' title='Have a look at the GitHub repository' %}
+{{< external-link href="https://github.com/arnolanglade/table-soccer" label="Have a look at the GitHub repository" >}}
 
 Let’s start! A group of developers who are fans of table soccer wants to create an application to see who’s the best player. They decided to save the results of matches and rank themselves.
 
@@ -176,7 +176,7 @@ Last but not least, We often associate CQRS with the event sourcing pattern even
 
 Don’t forget that a complete example is available on a Github repository.
 
-{% include blog-post-link.html url='https://github.com/arnolanglade/table-soccer' image='github-logo.webp' title='Have a look at the GitHub repository' %}
+{{< external-link href="https://github.com/arnolanglade/table-soccer" label="Have a look at the GitHub repository" >}}
 
 Any resemblance to real and actual names is purely coincidental!
 

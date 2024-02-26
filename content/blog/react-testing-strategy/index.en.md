@@ -65,8 +65,7 @@ it("shows to the customer if the product is in stock", () => {
 
 We only use those components in a single application as they are business-oriented. There's no need to share them, so we can translate them. Testing these components can be a bit challenging due to the translation system; translations can change and break your tests. I’ve written a blog post about how to test an application that is localized:
 
-{% include blog-post-link.html url='/test-strategy-i18n-react-application.html' image='test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp' title='Testing a React application: Secure your tests from internationalization impact' %}
-
+{{< page-link page="test-strategy-i18n-react-application" >}}
 
 ## Page components
 
@@ -74,7 +73,7 @@ Page components are a kind of controller. They delegate the orchestration of bus
 
 I've written a blog post to explain how a custom hook helps improve testability. Take a look at it to understand how it can enhance your code quality and help decouple concerns:
 
-{% include blog-post-link.html url='/how-to-use-custom-react-hook-to-increase-application-testability.html' image='how-to-use-custom-react-hook-to-increase-application-testability.webp' title='How to use custom React hook to increase application testability' %}
+{{< page-link page="how-to-use-custom-react-hook-to-increase-application-testability" >}}
 
 We can call them screen components as well. This term makes more sense, particularly in a mobile application.
 
@@ -126,4 +125,4 @@ How can we apply what I explained in the previous section to an application that
 
 Lastly, coupling will prevent you from easily testing your code. The solution to avoid this kind of problem is to apply the Dependency Inversion Principle from the SOLID principles. It will help you make your code more modular and easy to test. I’ve written a blog post to explain how to apply it to a React application:
 
-{% include blog-post-link.html url='/how-to-reduce-coupling-in-your-react-app.html' image='how-to-reduce-coupling-in-your-react-app.webp' title='How to reduce coupling in your React app' %}
+{{< page-link page="/how-to-reduce-coupling-in-your-react-app" >}}

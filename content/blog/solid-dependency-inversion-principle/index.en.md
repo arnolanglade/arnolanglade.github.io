@@ -96,7 +96,7 @@ By introducing the `ProductRepository` interface and using dependency injection,
 
 Testing chunks of code that interacts with Input/Output (IO) can be challenging, especially when we only want to test the business logic . Now, it is easy to test the product creation because we can replace the mysql repository but a fake one. I’ve written a blog post to explain how the dependency inversion principle can ease testing:
 
-{% include blog-post-link.html url='/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html' image='inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp' title='Ease testing thanks to the dependency inversion design pattern' %}
+{{< page-link page="/ease-testing-thanks-to-the-dependency-inversion-design-pattern" >}}
 
 # Rule 3: An interface should not depend on concrete implementations
 

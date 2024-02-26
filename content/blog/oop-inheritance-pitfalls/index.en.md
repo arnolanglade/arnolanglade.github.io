@@ -29,6 +29,5 @@ I have worked on several codebases that heavily relied on inheritance, but now I
 
 I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn't follow this principle. Here is the link: 
 
-{% include blog-post-link.html url='/open-close-principle.html' image='open-close-principle.webp' title='Open-Closed principle: Enhancing code modularity' %}
-
+{{< page-link page="open-close-principle" >}}
 

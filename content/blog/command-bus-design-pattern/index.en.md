@@ -9,7 +9,7 @@ tags: [command-bus, design-patterns]
 
 **Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I've written about those design patterns. It will help you to understand this new article:
 
-{% include blog-post-link.html url='/command-handler-patterns.html' image='command-handler/command-handler.webp' title='Command and command handler design pattern' %}
+{{< page-link page="command-handler-patterns" >}}
 
 ## What is a bus?
 
@@ -51,6 +51,6 @@ As I said previously, events are recorded by aggregates and they should be busin
 
 I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
 
-{% include blog-post-link.html url='/tag/command-bus' image='data-validation.webp' title='See all blog posts about command handling.' %}
+{{< page-link page="tags/command-bus/" >}}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).

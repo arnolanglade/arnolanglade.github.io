@@ -129,7 +129,7 @@ I've written a dedicated blog post explaining how to validate a command:
 
 To simplify this controller, consider using a command bus, which is responsible for finding the right handler for a given command. For more information about this pattern, I've written a dedicated blog post explaining how it works:
 
-{% include blog-post-link.html url='/command-bus-design-pattern.html' image='command-bus/command-bus.svg' title='The command bus design pattern' %}
+{{< page-link page="command-bus-design-pattern" >}}
 
 The following example is built with [Symfony Messenger](https://symfony.com/doc/current/components/messenger.html).
 
@@ -170,7 +170,7 @@ class ValidationMiddleware implements MiddlewareInterface
 
 **Tip:** Take a look at this blog post if you need to manage user permissions. Adding a middleware to the command bus can enhance the security of your application:
 
-{% include blog-post-link.html url='/how-to-handle-user-permissions-through-command-bus-middleware.html' image='how-to-handle-permissions-through-command-bus-middleware.webp' title='How to handle user permissions through command bus middleware' %}
+{{< page-link page="how-to-handle-user-permissions-through-command-bus-middleware/" >}}
 
 ## My last thoughts
 

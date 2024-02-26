@@ -103,6 +103,6 @@ Depending on the number of use cases the service classes can become really huge.
 
 I've written a blog post to explain what is a commands and we can apply it to query too:
 
-{% include blog-post-link.html url='/command-handler-patterns.html' image='command-handler/command-handler.webp' title='Command and command handler design pattern' %}
+{{< page-link page="/command-handler-patterns" >}}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).

@@ -60,8 +60,7 @@ Moving IO as far as possible from your domain code is really convenient because 
 
 **Tip:** I've written a blog post about unit testing that explains why testing can be hard. It mainly gives you tips to move IO outside your code to make it testable.
 
-{% include blog-post-link.html url='why-unit-testing-can-be-hard.html' image='why-unit-testing-can-be-hard.webp' title='Why unit testing can be hard?' %}
-
+{{< page-link page="why-unit-testing-can-be-hard" >}}
 
 ### Coupling rules
 
@@ -131,12 +130,11 @@ As you see, the only differences are the input and output of the adapter. We nee
 
 **Tip:** These business services can be written using the command and command handler patterns. I've written a blog post that explains these design patterns: 
 
-{% include blog-post-link.html url='/command-handler-patterns.html' image='command-handler/command-handler.webp' title='Command and command handler design pattern' %}
+{{< page-link page="command-handler-patterns" >}}
 
 I've written a bunch of articles about how to handle a command, validate its data, handle user permissions, and so on. Take a look at these articles:
 
-{% include blog-post-link.html url='/tag/command-bus' image='data-validation.webp' title='See all blog posts about command handling.' %}
-
+{{< page-link page="/tags/command-bus" >}}
 
 ### What about testing?
 

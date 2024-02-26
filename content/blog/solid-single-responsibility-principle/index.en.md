@@ -117,7 +117,7 @@ class ProductImport {
 ```
 I’ve written an article about the Dependency Inversion Principle (DIP), which explains the principle and how it helps to make testing easier:
 
-{% include blog-post-link.html url='/solid-dependency-inversion-principle.html' image='dependency-inversion-principle/dependency-inversion-principle.webp' title='SOLID principles: Understanding the dependency inversion principle' %}
+{{< page-link page="solid-dependency-inversion-principle" >}}
 
 {{< training-link >}}
 
@@ -125,6 +125,6 @@ The biggest benefit  of working with small classes is that it eases testing. The
 
 I've written an article about how the Single Responsibility Principle (SRP) helps with easy testing, especially when your classes are huge, and you want to test their private methods:
 
-{% include blog-post-link.html url='/do-not-test-private-methods.html' image='do-not-test-private-method/do-not-test-private-methods.webp' title='Don’t test private methods' %}
+{{< page-link page="do-not-test-private-methods" >}}
 
 Creating good code is like playing with Lego bricks. It involves working on small, easily testable classes and assembling them using composition to build more complex features.
