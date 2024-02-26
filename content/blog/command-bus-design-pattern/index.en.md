@@ -7,9 +7,6 @@ keywords: "software,software architecture,design patterns,command bus,event bus,
 tags: [command-bus, design-patterns]
 ---
 
-**Note:** Before reading this blog post, if you don’t know what a command and a command handler are, I advise you to first read the blog post I've written about those design patterns. It will help you to understand this new article:
-
-{{< page-link page="command-handler-patterns" >}}
 
 ## What is a bus?
 
@@ -22,6 +19,11 @@ In the next sections, we will speak about the command bus which is often associa
 ## The command bus
 
 **Quick reminder about command and command handler:** A command represents a user's intent. The data carried by the command has to be valid. It can be only handled by only one handler that is just a callable that will perform the user action.
+
+**Note:** I advise you to first read the blog post I've written about those design patterns if you don’t know what they are. It will help you to understand this new article:
+
+{{< page-link page="command-handler-patterns" >}}
+
 
 {{< training-link >}}
 
