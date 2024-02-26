@@ -2,8 +2,12 @@
 title: "OOP: how to build an object"
 date: 2021-03-10
 image_credit: danist07
+url: oop-primary-and-secondary-constructors
+aliases:
+    - "oop-how-to-build-an-object.html"
+    - "oop-how-to-build-an-object"
 description: "Object-oriented programming: primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases."
-keywords: "software,oop,design patterns,primary constructor, secondary constructor"
+keywords: "software,oop,primary constructor,secondary constructor,build an object,named constructor,object creation, object construction"
 tags: [OOP]
 ---
 

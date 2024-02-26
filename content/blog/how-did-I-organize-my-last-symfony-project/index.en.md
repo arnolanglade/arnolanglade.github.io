@@ -2,8 +2,12 @@
 title: How did I organize my last Symfony projects?
 date: 2021-03-30
 image_credit: alexkixa
+url: hexgonal-architecture-and-cqrs-with-symfony
+aliases:
+    - "how-did-I-organize-my-last-symfony-project.html"
+    - "how-did-I-organize-my-last-symfony-project"
 description: "Return of experience: In this blog post, I will explain how I organized my last Symfony projects. They are mainly inspired by Hexagonal and CQRS architecture."
-keywords: "software,software architecture,symfony,cqrs,php,hexagonal architecture,port adapters,rex"
+keywords: "software,software architecture,symfony,cqrs,cqrs with symfony,php,hexagonal architecture,hexagonal architecture with symfony,port and adapters"
 tags: [software-architecture, symfony]
 ---
 

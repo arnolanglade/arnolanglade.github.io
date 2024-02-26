@@ -2,8 +2,12 @@
 title: "Open-Closed principle: Enhancing code modularity"
 date: 2023-11-13
 image_credit: madze
+url: solid-open-close-principle
+aliases:
+    - "open-close-principle.html"
+    - "open-close-principle"
 description: Unlock the potential of the Open-Closed Principle in programming. Discover how to enhance code modularity and simplify maintenance using this SOLID concept. Learn to reduce complexity and write more flexible code.
-keywords: open-closed principle,SOLID principles,software engineering,design patterns,strategy pattern,object-oriented programming,programming principles,development best practices
+keywords: open-closed principle,SOLID principles,software engineering,design patterns,strategy pattern,object-oriented programming,programming principles,development best practices, OOP, SOLID
 tags: [OOP, SOLID]
 ---
 

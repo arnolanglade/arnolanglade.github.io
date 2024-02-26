@@ -2,8 +2,12 @@
 title: Persisting entities without ORM
 date: 2021-03-23
 image_credit: tofi
+url: repository-persisting-entity-without-orm
+aliases:
+    - "persisting-entities-without-orm.html"
+    - "persisting-entities-without-orm"
 description: The repository pattern provides a good abstraction to manage object persistence. Even if a lot of projects use an ORM, persisting entities do not necessarily require it.
-keywords: "software,oop,repository,design patterns,orm,persistence,sql,database"
+keywords: "software,oop,repository,design patterns,orm,persisting entity, persisting entities without orm, persisting entities with pure sql"
 tags: [design-patterns, OOP, repository, DDD]
 ---
 

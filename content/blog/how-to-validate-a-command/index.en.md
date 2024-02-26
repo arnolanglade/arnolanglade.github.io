@@ -2,6 +2,9 @@
 title: How to validate a command?
 date: 2021-03-04
 image_credit: heapdump
+url: how-to-validate-a-command
+aliases:
+    - "how-to-validate-a-command.html"
 description: Domain validation ensures your aggregate cannot be built in an invalid state but that is not enough to give good feedback to the end users. Validating commands is the best to prevent their processing if data given by users are wrong.
 keywords: "oop,design patterns,software,software architecture,command,command handler,command bus,data validation,domain validation"
 tags: [command-bus, design-patterns]

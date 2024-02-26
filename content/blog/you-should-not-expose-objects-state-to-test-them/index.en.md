@@ -2,8 +2,12 @@
 title: Why you should not expose objects' state to test them
 date: 2021-04-13
 image_credit: jdent
+url: software-testing-do-not-break-encapsulation
+aliases:
+    - "you-should-not-expose-objects-state-to-test-them.html"
+    - "you-should-not-expose-objects-state-to-test-them"
 description: Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.
-keywords: "software,testing,unit test,oop,encapsulation,ask don't tell"
+keywords: "software,testing,unit test,software testing,oop,encapsulation,ask don't tell,do not break encapsulation,object comparison"
 tags: [testing, OOP]
 ---
 

@@ -2,8 +2,12 @@
 title: How to reduce coupling in your React app
 date: 2023-03-06
 image_credit: diana_pole
+url: react-dependency-injection
+aliases:
+    - "how-to-reduce-coupling-in-your-react-app.html"
+    - "how-to-reduce-coupling-in-your-react-app"
 description: "The dependency inversion principle is a great design pattern, it makes applications more modular and easier to test. A React Context can help to implement this pattern in a React application. Learn how in this new blog article."
-keywords: "react,dependency injection,dependency inversion,typescript,coupling,software,design pattern"
+keywords: "react,reactjs,dependency injection,dependency inversion,coupling,software,design pattern,SOLID,react context, react dependency injection, react dependency inversion"
 tags: [react, SOLID, design-patterns]
 ---
 

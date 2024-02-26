@@ -2,8 +2,12 @@
 title: Increase your test quality thanks to builders or factories
 date: 2022-10-10
 image_credit: thoughtcatalog
+url: software-testing-builders-factories
+aliases:
+    - "increase-your-test-quality-thanks-to-builders-or-factories.html"
+    - "increase-your-test-quality-thanks-to-builders-or-factories"
 description: "Bad tests are hard to maintain and they slow down your productivity. Test code quality is as important as production code. The builder or factory patterns can help you to improve your test code quality. It will ease test refactoring and make tests more readable."
-keywords: "testing,test,software,design pattern,code quality"
+keywords: "testing,test,software,design pattern,code quality,builder pattern,factory pattern,test code quality,test quality,test readability,test refactoring"
 tags: [testing]
 ---
 

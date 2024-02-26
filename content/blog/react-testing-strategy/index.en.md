@@ -2,8 +2,11 @@
 title: Three types of React components for an effective testing strategy
 date: 2024-01-15
 image_credit: roman_lazygeek
+url: react-testing-strategy
+aliases:
+    - "react-testing-strategy.html"
 description: Discover an effective strategy for testing React components by categorizing them into UI, Business, and Page components. Learn how to organize your codebase to facilitate testing for maintainable code.
-keywords: react,javascript,typescript,testing,testing strategies,code maintainability
+keywords: react,reactjs,software testing,testing strategies,code maintainability,react testing,react architecture
 tags: [react, testing]
 ---
 

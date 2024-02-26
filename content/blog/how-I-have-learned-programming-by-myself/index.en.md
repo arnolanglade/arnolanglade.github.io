@@ -2,8 +2,12 @@
 title: How I have learned programming by myself
 date: 2022-10-17
 image_credit: thoughtcatalog
+url: self-taught-learn-programming-by-myself
+aliases:
+    - "how-I-have-learned-programming-by-myself.html"
+    - "how-I-have-learned-programming-by-myself"
 description: "Learning is an important part of our job. It is not that easy when you don’t know where to start, especially if you're self-taught like me. I share what I did to learn software development for the last 15 years in this blog post."
-keywords: "learning,knowledge,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training"
+keywords: "learning,knowledge,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training,read books,attend conferences,meetups,contribute to open source,side project,mentor,mentoring"
 tags: [mentoring]
 ---
 

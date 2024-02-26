@@ -2,8 +2,12 @@
 title: Why breaking encapsulation is not a good idea
 date: 2023-09-19
 image_credit: mattseymour
+url: oop-breaking-encapsulation-bad-idea
+aliases:
+    - "why-breaking-encapsulation-is-not-a-good-idea.html"
+    - "why-breaking-encapsulation-is-not-a-good-idea"
 description: "This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation."
-keywords: "oop,encapsulation,object,tell don’t ask,object"
+keywords: "oop,encapsulation,tell don’t ask,breaking encapsulation,encapsulation principle,object oriented programming,breaking encapsulation bad idea,object oriented programming"
 tags: [testing, OOP]
 ---
 

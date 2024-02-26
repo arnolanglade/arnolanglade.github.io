@@ -2,8 +2,12 @@
 title: What is the event sourcing pattern?
 date: 2022-11-28
 image_credit: vitsinkevich
+url: event-sourcing-pattern
+aliases:
+    - "what-is-the-event-sourcing-pattern.html"
+    - "what-is-the-event-sourcing-pattern"
 description: "Event sourcing consists in storing all changes that happened to the application state as a sequence of events instead of only storing the current state of the application. The sum of all events makes  the current application state."
-keywords: "software,software architecture,design patterns,es,event sourcing,table soccer"
+keywords: "software,software architecture,es,event sourcing,event sourcing example,event sourcing pattern"
 tags: [software-architecture]
 ---
 

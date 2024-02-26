@@ -2,8 +2,12 @@
 title: Ease testing thanks to the dependency inversion design pattern
 date: 2023-06-19
 image_credit: mmayyer
+url: software-testing-dependency-injection
+aliases:
+    - "ease-testing-thanks-to-the-dependency-inversion-design-pattern.html"
+    - "ease-testing-thanks-to-the-dependency-inversion-design-pattern"
 description: "The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable."
-keywords: "unit test,design pattern,pattern,software,dependency inversion,dependency injection,test,typescript"
+keywords: "unit test,software,dependency inversion,dependency injection,test, testing, SOLID, OOP, dependency injection principle"
 tags: [testing, SOLID, OOP]
 ---
 

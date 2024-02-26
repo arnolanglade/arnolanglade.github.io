@@ -2,9 +2,12 @@
 title: "The Mikado Method: Small Steps, Big Improvements"
 date: 2023-11-27
 alt: "The Mikado Method: Small Steps, Big Improvements"
+url: mikado-method
+aliases:
+    - "mikado-method.html"
 image_credit: tateisimikito
 description: Enhance your codebase with the Mikado Method – a focused approach for incremental improvements without breaking your codebase. Tailored for brownfield development, ensure code stability and effortless feature integration. Collaborate effectively with MikadoApp and achieve rapid code enhancements through Trunk Based Development.
-keywords: mikado method, refactoring, small steps development, brownfield development, trunk based development, mikado graph, continuous code improvement
+keywords: mikado method,refactoring,small steps development,brownfield development,trunk based development,mikado graph,continuous code improvement
 tags: [methodology]
 ---
 

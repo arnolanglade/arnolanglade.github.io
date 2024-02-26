@@ -2,8 +2,11 @@
 title: "Testing a React application: Secure your tests from internationalization impact"
 date: 2023-12-11
 image_credit: claybanks
+url: test-strategy-i18n-react-application
+aliases:
+    - "test-strategy-i18n-react-application.html"
 description: Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.
-keywords: I18n,localization,React-Intl,internationalization,Lokalise,testing,React testing,Jest,React Context,React,Typescript,Javascript
+keywords: I18n,localization,React-Intl,internationalization,Lokalise,testing,React testing,Jest,React Context,React,Typescript,Javascript,React hooks,React testing library
 tags: [react, testing]
 ---
 

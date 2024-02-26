@@ -2,8 +2,11 @@
 title: "The pitfalls of OOP's inheritance: Why simple isn't always better"
 date: 2023-10-23
 image_credit: gabrielsanchez
+url: oop-inheritance-pitfalls
+aliases:
+    - "oop-inheritance-pitfalls.html"
 description: Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.
-keywords: OOP,OOP inheritance,OOP principles,composition,Open-Closed principle,OOP best practices,coding tips
+keywords: OOP,OOP inheritance,OOP principles,OOP composition,Open-Closed principle,OOP best practices,coding tips,software development
 tags: [OOP]
 ---
 

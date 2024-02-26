@@ -2,8 +2,12 @@
 title: Use composition instead of props drilling
 date: 2023-05-22
 image_credit: xavi_cabrera
+url: react-composition-instead-of-props-drilling
+aliases:
+    - "use-composition-instead-of-props-drilling.html"
+    - "use-composition-instead-of-props-drilling"
 description: "Adding too many props will make your components complex, hard to understand and maintain. Instead opt for several small components and apply composition. Learn how in this blog article."
-keywords: "react,reactjs,composition,javascript,typescript"
+keywords: "react,reactjs,composition,javascript,typescript,react composition,react props drilling,react component props,react component testing"
 tags: [react, testing]
 ---
 

@@ -2,9 +2,13 @@
 title: "Objective: set up your projects more easily"
 date: 2021-06-02
 image_credit: intelligenciya
+url: makefile-setup-your-symfony-projects-more-easily
+aliases:
+    - "objective-set-up-your-projects-more-easily.html"
+    - "objective-set-up-your-projects-more-easily"
 tags: [makefile]
 description: Setting up a project locally should be easy to let devs focus on delivering value. Makefile can provide an abstraction to simplify their installation and hide the complexity.
-keywords: "makefile,software,setup,installation"
+keywords: "makefile,software,software installation,project setup,project installation,symfony project setup,symfony project installation"
 ---
 
 For the last decade I worked on several more or less complex projects. I often had problems with their installation. Sometimes, the project was not documented or the existing documentation was not up to date. I had to run commands but I did not understand all of them. When I got errors it was hard to understand what happened. That was not always simple.

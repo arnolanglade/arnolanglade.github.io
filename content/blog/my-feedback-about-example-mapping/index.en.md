@@ -2,8 +2,11 @@
 title: My feedback about example mapping
 date: 2022-10-31
 image_credit: amandagraphc
+url: my-feedback-about-example-mapping
+aliases:
+    - "my-feedback-about-example-mapping.html"
 description: "Example mapping is a good way to align the team's understanding of domain problems and help your team to better collaborate. Last but not least, it eases to refine your stories and improve your backlog prioritization."
-keywords: "example mapping,bdd,behavior driven development,no estimate,team collaboration,sticky note,small story,domain problem"
+keywords: "example mapping,bdd,behavior driven development,no estimate,team collaboration,sticky note,small story,domain problem,acceptance criteria,backlog prioritization, backlog refinement"
 tags: [BDD, methodology]
 ---
 

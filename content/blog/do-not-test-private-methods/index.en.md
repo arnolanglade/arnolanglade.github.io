@@ -2,8 +2,12 @@
 title: Don’t test private methods
 date: 2023-07-17
 image_credit: dtopkin1
+url: software-testing-private-methods
+aliases:
+    - "do-not-test-private-methods.html.html"
+    - "do-not-test-private-methods.html"
 description: "One of the first mistakes I made when I started to test my code was to test private methods. Spoiler alert: it was a bad idea! If you need to test a private method, it probably means that your code is not well designed. Private methods are implementation details of objects and we should not care about them. When you test public methods you also test the private ones."
-keywords: "unit test,design pattern,pattern,software,private method,single responsibility principle,test"
+keywords: "unit test,software,private method,single responsibility principle,software testing,testing private methods,SOLID,OOP,dependency injection principle"
 tags: [testing, OOP]
 ---
 
