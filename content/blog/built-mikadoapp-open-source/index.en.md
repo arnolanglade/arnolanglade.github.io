@@ -74,23 +74,11 @@ The next and final step was to make the user interface fancy. I chose several li
 
 The previous image is a screenshot of the first version of the `MikadoApp`. Try the self hosted version of the MikadoApp:
 
-<div style="text-align: center;margin-bottom: 30px">
-    <a href="https://mikado-method-teal.vercel.app" class="cta-button c-button c-button--primary c-button--small">
-        <span class="circle-bg">
-          <i class="ion ion-open-outline"></i>
-        </span>
-        Try the MikadoApp
-    </a>
-</div>
+{{< external-link href="https://mikado-method-teal.vercel.app" label="Try the MikadoApp" >}}
 
 Don’t forget, MikadoApp is an open-source application. Don't hesitate to contribute to the application to improve. Any help is very welcome.
 
-<div style="text-align: center;margin-bottom: 30px">
-    <a href="https://github.com/arnolanglade/mikado-app" class="cta-button c-button c-button--primary c-button--small">
-        <i class="ion ion-logo-github" style="margin-right: 6px"></i>
-        Sources on GitHub
-    </a>
-</div>
+{{< external-link href="https://github.com/arnolanglade/mikado-app" label="Sources on GitHub" >}}
 
 Deploying the initial version of an application as soon as possible is great, but it's even better when you can observe what happens in production. With a robust alerting system, we can react promptly and address issues before they become visible to too many users. I use Vercel's free plan, which provides some basic logs, but it is not enough. I decided to use Sentry as an incident manager. It gathers all errors that occur in production and sends me an email when something goes wrong.
 
