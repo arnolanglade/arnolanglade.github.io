@@ -12,11 +12,11 @@ In this blog post, I will explain how I built MikadoApp and the choices I made. 
 
 MikadoApp is an open-source application. Don't hesitate to contribute to the application to improve it. Submit issues if you find bugs or have ideas for improvement. Pull requests (PRs) for enhancing or adding additional features are also very welcome.
 
-{% include mikado-method-source.html %}
+{{< external-link href="https://github.com/arnolanglade/mikado-app" label="Sources on GitHub" >}}
 
 Try the self hosted version of the MikadoApp, here is the link:
 
-{% include mikado-method-link.html %}
+{{< external-link href="https://mikado-method-teal.vercel.app" label="Try the MikadoApp" >}}
 
 ## Step 1: Define what I want?
 
