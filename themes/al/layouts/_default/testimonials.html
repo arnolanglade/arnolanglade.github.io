@@ -29,7 +29,7 @@
           </p>
           <p class="card-text text-dark w-100 text-center mt-3">
             {{ $src := (printf "%s%s" "testimonial/"  .image ) }}
-            {{ partial "asset-image" (dict "src" $src "class" "rounded-circle" "alt" .name "format" "70x") }}
+            {{ partial "asset-image" (dict "src" $src "class" "rounded-circle" "alt" .name "size" "70x") }}
             <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-dark text-decoration-none">{{ .name }} ({{ .position }})</a>
           </p>
         </div>
