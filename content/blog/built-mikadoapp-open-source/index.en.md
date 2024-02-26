@@ -4,7 +4,7 @@ date: 2024-02-05
 image_credit:
 description: Discover how I built theMikadoApp, an open-source application leveraging the Mikado Method. Learn about technical choices, practices, and the steps to deploy an MVP. Discover the challenges faced and lessons learned in the development process.
 keywords: MikadoApp, Mikado Method, Next.js, Supabase, React Flow, React-toastify, software development, open source, event storming, example mapping, deployment
-tags: [methodology, react]
+tags: [methodology, agile, react]
 ---
 In this blog post, I will explain how I built MikadoApp and the choices I made. If you are not familiar with the Mikado Method, I encourage you to read the blog I’ve written to understand how you can break down a big task into smaller ones:
 

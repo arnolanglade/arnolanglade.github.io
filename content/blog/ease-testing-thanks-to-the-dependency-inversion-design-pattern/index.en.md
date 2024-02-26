@@ -4,7 +4,7 @@ date: 2023-06-19
 image_credit: mmayyer
 description: "The inversion design pattern is quite simple and super powerful. It makes your code more modular. It lets you change a class's dependency to another one depending on the context. It is a good way to decouple your code from IO to make it testable."
 keywords: "unit test,design pattern,pattern,software,dependency inversion,dependency injection,test,typescript"
-tags: [testing, design-patterns, OOP]
+tags: [testing, SOLID, OOP]
 ---
 
 In this new blog post, I would like to speak about the dependency inversion design pattern. This pattern makes your code more modular and helps to improve codebase testability. It’s quite simple and super powerful.

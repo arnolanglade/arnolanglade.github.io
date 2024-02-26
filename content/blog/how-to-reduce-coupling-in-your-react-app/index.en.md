@@ -4,7 +4,7 @@ date: 2023-03-06
 image_credit: diana_pole
 description: "The dependency inversion principle is a great design pattern, it makes applications more modular and easier to test. A React Context can help to implement this pattern in a React application. Learn how in this new blog article."
 keywords: "react,dependency injection,dependency inversion,typescript,coupling,software,design pattern"
-tags: [react, design-patterns]
+tags: [react, SOLID, design-patterns]
 ---
 
 Today, I would like to cover dependency injection in React. I worked with several frameworks using tools to build and inject dependencies. It is pretty convenient if you apply the dependency inversion principle because you can easily change a dependency with another one.

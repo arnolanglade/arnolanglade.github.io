@@ -4,7 +4,7 @@ date: 2021-03-10
 image_credit: danist07
 description: "Object-oriented programming: primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases."
 keywords: "software,oop,design patterns,primary constructor, secondary constructor"
-tags: [OOP, design-patterns]
+tags: [OOP]
 ---
 
 In this new blog post, I want to talk about object building more specifically about primary and secondary constructors. The primary constructor is the default way to build an object with all its dependencies. The secondary constructors provide other ways to build objects depending on use cases.

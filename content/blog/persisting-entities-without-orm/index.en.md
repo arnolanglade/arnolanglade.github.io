@@ -4,7 +4,7 @@ date: 2021-03-23
 image_credit: tofi
 description: The repository pattern provides a good abstraction to manage object persistence. Even if a lot of projects use an ORM, persisting entities do not necessarily require it.
 keywords: "software,oop,repository,design patterns,orm,persistence,sql,database"
-tags: [design-patterns, OOP, repository]
+tags: [design-patterns, OOP, repository, DDD]
 ---
 
 Today, I will talk about persisting entities without ORM. First, I will introduce the repository pattern because it provides a good abstraction to manage object persistence. Then, we will see what are the impacts on the entity design.
