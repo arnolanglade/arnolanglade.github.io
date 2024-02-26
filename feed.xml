@@ -5,9 +5,139 @@
         <description></description>
         <link>https://arnolanglade.github.io/</link>
         <atom:link href="https://arnolanglade.github.io/feed.xml" rel="self" type="application/rss+xml" />
-        <pubDate>Mon, 26 Feb 2024 02:31:25 -0600</pubDate>
-        <lastBuildDate>Mon, 26 Feb 2024 02:31:25 -0600</lastBuildDate>
+        <pubDate>Mon, 26 Feb 2024 02:35:47 -0600</pubDate>
+        <lastBuildDate>Mon, 26 Feb 2024 02:35:47 -0600</lastBuildDate>
         <generator>Jekyll v4.2.1</generator>
+        
+        <item>
+            <title>SOLID principles: Understanding the dependency inversion principle</title>
+            <description>&lt;p&gt;The dependency inversion principle (DIP) is one of the SOLID principles. It is a crucial concept in object-oriented programming (OOP) because it highlights the importance of decoupling high-level modules from low-level modules. It helps to make code more modular, flexible, and maintainable by ensuring that high-level modules depend on abstractions rather than concrete implementations. Let’s have a look at the wikipedia definition and understand its meaning:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;High-level modules should not import anything from low-level modules. Both should depend on abstractions (e.g., interfaces).
+Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Dependency_inversion_principle&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What does it mean exactly? To be compliant with this principle,your code needs to follow three main rules, which we will detail in the next three sections.&lt;/p&gt;
+
+&lt;h2 id=&quot;rules-1-a-class-should-not-depend-on-another&quot;&gt;Rules 1: A class should not depend on another&lt;/h2&gt;
+
+&lt;p&gt;The first one is that a class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/dependency-inversion-principle/concrete-class.svg&quot; alt=&quot;Dependency Inversion Principle: Concrete class&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s take an example. The most common example of coupling is when we use the singleton pattern. This pattern allows you to create a unique instance of a class and make it global. It is useful to create a database connection, we don’t need to create it each time we need to query the database.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+   &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/** config */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we can access it from anywhere in the application when we need to query the database, using the static method called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getInstance&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CreateNewProduct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;I remember using it a lot when I was a junior developer. It seemed powerful because we didn’t need to inject anything. However, the problem with this piece of code is that it couples &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConnection&lt;/code&gt;. Here, we need a working database to test or run this piece of code. That’s a shame because it avoids quickly checking if the product creation logic works or not.&lt;/p&gt;
+
+&lt;div class=&quot;training-card&quot;&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Do you speak French ?&lt;/strong&gt; Tired of the same old CRUD applications, struggling with your framework, or feeling the
+    pressure of production releases? It's time to take your career to the next level.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Discover the power of &lt;strong&gt;Hexagonal Architecture&lt;/strong&gt; and &lt;strong&gt;DDD&lt;/strong&gt; to build robust and sustainable Symfony applications. Join me
+    and kickstart your journey toward mastering advanced development techniques.
+  &lt;/p&gt;
+  &lt;p class=&quot;link&quot;&gt;
+    &lt;a class=&quot;cta-button c-button c-button--primary c-button--small&quot; href=&quot;https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd&quot; target=&quot;_blank&quot; onclick=&quot;insights.track({id: 'training-link-clicked', parameters: { page: 'SOLID principles: Understanding the dependency inversion principle'}})&quot;&gt;
+      🚀 Start your journey here!
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;rule-2-a-class-should-only-depend-on-abstractions&quot;&gt;Rule 2: A class should only depend on abstractions&lt;/h2&gt;
+
+&lt;p&gt;The second rule is that a class should only depend on abstractions (e.g., interfaces). In OOP, an interface is like a contract. It describes a set of methods that an object needs to implement. This is great because it can be implemented in several ways. It makes your code more modular as you can use a specific implementation depending on the context.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/dependency-inversion-principle/use-abstraction.svg&quot; alt=&quot;Dependency Inversion Principle: use abstraction&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s see how an interface can prevent coupling issues between the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConnection&lt;/code&gt; class. First, we will introduce a new interface called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductRepository&lt;/code&gt; to define how to save a product in the application.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ProductRepository&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we will create an implementation called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MysqlProductRepository&lt;/code&gt; that will be responsible for saving products in a MySQL database.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MysqlProductRepository&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ProductRepository&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DatabaseConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;executeQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;INSERT INTO products ...&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, we need to refactor the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt; to remove its dependency on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConnection&lt;/code&gt;. We will inject an instance &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductRepository&lt;/code&gt; into the  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt; class to prevent it from being coupled to another class.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I still use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DatabaseConnection.getInstance()&lt;/code&gt; method to get the database connection to keep the example simple but another way would be to inject the database connection through the MysqlProductRepository constructor.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CreateNewProduct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;productRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ProductRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    
+   &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;productRepository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By introducing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductRepository&lt;/code&gt; interface and using dependency injection, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt; class becomes more flexible as it works with any implementation of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductRepository&lt;/code&gt;. If we need to switch from MySQL to PostgreSQL for any reason, we only need to create a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ProductRepository&lt;/code&gt; implementation for PostgreSQL and inject it into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CreateNewProduct&lt;/code&gt;. This approach decouples the ``CreateNewProduct` class from a specific database implementation, making it easier to maintain and update the code in the future.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/dependency-inversion-principle/use-abstraction-concrete-example.svg&quot; alt=&quot;Dependency Inversion Principle: use abstraction concrete example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Testing chunks of code that interacts with Input/Output (IO) can be challenging, especially when we only want to test the business logic . Now, it is easy to test the product creation because we can replace the mysql repository but a fake one. I’ve written a blog post to explain how the dependency inversion principle can ease testing:&lt;/p&gt;
+
+&lt;div class=&quot;post__navigation blog-post-link&quot;&gt;
+   &lt;a class=&quot;post__prev&quot; href=&quot;/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html&quot;&gt;
+      &lt;span class=&quot;prev__image&quot;&gt;
+         &lt;img loading=&quot;lazy&quot; src=&quot;/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp&quot; alt=&quot;Ease testing thanks to the dependency inversion design pattern&quot; /&gt;
+      &lt;/span&gt;
+      &lt;span class=&quot;prev__box&quot;&gt;
+         &lt;span class=&quot;post__nav__title&quot;&gt;Ease testing thanks to the dependency inversion design pattern&lt;/span&gt;
+      &lt;/span&gt;
+   &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;rule-3-an-interface-should-not-depend-on-concrete-implementations&quot;&gt;Rule 3: An interface should not depend on concrete implementations&lt;/h1&gt;
+
+&lt;p&gt;The last rule is an interface should not depend on concrete implementations to avoid coupling them to another class.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;images/posts/dependency-inversion-principle/abstraction-should-not-use-concrete-class.svg&quot; alt=&quot;Dependency Inversion Principle: abstraction should-not use concrete class&quot; /&gt;&lt;/p&gt;
+</description>
+            <pubDate>Mon, 26 Feb 2024 00:00:00 -0600</pubDate>
+            <link>https://arnolanglade.github.io/solid-dependency-inversion-principle.html?s=feed</link>
+            <guid isPermaLink="true">https://arnolanglade.github.io/solid-dependency-inversion-principle.html</guid>
+            
+            <category>OOP</category>
+            
+            <category>SOLID</category>
+            
+            
+        </item>
         
         <item>
             <title>How I built MikadoApp, an open-source application for the Mikado Method</title>

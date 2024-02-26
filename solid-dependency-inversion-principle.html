@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Why you should not expose objects' state to test them</title>
-  <meta name='description' content='Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not ha...'>
-  <meta name="keywords" content="software,testing,unit test,oop,encapsulation,ask don't tell">
-  <link rel="canonical" href="https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html">
+  <title>SOLID principles: Understanding the dependency inversion principle</title>
+  <meta name='description' content='Explore the Dependency Inversion Principle (DIP), a key SOLID principle in object-oriented programming (OOP). Learn how to enhance code modularity, flexibili...'>
+  <meta name="keywords" content="SOLID principles,Dependency Inversion Principle,DIP,Object-Oriented Programming,OOP, Abstractions, Interfaces, Dependency Injection">
+  <link rel="canonical" href="https://arnolanglade.github.io/solid-dependency-inversion-principle.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why you should not expose objects' state to test them – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta name="twitter:description" content="Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.">
-  <meta name="twitter:image:src" content="https://arnolanglade.github.io/test-comparison.webp">
+  <meta name="twitter:title" content="SOLID principles: Understanding the dependency inversion principle – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta name="twitter:description" content="Explore the Dependency Inversion Principle (DIP), a key SOLID principle in object-oriented programming (OOP). Learn how to enhance code modularity, flexibility, and maintainability by decoupling high-level and low-level modules.">
+  <meta name="twitter:image:src" content="https://arnolanglade.github.io/dependency-inversion-principle/dependency-inversion-principle.webp">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Why you should not expose objects' state to test them – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
-  <meta property="og:description" content="Exposing the object's state to test them is not a good idea. Comparing object instances is better because it avoids breaking encapsulation and it does not have any impact on their design.">
-  <meta property="og:image" content="https://arnolanglade.github.io/test-comparison.webp">
+  <meta property="og:title" content="SOLID principles: Understanding the dependency inversion principle – Arnaud Langlade - Senior software engineer, software architect, and technical coach">
+  <meta property="og:description" content="Explore the Dependency Inversion Principle (DIP), a key SOLID principle in object-oriented programming (OOP). Learn how to enhance code modularity, flexibility, and maintainability by decoupling high-level and low-level modules.">
+  <meta property="og:image" content="https://arnolanglade.github.io/dependency-inversion-principle/dependency-inversion-principle.webp">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -197,7 +197,7 @@
       
       <div class="col col-6 col-d-12">
         <div class="post-image">
-          <img loading="lazy" src="/images/posts/test-comparison.webp" alt="Why you should not expose objects' state to test them">
+          <img loading="lazy" src="/images/posts/dependency-inversion-principle/dependency-inversion-principle.webp" alt="SOLID principles: Understanding the dependency inversion principle">
         </div>
       </div>
       
@@ -208,23 +208,23 @@
           
           <div class="post-tags">
             
-              <a href="/tag/testing" class="post-tags__tag">testing</a>
-            
               <a href="/tag/oop" class="post-tags__tag">OOP</a>
+            
+              <a href="/tag/solid" class="post-tags__tag">SOLID</a>
             
           </div>
           
 
-          <h1 class="post__title">Why you should not expose objects&#39; state to test them</h1>
+          <h1 class="post__title">SOLID principles: Understanding the dependency inversion principle</h1>
 
           <div class="post__meta">
             <div class="post__meta-bottom">
-              <time class="post__date" datetime="2021-04-13T00:00:00-05:00">
-                13 Apr 2021
+              <time class="post__date" datetime="2024-02-26T00:00:00-06:00">
+                26 Feb 2024
               </time>
               
               <p class="post__image-credit">
-                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@jdent">@jdent</a>
+                Picture: <a class="post__image-credit-link" href="https://unsplash.com/@gndclouds">@gndclouds</a>
               </p>
               
             </div>
@@ -241,53 +241,47 @@
   <article class="post">
 
     <div class="post__content">
-      <p>To introduce this topic, let’s have a look at the PHP documentation to understand how object comparison works using the comparison and identity operators.</p>
+      <p>The dependency inversion principle (DIP) is one of the SOLID principles. It is a crucial concept in object-oriented programming (OOP) because it highlights the importance of decoupling high-level modules from low-level modules. It helps to make code more modular, flexible, and maintainable by ensuring that high-level modules depend on abstractions rather than concrete implementations. Let’s have a look at the wikipedia definition and understand its meaning:</p>
 
 <blockquote>
-  <p>When using the comparison operator (==), object variables are compared in a simple manner, namely: Two object instances are equal if they have the same attributes and values (values are compared with ==), and are instances of the same class.</p>
+  <p>High-level modules should not import anything from low-level modules. Both should depend on abstractions (e.g., interfaces).
+Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.</p>
 
-  <p>When using the identity operator (===), object variables are identical if and only if they refer to the same instance of the same class.</p>
-
-  <p><a href="https://www.php.net/manual/en/language.oop5.object-comparison.php">PHP documentation </a></p>
+  <p><a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">Wikipedia</a></p>
 </blockquote>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="p">();</span>
-<span class="nv">$otherObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="p">();</span>
+<p>What does it mean exactly? To be compliant with this principle,your code needs to follow three main rules, which we will detail in the next three sections.</p>
 
-<span class="nv">$object</span> <span class="o">==</span> <span class="nv">$otherObject</span> <span class="c1">// true</span>
-<span class="nv">$object</span> <span class="o">===</span> <span class="nv">$otherObject</span> <span class="c1">// false </span>
-</code></pre></div></div>
+<h2 id="rules-1-a-class-should-not-depend-on-another">Rules 1: A class should not depend on another</h2>
 
-<p>I add an <code class="language-plaintext highlighter-rouge">equals</code> method to objects to handle object comparison. The purpose of this method is to compare an object state with another one. In the following example, I use the comparison operator (==) because I want to check if the objects have the same state no matter their references.</p>
+<p>The first one is that a class should not depend on another one to avoid coupling them together. If a class is coupled with another one, it means you won’t be able to use the first one without the second one.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Email</span>
-<span class="p">{</span>
-   <span class="k">private</span> <span class="kt">string</span> <span class="nv">$email</span><span class="p">;</span>
+<p><img src="images/posts/dependency-inversion-principle/concrete-class.svg" alt="Dependency Inversion Principle: Concrete class" /></p>
 
-   <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$email</span><span class="p">)</span>
-   <span class="p">{</span>
-       <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
-   <span class="p">}</span>
+<p>Let’s take an example. The most common example of coupling is when we use the singleton pattern. This pattern allows you to create a unique instance of a class and make it global. It is useful to create a database connection, we don’t need to create it each time we need to query the database.</p>
 
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">Email</span> <span class="nv">$email</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span> <span class="o">==</span> <span class="nv">$email</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">DatabaseConnection</span> <span class="p">{</span>
+   <span class="k">private</span> <span class="k">static</span> <span class="nx">connection</span><span class="p">:</span> <span class="nx">DatabaseConnection</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  
+   <span class="k">public</span> <span class="k">static</span> <span class="nx">getInstance</span><span class="p">():</span> <span class="nx">DatabaseConnection</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nx">DatabaseConnection</span><span class="p">.</span><span class="nx">connection</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nx">DatabaseConnection</span><span class="p">.</span><span class="nx">connection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseConnection</span><span class="p">(</span><span class="cm">/** config */</span><span class="p">);</span>
+       <span class="p">}</span>
+       <span class="k">return</span> <span class="nx">DatabaseConnection</span><span class="p">.</span><span class="nx">connection</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>There is another way to compare object state. Do you know that instances of the same class can access each other’s private members?</p>
+<p>Then we can access it from anywhere in the application when we need to query the database, using the static method called <code class="language-plaintext highlighter-rouge">getInstance</code>.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Email</span>
-<span class="p">{</span>
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">Email</span> <span class="nv">$email</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">email</span> <span class="o">===</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="n">email</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CreateNewProduct</span> <span class="p">{</span>
+   <span class="nx">create</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">DatabaseConnection</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">()</span>
+       <span class="c1">// ...</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-
-<p><strong>Tip:</strong> This is really useful to compare Doctrine entities that have persistent collections. The error <code class="language-plaintext highlighter-rouge">Error: Nesting level too deep - recursive dependency?</code> is raised when we compare entities using the comparison operator (==). You should have a look at this <a href="https://www.richardlord.net/blog/php/php-nesting-level-too-deep-recursive-dependency.html">blog post</a> to understand why this error occured. Accessing private attributes let you use the identity operator (===) to prevent this error.</p>
+<p>I remember using it a lot when I was a junior developer. It seemed powerful because we didn’t need to inject anything. However, the problem with this piece of code is that it couples <code class="language-plaintext highlighter-rouge">CreateNewProduct</code> to <code class="language-plaintext highlighter-rouge">DatabaseConnection</code>. Here, we need a working database to test or run this piece of code. That’s a shame because it avoids quickly checking if the product creation logic works or not.</p>
 
 <div class="training-card">
   <p>
@@ -299,62 +293,70 @@
     and kickstart your journey toward mastering advanced development techniques.
   </p>
   <p class="link">
-    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" target="_blank" onclick="insights.track({id: 'training-link-clicked', parameters: { page: 'Why you should not expose objects' state to test them'}})">
+    <a class="cta-button c-button c-button--primary c-button--small" href="https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd" target="_blank" onclick="insights.track({id: 'training-link-clicked', parameters: { page: 'SOLID principles: Understanding the dependency inversion principle'}})">
       🚀 Start your journey here!
     </a>
   </p>
 </div>
 
-<p>By the way, entities are a bit special because an entity is an object that has an identity. It means that if we want to compare them we should compare their identities instead of their states.</p>
+<h2 id="rule-2-a-class-should-only-depend-on-abstractions">Rule 2: A class should only depend on abstractions</h2>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
-<span class="p">{</span>
-   <span class="k">private</span> <span class="kt">MapId</span> <span class="nv">$mapId</span><span class="p">;</span>
+<p>The second rule is that a class should only depend on abstractions (e.g., interfaces). In OOP, an interface is like a contract. It describes a set of methods that an object needs to implement. This is great because it can be implemented in several ways. It makes your code more modular as you can use a specific implementation depending on the context.</p>
 
-   <span class="k">public</span> <span class="k">function</span> <span class="n">equals</span><span class="p">(</span><span class="kt">MapId</span> <span class="nv">$mapId</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">mapId</span><span class="o">-&gt;</span><span class="nf">equals</span><span class="p">(</span><span class="nv">$mapId</span><span class="p">);</span>
+<p><img src="images/posts/dependency-inversion-principle/use-abstraction.svg" alt="Dependency Inversion Principle: use abstraction" /></p>
+
+<p>Let’s see how an interface can prevent coupling issues between the <code class="language-plaintext highlighter-rouge">CreateNewProduct</code> and the <code class="language-plaintext highlighter-rouge">DatabaseConnection</code> class. First, we will introduce a new interface called <code class="language-plaintext highlighter-rouge">ProductRepository</code> to define how to save a product in the application.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">ProductRepository</span> <span class="p">{</span>
+   <span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then we will create an implementation called <code class="language-plaintext highlighter-rouge">MysqlProductRepository</code> that will be responsible for saving products in a MySQL database.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MysqlProductRepository</span> <span class="k">implements</span> <span class="nx">ProductRepository</span> <span class="p">{</span>
+   <span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">DatabaseConnection</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">()</span>
+       <span class="nx">connection</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">INSERT INTO products ...</span><span class="dl">'</span><span class="p">)</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>I add an extra method called <code class="language-plaintext highlighter-rouge">hasSameState</code> to entities to compare their states because entity state comparison remains really useful for testing.</p>
+<p>Finally, we need to refactor the <code class="language-plaintext highlighter-rouge">CreateNewProduct</code> to remove its dependency on the <code class="language-plaintext highlighter-rouge">DatabaseConnection</code>. We will inject an instance <code class="language-plaintext highlighter-rouge">ProductRepository</code> into the  <code class="language-plaintext highlighter-rouge">CreateNewProduct</code> class to prevent it from being coupled to another class.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">final</span> <span class="kd">class</span> <span class="nc">Map</span>
-<span class="p">{</span>
-   <span class="k">public</span> <span class="k">function</span> <span class="n">hasSameState</span><span class="p">(</span><span class="kt">Map</span> <span class="nv">$map</span><span class="p">):</span> <span class="kt">bool</span>
-   <span class="p">{</span>
-       <span class="k">return</span> <span class="nv">$this</span> <span class="o">==</span> <span class="nv">$map</span><span class="p">;</span>
+<p><strong>Note:</strong> I still use the <code class="language-plaintext highlighter-rouge">DatabaseConnection.getInstance()</code> method to get the database connection to keep the example simple but another way would be to inject the database connection through the MysqlProductRepository constructor.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CreateNewProduct</span> <span class="p">{</span>
+   <span class="kd">constructor</span><span class="p">(</span><span class="nx">productRepository</span><span class="p">:</span> <span class="nx">ProductRepository</span><span class="p">)</span> <span class="p">{}</span>
+    
+   <span class="nx">create</span><span class="p">(</span><span class="nx">product</span><span class="p">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">productRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">product</span><span class="p">)</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>For a long time, I used getters for testing purposes. I only knew this way to ensure objects had the right state.</p>
+<p>By introducing the <code class="language-plaintext highlighter-rouge">ProductRepository</code> interface and using dependency injection, the <code class="language-plaintext highlighter-rouge">CreateNewProduct</code> class becomes more flexible as it works with any implementation of <code class="language-plaintext highlighter-rouge">ProductRepository</code>. If we need to switch from MySQL to PostgreSQL for any reason, we only need to create a new <code class="language-plaintext highlighter-rouge">ProductRepository</code> implementation for PostgreSQL and inject it into <code class="language-plaintext highlighter-rouge">CreateNewProduct</code>. This approach decouples the ``CreateNewProduct` class from a specific database implementation, making it easier to maintain and update the code in the future.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Nantes'</span><span class="p">);</span>
+<p><img src="images/posts/dependency-inversion-principle/use-abstraction-concrete-example.svg" alt="Dependency Inversion Principle: use abstraction concrete example" /></p>
 
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nb">rename</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">);</span>
+<p>Testing chunks of code that interacts with Input/Output (IO) can be challenging, especially when we only want to test the business logic . Now, it is easy to test the product creation because we can replace the mysql repository but a fake one. I’ve written a blog post to explain how the dependency inversion principle can ease testing:</p>
 
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">getName</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">shouldReturn</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">)</span> <span class="p">;</span>
-</code></pre></div></div>
+<div class="post__navigation blog-post-link">
+   <a class="post__prev" href="/ease-testing-thanks-to-the-dependency-inversion-design-pattern.html">
+      <span class="prev__image">
+         <img loading="lazy" src="/images/posts/inversion-dependency/ease-testing-thanks-to-the-dependency-inversion-design-pattern.webp" alt="Ease testing thanks to the dependency inversion design pattern" />
+      </span>
+      <span class="prev__box">
+         <span class="post__nav__title">Ease testing thanks to the dependency inversion design pattern</span>
+      </span>
+   </a>
+</div>
 
-<p>It was a mistake because exposing objects’ state breaks data encapsulation. We should not know how objects work internally, we should only use their public API (public methods) to interact with them. But, if we need to build the <code class="language-plaintext highlighter-rouge">Map</code> object with something else than a string, this assertion will no longer be true. That will break all application tests and parts that use this getter! That’s not great! Object comparison I described previously helps to get rid of getters.</p>
+<h1 id="rule-3-an-interface-should-not-depend-on-concrete-implementations">Rule 3: An interface should not depend on concrete implementations</h1>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Nantes'</span><span class="p">);</span>
+<p>The last rule is an interface should not depend on concrete implementations to avoid coupling them to another class.</p>
 
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nb">rename</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">);</span>
-
-<span class="nv">$map</span><span class="o">-&gt;</span><span class="nf">hasSameState</span><span class="p">(</span><span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">))</span><span class="o">-&gt;</span><span class="nf">shouldReturn</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-</code></pre></div></div>
-
-<p>Now, the <code class="language-plaintext highlighter-rouge">Map</code> object is better designed. Its state is not exposed anymore which improves data encapsulation. It follows the “Tell don’t ask” principle because I don’t need to extract its internal state to test it. I only need to use its public API to check if it meets the business exceptions.</p>
-
-<p><strong>Tip:</strong> If you don’t want or if you can’t add a method to your objects that handles comparison you can still compare their instances to avoid adding getters.</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Assert</span><span class="o">::</span><span class="nf">equals</span><span class="p">(</span><span class="nv">$map</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">(</span><span class="s1">'Best places at Bordeaux'</span><span class="p">));</span>
-</code></pre></div></div>
-
-<p>Thanks to my proofreader <a href="https://www.linkedin.com/in/laurebrosseau">@LaureBrosseau</a>.</p>
+<p><img src="images/posts/dependency-inversion-principle/abstraction-should-not-use-concrete-class.svg" alt="Dependency Inversion Principle: abstraction should-not use concrete class" /></p>
 
     </div>
 
@@ -365,19 +367,19 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Why%20you%20should%20not%20expose%20objects'%20state%20to%20test%20them&url=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html"
+        href="https://twitter.com/intent/tweet?text=SOLID%20principles:%20Understanding%20the%20dependency%20inversion%20principle&url=https://arnolanglade.github.io/solid-dependency-inversion-principle.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://arnolanglade.github.io/solid-dependency-inversion-principle.html"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/you-should-not-expose-objects-state-to-test-them.html&title=Why%20you%20should%20not%20expose%20objects'%20state%20to%20test%20them&summary=Exposing%20the%20object's%20state%20to%20test%20them%20is%20not%20a%20good%20idea.%20Comparing%20object%20instances%20is%20better%20because%20it%20avoids%20breaking%20encapsulation%20and%20it%20does%20not%20have%20any%20impact%20on%20their%20design.&source=Arnaud%20Langlade"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=https://arnolanglade.github.io/solid-dependency-inversion-principle.html&title=SOLID%20principles:%20Understanding%20the%20dependency%20inversion%20principle&summary=Explore%20the%20Dependency%20Inversion%20Principle%20(DIP),%20a%20key%20SOLID%20principle%20in%20object-oriented%20programming%20(OOP).%20Learn%20how%20to%20enhance%20code%20modularity,%20flexibility,%20and%20maintainability%20by%20decoupling%20high-level%20and%20low-level%20modules.&source=Arnaud%20Langlade"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -409,7 +411,7 @@
                 
                 
                   
-                    <a href="/tag/testing" class="section__link related-tag">See all<span> testing</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tag/OOP" class="section__link related-tag">See all<span> OOP</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
                   
@@ -427,16 +429,51 @@
             
 
             
+            
+            
+            
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[0]) -->
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[5]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/solid-dependency-inversion-principle.html">
-        <img loading="lazy" src="/images/posts/dependency-inversion-principle/dependency-inversion-principle.webp" alt="SOLID principles: Understanding the dependency inversion principle">
+      <a class="c-blog-card__image" href="/open-close-principle.html">
+        <img loading="lazy" src="/images/posts/open-close-principle.webp" alt="Open-Closed principle: Enhancing code modularity">
       </a>
     </div>
     
@@ -454,78 +491,16 @@
       
 
       <h2 class="c-blog-card__title">
-        <a href="/solid-dependency-inversion-principle.html">SOLID principles: Understanding the dependency inversion principle</a>
+        <a href="/open-close-principle.html">Open-Closed principle: Enhancing code modularity</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Explore the Dependency Inversion Principle (DIP), a key SOLID principle in object-oriented programming (OOP). Learn how to enhance code modularity, flexibility, and maintainability by decoupling high-level and low-level modules.
+        Unlock the potential of the Open-Closed Principle in programming. Discover how to enhance code modularity and simplify maintenance using this SOLID concept. Learn to reduce complexity and write more flexible code.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2024-02-26T00:00:00-06:00">26 Feb 2024</time></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!--bookshop-live end-->
-
-            
-                
-              
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[2]) -->
-          
-<div class="c-blog-card col col-4 col-d-6 col-t-12">
-  <div class="c-blog-card__inner">
-
-    
-    <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/react-testing-strategy.html">
-        <img loading="lazy" src="/images/posts/react-testing-strategy/react-testing-strategy.webp" alt="Three types of React components for an effective testing strategy">
-      </a>
-    </div>
-    
-
-    <div class="c-blog-card__content">
-
-      
-      <div class="c-blog-card__tags-box">
-        
-        <a href="/tag/react" class="c-blog-card__tag">react</a>
-        
-        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
-        
-      </div>
-      
-
-      <h2 class="c-blog-card__title">
-        <a href="/react-testing-strategy.html">Three types of React components for an effective testing strategy</a>
-      </h2>
-
-      <p class="c-blog-card__excerpt">
-        Discover an effective strategy for testing React components by categorizing them into UI, Business, and Page components. Learn how to organize your codebase to facilitate testing for maintainable code.
-      </p>
-
-      <div class="c-blog-card__meta">
-        <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2024-01-15T00:00:00-06:00">15 Jan 2024</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-11-13T00:00:00-06:00">13 Nov 2023</time></span>
         </div>
       </div>
     </div>
@@ -545,15 +520,15 @@
 
             
 
-            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[3]) -->
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[6]) -->
           
 <div class="c-blog-card col col-4 col-d-6 col-t-12">
   <div class="c-blog-card__inner">
 
     
     <div class="c-blog-card__image-wrap">
-      <a class="c-blog-card__image" href="/test-strategy-i18n-react-application.html">
-        <img loading="lazy" src="/images/posts/test-strategy-i18n-react-application/test-strategy-i18n-react-application.webp" alt="Testing a React application: Secure your tests from internationalization impact">
+      <a class="c-blog-card__image" href="/oop-inheritance-pitfalls.html">
+        <img loading="lazy" src="/images/posts/pitfalls-of-oop-inheritance/pitfalls-of-oop-inheritance.webp" alt="The pitfalls of OOP's inheritance: Why simple isn't always better">
       </a>
     </div>
     
@@ -563,24 +538,77 @@
       
       <div class="c-blog-card__tags-box">
         
-        <a href="/tag/react" class="c-blog-card__tag">react</a>
-        
-        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
         
       </div>
       
 
       <h2 class="c-blog-card__title">
-        <a href="/test-strategy-i18n-react-application.html">Testing a React application: Secure your tests from internationalization impact</a>
+        <a href="/oop-inheritance-pitfalls.html">The pitfalls of OOP's inheritance: Why simple isn't always better</a>
       </h2>
 
       <p class="c-blog-card__excerpt">
-        Learn how to prevent test suite breaks caused by translation changes through an innovative solution, ensuring resilience and flexibility in your testing approach.
+        Discover the complexities of excessive inheritance in object-oriented programming (OOP) and understand why careful consideration is crucial to avoid potential problems and pitfalls.
       </p>
 
       <div class="c-blog-card__meta">
         <div class="c-blog-card__info">
-          <span class="c-blog-card__date"><time datetime="2023-12-11T00:00:00-06:00">11 Dec 2023</time></span>
+          <span class="c-blog-card__date"><time datetime="2023-10-23T00:00:00-05:00">23 Oct 2023</time></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <!--bookshop-live end-->
+
+            
+                
+              
+            
+            
+            
+
+            
+
+            
+
+            <!--bookshop-live name(blog-card/blog-card.jekyll.html) params(post=post) context(post=site.posts[7]) -->
+          
+<div class="c-blog-card col col-4 col-d-6 col-t-12">
+  <div class="c-blog-card__inner">
+
+    
+    <div class="c-blog-card__image-wrap">
+      <a class="c-blog-card__image" href="/why-breaking-encapsulation-is-not-a-good-idea.html">
+        <img loading="lazy" src="/images/posts/why-breaking-encapsulation-is-not-a-good-idea/why-breaking-encapsulation-is-not-a-good-idea.webp" alt="Why breaking encapsulation is not a good idea">
+      </a>
+    </div>
+    
+
+    <div class="c-blog-card__content">
+
+      
+      <div class="c-blog-card__tags-box">
+        
+        <a href="/tag/testing" class="c-blog-card__tag">testing</a>
+        
+        <a href="/tag/oop" class="c-blog-card__tag">OOP</a>
+        
+      </div>
+      
+
+      <h2 class="c-blog-card__title">
+        <a href="/why-breaking-encapsulation-is-not-a-good-idea.html">Why breaking encapsulation is not a good idea</a>
+      </h2>
+
+      <p class="c-blog-card__excerpt">
+        This principle restricts direct access to the state of the object from outside. This means that the internal implementation details of a class are hidden. Accessing the state of the object is only allowed through its public API (public methods). This concept helps to protect the data from outside interference and ensures controlled and secure data manipulation.
+      </p>
+
+      <div class="c-blog-card__meta">
+        <div class="c-blog-card__info">
+          <span class="c-blog-card__date"><time datetime="2023-09-19T00:00:00-05:00">19 Sep 2023</time></span>
         </div>
       </div>
     </div>
