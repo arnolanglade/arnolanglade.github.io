@@ -4,7 +4,7 @@ date: 2022-10-17
 image_credit: thoughtcatalog
 description: "Learning is an important part of our job. It is not that easy when you don’t know where to start, especially if you're self-taught like me. I share what I did to learn software development for the last 15 years in this blog post."
 keywords: "learning,knowledge,software,continuous learning,self taught,mentor,open source,conference,books,burnout,training"
-tags: [learning]
+tags: [mentoring]
 ---
 
 I am, what we call, a self-taught. I studied telecommunications and networks at school, unfortunately, I only learned the basics of programming. I had to learn and improve my skills by myself for many years during my free time. I did not take the easiest path to learn! That’s why I wanted to share with you my own experience and what I did to learn software development. I hope this post will help some of you.
