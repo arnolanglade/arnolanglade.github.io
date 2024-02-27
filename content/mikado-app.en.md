@@ -34,13 +34,13 @@ GitHub.
 
 ## How to use the MikadoApp
 Let’s take an example: MySQL doesn’t match the project's needs; you want to migrate your application to PostgreSQL.
-On the homepage of the Mikado App, enter your objective. Explain what you want to do and click on the “Start” button to begin working.
+On the homepage of the Mikado App, enter your objective. Explain what you want to do and click on the « Start » button to begin working.
 
 {{< image src="/images/project/mikado-app/describe-objective.webp" alt="describe objective" >}}
 
 Then you arrive on the mikado graph page. You can split your objective into small steps called prerequisites. To achieve the database migration, we first need to install the database and  update the repositories due to the usage of SQL queries specific to MySQL.
 
-Click on the 'Add a prerequisite' button to open the prerequisite addition form. Then, describe the actions required to complete the prerequisite. Finally, click on the 'Add' button to add the prerequisite to the Mikado Graph:
+Click on the « Add a prerequisite » button to open the prerequisite addition form. Then, describe the actions required to complete the prerequisite. Finally, click on the « Add » button to add the prerequisite to the Mikado Graph:
 
 {{< image src="/images/project/mikado-app/add-prerequisite.webp" alt="add prerequisite" >}}
 
@@ -48,13 +48,13 @@ You can create as many prerequisites as you want. Don’t forget that small step
 
 {{< image src="/images/project/mikado-app/prerequisite-list.webp" alt="prerequisite list" >}}
 
-After adding prerequisites, select one from the list and click on the “Start exploring” button to start experimenting with things to solve it. The background color of the prerequisite changes to blue, indicating that the prerequisite status is now “Experimenting,” meaning you are actively working on it.
+After adding prerequisites, select one from the list and click on the « Start exploring » button to start experimenting with things to solve it. The background color of the prerequisite changes to blue, indicating that the prerequisite status is now « Experimenting » meaning you are actively working on it.
 
-Now, you have two choices: the first one is to click on the “Add a prerequisite” button to split the prerequisite into smaller steps.
+Now, you have two choices: the first one is to click on the « Add a prerequisite » button to split the prerequisite into smaller steps.
 
 {{< image src="/images/project/mikado-app/prequisite-buble.webp" alt="prequisite buble" >}}
 
-The second option is to click on 'Commit your changes' when you finish it and proceed to the next one on the list.
+The second option is to click on « Commit your changes » when you finish it and proceed to the next one on the list.
 
 {{< image src="/images/project/mikado-app/prerequisite-completed.webp" alt="prerequisite completed" >}}
 
