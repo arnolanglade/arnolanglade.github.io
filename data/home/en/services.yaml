@@ -5,39 +5,56 @@ content:
   - image:
       src: "portfolio-ecommerce.png"
       alt: ""
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+    title: "Looking for seasoned guidance on your projects? "
+    text: |
+      With 15 years as a software engineer, I've collaborated with industry leaders like Royal Canin (a Mars Group company), Prisma Media, Sud Ouest Group, and innovative startups such as Akeneo, Convelio, and Sunday. My priority? Delivering real value to end users.
+  
+      I believe in the power of understanding business needs over chasing the latest tech trends. My approach centers on identifying the most pragmatic solutions, quickly moving to production to gather user feedback. Feedback is crucial in software development, it ensures we make the
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Hire me"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+      - label: "Lean more about me"
+        url: "/about-me"
 
   - image:
       src: "portfolio-ecommerce.png"
       alt: ""
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+    title: "Looking to boost your team's skills or shift their mindset? "
+    text: |
+      Are persistent bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
+  
+      As a Technical Coach, I can help your teams grow, enhancing their efficiency and productivity. I'm passionate about sharing my expertise in software craftsmanship and helping the individuals I collaborate with to progress.
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Hire me"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+      - label: "My talks"
+        url: "/talks"
+
+      - label: "My blog"
+        url: "/blog"
 
   - image:
       src: "portfolio-ecommerce.png"
       alt: ""
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+    title: "Looking for solutions to scale faster than your competitor ?"
+    text: |
+      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests scalability issues within your architecture.
+  
+      I've worked for several startups, so I'm familiar with this problem. As software architect, I can help you build solid software foundations and organize your teams to enable faster feature delivery.
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Hire me"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+  - image:
+      src: "portfolio-ecommerce.png"
+      alt: ""
+    title: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
+    text: |
+      Often find yourself shipping products that don't meet business expectations? As Alberto Brandolini said :  “It's not stakeholder knowledge but developers' ignorance that gets deployed into production.”
+  
+      To bridge this gap, I can organize and lead event storming and example mapping workshops. These sessions are designed to bring technical and non-technical stakeholders together in one room to facilitate discussion. Event storming helps to grasp the global picture and start thinking about the software design, while example mapping helps to clarify user stories.
+    buttons:
+      - label: "Hire me"
+        url: "hire-me"
