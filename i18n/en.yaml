@@ -2,7 +2,7 @@ home:
   section:
     me:
       title: "Hi there, I am **Arnaud!**"
-      text: "I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further»"
+      text: "With 15 years of software engineering experience, I've worked with a wide range of companies, from small to large ones. How can I help you? As a Technical Coach, I'm here to help your teams grow, enhancing their efficiency and productivity. My expertise as a Software Architect allows me to build strong software foundations, accelerating the delivery of new features."
       buttonPrimary: "Hire me"
       buttonSecondary: "About me"
     testimonials:
@@ -13,8 +13,6 @@ home:
     hire-me:
       title: "Let's move your projects forward, let's discuss it together!"
       button: "Let's talk"
-  footer:
-    social: "Follow me on social networks, I share a lot of things about software development, and more."
 
 blog:
   button:
@@ -33,9 +31,10 @@ post:
       Discover the power of **Hexagonal Architecture** and **DDD** to build robust and sustainable Symfony applications. Join me and kickstart your journey toward mastering advanced development techniques.
     button: 🚀 Start your journey here!
   about:
-    title: "Hello I'am Arnaud"
-    text: "I love sharing my knowledge about software engineering such as architectural design patterns, software testing, methodologies and so on. Follow me on social networks, I share a lot of things about software development, and more."
-
+    title: "Hello I'am Arnaud!"
+    intro: "I'm a technical coach and software architect passionate about sharing my knowledge of software engineering. From architectural design patterns to software testing and various methodologies, I cover it all!"
+    link: "Learn more about me"
+    social-media: "Join me on social media where I share insights on software development and much more."
 talks:
   video: "Watch the video"
   slides:
@@ -52,3 +51,9 @@ newsletter:
 footer:
   links: "Learn more"
   newsletter: "Subscribe to my newsletter"
+  social: "Join me on social media where I share insights on software development and much more."
+
+hire-me:
+  email: "Contact me at contact@arnaudlanglade.com"
+  social-media: "Or on social media:"
+  form: "Or, use the form below ;)"

@@ -1,5 +1,5 @@
 ---
-title: "Hire me"
+title: "Would you like to discuss your project? "
 slug: "hire-me"
 aliases: ["contact", "contact-me", "work-with-me"]
 description: ""

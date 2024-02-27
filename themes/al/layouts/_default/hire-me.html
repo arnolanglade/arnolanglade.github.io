@@ -7,10 +7,20 @@
           {{ partial "asset-image" (dict "src" "hire-me.png" "alt" "Arnaud Langlade" "size" "600x") }}
         </div>
       </div>
-      <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
         {{ with .Title }}
-        <h1 class="page-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ . }}</h1>
+        <h1 class="page-title display-1 fw-bold text-primary pb-4 mb-xl-0 w-100">{{ . }}</h1>
         {{ end }}
+        <p class="text-light">
+          {{ i18n "hire-me.email" | markdownify }}
+        </p>
+        <p class="text-light">
+          {{ i18n "hire-me.social-media" | markdownify }}
+          {{ partial "social-media-link" . }}
+        </p>
+        <p class="text-light">
+          {{ i18n "hire-me.form" | markdownify }}
+        </p>
       </div>
     </div>
   </div>
