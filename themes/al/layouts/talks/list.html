@@ -7,9 +7,12 @@
           {{ partial "asset-image" (dict "src" "me/sunny-tech.jpg" "alt" "Arnaud Langlade" "size" "600x") }}
         </div>
       </div>
-      <div class="post-header-left col-xl-6 col-12 d-flex align-items-center">
+      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
         {{ with .Title }}
-        <h1 class="page-title display-1 fw-bold text-primary mt-5 mb-xl-0 w-100">{{ . }}</h1>
+        <h1 class="page-title display-1 fw-bold text-primary pb-4 mb-xl-0 w-100">{{ . }}</h1>
+        {{ end }}
+        {{ with .Description }}
+        <p class="text-light">{{ . }}</p>
         {{ end }}
       </div>
     </div>
