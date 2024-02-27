@@ -1,6 +1,6 @@
 ---
 title: "Ils ont aimé travaillé avec moi"
-slug: "temoignages"
+slug: "testimonials"
 description: ""
 layout: "testimonials"
 menus:

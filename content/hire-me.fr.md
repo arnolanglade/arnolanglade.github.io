@@ -1,7 +1,7 @@
 ---
 title: "Travaillons ensemble"
-slug: "travaillons-ensemble"
-aliases: ["contact", "contactez-moi"]
+slug: "hire-me"
+aliases: ["contact", "contact-me", "work-with-me"]
 description: ""
 hire_me: false
 layout: "hire-me"

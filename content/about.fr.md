@@ -1,6 +1,6 @@
 ---
 title: "A propos de moi"
-slug: "a-propos-de-moi"
+slug: "about-me"
 description: ""
 menu:
   - footer
