@@ -6,6 +6,7 @@ keywords: "arnaud langlade,langlade,ingénieur logiciel,architecte,coach techniq
 menus:
   main:
     name: "Blog"
+    weight: 3
   footer:
     name: "Blog"
     weight: 5

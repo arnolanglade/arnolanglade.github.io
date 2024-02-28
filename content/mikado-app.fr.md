@@ -8,6 +8,7 @@ image:
 menus:
   main:
     name: "MikadoApp"
+    weight: 5
   footer:
     name: "MikadoApp"
 ---

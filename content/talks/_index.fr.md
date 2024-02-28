@@ -4,6 +4,9 @@ description: Hi, I'm Arnaud, a technical coach and software architect. I love sh
 slug: "conferences"
 author: "Arnaud Langlade"
 menus:
+  main:
+    weight: 4
+    name: "Conférences"
   footer:
     weight: 3
 ---
