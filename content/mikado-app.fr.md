@@ -1,5 +1,5 @@
 ---
-title: "The MikadoApp"
+title: "La MikadoApp"
 slug: "mikadao-app"
 description: ""
 image:
@@ -23,7 +23,7 @@ Cette méthode simplifie le refactoring. Vous pouvez améliorer continuellement 
 
 Pour plus d'informations, jetez un œil à mon article de blog sur la [Méthode Mikado](/mikado-method.html)
 
-## Essayez l'appli Mikado
+## Essayez la MikadoApp
 
 Essayez l'application Mikado en ligne. Pour le moment, je n'utilise que le plan gratuit de Vercel, ce qui signifie que l'application peut être lente.
 
@@ -34,7 +34,7 @@ GitHub.
 
 {{<external-link href="https://github.com/arnolanglade/mikado-app" label="Sources sur GitHub" >}}
 
-## Comment utiliser l'appli Mikado
+## Comment utiliser la MikadoApp
 
 Prenons un exemple : MySQL ne correspond pas aux besoins du projet ; vous voulez migrer votre application vers PostgreSQL.
 
