@@ -6,4 +6,5 @@ layout: "testimonials"
 menus:
   footer:
     name: "Testimonials"
+    weight: 4
 ---

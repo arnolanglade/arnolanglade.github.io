@@ -8,4 +8,5 @@ menus:
     name: "Blog"
   footer:
     name: "Blog"
+    weight: 5
 ---

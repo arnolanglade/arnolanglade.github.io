@@ -2,8 +2,9 @@
 title: "A propos de moi"
 slug: "about-me"
 description: ""
-menu:
-  - footer
+menus:
+  footer:
+    weight: 2
 image:
   src: "me/voyage.jpg"
   alt: "Arnaud Langlade"
