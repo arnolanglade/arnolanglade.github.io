@@ -1,5 +1,22 @@
 .section.blog-list {
   .pagination {
     justify-content: center;
+    background-color: $dark;
+  }
+}
+.pagination {
+  justify-content: center;
+  .page-item.active .page-link {
+    border-color: $dark;
+    color: $dark;
+  }
+  .page-link {
+
+    color: $dark;
+    border-color: $dark;
+  }
+  .page-item.disabled .page-link {
+
+    border-color: $dark;
   }
 }
