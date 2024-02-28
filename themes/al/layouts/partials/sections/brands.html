@@ -1,17 +1,17 @@
-<section class="section brands py-5">
+<section class="section bg-dark brands py-5">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="fs-5 fw-semibold text-dark text-center pb-4">
+        <h2 class="fs-5 fw-semibold text-center pb-4 text-light">
           {{ i18n "home.section.brands.title" }}
         </h2>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row">
       {{ range .content.items }}
-      <div class="col px-3 my-2 text-center d-flex align-items-center">
+      <div class="col px-3 my-2 text-center d-flex align-items-center justify-content-center">
         {{ $src := (printf "%s%s" "brand/" .src ) }}
-        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "180x") }}
+        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "x60" "class" "") }}
       </div>
       {{ end }}
     </div>
