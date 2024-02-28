@@ -4,17 +4,22 @@ id: "brands"
 content:
   items:
     akeneo:
-      src: "akeneo-2.png"
+      src: "akeneo.png"
       alt: "Akeneo"
+      weight: 1
     sunday:
       src: "sunday.jpg"
       alt: "Sunday"
+      weight: 2
     royal-canin:
-      src: "royal-canin-2.png"
+      src: "royal-canin.png"
       alt: "Royal Canin"
+      weight: 5
     sud-ouest:
       src: "sud-ouest.jpg"
       alt: "Sud Ouest"
+      weight: 4
     iogk:
       src: "iogk.png"
       alt: "IOGK"
+      weight: 3

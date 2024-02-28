@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      {{ range .content.items }}
+      {{ range sort (.content.items) "weight" "asc" }}
       <div class="col px-3 my-2 text-center d-flex align-items-center justify-content-center">
         {{ $src := (printf "%s%s" "brand/" .src ) }}
         {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "x60" "class" "") }}
