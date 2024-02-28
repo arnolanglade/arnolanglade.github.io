@@ -4,12 +4,12 @@ id: "portfolio"
 content:
   - image:
       src: "seasoned-guidance-on-your-projects.png"
-      alt: "Looking for seasoned guidance on your projects"
-    title: "Looking for seasoned guidance on your projects? "
+      alt: "Looking for technical expert on your projects?"
+    title: "Looking for technical expert on your projects?"
     text: |
-      With 15 years as a software engineer, I've collaborated with industry leaders like Royal Canin (a Mars Group company), Prisma Media, Sud Ouest Group, and innovative startups such as Akeneo, Convelio, and Sunday. My priority? Delivering real value to end users.
+      With 15 years as a software engineer, I've collaborated with large companies like Royal Canin (a Mars Group company), Prisma Media, Sud Ouest Group, and innovative startups such as Akeneo, Convelio, and Sunday. My priority? Delivering real value to end users.
   
-      I believe in the power of understanding business needs over chasing the latest tech trends. My approach centers on identifying the most pragmatic solutions, quickly moving to production to gather user feedback. Feedback is crucial in software development, it ensures we make the
+      I believe in the power of understanding business needs over chasing the latest tech trends. I focus on finding the most pragmatic solutions to quickly ship them to production and collect user feedback.. Feedback is crucial in software development, it ensures we make the right decisions.
     buttons:
       - label: "Need an expert? Hire me!"
         url: "hire-me"
@@ -19,10 +19,10 @@ content:
 
   - image:
       src: "boost-your-team-skills-or-shift-their-mindset.png"
-      alt: "Looking to boost your team's skills or shift their mindset"
-    title: "Looking to boost your team's skills or shift their mindset? "
+      alt: "Looking to boost your team's skills or shift their mindset?"
+    title: "Looking to boost your team's skills or shift their mindset?"
     text: |
-      Are persistent bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
+      Are bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
   
       As a Technical Coach, I can help your teams grow, enhancing their efficiency and productivity. I love sharing my knowledge on software craftsmanship and helping the individuals I collaborate with to progress.
     buttons:
@@ -34,10 +34,10 @@ content:
 
   - image:
       src: "scale-faster-than-your-competitor.png"
-      alt: "Looking for solutions to scale faster than your competitor"
+      alt: "Looking for solutions to scale faster than your competitor?"
     title: "Looking for solutions to scale faster than your competitor?"
     text: |
-      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests scalability issues within your architecture.
+      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests architecture issues within your application.      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests scalability issues within your architecture.
   
       I've worked for several startups, so I'm familiar with this problem. As software architect, I can help you build solid software foundations and organize your teams to enable faster feature delivery.
     buttons:
@@ -49,10 +49,10 @@ content:
 
   - image:
       src: "bridge-the-gap-between-your-ech-and-non-tech-team-members.png"
-      alt: "Looking for solutions to bridge the gap between your tech and non-tech team members"
+      alt: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
     title: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
     text: |
-      Often find yourself shipping products that don't meet business expectations? As Alberto Brandolini said :  “It's not stakeholder knowledge but developers' ignorance that gets deployed into production.”
+      Often find yourself shipping features that don't meet business expectations? As Alberto Brandolini said :  “It's not stakeholder knowledge but developers' ignorance that gets deployed into production.”
   
       To bridge this gap, I can organize and lead event storming and example mapping workshops. These sessions are designed to bring technical and non-technical stakeholders together in one room to facilitate discussion. Event storming helps to grasp the global picture and start thinking about the software design, while example mapping helps to clarify user stories.
     buttons:

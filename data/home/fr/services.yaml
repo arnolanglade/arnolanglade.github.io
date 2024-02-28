@@ -3,41 +3,61 @@ id: "portfolio"
 
 content:
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
-    title: "We developed an eCommerce website fr"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+      src: "seasoned-guidance-on-your-projects.png"
+      alt: "Vous êtes à la recherche d’un expert technique pour vos projets ?"
+    title: "LVous êtes à la recherche d’un expert technique pour vos projets ?"
+    text: |
+      Fort de 15 ans d'expérience en tant qu'ingénieur logiciel, j'ai collaboré avec de grandes entreprises telles que Royal Canin (une entreprise du groupe Mars), Prisma Media, le Groupe Sud Ouest, ainsi qu'avec des startups innovantes comme Akeneo, Convelio et Sunday. Ma priorité ? Apporter une réelle valeur aux utilisateurs finaux.
+      
+      Je crois en l'importance de comprendre les besoins métier plutôt que de courir après les dernières technologies à la mode. Je me concentre sur la recherche des solutions les plus pragmatiques pour les mettre rapidement en production et recueillir les retours des utilisateurs. Les retours sont cruciaux dans le développement logiciel, ils garantissent que nous prenons les bonnes décision
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Besoin d'un expert ? Engagez-moi !"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+      - label: "En savoir plus sur moi"
+        url: "/about-me"
 
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+      src: "boost-your-team-skills-or-shift-their-mindset.png"
+      alt: "Vous cherchez à booster les compétences ou à transformer leur état d'esprit de votre équipe ?"
+    title: "Vous cherchez à booster les compétences ou à transformer leur état d'esprit de votre équipe ?"
+    text: |
+      Des mauvaises habitudes freinent-elles vos capacités de livraison ? Si vous souhaitez du changement mais que les discussions se transforment toujours en débats sans fin, faire appel à un facilitateur externe peut parfois faire toute la différence.
+      
+      En tant que Coach Technique, je peux aider vos équipes à progresser, en améliorant leur efficacité et leur productivité. J'adore partager mes connaissances sur l'artisanat logiciel et aider les personnes avec lesquelles je collabore à progresser.
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Besoin d'un coach ? Engagez-moi !"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+      - label: "En savoir plus sur moi"
+        url: "/about-me"
 
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
+      src: "scale-faster-than-your-competitor.png"
+      alt: "Vous cherchez des solutions pour accélérer votre croissance face à la concurrence ?"
+    title: "Vous cherchez des solutions pour accélérer votre croissance face à la concurrence ?"
+    text: |
+      Vous ajoutez des dizaines et des dizaines d'ingénieurs mais vous ne vous livrez pas encore assez vite ? Embaucher simplement plus de personnes n'est pas la solution pour passer à l’échelle. Lorsqu'un ingénieur met à jour une partie de l'application et que cela affecte une autre, cela suggère des problèmes d'architecture au sein de votre application.
+      
+      J'ai travaillé pour plusieurs startups, donc je connais bien ces problèmes. En tant qu'architecte logiciel, je peux vous aider à construire des fondations logicielles solides et à organiser vos équipes pour permettre une livraison de fonctionnalités plus rapide.
     buttons:
-      - label: "See live"
-        url: "#"
+      - label: "Besoin d'un architecte ? Engagez-moi !"
+        url: "hire-me"
 
-      - label: "Read more"
-        url: "#"
+      - label: "En savoir plus sur moi"
+        url: "/about-me"
+
+  - image:
+      src: "bridge-the-gap-between-your-ech-and-non-tech-team-members.png"
+      alt: "Vous cherchez des solutions pour combler le fossé entre vos équipes techniques et non techniques ?"
+    title: "Vous cherchez des solutions pour combler le fossé entre vos équipes techniques et non techniques ?"
+    text: |
+      Vous vous retrouvez souvent à livrer des produits qui ne répondent pas aux attentes métier ? Comme l'a dit Alberto Brandolini : "Ce n'est pas la connaissance des parties prenantes mais l'ignorance des développeurs qui est déployée en production."
+  
+      Pour combler ce fossé, je peux organiser et animer des ateliers d'event storming et d’example mapping. Ces sessions sont conçues pour réunir dans une même salle les personnes techniques et non techniques afin de faciliter la discussion. L'event storming aide à saisir l'image globale et à commencer à réfléchir à la conception du logiciel, tandis que l'example mapping aide à clarifier les user stories.
+    buttons:
+      - label: "Besoin d'un facilitateur ? Engagez-moi !"
+        url: "hire-me"
+
+      - label: "En savoir plus sur moi"
+        url: "/about-me"
