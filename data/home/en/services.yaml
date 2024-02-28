@@ -3,8 +3,8 @@ id: "portfolio"
 
 content:
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
+      src: "seasoned-guidance-on-your-projects.png"
+      alt: "Looking for seasoned guidance on your projects"
     title: "Looking for seasoned guidance on your projects? "
     text: |
       With 15 years as a software engineer, I've collaborated with industry leaders like Royal Canin (a Mars Group company), Prisma Media, Sud Ouest Group, and innovative startups such as Akeneo, Convelio, and Sunday. My priority? Delivering real value to end users.
@@ -17,9 +17,14 @@ content:
       - label: "Lean more about me"
         url: "/about-me"
 
+      - label: "My talks"
+        url: "/talks"
+
+      - label: "My blog"
+        url: "/blog"
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
+      src: "boost-your-team-skills-or-shift-their-mindset.png"
+      alt: "Looking to boost your team's skills or shift their mindset"
     title: "Looking to boost your team's skills or shift their mindset? "
     text: |
       Are persistent bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
@@ -29,6 +34,9 @@ content:
       - label: "Hire me"
         url: "hire-me"
 
+      - label: "Lean more about me"
+        url: "/about-me"
+
       - label: "My talks"
         url: "/talks"
 
@@ -36,9 +44,9 @@ content:
         url: "/blog"
 
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
-    title: "Looking for solutions to scale faster than your competitor ?"
+      src: "scale-faster-than-your-competitor.png"
+      alt: "Looking for solutions to scale faster than your competitor"
+    title: "Looking for solutions to scale faster than your competitor?"
     text: |
       Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests scalability issues within your architecture.
   
@@ -47,9 +55,12 @@ content:
       - label: "Hire me"
         url: "hire-me"
 
+      - label: "Lean more about me"
+        url: "/about-me"
+
   - image:
-      src: "portfolio-ecommerce.png"
-      alt: ""
+      src: "bridge-the-gap-between-your-ech-and-non-tech-team-members.png"
+      alt: "Looking for solutions to bridge the gap between your tech and non-tech team members"
     title: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
     text: |
       Often find yourself shipping products that don't meet business expectations? As Alberto Brandolini said :  “It's not stakeholder knowledge but developers' ignorance that gets deployed into production.”
@@ -58,3 +69,6 @@ content:
     buttons:
       - label: "Hire me"
         url: "hire-me"
+
+      - label: "Lean more about me"
+        url: "/about-me"
