@@ -1,6 +1,6 @@
 {{ with site.GetPage (.Get "page")}}
 <div class="text-center">
-  <a class="btn btn-primary text-dark p-3 my-3" href="{{ .Permalink }}">
+  <a class="btn btn-primary text-dark fw-bold p-3 my-3" href="{{ .Permalink }}">
     <div class="row">
       <div class="col-3 text-start d-flex align-items-center">
         {{ partial "content-image" (dict "context" . "src" "post-header" "alt" .Title "size" "140x webp") }}
