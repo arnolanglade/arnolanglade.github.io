@@ -1,14 +1,14 @@
-<section class="section portfolio mt-4">
+<section class="section portfolio my-5">
   <div class="container">
     {{ range .content }}
     <div class="row portfolio-feature">
-      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
+      <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
         {{ with .image }}
         {{ $src := printf "service/%s" .src }}
-        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "600x") }}
+        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "530x") }}
         {{ end }}
       </div>
-      <div class="col-12 col-xl-6 d-flex flex-column justify-content-center">
+      <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         {{ with .pretitle }}
           <p class="text-danger fw-semibold mb-2">{{ . | markdownify }}</p>
         {{ end }}
@@ -20,10 +20,10 @@
         {{ end }}
         <div class="">
           {{ range .buttons | first 1 }}
-            <a class="btn btn-primary text-decoration-none me-3" href="{{ .url }}">{{ .label }}</a>
+            <a class="btn btn-primary text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
           {{ end }}
           {{ range .buttons | after 1 }}
-            <a class="btn btn-outline-dark text-decoration-none me-3" href="{{ .url }}">{{ .label }}</a>
+            <a class="btn btn-outline-dark text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
           {{ end }}
         </div>
       </div>

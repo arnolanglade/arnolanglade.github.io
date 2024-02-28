@@ -11,17 +11,12 @@ content:
   
       I believe in the power of understanding business needs over chasing the latest tech trends. My approach centers on identifying the most pragmatic solutions, quickly moving to production to gather user feedback. Feedback is crucial in software development, it ensures we make the
     buttons:
-      - label: "Hire me"
+      - label: "Need an expert? Hire me!"
         url: "hire-me"
 
       - label: "Lean more about me"
         url: "/about-me"
 
-      - label: "My talks"
-        url: "/talks"
-
-      - label: "My blog"
-        url: "/blog"
   - image:
       src: "boost-your-team-skills-or-shift-their-mindset.png"
       alt: "Looking to boost your team's skills or shift their mindset"
@@ -29,19 +24,13 @@ content:
     text: |
       Are persistent bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
   
-      As a Technical Coach, I can help your teams grow, enhancing their efficiency and productivity. I'm passionate about sharing my expertise in software craftsmanship and helping the individuals I collaborate with to progress.
+      As a Technical Coach, I can help your teams grow, enhancing their efficiency and productivity. I love sharing my knowledge on software craftsmanship and helping the individuals I collaborate with to progress.
     buttons:
-      - label: "Hire me"
+      - label: "Need a coach? Hire me!"
         url: "hire-me"
 
       - label: "Lean more about me"
         url: "/about-me"
-
-      - label: "My talks"
-        url: "/talks"
-
-      - label: "My blog"
-        url: "/blog"
 
   - image:
       src: "scale-faster-than-your-competitor.png"
@@ -52,7 +41,7 @@ content:
   
       I've worked for several startups, so I'm familiar with this problem. As software architect, I can help you build solid software foundations and organize your teams to enable faster feature delivery.
     buttons:
-      - label: "Hire me"
+      - label: "Need an architect? Hire me!"
         url: "hire-me"
 
       - label: "Lean more about me"
@@ -67,7 +56,7 @@ content:
   
       To bridge this gap, I can organize and lead event storming and example mapping workshops. These sessions are designed to bring technical and non-technical stakeholders together in one room to facilitate discussion. Event storming helps to grasp the global picture and start thinking about the software design, while example mapping helps to clarify user stories.
     buttons:
-      - label: "Hire me"
+      - label: "Need a facilitator? Hire me!"
         url: "hire-me"
 
       - label: "Lean more about me"
