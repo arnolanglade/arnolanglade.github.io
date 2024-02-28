@@ -34,7 +34,7 @@ post:
     button: 🚀 Commencez votre voyage ici !
   about:
     title: "Bonjour, Je suis Arnaud!"
-    intro: "Je suis coach technique et architecte logiciel. J'aime partager de mes connaissances en ingénierie logicielle. Des patterns architecturaux aux tests logiciels en passant par différentes méthodologies, je couvre tout !"
+    intro: "Je suis coach technique et architecte logiciel. Mon objectif est de rendre les concepts logiciels complexes accessibles et intéressants pour tous."
     link: "En savoir plus sur moi"
     social-media: "Rejoignez-moi sur les réseaux sociaux où je partage sur le développement logiciel et bien plus."
 
