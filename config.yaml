@@ -22,7 +22,7 @@ languages:
     menus:
       main:
         - name: "Training"
-          url: ""
+          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
           weight: 2
       buttons:
         - name: "Hire me"
@@ -31,7 +31,7 @@ languages:
           pre: "btn btn-primary text-light"
       footer:
         - name: "Training"
-          url: ""
+          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
           weight: 2
 
     params:
@@ -49,7 +49,7 @@ languages:
     menus:
       main:
         - name: "Formation"
-          url: ""
+          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
           weight: 2
       buttons:
         - name: "Travaillons ensemble"
@@ -58,7 +58,7 @@ languages:
           pre: "btn btn-primary text-light"
       footer:
         - name: "Formation"
-          url: ""
+          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
           weight: 2
     params:
       title: "Arnaud Langlade - Ingénieur logiciel senior, architecte logiciel et coach technique"
