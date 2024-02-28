@@ -35,6 +35,10 @@
     <div class="row g-4 pb-3">
       {{ range (.Paginate .RegularPages).Pages }}
         {{ partial "blog-post-card.html" . }}
+      {{ else }}
+      <p class="text-center fs-3">
+        Les post en français arrivent bientôt !
+      </p>
       {{ end }}
     </div>
     <div class="row mt-3">
