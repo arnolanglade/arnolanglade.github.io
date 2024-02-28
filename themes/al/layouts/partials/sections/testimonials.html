@@ -1,8 +1,8 @@
-<section class="section testimonials py-5">
+<section class="section testimonials bg-dark py-5">
   <div class="container">
     <div class="row pb-5">
       <div class="col-12">
-          <h2 class="fs-1 fw-bold text-center text-dark">
+          <h2 class="fs-1 fw-bold text-center text-light">
             {{ i18n "home.section.testimonials.title" | markdownify }}
           </h2>
       </div>
@@ -10,8 +10,7 @@
     <div class="row">
       {{ range $i, $e := first 1 .content.list }}
       <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-        {{ partial "asset-image" (dict "src" "testimonial/testimonial-awards.png" "alt" "" "size" "600x") }}
-
+        {{ partial "asset-image" (dict "src" "testimonial/testimonial-awards.png" "alt" "" "size" "500x") }}
       </div>
       <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         <div class="pb-2">
@@ -33,7 +32,7 @@
       </div>
       {{ end }}
     </div>
-    <div class="row">
+    <div class="row mt-5">
       {{ range $i, $e :=  first 3 (after 1 .content.list) }}
       <div class="col-12 col-xl-4">
         <div class="card px-1 py-4 h-100 border-0">
@@ -69,7 +68,7 @@
       {{ end }}
     </div>
     <div class="row">
-      <a class="btn btn-outline-dark mx-auto w-auto mt-4 px-5" href="{{ "testimonials" | relLangURL }}">
+      <a class="btn btn-primary mx-auto w-auto mt-5 px-5" href="{{ "testimonials" | relLangURL }}">
         {{ i18n "home.section.testimonials.button" | markdownify }}
         <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
       </a>
