@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
-        <h4 class="fs-5 fw-semibold text-uppercase text-primary mb-2">{{ .Site.Title }}</h4>
+        <h3 class="fs-5 fw-semibold text-uppercase text-primary mb-2">{{ .Site.Title }}</h3>
         <p class="small text-light mb-0">{{ i18n "footer.social" }}</p>
         {{ partial "social-media-link" . }}
       </div>
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
-        <h5 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.links" }}</h5>
+        <h3 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.links" }}</h3>
         <ul class="list-unstyled row">
           {{ range .Site.Menus.footer }}
             <li class="col-6">
@@ -21,7 +21,7 @@
           action="https://github.us13.list-manage.com/subscribe/post?u=d7313775f348f8c8d39a841a0&id=28bcb90eaa&f_id=00550ee4f0"
           method="post"
         >
-          <h5 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.newsletter" }}</h5>
+          <h3 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.newsletter" }}</h3>
           <div class="input-group">
             <input type="email" class="form-control" placeholder="{{ i18n "newsletter.placeholder" }}" id="EMAIL" name="EMAIL">
             <button type="submit" class="btn btn-primary text-dark">{{ i18n "newsletter.button" }}</button>
