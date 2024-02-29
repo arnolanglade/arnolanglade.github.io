@@ -27,9 +27,9 @@
           <a class="card text-decoration-none h-100 border-radius-30" href="{{ .Permalink }}">
             {{ partial "content-image" (dict "context" . "src" "talk-header" "alt" .Title "size" "416x") }}
             <div class="card-body bg-dark">
-              <h2 class="card-title text-center pb-4">{{ .Title }}</h2>
+              <h2 class="card-title text-primary text-center pb-4 fs-3">{{ .Title }}</h2>
               {{ with .Params.conference }}
-              <p class="text-center">
+              <p class="text-center text-light">
                 {{ .title }}
               <p>
               {{ end }}
