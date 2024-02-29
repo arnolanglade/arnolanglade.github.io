@@ -1,9 +1,10 @@
 ---
-title: "Unit testing: essential and complicated at the same time"
+title: "Tests unitaires: essentiels et compliqués à la fois"
 conference: 
   title: Agile Tour Bordeaux 2023
   link: https://agiletourbordeaux.fr
-description: "When I started coding I could develop for hours without executing my code. Then, I needed to debug it for hours. It wasn't funny! I discovered what was testing and I understood its benefits. However, it wasn't easy to write my first tests. We can make many mistakes that make tests hard to write and maintain. I would like to present to you what I have learned over the last few years to help you write tests."
+description: "Conférence à Agile tour Bordeaux : je vous présente ce que j’ai appris durant ces dernières années afin de faciliter l’écriture de vos tests. Lorsque j’ai commencé à développer, je pouvais coder pendant des heures sans exécuter mon code. La suite était moins marrante, je passais des heures à le débugger. J’ai découvert les tests par la suite et j’ai rapidement compris les avantages qu’ils apportaient."
+abstract: "Je me souviens lorsque j’ai commencé à développer que je pouvais coder pendant des heures sans exécuter mon code. La suite était moins marrante, je passais des heures à le débugger. J’ai découvert les tests par la suite et j’ai rapidement compris les avantages qu’ils apportaient. Cependant, ça n’a pas été facile d’écrire mes premiers tests. On peut commettre beaucoup d'erreurs qui les rendent difficiles à écrire et à maintenir. Je souhaite vous présenter ce que j’ai appris durant ces dernières années afin de faciliter l’écriture de vos tests."
 video:
   id: AOhqbqvVBs0
   title: "Tests unitaires : essentiels et compliqués à la fois"
