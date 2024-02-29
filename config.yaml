@@ -39,8 +39,8 @@ languages:
           weight: 2
 
     params:
-      title: Arnaud Langlade - Senior software engineer, software architect, and technical coach
-      description: "Arnaud Langlade - I am a software architect, and technical coach. I focus on understanding business needs to find the best solution. I love everything that ends with *DD such as DDD, BDD and TDD. These tools and all eXtreme Programming values help me to build robust and maintainable software. Last but not least, teamwork is essential: «alone we go faster, together we go further»."
+      title: "Arnaud Langlade - Technical coach and software architect"
+      description: "Arnaud Langlade - With 15 years in software engineering, I’m here to help your teams grow and to build long-lasting applications as a Technical Coach and Software Architect. I have the know-how and experience to boost team efficiency and address difficult issues, ensuring your projects are both sustainable and successful."
       keywords: "arnaud langlade,langlade,freelancer,software engineer,software architect,technical coach,software craftsmanship,oop,blog,talk,tdd,bdd,ddd,event storming,example mapping,arnolanglade"
     weight: 1
   fr:
@@ -69,9 +69,9 @@ languages:
             target: "_blank"
           weight: 2
     params:
-      title: "Arnaud Langlade - Ingénieur logiciel senior, architecte logiciel et coach technique"
-      description: "Arnaud Langlade - Je suis un architecte logiciel et un coach technique. Je me concentre sur la compréhension des besoins métier pour trouver la meilleure solution. J'adore tout ce qui se termine par *DD comme DDD, BDD et TDD. Ces outils et toutes les valeurs de l'eXtreme Programming m'aident à construire des logiciels robustes et maintenables. Enfin, le travail d'équipe est essentiel : «seul nous allons plus vite, ensemble nous allons plus loin»."
-      keywords: "arnaud langlade,langlade,freelancer,ingénieur logiciel,architecte logiciel,coach technique,artisan logiciel,oop,blog,conférence,tdd,bdd,ddd,event storming,example mapping,arnolanglade"
+      title: "Arnaud Langlade - coach technique et architecte logiciel"
+      description: "Arnaud Langlade - Avec 15 ans d’expérience en ingénierie logicielle, je suis là pour aider vos équipes à se développer et construire des applications durables en tant que Coach Technique et Architecte Logiciel. J’ai le savoir-faire et l’expérience nécessaires pour améliorer l’efficacité des équipes et résoudre les problèmes difficiles, assurant ainsi que vos projets soient à la fois pérennes et réussis."
+      keywords: "arnaud langlade,langlade,freelance,indépendant,ingénieur logiciel,architecte logiciel,coach technique,artisan logiciel,oop,blog,conférence,tdd,bdd,ddd,event storming,example mapping,arnolanglade"
     weight: 2
 
 params:
