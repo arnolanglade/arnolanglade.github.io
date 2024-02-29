@@ -1,7 +1,6 @@
 ---
 title: "A propos de moi"
 slug: "about-me"
-description: ""
 menus:
   footer:
     weight: 2
