@@ -25,7 +25,7 @@
   <section class="section blog-single py-5">
     <div class="container">
       <div class="row pb-5">
-        {{ with .Params.description }}
+        {{ with .Params.abstract }}
         {{ . | markdownify }}
         {{ end }}
 
