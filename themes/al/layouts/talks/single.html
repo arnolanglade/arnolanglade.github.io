@@ -31,7 +31,7 @@
 
         {{ with .Params.video }}
         <h2 class="mt-5">{{ i18n "talks.video" }}</h2>
-        {{ partial "youtube" (dict "id" .id "title" .title) }}
+        {{ partial "youtube" (dict "id" . "title" $.Title) }}
         {{ end }}
 
         <h2 class="mt-5">{{ i18n "talks.slides.title" }}</h2>
