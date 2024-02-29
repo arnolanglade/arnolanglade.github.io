@@ -16,7 +16,7 @@
         </p>
         <p class="text-light mb-0">
           {{ i18n "hire-me.social-media" | markdownify }}
-          {{ partial "social-media-link" . }}
+          {{ partial "social-media-link" (dict "social" .Site.Params.social)  }}
         </p>
         <p class="text-light">
           {{ i18n "hire-me.form" | markdownify }}

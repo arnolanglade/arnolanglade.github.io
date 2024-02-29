@@ -4,7 +4,7 @@
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
         <h3 class="fs-5 fw-semibold text-uppercase text-primary mb-2">{{ .Site.Title }}</h3>
         <p class="small text-light mb-0">{{ i18n "footer.social" }}</p>
-        {{ partial "social-media-link" . }}
+        {{ partial "social-media-link" (dict "social" .Site.Params.social "class" "justify-content-xl-start")  }}
       </div>
       <div class="col-12 col-xl-4 text-center text-xl-start pb-4">
         <h3 class="fs-5 fw-semibold text-primary mb-2">{{ i18n "footer.links" }}</h3>

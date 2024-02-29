@@ -55,8 +55,8 @@
                     <a href="{{ "/about-me" | relLangURL }}" class="btn btn-primary text-decoration-none">{{ i18n "post.about.link" }}</a>
                   </p>
                   <p class="card-text fs-6 mb-3">{{ i18n "post.about.social-media" | markdownify }}</p>
-                  {{ partial "social-media-link" . }}
-                  {{ partial "share-post.html" . }}
+                  {{ partial "social-media-link" (dict "social" .Site.Params.social) }}
+                  {{ partial "share-post" . }}
                 </div>
               </div>
             </div>

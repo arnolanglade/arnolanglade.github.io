@@ -1,5 +1,5 @@
-{{ with .Site.Params.social }}
-<ul class="d-flex justify-content-center justify-content-xl-start list-unstyled mt-4">
+<ul class="d-flex list-unstyled mt-4 {{ .class }}">
+{{ with .social }}
   {{ with .linkedin }}
   <li class="rounded-circle bg-primary me-2 p-2">
     <a class="d-flex align-items-center justify-content-center size-16 text-dark" href="{{ . }}" target="_blank" title="linkedin">
@@ -49,5 +49,5 @@
     </a>
   </li>
   {{ end }}
-</ul>
 {{ end }}
+</ul>
