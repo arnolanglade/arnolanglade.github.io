@@ -1,7 +1,6 @@
 ---
 title: "Abonnement confirmé"
 slug: "subscription-confirmed"
-description: ""
 hire_me: false
 ---
 
