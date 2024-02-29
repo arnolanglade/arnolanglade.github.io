@@ -40,7 +40,7 @@
         {{ end }}
 
         {{ with .Params.slideshare }}
-        {{ partial "slideshare" . }}
+        {{ partial "slideshare" (dict "slide" . "title" $.Title) }}
         {{ end }}
 
         {{ with .Content }}
