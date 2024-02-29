@@ -4,7 +4,6 @@
   "paths": {
    "*": [
     "*",
-    "../themes/al/assets/*"
    ]
   }
  }
