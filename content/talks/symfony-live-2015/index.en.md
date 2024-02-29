@@ -1,20 +1,14 @@
 ---
-title: Développer avec le sylius resourcebundle
+title: Developing with the Sylius ResourceBundle
 conference:
   title: Symfony live Paris 2015
   link: https://live.symfony.com/2015-paris
-description: |
-  The resource bundle easy CRUD and persistence for Symfony applications.
-  
-  During our work on Sylius, the core team noticed a lot of duplicated code across all controllers. The core team started looking for good solution of the problem. The core team is not big fans of administration generators (they're cool, but not for our usecase!) - the core team wanted something simpler and more flexible.
-  
-  Another idea was to not limit ourselves to one persistence backend. Initial implementation included custom manager classes, which was quite of overhead, so the core team decided to simply stick with Doctrine Common Persistence interfaces. If you are using Doctrine ORM or any of the ODM's, you're already familiar with those concepts. Resource bundle relies mainly on ObjectManager and ObjectRepository interfaces.
-  
-  The last annoying problem this bundle is trying to solve, is having separate "backend" and "frontend" controllers, or any other duplication for displaying the same resource, with different presentation (view). The core team also wanted an easy way to filter some resources from list, sort them or display by id, slug or any other criteria - without having to defining another super simple action for that purpose.
+description: "Talk at Symfony Live Paris: I present the ResourceBundle that eases CRUD for Symfony applications."
+abstract: "During its development, the Sylius team realized that they were duplicating a lot of code to manage their CRUDs. Not wanting to reinvent Symfony or use an admin generator, they decided to create a simple and flexible bundle: SyliusResourceBundle. I will present how to manage your CRUDs with this bundle by writing the minimum amount of code and, most importantly, without duplicating it! It was designed to support multiple types of drivers (DoctrineORM, PHPCR). Moreover, it allows for the rapid construction of an API thanks to the FOSTRestBundle. I will highlight all the components used by this bundle, such as Doctrine. It facilitates configuration through ResolveDoctrineTargetEntitiesPass and the creation of MappingDriver. It also uses the EventDispatcher: events are raised when an action is executed on a resource. It also brings new FormType or FormExtension like the CollectionExtension, which allows managing your form collections (including JS)."
 keyword: "sylius,resource bundle,crud,symfony,rad"
 video:
   id: O8jzsNVFQHg
-  title: "Développer avec le sylius resourcebundle"
+  title: "Developing with the Sylius ResourceBundle"
 date: 2015-03-01
 slideshare: p8KjWf2PyoB94R
 ---
