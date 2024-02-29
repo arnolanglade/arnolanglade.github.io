@@ -13,11 +13,14 @@ $secondary: #002dff;
 $danger: #FF87B0;
 $light: #FFFFFF;
 
+
 // scss-docs-start import-stack
 // Configuration
+@import "bootstrap/scss/mixins";
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
 @import "bootstrap/scss/utilities";
 
 // Layout & components
