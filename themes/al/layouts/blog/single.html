@@ -47,7 +47,7 @@
               <div class="card mb-3">
                 {{ partial "asset-image" (dict "src" "me/avatar.jpg" "alt" "Arnaud Langlade" "size" "200x" "class" "rounded-circle mx-auto mt-3") }}
                 <div class="card-body">
-                  <h4 class="card-title text-center">{{ i18n "post.about.title" | markdownify }}</h4>
+                  <h3 class="card-title text-center">{{ i18n "post.about.title" | markdownify }}</h3>
                   <p class="card-text fs-6">
                     {{ i18n "post.about.intro" | markdownify }}
                   </p>
