@@ -1,0 +1,32 @@
+{{ $permalink := urlquery .Permalink }}
+{{ $title := urlquery .Title }}
+{{ $description := urlquery .Description }}
+<p class="card-text fs-6 mb-3">
+   {{ i18n "post.share.title" }}
+</p>
+<ul class="d-flex justify-content-xl-center justify-content-start list-unstyled">
+  <li class="rounded-circle bg-primary me-2 p-2">
+    <a class="d-flex align-items-center justify-content-center size-16 text-dark"
+       href="https://twitter.com/intent/tweet?text={{ printf "%s by @arnolanglade" $title | safeURL  }}&url={{ $permalink | safeURL }}"
+       onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="Share on Twitter" rel="nofollow">
+      {{ partial "icons/x" . }}
+    </a>
+  </li>
+  <li class="rounded-circle bg-primary me-2 p-2">
+    <a class="d-flex align-items-center justify-content-center size-16 text-dark"
+       href="https://www.facebook.com/sharer/sharer.php?u={{ $permalink | safeURL }}"
+       onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="Share on Facebook" rel="nofollow">
+      {{ partial "icons/facebook" .}}
+    </a>
+  </li>
+  <li class="rounded-circle bg-primary me-2 p-2">
+    <a class="d-flex align-items-center justify-content-center size-16 text-dark"
+       href="https://www.linkedin.com/shareArticle?mini=true&url={{ $permalink | safeURL }}&title={{ $title | safeURL }}&summary={{ $description | safeURL }}"
+       onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="Share on LinkedIn" rel="nofollow">
+      {{ partial "icons/linkedin" .}}
+    </a>
+  </li>
+</ul>

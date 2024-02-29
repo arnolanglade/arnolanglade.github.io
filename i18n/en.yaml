@@ -35,6 +35,12 @@ post:
     intro: "I'm a technical coach and software architect. I aim to make complex software concepts accessible and interesting for all."
     link: "Learn more about me"
     social-media: "Join me on social media where I share insights on software development and much more."
+  share:
+    title: "Share it if you like it!"
+    x: "Share on X"
+    facebook: "Share on Facebook"
+    linkedin: "Share on LinkedIn"
+
 talks:
   video: "Watch the video"
   slides:
