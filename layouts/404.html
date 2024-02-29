@@ -4,7 +4,7 @@
     <div class="row pb-5">
       <div class="col-12 text-center">
         <h1 class="display-1 fw-bold text-center text-primary pb-3">Page not found</h1>
-        <p class="text-black-61 text-center pb-3">You're lost! The page does not exit.</p>
+        <p class="text-dark text-center pb-3">You're lost! The page does not exit.</p>
       </div>
       {{- range ( where site.RegularPages "Section" "blog" | first 3 ) }}
       {{ partial "blog-post-card" . }}

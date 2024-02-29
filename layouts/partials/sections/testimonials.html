@@ -19,7 +19,7 @@
         <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
           {{ $src := (printf "%s%s" "testimonial/" .image ) }}
           {{ partial "asset-image" (dict "src" $src "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
-          <p class="card-text text-black-61 ps-2">
+          <p class="card-text text-dark ps-2">
             "{{ .text }}"
             <br>
             <br>
@@ -52,7 +52,7 @@
           {{ else }}
           <div class="card-body">
             {{ $colors := (slice "bg-green" "bg-yellow" "bg-red" "bg-purple") }}
-            <div class="{{ index $colors (mod $i 4) }} rounded-circle size-90 mb-4"></div>
+            <div class="{{ index $colors (mod $i 4) }} rounded-circle mb-4"></div>
             <p class="card-text text-dark">"
               {{ $e.text }}"
               <br>
