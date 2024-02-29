@@ -1,11 +1,11 @@
-{{ $url := (printf "%s%s%s" "slides/" . "/" ) }}
+{{ $url := (printf "%s%s%s" "slides/" .slide "/" ) }}
 <div class="py-5">
-  <iframe src="{{ $url | absURL}}" height="700" width="100%">
+  <iframe src="{{ $url | absURL}}" height="700" width="100%" title="{{ .title }}">
     Fallback text here for unsupporting browsers, of which there are scant few.
   </iframe>
 
   <p class="text-center">
-    <a href="{{ $url }}" class="btn btn-primary mt-3 text-light" target="_blank">{{ i18n "talks.slides.button" }}</a>
+    <a href="{{ $url }}" class="btn btn-primary mt-3 text-dark" target="_blank">{{ i18n "talks.slides.button" }}</a>
   </p>
 </div>
 

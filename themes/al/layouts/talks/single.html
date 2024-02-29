@@ -30,13 +30,13 @@
         {{ end }}
 
         {{ with .Params.video }}
-        <h3 class="mt-5">{{ i18n "talks.video" }}</h3>
+        <h2 class="mt-5">{{ i18n "talks.video" }}</h2>
         {{ partial "youtube" (dict "id" .id "title" .title) }}
         {{ end }}
 
-        <h3 class="mt-5">{{ i18n "talks.slides.title" }}</h3>
+        <h2 class="mt-5">{{ i18n "talks.slides.title" }}</h2>
         {{ with .Params.slides }}
-        {{ partial "slides" . }}
+        {{ partial "slides" (dict "slide" . "title" $.Title) }}
         {{ end }}
 
         {{ with .Params.slideshare }}
