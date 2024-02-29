@@ -14,7 +14,7 @@
       </div>
       <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         <div class="pb-2">
-          {{ partial "asset-image" (dict "src" "testimonials-left-quote.png" "alt" "" "size" "64x") }}
+          {{ partial "asset-image" (dict "src" "testimonial/left-quote.png" "alt" "" "size" "64x") }}
         </div>
         <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
           {{ $src := (printf "%s%s" "testimonial/" .image ) }}
@@ -27,7 +27,7 @@
           </p>
         </div>
         <div class="pt-2 text-end">
-          {{ partial "asset-image" (dict "src" "testimonials-right-quote.png" "alt" "" "size" "64x") }}
+          {{ partial "asset-image" (dict "src" "testimonial/right-quote.png" "alt" "" "size" "64x") }}
         </div>
       </div>
       {{ end }}
