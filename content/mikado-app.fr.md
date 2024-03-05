@@ -40,28 +40,28 @@ Prenons un exemple : MySQL ne correspond pas aux besoins du projet ; vous voulez
 
 Sur la page d'accueil de l'appli Mikado, entrez votre objectif. Expliquez ce que vous voulez faire et cliquez sur le bouton « Start » pour commencer à travailler.
 
-{{< image src="/images/project/mikado-app/describe-objective.webp" alt="describe objective" >}}
+{{< asset-image src="/project/mikado-app/describe-objective.png" alt="Décrire l'objectif" >}}
 
 Ensuite, vous arrivez sur la page du graphie Mikado. Vous pouvez diviser votre objectif en petites étapes appelées prérequis. Pour réaliser la migration de la base de données, nous devons d'abord installer la base de données et mettre à jour les repositories à cause de l'utilisation de requêtes SQL spécifiques à MySQL.
 
 Cliquez sur le bouton 'Add a prerequisite' pour ouvrir le formulaire d'ajout de prérequis. Ensuite, décrivez les actions requises pour compléter le prérequis. Enfin, cliquez sur le bouton « Add » pour ajouter le prérequis au Graphe Mikado :
 
-{{< image src="/images/project/mikado-app/add-prerequisite.webp" alt="add prerequisite" >}}
+{{< asset-image src="/project/mikado-app/add-prerequisite.png" alt="Ajouter un nouveau prérequis" >}}
 
 Vous pouvez créer autant de prérequis que vous le souhaitez. N'oubliez pas que les petites étapes sont plus faciles à réaliser ! Comme vous pouvez le voir dans la capture d'écran suivante, la bulle du prérequis a un fond orange, indiquant que les prérequis ont le statut « À faire » :
 
-{{< image src="/images/project/mikado-app/prerequisite-list.webp" alt="prerequisite list" >}}
+{{< asset-image src="/project/mikado-app/prerequisite-list.png" alt="Liste des prérequis" >}}
 
 Après avoir ajouté des prérequis, sélectionnez-en un dans la liste et cliquez sur le bouton « Start exploring » pour commencer à expérimenter des choses pour le résoudre. La couleur de fond du prérequis change en bleu, indiquant que le statut du prérequis est maintenant « En expérimentation », ce qui signifie que vous travaillez activement dessus.
 
 Maintenant, vous avez deux choix : le premier est de cliquer sur le bouton « Add a prerequisite » pour diviser le prérequis en étapes plus petites.
 
-{{< image src="/images/project/mikado-app/prequisite-buble.webp" alt="prequisite buble" >}}
+{{< asset-image src="/project/mikado-app/prequisite-buble.png" alt="Node du prérequis dans le graphe" >}}
 
 La deuxième option est de cliquer sur « Commit your changes » lorsque vous avez terminé et de passer au suivant sur la liste.
 
-{{< image src="/images/project/mikado-app/prerequisite-completed.webp" alt="prerequisite completed" >}}
+{{< asset-image src="/project/mikado-app/prerequisite-completed.png" alt="Le prérequis is fini" >}}
 
 Continuez à résoudre tous les prérequis jusqu'à la fin. Lorsque tous les prérequis sont terminés, votre objectif est atteint !
 
-{{< image src="/images/project/mikado-app/objective-completed.webp" alt="objective completed" class="mb-0" >}}
+{{< asset-image src="/project/mikado-app/objective-completed.png" alt="L'objectif est fini" class="mb-0" >}}
