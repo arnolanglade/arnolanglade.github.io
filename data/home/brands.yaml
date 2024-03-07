@@ -8,18 +8,18 @@ content:
       alt: "Akeneo"
       weight: 1
     sunday:
-      src: "sunday.jpg"
+      src: "sunday.png"
       alt: "Sunday"
       weight: 2
     royal-canin:
-      src: "royal-canin.png"
+      src: "royal-canin.jpg"
       alt: "Royal Canin"
       weight: 5
     sud-ouest:
-      src: "sud-ouest.jpg"
+      src: "sudouest.png"
       alt: "Sud Ouest"
       weight: 4
     iogk:
-      src: "iogk.png"
+      src: "iogk.jpeg"
       alt: "IOGK"
       weight: 3
