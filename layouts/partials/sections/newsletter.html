@@ -7,6 +7,9 @@
         class="text-center"
       >
         <h3 class="title fw-bold">{{ i18n "newsletter.title" }}</h3>
+        {{ with .Params.image }}
+        {{ partial "asset-image" (dict "src" . "alt" "Blog" "size" "350x" "class" "my-5") }}
+        {{ end }}
         <p>{{ i18n "newsletter.text" }}</p>
         <input type="email" class="form-control" placeholder="{{ i18n "newsletter.placeholder" }}" name="EMAIL">
         <button type="submit" class="btn btn-primary my-4 fw-bold fs-4 text-light px-5 py-3 text-dark">
