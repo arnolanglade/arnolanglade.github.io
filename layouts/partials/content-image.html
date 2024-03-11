@@ -11,11 +11,12 @@
 {{ $format = (printf "%s%s%s" "resize " . " webp" ) }}
 {{ end }}
 
-{{ with .context.Resources.GetMatch $src }}
-  {{ with .Process $format }}
-  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" class="{{ $class }} img-fluid">
-  {{ end }}
-{{ else }}
+{{ if (strings.Contains .src ".svg") }}
   <img class="{{ $class }} img-fluid" src="{{ .src }}" alt="{{ .alt }}" />
+{{ else }}
+  {{ with .context.Resources.GetMatch $src }}
+    {{ with .Process $format }}
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" class="{{ $class }} img-fluid">
+    {{ end }}
+  {{ end }}
 {{ end }}
-
