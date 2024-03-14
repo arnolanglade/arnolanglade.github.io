@@ -1,7 +1,7 @@
 home:
   section:
     me:
-      title: "Bonjour, je suis **Arnaud!**"
+      title: "Bonjour, je suis **Arnaud !**"
       text: "Avec 15 ans d'expérience en ingénierie logicielle, je suis là pour aider vos équipes à se développer et construire des applications durables en tant que Coach Technique et Architecte Logiciel. J'ai le savoir-faire et l'expérience nécessaires pour améliorer l'efficacité des équipes et résoudre les problèmes difficiles, assurant ainsi que vos projets soient à la fois pérennes et réussis."
       buttonPrimary: "Travaillons ensemble"
       buttonSecondary: "À propos de moi"
@@ -33,7 +33,7 @@ post:
       Découvrez la puissance de l'**Architecture Hexagonale** et du **DDD** pour construire des applications Symfony robustes et durables. Rejoignez-moi et lancez votre voyage vers la maîtrise des techniques de développement avancées.
     button: 🚀 Commencez votre voyage ici !
   about:
-    title: "Bonjour, Je suis Arnaud!"
+    title: "Bonjour, Je suis Arnaud !"
     intro: "Je suis coach technique et architecte logiciel. Mon objectif est de rendre les concepts logiciels complexes accessibles et intéressants pour tous."
     link: "En savoir plus sur moi"
     social-media: "Rejoignez-moi sur les réseaux sociaux où je partage sur le développement logiciel et bien plus."
