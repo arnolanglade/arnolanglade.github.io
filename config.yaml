@@ -57,7 +57,7 @@ languages:
           weight: 2
       buttons:
         - name: "Travaillons ensemble"
-          url: "/fr/travaillons-ensemble"
+          url: "/hire-me"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
