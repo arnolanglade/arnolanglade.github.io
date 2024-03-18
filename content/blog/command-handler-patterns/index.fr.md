@@ -2,7 +2,7 @@
 author: "Arnaud Langlade"
 title: "Le design pattern Command and command handler"
 url: "command-handler-patterns"
-date: "2024-03-26"
+date: "2024-04-02"
 image_credit: redaquamedia
 description: "Découvrez le design pattern command et command handler dans le développement logiciel. Les commandes représentent les intentions des utilisateurs, prises en charge par le command handler. Apprenez ces patterns à travers des exemples concrets et bien plus, comme par exemple la validation de commande ou l’utilisation d’un command bus"
 keywords: "design patterns,software,software architecture,command,command handler,command bus"
