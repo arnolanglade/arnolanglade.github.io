@@ -1,6 +1,6 @@
 ---
 title: "SOLID principles: Understanding the single responsibility principle"
-date: 2024-03-19
+date: 2024-03-18
 image_credit: designedbyflores
 url: solid-single-responsibility-principle
 description: The single responsibility principle (SRP) is a software engineering rule that can help developers write code that is more maintainable and testable. By following this principle, developers can break down complex problems into smaller, more manageable units of code, which makes the code easier to understand and maintain.
