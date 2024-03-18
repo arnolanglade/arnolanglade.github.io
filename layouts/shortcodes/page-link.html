@@ -1,5 +1,6 @@
-{{ with site.GetPage (.Get "page")}}
+{{ $page := .Get "page" }}
 <div class="text-center">
+{{ with site.GetPage $page}}
   <a class="btn btn-primary text-dark fw-bold p-3 my-3" href="{{ .Permalink }}">
     <div class="row">
       <div class="col-3 text-start d-flex align-items-center">
@@ -14,8 +15,26 @@
       </div>
     </div>
   </a>
-</div>
+{{ else }}
+  {{ with where .Site.Sites "Language.Lang" "eq" "en" }}
+    {{ with index . 0 }}
+      {{ with .GetPage $page }}
+        <a class="btn btn-primary text-dark fw-bold p-3 my-3" href="{{ .Permalink }}">
+          <div class="row">
+            <div class="col-3 text-start d-flex align-items-center">
+              {{ if strings.Contains .RelPermalink "tags/" }}
+              {{ partial "asset-image" (dict "src" "blog/tags.webp" "alt" .Title "size" "140x") }}
+              {{ else }}
+              {{ partial "content-image" (dict "context" . "src" "post-header" "alt" .Title "size" "140x webp") }}
+              {{ end }}
+            </div>
+            <div class="col-9 fs-4 ps-0 pe-2 text-start d-flex align-items-center">
+              {{ .Title }}
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
-
-
-
+</div>
