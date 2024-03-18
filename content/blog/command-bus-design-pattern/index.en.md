@@ -5,8 +5,8 @@ image_credit: rockstaar_
 url: command-bus-design-pattern
 aliases:
     - "command-bus-design-pattern.html"
-description: "The goal of command and the event bus is to deliver a command or an event to its handler(s). Events and commands are objects used to encapsulate information needed to achieve an action (a command) or to tell what happened in the system (an event)."
-keywords: "software,software architecture,design patterns,command bus,event bus,bus,middleware,handle command,handle event,dispatch event,dispatch command,command bus middleware"
+description: "Explore the command bus design pattern: a comprehensive guide to understanding its role in software architecture, benefits, and how it works alongside the event bus for optimal application modularity and scalability."
+keywords:  "command bus design pattern,event bus design pattern,software architecture,command bus,event bus,middleware design pattern,middleware in software design,command bus middleware,command and event handling"
 tags: [command-bus, design-patterns, software-architecture]
 ---
 
