@@ -14,7 +14,7 @@ The single responsibility principle (SRP) is the first of the five SOLID princip
 >
 >[wikipedia](https://en.wikipedia.org/wiki/SOLID)
 
-SPR can be challenging to apply because it requires developers to break down complex problems into smaller, more manageable units of code. Identifying and isolating responsibilities can be challenging, and if done incorrectly, it can lead to poor design decisions.
+SRP can be challenging to apply because it requires developers to break down complex problems into smaller, more manageable units of code. Identifying and isolating responsibilities can be challenging, and if done incorrectly, it can lead to poor design decisions.
 
 Let’s take an example. The following class is in charge of importing products into an application as a PIM or an ERP.
 ```ts
