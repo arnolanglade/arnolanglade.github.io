@@ -105,14 +105,14 @@ interface ProductLoader {
   loadProduct(file: string): Promise<Product[]>
 }
 
-interface ProductLoader {
+interface Products {
   save(product: Product): Promise<void>
 }
 
 class ProductImport {
   constructor(
     private productLoader: ProductLoader,
-    private products: ProductLoader,
+    private products: Products,
   ) {}
 }
 ```
