@@ -84,7 +84,7 @@ params:
     x: "https://twitter.com/arnolanglade"
     bluesky: "https://bsky.app/profile/arnolanglade.bsky.social"
     github: "https://github.com/arnolanglade"
-    mastodon: "https://www.youtube.com/@arnolanglade"
+    mastodon: "https://mastodon.social/@arnolanglade"
     youtube: "https://www.youtube.com/@arnolanglade"
     rss: "/blog/index.xml"
 
