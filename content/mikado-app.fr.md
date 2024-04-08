@@ -1,6 +1,8 @@
 ---
 title: "La MikadoApp"
-slug: "mikadao-app"
+slug: "mikado-app"
+aliases:
+  - "mikadao-app"
 description: "La MikadoApp est un outil open source pour simplifier la création et le partage du graphe Mikado"
 image:
   src: "project/mikado-game.png"
