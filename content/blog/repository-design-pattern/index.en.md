@@ -1,6 +1,6 @@
 ---
 title: The repository design pattern
-date: 2024-04-09
+date: 2024-04-08
 image_credit: ningshi
 url: repository-design-pattern
 description: Discover the repository design pattern explained thanks to a simple example. Learn how it works and it ensures a clean separation between the domain model and the persistence model, aiming to hide the complexity of the object’s state storing.
