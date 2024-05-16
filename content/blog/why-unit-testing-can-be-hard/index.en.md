@@ -2,10 +2,11 @@
 title: Why unit testing can be hard?
 date: 2021-05-03
 image_credit: craftedbygc
-url: testing-testing-common-mistakes
+url: unit-testing-common-mistakes
 aliases:
     - "why-unit-testing-can-be-hard.html"
     - "why-unit-testing-can-be-hard"
+    - "testing-testing-common-mistakes"
 description: Testing can be really difficult for beginners. The main reason is that your code probably uses IO. This blog post gives you tips about improving your code design to ease testing.
 keywords: "software,testing,unit test,coupling,io,dependency inversion"
 tags: [testing, OOP]
