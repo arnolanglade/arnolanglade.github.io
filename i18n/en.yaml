@@ -48,8 +48,8 @@ talks:
     button: "View slides in full screen"
 
 newsletter:
-  title: "Newsletter: Be the first to know!"
-  text: "Subscribe to my newsletter for updates on my latest blog posts, tech releases, and exclusive content. Stay ahead in the coding game!"
+  title: "Get practical tech tips every month"
+  text: "Subscribe to receive a monthly newsletter packed with insights, tips, and best practices. Stay ahead in the coding game!"
   button: "Subscribe"
   placeholder: "Your email address"
   privacy: "Your data will remain strictly confidential and will be used exclusively to communicate with you. Be assured that it will never be sold to third parties."

@@ -50,11 +50,11 @@ talks:
     button: "Voir les slides en plein écran"
 
 newsletter:
-  title: "Newsletter : Soyez le premier à savoir !"
-  text: "Abonnez-vous à ma newsletter pour être informé de mes derniers articles de blog, des sorties techniques et du contenu exclusif. Restez en avance dans le jeu du code !"
+  title: "Recevez chaque mois des conseils tech pratiques"
+  text: "Abonnez-vous pour recevoir une newsletter mensuelle pleine de retours d’expérience, d’astuces et de bonnes pratiques. Restez en avance dans le jeu du code !"
   button: "S'abonner"
   placeholder: "Votre adresse email"
-  privacy: "Tes données resteront strictement confidentielles et seront exclusivement utilisées pour communiquer avec vous. Soyez assuré(e) qu'elles ne seront jamais vendues à des tiers."
+  privacy: "Vos données resteront strictement confidentielles et seront exclusivement utilisées pour communiquer avec vous. Soyez assuré(e) qu'elles ne seront jamais vendues à des tiers."
 
 footer:
   links: "En savoir plus"
