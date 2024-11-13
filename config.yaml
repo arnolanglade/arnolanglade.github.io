@@ -20,7 +20,7 @@ languages:
     menus:
       main:
         - name: "Training"
-          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
+          url: "https://formation.arnaudlanglade.com/formation-architecture-hexagonale-ddd"
           params:
             target: "_blank"
           weight: 2
@@ -31,7 +31,7 @@ languages:
           pre: "btn btn-primary text-light"
       footer:
         - name: "Training"
-          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
+          url: "https://formation.arnaudlanglade.com/formation-architecture-hexagonale-ddd"
           params:
             target: "_blank"
           weight: 2
@@ -51,7 +51,7 @@ languages:
     menus:
       main:
         - name: "Formation"
-          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
+          url: "https://formation.arnaudlanglade.com/formation-architecture-hexagonale-ddd"
           params:
             target: "_blank"
           weight: 2
@@ -62,7 +62,7 @@ languages:
           pre: "btn btn-primary text-light"
       footer:
         - name: "Formation"
-          url: "https://formation.arnaudlanglade.com/formation-symfony-architecture-hexagonale-ddd"
+          url: "https://formation.arnaudlanglade.com/formation-architecture-hexagonale-ddd"
           params:
             target: "_blank"
           weight: 2
