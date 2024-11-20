@@ -1,6 +1,6 @@
 ---
 title: Le design pattern Command Bus
-date: 2022-09-12
+date: 2024-11-25
 image_credit: rockstaar_
 url: command-bus-design-pattern
 aliases:
