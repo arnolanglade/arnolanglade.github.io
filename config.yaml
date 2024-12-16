@@ -26,7 +26,7 @@ languages:
           weight: 2
       buttons:
         - name: "Hire me"
-          url: "/hire-me"
+          url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
@@ -57,7 +57,7 @@ languages:
           weight: 2
       buttons:
         - name: "Travaillons ensemble"
-          url: "/hire-me"
+          url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
