@@ -10,7 +10,6 @@ As Alberto Brandolini says, “it’s the misunderstanding of developers that go
 
 In this presentation, I’ll share how we replaced these meetings with a much more productive workshop: Example Mapping. Thanks to this simple and effective tool, we managed to clarify requirements and build our backlog collaboratively."
 slides: "agile-tour-example-mapping"
+video: _6X_1PPCj8c
 date: 2024-10-31
 ---
-
-{{< external-link href="https://event.afup.org/afupday2024-interview-arnaud-langlade/" label="Speaker interview" >}}

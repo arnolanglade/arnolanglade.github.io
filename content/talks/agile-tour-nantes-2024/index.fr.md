@@ -10,5 +10,6 @@ Comme le dit Alberto Brandolini, 'c’est l’incompréhension des développeur�
 
 Lors de cette présentation, je partagerai comment nous avons remplacé ces réunions par un atelier beaucoup plus productif : l'Example Mapping. Grâce à cet outil simple et efficace, nous avons réussi à clarifier les besoins et à construire notre backlog de manière collaborative."
 slides: "agile-tour-example-mapping"
+video: _6X_1PPCj8c
 date: 2024-10-31
 ---
