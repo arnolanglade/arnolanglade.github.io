@@ -12,7 +12,7 @@ content:
       Je crois en l'importance de comprendre les besoins métier plutôt que de courir après les dernières technologies à la mode. Je me concentre sur la recherche des solutions les plus pragmatiques pour les mettre rapidement en production et recueillir les retours des utilisateurs. Les retours sont cruciaux dans le développement logiciel, ils garantissent que nous prenons les bonnes décision
     buttons:
       - label: "Besoin d'un expert ? Engagez-moi !"
-        url: "hire-me"
+        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
 
       - label: "En savoir plus sur moi"
         url: "/about-me"
@@ -27,7 +27,7 @@ content:
       En tant que Coach Technique, je peux aider vos équipes à progresser, en améliorant leur efficacité et leur productivité. J'adore partager mes connaissances sur l'artisanat logiciel et aider les personnes avec lesquelles je collabore à progresser.
     buttons:
       - label: "Besoin d'un coach ? Engagez-moi !"
-        url: "hire-me"
+        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
 
       - label: "En savoir plus sur moi"
         url: "/about-me"
@@ -42,7 +42,7 @@ content:
       J'ai travaillé pour plusieurs startups, donc je connais bien ces problèmes. En tant qu'architecte logiciel, je peux vous aider à construire des fondations logicielles solides et à organiser vos équipes pour permettre une livraison de fonctionnalités plus rapide.
     buttons:
       - label: "Besoin d'un architecte ? Engagez-moi !"
-        url: "hire-me"
+        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
 
       - label: "En savoir plus sur moi"
         url: "/about-me"
@@ -57,7 +57,7 @@ content:
       Pour combler ce fossé, je peux organiser et animer des ateliers d'event storming et d’example mapping. Ces sessions sont conçues pour réunir dans une même salle les personnes techniques et non techniques afin de faciliter la discussion. L'event storming aide à saisir l'image globale et à commencer à réfléchir à la conception du logiciel, tandis que l'example mapping aide à clarifier les user stories.
     buttons:
       - label: "Besoin d'un facilitateur ? Engagez-moi !"
-        url: "hire-me"
+        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
 
       - label: "En savoir plus sur moi"
         url: "/about-me"
