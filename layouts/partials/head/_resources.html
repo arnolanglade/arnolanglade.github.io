@@ -1,7 +1,6 @@
 <!-- Load Shared SCSS -->
 {{- $sharedSCSS := resources.Get "scss/blog.scss" -}}
-{{- $sharedSCSS := $sharedSCSS | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "assets")) -}}
-{{- $sharedSCSS := $sharedSCSS | resources.ExecuteAsTemplate "main.scss" . -}}
+{{- $sharedSCSS := $sharedSCSS | css.Sass (dict "outputStyle" "compressed" "includePaths" (slice "assets")) -}}
 
 <!-- Load Shared JS -->
 {{- $sharedJS := resources.Get "js/blog.js" -}}
