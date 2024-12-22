@@ -4,7 +4,8 @@ title: "Arnaud Langlade"
 
 enableRobotsTXT: true
 summaryLength: 20
-paginate: 12
+pagination:
+  pagerSize: 12
 imaging:
   quality: 100
 
