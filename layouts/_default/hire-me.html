@@ -25,24 +25,8 @@
     </div>
   </div>
 </section>
-<section class="section testimonials py-5">
-  <div class="container p-2">
-    <div class="row">
-      <h2 class="text-center fw-bold mb-5">
-        {{ i18n "hire-me.title" }}
-      </h2>
-      <iframe
-        src="https://us13.list-manage.com/contact-form?u=d7313775f348f8c8d39a841a0&form_id=15694930986090ef8ffd6791a315440b"
-        id="contact-form"
-        frameborder="0"
-        scrolling="0"
-        width="700px"
-        height="930px"
-        title="{{ .Title }}"
-      >
-      </iframe>
-    </div>
-  </div>
-</section>
+
+{{ partial "sections/hire-me" . }}
+
 {{ end }}
 
