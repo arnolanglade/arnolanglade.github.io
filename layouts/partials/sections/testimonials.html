@@ -34,20 +34,18 @@
     </div>
     <div class="row mt-5">
       {{ range $i, $e :=  first 3 (after 1 .content.list) }}
-      <div class="col-12 col-xl-4">
+      <div class="col-12 col-xl-4 testimonial-container">
         <div class="card px-1 py-4 h-100 border-0">
           {{ with $e.image }}
           <div class="card-body">
             {{ $src := (printf "%s%s" "testimonial/"  $e.image ) }}
             {{ partial "asset-image" (dict "src" $src "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
-            <p class="card-text text-dark">
-              "{{ $e.text }}"
-              <br>
-              <br>
-              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
-                {{ $e.name }} ({{ $e.position }})
-              </a>
+            <p class="card-text text-dark testimonial-content">
+              {{ $e.text }}
             </p>
+            <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
+              {{ $e.name }} ({{ $e.position }})
+            </a>
           </div>
           {{ else }}
           <div class="card-body">

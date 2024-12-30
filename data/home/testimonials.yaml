@@ -9,6 +9,15 @@ content:
       linkedin: "https://www.linkedin.com/in/arnaud-faissolle-249315"
       image: "arnaud-faisolle.jpeg"
 
+    - text: |
+        J'ai fait appel à Arnaud pour m'aider à remettre de l'ordre et smplifier une application web métier. Parfois, les déploiements étaient risqués. Nous n'avions pas pris le temps de prendre du recul sur nos développeemnts depuis des années et le ménage n'avait pas été fait dans des tests obsolètes. Arnaud a apporté des méthodes et sa patience pour remettre en ordre et simplifier notre code et notre architecture. Avec Arnaud, nous avons reduit d'1/3 le volume de code source et triplé le nombre de tests, à fonctionnalités égales.
+        
+        En quelques mots, méthode Mikado, EventStorming, culture de la "CI verte", harnais de tests, remise en cause et questionnement des choix techniques, suppression des complexités inutiles, encadrement des juniors sont les points qui font sa marque de fabrique.
+      name: "Grégory Planchat"
+      position: "Co-fondateur de Gyroscops"
+      linkedin: "https://www.linkedin.com/in/gplanchat"
+      image: "gregory-plancha.jpeg"
+
     - image: "arnaud-lemaire.jpeg"
       text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
       name: "Arnaud LEMAIRE"

@@ -200,3 +200,15 @@
   }
 }
 
+.section.testimonials {
+  .testimonial-container {
+    margin-bottom: 20px;
+  }
+  .testimonial-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* Nombre de lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
