@@ -121,7 +121,7 @@ Do the functions 'get, add, and remove' ring a bell? Perhaps, they remind you of
 
 The repository design pattern is ideal for isolating the domain from Input/Output operations. I’ve written an article about hexagonal architecture, an architectural pattern that helps in building sustainable software and ease testing too:
 
-{{< page-link page="/hexagonal-architect-by-example" >}}
+{{< page-link page="hexagonal-architect-by-example" >}}
 
 Depending on business needs, a repository can include various retrieval methods. As I mentioned earlier, a repository is a collection of domain objects. To be more precise, it's a collection of aggregates. An aggregate is a cluster of objects that together represent a domain concept, like the `Map`. In this case, the `Map` object is the aggregate root, and the `Marker` object is an entity that belongs to the `Map` aggregate. Since the aggregate root acts as the entry point for all internal interactions, a repository can only work with an aggregate root.
 

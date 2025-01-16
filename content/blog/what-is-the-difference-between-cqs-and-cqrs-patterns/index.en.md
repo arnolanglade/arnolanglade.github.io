@@ -107,6 +107,6 @@ Depending on the number of use cases the service classes can become really huge.
 
 I've written a blog post to explain what is a commands and we can apply it to query too:
 
-{{< page-link page="/command-handler-patterns" >}}
+{{< page-link page="command-handler-patterns" >}}
 
 Thanks to my proofreader [@LaureBrosseau](https://www.linkedin.com/in/laurebrosseau).

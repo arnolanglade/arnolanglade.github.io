@@ -128,4 +128,4 @@ How can we apply what I explained in the previous section to an application that
 
 Lastly, coupling will prevent you from easily testing your code. The solution to avoid this kind of problem is to apply the Dependency Inversion Principle from the SOLID principles. It will help you make your code more modular and easy to test. I’ve written a blog post to explain how to apply it to a React application:
 
-{{< page-link page="/how-to-reduce-coupling-in-your-react-app" >}}
+{{< page-link page="how-to-reduce-coupling-in-your-react-app" >}}
