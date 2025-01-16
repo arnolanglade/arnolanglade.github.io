@@ -102,7 +102,7 @@ api/src/Domain
 └── Map
 ```
 
-Since I avoided using technical terms to name folders, it's easy to imagine that the project is about creating maps. Now, let’s take a look inside the
+Since I avoided using technical terms to name folders, it's easy to imagine that the project is about creating maps. Now, let’s take a look inside the `Map` folder:
 
 ```bash
 tree src/Domain/Map -L 1
