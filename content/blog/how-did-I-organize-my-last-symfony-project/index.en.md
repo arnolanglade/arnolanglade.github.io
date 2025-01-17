@@ -115,11 +115,11 @@ tree src/Domain/Map -L 1
 ├── MapCreated.php                      // Event
 ├── MapId.php                           // ValueObject
 ├── MapName.php                         // ValueObject
-├── Map.php                             // Aggregate root
-├── Maps.php                            // Interface Repository
-├── Marker                              // Dossier pour Marker
+├── Map.php                             // Root Aggregate
+├── Maps.php                            // Repository Interface
+├── Marker                              // All classes to design Marker entity
 ├── MarkerAddedToMap.php                // Event
-└── UseCase                             // Orchestration des cas d’usage
+└── UseCase                             // Use cases orchestration
 ```
 
 In this folder, we have all the code necessary to design the `Map` aggregate. As you can see, I didn’t organize it by design patterns like `ValueObject`, `Entity`, or something else.
