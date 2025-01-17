@@ -39,8 +39,10 @@ In the following sections, we will explore how I organized the application sourc
 > https://en.wikipedia.org/wiki/Hexagonal_architecture_%28software%29
 
 The main advantage of Hexagonal Architecture is that it decouples the heart of your application from [Input/Output](https://press.rebus.community/programmingfundamentals/chapter/input-and-output/).
+
 I call the heart of the application the `Domain`. This is the area of the app where all the pieces of code represent the problem we are solving. This part must be side-effect-free, it must not rely on any tools, frameworks, or technologies.
-`Output` refers to the tools the application needs to work, such as network calls, database queries, filesystem operations, actual timestamps, or randomness. All `Output` is moved to the infrastructure. `Input` refers to how the domain is exposed to the outside world, for example, it can be a web controller or a CLI command. These pieces of code are moved to the `UserInterface`.
+
+`Outputs` refer to the tools the application needs to work, such as network calls, database queries, filesystem operations, actual timestamps, or randomness. All `Outputs` are moved to the infrastructure. `Inputs` refer to how the domain is exposed to the outside world, for example, it can be a web controller or a CLI command. These pieces of code are moved to the `UserInterface`.
 
 **Note:** Check out my blog post about Hexagonal Architecture to dive deeper into the subject:
 
@@ -63,7 +65,7 @@ api/src/Domain/
 
 I am not a big fan of Onion Architecture because I prefer to keep my projects as simple as possible. Having many layers can make maintenance challenging, as it requires aligning the entire team on coupling rules. Even agreeing with yourself can be difficult, so getting several people to agree is often much harder. Here, we follow just one simple rule : `Domain` must **not** use IO
 
-At times, I needed to create custom libraries because I couldn’t find any open-source libraries that met my expectations. To avoid coding directly in the `vendor` directory, I introduced a third area called `Libraries` (this area is optional). These libraries can be used in both the `Domain` and `Infrastructure` layers, but their usage must not violate the coupling rules defined for those areas.
+At times, I needed to create custom libraries because I couldn’t find any open-source libraries that met my expectations. To avoid coding directly in the `vendor` directory, I introduced a third area called `Libraries` (this area is optional). These libraries can be used in both the `Domain`, `UserInterface` and `Infrastructure` layers, but their usage must not violate the coupling rules defined for those areas.
 
 ```bash
 tree src/Domain/ -L 1
@@ -74,7 +76,7 @@ api/src/Domain/
 └── UserInterface
 ```
 
-**Coupling rules:** `Libraries` must **not** depend on `Domain` and `Infrastructure`
+**Coupling rules:** `Libraries` must **not** depend on `Domain`, `UserInterface` and `Infrastructure`
 
 Finally, I created a sub-area called Application within the Infrastructure layer. It contains all the code needed to have the application up and running, such as framework code (Symfony kernel and framework customizations), data fixtures, and migrations. In the following example, `Exception` and `Security` folders contain framework customizations.
 
@@ -89,9 +91,11 @@ api/src/Infrastructure/Application
 └── Kernel
 ```
 
-**Note :** Looking back, I won't keep the folder in infra. All code related to framework customization should go into a dedicated folder called framework in the `Libraries` folder, whereas `Fixtures` and `Migrations` can remain at the root of the infrastructure folder.## Focus on the business
+**Note :** Looking back, I won't keep the folder in infra. All code related to framework customization should go into a dedicated folder called framework in the `Libraries` folder, whereas `Fixtures` and `Migrations` can remain at the root of the infrastructure folder.
 
-A really important aspect for me is organizing the codebase around business concepts. I avoid naming folders and classes based on technical patterns like Entity, ValueObject, or Repository, and especially not Provider, DataMapper, or Form. Non-technical people should be able to understand the purpose of a class simply by its name.
+## Focus on the business
+
+A really important aspect for me is organizing the codebase around business concepts. I avoid naming folders and classes based on technical patterns like `Entity`, `ValueObject`, or `Repository`, and especially not `Provider`, `DataMapper`, or `Form`. Non-technical people should be able to understand the purpose of a class simply by its name.
 
 ### Domain
 
@@ -106,19 +110,16 @@ Since I avoided using technical terms to name folders, it's easy to imagine that
 
 ```bash
 tree src/Domain/Map -L 1
-├── CartographersAllowedToEditMap.php   // Value object
-├── Description.php   // Value object
-├── MapCreated.php   // Event 
-├── MapId.php   // Value object
-├── MapName.php   // Value object
-├── Map.php   // Root aggregate
-├── Maps.php   // Repository interface
-├── Marker    // All classes to design Marker entity
-├── MarkerAddedToMap.php   // Event
-├── MarkerDeletedFromMap.php   // Event
-├── MarkerEditedOnMap.php   // Event
-├── UnknownMap.php   // Exception
-└── UseCase    // Use cases orchestration
+├── CartographersAllowedToEditMap.php   // ValueObject
+├── Description.php                     // ValueObject
+├── MapCreated.php                      // Event
+├── MapId.php                           // ValueObject
+├── MapName.php                         // ValueObject
+├── Map.php                             // Aggregate root
+├── Maps.php                            // Interface Repository
+├── Marker                              // Dossier pour Marker
+├── MarkerAddedToMap.php                // Event
+└── UseCase                             // Orchestration des cas d’usage
 ```
 
 In this folder, we have all the code necessary to design the `Map` aggregate. As you can see, I didn’t organize it by design patterns like `ValueObject`, `Entity`, or something else.
@@ -142,6 +143,8 @@ api/src/Infrastructure
         └── InMemoryMaps.php
         └── PostgreSqlMaps.php
 ```
+
+### UserInterface
 
 ```bash
 tree src/UserInterface -L 1            
