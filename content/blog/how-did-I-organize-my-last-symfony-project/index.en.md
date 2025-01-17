@@ -32,6 +32,7 @@ tree . -L 1
 ```
 
 In the following sections, we will explore how I organized the application sources using Hexagonal Architecture and how CQRS helped me simplify the modeling write and read usecase.
+
 ## My Approach to hexagonal architecture
 
 > The hexagonal architecture, or ports and adapters architecture, is an architectural pattern used in software design. It aims at creating loosely coupled application components that can be easily connected to their software environment by means of ports and adapters. This makes components exchangeable at any level and facilitates test automation.
@@ -49,7 +50,6 @@ I call the heart of the application the `Domain`. This is the area of the app wh
 {{< page-link page="hexagonal-architect-by-example" >}}
 
 Based on this approach, my first decision was to split the `src` directory into three areas: `Domain`, `Infrastructure`, and `UserInterface`.
-
 
 ```bash
 tree src/Domain/ -L 1
