@@ -130,9 +130,9 @@ The `UseCase` folder contains all the code needed to orchestrate use cases, such
 
 **Tip:** I don’t suffix repositories with "Repository." Instead, I try to use a business concept for the name, such as `ProductCatalog` for a `Product` aggregate. If I can’t find a suitable business concept, I use the plural form of the aggregate name, since a repository represents a collection of objects.
 
-### Infrastructure
-
 I organize the root of the `Infrastructure` and `UserInterface` folder in the same way as the `Domain` one.
+
+### Infrastructure
 
 ```bash
 tree src/Infrastructure -L 1            
