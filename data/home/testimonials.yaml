@@ -9,6 +9,12 @@ content:
       linkedin: "https://www.linkedin.com/in/arnaud-faissolle-249315"
       image: "arnaud-faisolle.jpeg"
 
+    - image: "arnaud-lemaire.jpeg"
+      text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
+      name: "Arnaud LEMAIRE"
+      position: "CTPO at Sunday"
+      linkedin: "https://www.linkedin.com/in/lilobase/"
+
     - text: |
         J'ai fait appel à Arnaud pour m'aider à remettre de l'ordre et smplifier une application web métier. Parfois, les déploiements étaient risqués. Nous n'avions pas pris le temps de prendre du recul sur nos développeemnts depuis des années et le ménage n'avait pas été fait dans des tests obsolètes. Arnaud a apporté des méthodes et sa patience pour remettre en ordre et simplifier notre code et notre architecture. Avec Arnaud, nous avons reduit d'1/3 le volume de code source et triplé le nombre de tests, à fonctionnalités égales.
         
@@ -17,12 +23,6 @@ content:
       position: "Co-fondateur de Gyroscops"
       linkedin: "https://www.linkedin.com/in/gplanchat"
       image: "gregory-plancha.jpeg"
-
-    - image: "arnaud-lemaire.jpeg"
-      text: "Arnaud est un développeur exceptionnel, dont l'autonomie et l'initiative ont marqué son passage dans nos équipes.Sa capacité à prendre en charge des projets de A à Z ainsi que son esprit d'analyse et de synthèse en font un très bon leader technique. Si vous avez la chance d'avoir Arnaud dans votre équipe, vous verrez rapidement son impact positif. Je recommande Arnaud avec enthousiasme."
-      name: "Arnaud LEMAIRE"
-      position: "VP/Chief Architect at Sunday"
-      linkedin: "https://www.linkedin.com/in/lilobase/"
 
     - text: "Arnaud is a great software engineer. He led the design and delivery of valuable features and capabilities in our product offer. He introduced, advocated, and embodied many excellent practices like domain-driven design, event storming, and more. His passion for clean architecture and quality positively influenced our entire product development team."
       name: "Nicolas Dupont"
@@ -35,6 +35,34 @@ content:
       position: "Engineer Manager at Sunday"
       linkedin: "https://www.linkedin.com/in/denis-migot"
       image: "denis-migot.jpeg"
+
+    - text: "J'ai eu l'opportunité de travailler avec Arnaud, et c'est un professionnel sérieux et compétent. Expert confirmé dans l'écriture de tests, il n'hésite jamais à partager ses connaissances pour aider l'équipe à progresser. Il a le bon mindset, et cherche à améliorer les choses, ce qui en fait un collègue appréciable."
+      name: "Hadrien Sibboni"
+      position: "Team Lead at Skaleet"
+      linkedin: "https://www.linkedin.com/in/hadrien-sibboni-5a33b1b5/"
+
+    - text: |
+        Je recommande vivement Arnaud, développeur expérimenté avec qui j’ai eu l’opportunité (et le plaisir) de collaborer de manière rapprochée, notamment en pair-programming. Son professionnalisme irréprochable, son sens aigu du détail et sa force de proposition ont rendu notre travail commun particulièrement efficace et enrichissant.
+        
+        Grâce à sa solide expérience sur du code legacy, il a su identifier rapidement les zones sensibles, anticiper les impacts et guider les décisions techniques pour éviter des erreurs lors de phases de refactoring complexes. Ses remarques étaient toujours pertinentes, argumentées et orientées vers la qualité du produit. Cela en ayant toujours à l'esprit cette question : "quel problème essaye-t-on de résoudre ?"
+        
+        Au-delà de ses compétences techniques, j’ai énormément apprécié sa force de proposition. Il n’hésite pas à remettre en question les approches existantes quand cela est pertinent, à proposer des solutions mieux adaptées ou plus robustes, et à apporter des idées qui améliorent réellement la qualité du produit. Ses interventions sont toujours réfléchies, argumentées et orientées vers l’impact positif à long terme.
+        
+        Collaborer en pair-programming avec lui a été une expérience très formatrice. Il partage volontiers ses connaissances, explique clairement ses raisonnements, et crée un environnement de travail à la fois exigeant et bienveillant.
+        
+        Enfin, c’est quelqu’un de fiable, investi et constant dans son niveau d’exigence. Il porte une grande attention à la lisibilité du code, à la qualité des tests et à l’impact global de chaque changement. Sa présence est à la fois professionnelle, constructive et agréable.
+        
+        Je pose ça sur le coin de la table : Arnaud est un artisan logiciel sur lequel on peut compter et je suis convaincu que son expertise, sa rigueur et son engagement sont de véritables atouts pour n’importe quelle équipe de développement."
+      name: "Daniel Berlemont"
+      position: "Software Architect - API & Async Messaging at Skaleet"
+      linkedin: "https://www.linkedin.com/in/daniel-berlemont/"
+      image: "DanielBerlemont.jpeg"
+
+    - text: "It was my pleasure to work in pair-programming with Arnaud for 3 months. His mastery of TDD and his ability to guide his teammates into it made the whole experience extremely profitable and allowed to produce a very well-decoupled, expressive code. We could rely a lot on his ability to split a big feature into smaller steps, without being confused by the general complexity of the task at hand. Finally, his constant focus on building iteratively things that work and bring value make him a 5* asset in a software development team."
+      name: "Laurent Verdier"
+      position: "Web developer at Palo IT"
+      linkedin: "https://www.linkedin.com/in/lverdier/"
+      image: "laurent-verdier.jpeg"
 
     - text: |
         J’ai eu le plaisir et le privilège de travailler avec Arnaud durant près de dix ans au sein de trois entreprises différentes. C'est sans conteste la personne avec qui et de qui j'ai appris le plus dans ce métier.
@@ -58,9 +86,3 @@ content:
       position: "Chef de projet technique chez Clever Age"
       linkedin: "https://www.linkedin.com/in/borisschapira"
       image: "boris-schapira.jpeg"
-
-    - text: "It was my pleasure to work in pair-programming with Arnaud for 3 months. His mastery of TDD and his ability to guide his teammates into it made the whole experience extremely profitable and allowed to produce a very well-decoupled, expressive code. We could rely a lot on his ability to split a big feature into smaller steps, without being confused by the general complexity of the task at hand. Finally, his constant focus on building iteratively things that work and bring value make him a 5* asset in a software development team."
-      name: "Laurent Verdier"
-      position: "Web developer at Palo IT"
-      linkedin: "https://www.linkedin.com/in/lverdier/"
-      image: "laurent-verdier.jpeg"
