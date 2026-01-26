@@ -14,12 +14,16 @@ content:
     royal-canin:
       src: "royal-canin.jpg"
       alt: "Royal Canin"
-      weight: 5
+      weight: 6
     sud-ouest:
       src: "sudouest.png"
       alt: "Sud Ouest"
-      weight: 4
+      weight: 5
     iogk:
       src: "iogk.jpeg"
       alt: "IOGK"
       weight: 3
+    skaleet:
+      src: "skaleet.png"
+      alt: "Skaleet"
+      weight: 4
