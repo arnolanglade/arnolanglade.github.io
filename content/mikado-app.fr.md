@@ -8,9 +8,6 @@ image:
   src: "project/mikado-game.png"
   alt: "Jeu du Mikado"
 menus:
-  main:
-    name: "MikadoApp"
-    weight: 5
   footer:
     name: "MikadoApp"
 ---
