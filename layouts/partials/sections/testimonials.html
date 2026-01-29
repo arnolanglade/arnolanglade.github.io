@@ -1,75 +1,37 @@
-<section class="section testimonials bg-dark py-5">
-  <div class="container">
-    <div class="row pb-5">
-      <div class="col-12">
-          <h2 class="fs-1 fw-bold text-center text-light">
-            {{ i18n "home.section.testimonials.title" | markdownify }}
-          </h2>
-      </div>
-    </div>
-    <div class="row">
-      {{ range $i, $e := first 1 .content.list }}
-      <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
-        {{ partial "asset-image" (dict "src" "testimonial/testimonial-header.png" "alt" "" "size" "500x") }}
-      </div>
-      <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
-        <div class="pb-2">
-          {{ partial "asset-image" (dict "src" "testimonial/left-quote.png" "alt" "" "size" "64x") }}
-        </div>
-        <div class="card d-flex flex-xl-row align-items-start border-0 shadow p-5">
-          {{ $src := (printf "%s%s" "testimonial/" .image ) }}
-          {{ partial "asset-image" (dict "src" $src "alt" .name "size" "70x" "class" "rounded-circle mb-3") }}
-          <p class="card-text text-dark ps-2">
-            "{{ .text }}"
-            <br>
-            <br>
-            <a href="{{ .linkedin }}" target="_blank" class="fw-bold text-dark text-decoration-none">{{ .name }} ({{ .position }})</a>
+<div class="container testimonials">
+  <div class="row testimonial-container align-items-stretch">
+    {{ range first 4 .content.list }}
+    <div class="col-12 col-md-6 d-flex mb-4 ">
+      <div class="card d-flex flex-column border-0 shadow p-4 h-100 w-100">
+        <div class="d-flex flex-column flex-grow-1">
+          <div class="flex-grow-1">
+            {{ partial "asset-image" (dict "src" "testimonial/left-quote.png" "alt" "" "size" "32x") }}
+            {{ with .text }}{{ . | markdownify }}{{ end }}
+            {{ partial "asset-image" (dict "src" "testimonial/right-quote.png" "alt" "" "size" "32x") }}
+          </div>
+          <p class="card-text text-dark w-100 mt-auto d-flex align-items-center pt-3 gap-3">
+            {{ $src := printf "testimonial/%s" .image }}
+            {{ partial "asset-image" (dict
+            "src" $src
+            "class" "rounded-circle"
+            "alt" .name
+            "size" "70x"
+            ) }}
+            <a href="{{ .linkedin }}"
+               target="_blank"
+               class="fw-bold text-dark text-decoration-none">
+              {{ .name }} ({{ .position }})
+            </a>
           </p>
         </div>
-        <div class="pt-2 text-end">
-          {{ partial "asset-image" (dict "src" "testimonial/right-quote.png" "alt" "" "size" "64x") }}
-        </div>
       </div>
-      {{ end }}
     </div>
-    <div class="row mt-5">
-      {{ range $i, $e :=  first 3 (after 1 .content.list) }}
-      <div class="col-12 col-xl-4 testimonial-container">
-        <div class="card px-1 py-4 h-100 border-0">
-          {{ with $e.image }}
-          <div class="card-body">
-            {{ $src := (printf "%s%s" "testimonial/"  $e.image ) }}
-            {{ partial "asset-image" (dict "src" $src "alt" $e.name "size" "70x" "class" "rounded-circle mb-3" ) }}
-            <p class="card-text text-dark testimonial-content">
-              {{ $e.text }}
-            </p>
-            <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
-              {{ $e.name }} ({{ $e.position }})
-            </a>
-          </div>
-          {{ else }}
-          <div class="card-body">
-            {{ $colors := (slice "bg-green" "bg-yellow" "bg-red" "bg-purple") }}
-            <div class="{{ index $colors (mod $i 4) }} rounded-circle mb-4"></div>
-            <p class="card-text text-dark">"
-              {{ $e.text }}"
-              <br>
-              <br>
-              <a href="{{ $e.linkedin }}" target="_blank"  class="fw-bold text-dark text-decoration-none">
-                {{ $e.name }} ({{ $e.position }})
-              </a>
-            </p>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-    <div class="row">
-      <a class="btn btn-primary mx-auto w-auto mt-5 px-5" href="{{ "testimonials" | relLangURL }}">
-        {{ i18n "home.section.testimonials.button" | markdownify }}
-        <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
-      </a>
-    </div>
+    {{ end }}
   </div>
-</section>
+  <div class="row">
+    <a class="btn btn-primary mx-auto w-auto mt-2 mb-5 px-5" href="{{ "testimonials" | relLangURL }}">
+      {{ i18n "home.section.testimonials.button" | markdownify }}
+      <span class="ms-2">{{ partial "icons/arrow-right.html" }}</span>
+    </a>
+  </div>
+</div>

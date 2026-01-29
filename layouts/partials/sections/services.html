@@ -1,32 +1,44 @@
-<section class="section service my-5">
+{{ $services := .services }}
+{{ $testimonials := .testimonials }}
+
+<section class="section service my-5 ">
   <div class="container">
-    {{ range .content }}
+    {{ range $services.content }}
     <div class="row service-feature">
-      <div class="col-12 col-xl-5 d-flex flex-column justify-content-center">
+      {{ if eq .type "testimonials" }}
+      {{ with .title }}
+      <h3 class="fs-1 fw-bold text-dark pb-3 mt-5">{{ . | markdownify }}</h3>
+      {{ end }}
+      {{ partial "sections/testimonials.html" $testimonials }}
+      {{ else }}
+      <div class="col-12 col-xl-5 d-flex flex-column justify-content-center pb-3">
         {{ with .image }}
         {{ $src := printf "service/%s" .src }}
-        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "530x") }}
+        {{ partial "asset-image" (dict "src" $src "alt" .alt "size" "500x") }}
         {{ end }}
       </div>
       <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
         {{ with .pretitle }}
-          <p class="text-danger fw-semibold mb-2">{{ . | markdownify }}</p>
+        <p class="text-danger fw-semibold mb-2">{{ . | markdownify }}</p>
         {{ end }}
         {{ with .title }}
-          <h3 class="fs-1 fw-bold text-dark pb-3">{{ . | markdownify }}</h3>
+        <h3 class="fs-1 fw-bold text-dark pb-3">{{ . | markdownify }}</h3>
         {{ end }}
         {{ with .text }}
-          <p class="text-dark pb-3">{{ . | markdownify }}</p>
+        {{ . | markdownify }}
         {{ end }}
         <div class="">
-          {{ range .buttons | first 1 }}
-            <a class="btn btn-primary text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
+          {{ with .buttons }}
+          {{ range . | first 1 }}
+          <a class="btn btn-primary text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
           {{ end }}
-          {{ range .buttons | after 1 }}
-            <a class="btn btn-outline-dark text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
+          {{ range . | after 1 }}
+          <a class="btn btn-outline-dark text-decoration-none me-3 mb-2" href="{{ .url }}">{{ .label }}</a>
+          {{ end }}
           {{ end }}
         </div>
       </div>
+      {{ end }}
     </div>
     {{ end }}
   </div>

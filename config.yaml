@@ -105,3 +105,8 @@ outputs:
     - rss
 
 copyright: "© 2024 Arnaud Langlade"
+
+markup:
+  goldmark:
+    renderer:
+      hardWraps: true
