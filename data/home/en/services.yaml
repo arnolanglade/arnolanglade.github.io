@@ -4,60 +4,76 @@ id: "portfolio"
 content:
   - image:
       src: "seasoned-guidance-on-your-projects.png"
-      alt: "Looking for technical expert on your projects?"
-    title: "Looking for technical expert on your projects?"
+      alt: "When your application slows down delivery"
+    title: "When your application slows down delivery"
     text: |
-      With 15 years as a software engineer, I've collaborated with large companies like Royal Canin (a Mars Group company), Prisma Media, Sud Ouest Group, and innovative startups such as Akeneo, Convelio, and Sunday. My priority? Delivering real value to end users.
-  
-      I believe in the power of understanding business needs over chasing the latest tech trends. I focus on finding the most pragmatic solutions to quickly ship them to production and collect user feedback.. Feedback is crucial in software development, it ensures we make the right decisions.
-    buttons:
-      - label: "Need an expert? Hire me!"
-        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
-
-      - label: "Lean more about me"
-        url: "/about-me"
+      Stressful deployments.
+      Recurring incidents.
+      A legacy application that slows down every change.
+      
+      It is almost never a lack of motivation or skills.<br>
+      Most of the time, **the foundations, practices, and organization no longer scale.**
 
   - image:
       src: "boost-your-team-skills-or-shift-their-mindset.png"
-      alt: "Looking to boost your team's skills or shift their mindset?"
-    title: "Looking to boost your team's skills or shift their mindset?"
+      alt: "The problem with a poorly managed application?"
+    title: "The problem with a poorly managed application?"
     text: |
-      Are bad habits slowing down your delivery capabilities? If you want change but discussions always turn into an endless debate, sometimes bringing in an external facilitator can make all the difference. 
-  
-      As a Technical Coach, I can help your teams grow, enhancing their efficiency and productivity. I love sharing my knowledge on software craftsmanship and helping the individuals I collaborate with to progress.
-    buttons:
-      - label: "Need a coach? Hire me!"
-        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
-
-      - label: "Lean more about me"
-        url: "/about-me"
+      The real cost of inaction:
+      
+      * each delivery becomes riskier,
+      * technical debt slows down innovation,
+      * teams lose confidence,
+      * adding more developers does not speed things up.
+      
+      Result: **you deliver less, more slowly, and with more incidents.**
 
   - image:
       src: "scale-faster-than-your-competitor.png"
-      alt: "Looking for solutions to scale faster than your competitor?"
-    title: "Looking for solutions to scale faster than your competitor?"
+      alt: "My role?"
+    title: "My role?"
     text: |
-      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests architecture issues within your application.      Adding tens and tens of software engineers but still not shipping fast enough? Simply hiring more people isn't the key to scaling effectively. When an engineer updates one section of the application and it unexpectedly affects another, this suggests scalability issues within your architecture.
-  
-      I've worked for several startups, so I'm familiar with this problem. As software architect, I can help you build solid software foundations and organize your teams to enable faster feature delivery.
-    buttons:
-      - label: "Need an architect? Hire me!"
-        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
+      I support teams as a **Software Architect and CTO on-demand**, with 15 years of experience on **critical legacy applications** as well as **from-scratch products**.
+      
+      My goal: **build strong foundations without stopping delivery.**
+      
+      In practice, I work closely with teams to:
+      * identify what is really slowing down delivery (beyond the symptoms),
+      * evolve an existing application **step by step**, without a “big refactor”,
+      * improve practices (architecture, testing, CI/CD, collaboration),
+      * build solid foundations when starting a product from scratch.
+      
+      Often through **pair or mob programming**, to make sure changes last.
 
-      - label: "Lean more about me"
-        url: "/about-me"
+  - image:
+    title: What people I worked with say
+    type: "testimonials"
 
   - image:
       src: "bridge-the-gap-between-your-ech-and-non-tech-team-members.png"
-      alt: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
-    title: "Looking for solutions to bridge the gap between your tech and non-tech team members?"
+      alt: "Who is this for?"
+    title: "Who is this for?"
     text: |
-      Often find yourself shipping features that don't meet business expectations? As Alberto Brandolini said :  “It's not stakeholder knowledge but developers' ignorance that gets deployed into production.”
-  
-      To bridge this gap, I can organize and lead event storming and example mapping workshops. These sessions are designed to bring technical and non-technical stakeholders together in one room to facilitate discussion. Event storming helps to grasp the global picture and start thinking about the software design, while example mapping helps to clarify user stories.
-    buttons:
-      - label: "Need a facilitator? Hire me!"
-        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
+      I mainly work with:
+      * software editors,
+      * start-ups,
+      * companies with an existing application that has become hard to evolve,
+      
+      who want to:
+      * regain control over their legacy,
+      * make deployments safer,
+      * speed up sustainably,
+      * or build a product from scratch on solid foundations.
 
-      - label: "Lean more about me"
-        url: "/about-me"
+  - image:
+      src: "hire-me.png"
+      alt: "Let’s talk about your situation"
+    title: "Let’s talk about your situation"
+    text: |
+      Are your deliveries becoming a challenge?
+      Do you feel your projects are moving too slowly?
+      
+      Let’s talk for 30 minutes, with no commitment.
+    buttons:
+      - label: "Book a call"
+        url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
