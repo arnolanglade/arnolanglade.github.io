@@ -10,7 +10,7 @@ image:
   format: "x600 webp"
 ---
 
-I am a technical coach and software architect with 15 years of experience. Self-taught, I studied telecommunications and networks in school, my first job was in a small web agency as a developer. I learned on the job and spent many years enhancing my skills in my free time. It wasn't the easiest path, but I have no regrets. I love my job!
+I am a Software Architect and CTO on-demand with 15 years of experience. Self-taught, I studied telecommunications and networks in school, my first job was in a small web agency as a developer. I learned on the job and spent many years enhancing my skills in my free time. It wasn't the easiest path, but I have no regrets. I love my job!
 
 I have worked with many service companies, which allowed me to contribute on major projects for huge companies such as [Prisma media](https://www.prismamedia.com), [Royal Canin](https://www.royalcanin.com) and [Groupe Sud Ouest](https://www.groupesudouest.com). Then, I worked for several startups, including [Akeneo](https://www.akeneo.com), [Convelio](https://www.convelio.com) or [Sunday](https://sundayapp.com). Finally, after leaving Sunday, I founded my own enterprise in August 2022.
 

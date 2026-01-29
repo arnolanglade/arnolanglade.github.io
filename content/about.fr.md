@@ -11,7 +11,7 @@ image:
 ---
 
 
-Je suis coach technique et architecte logiciel avec 15 ans d'expérience. Autodidacte, j'ai étudié les télécommunications et les réseaux à l'école, mon premier emploi était dans une petite agence web en tant que développeur. J'ai appris sur le tas et passé de nombreuses années à perfectionner mes compétences pendant mon temps libre. Ce n'était pas le chemin le plus facile, mais je ne regrette rien. J'adore mon travail !
+Je suis architecte logiciel and CTO on-demand avec 15 ans d'expérience. Autodidacte, j'ai étudié les télécommunications et les réseaux à l'école, mon premier emploi était dans une petite agence web en tant que développeur. J'ai appris sur le tas et passé de nombreuses années à perfectionner mes compétences pendant mon temps libre. Ce n'était pas le chemin le plus facile, mais je ne regrette rien. J'adore mon travail !
 
 J'ai travaillé avec de nombreuses entreprises de services, ce qui m'a permis de contribuer à d'importants projets pour de grandes entreprises telles que [Prisma media](https://www.prismamedia.com), [Royal Canin](https://www.royalcanin.com) et [Groupe Sud Ouest](https://www.groupesudouest.com). Ensuite, j'ai travaillé pour plusieurs startups comme [Akeneo](https://www.akeneo.com), [Convelio](https://www.convelio.com) ou [Sunday](https://sundayapp.com). Finalement, après avoir quitté Sunday, j'ai fondé ma propre entreprise en août 2022.
 
