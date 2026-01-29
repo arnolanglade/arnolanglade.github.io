@@ -71,9 +71,9 @@ content:
     title: "Parlons de votre situation"
     text: |
       Vos livraisons vous donnent du fil à retordre ?
-      Vous sentez que la technique freine la stratégie ?
+      Vous avez l’impression que les projets avancent trop lentement ?
       
       Échangeons 30 minutes, sans engagement.
     buttons:
-      - label: "Échangeons 30 minutes"
+      - label: "Prendre rendez-vous"
         url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
