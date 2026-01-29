@@ -104,7 +104,7 @@ outputs:
     - html
     - rss
 
-copyright: "© 2024 Arnaud Langlade"
+copyright: "© Arnaud Langlade"
 
 markup:
   goldmark:
