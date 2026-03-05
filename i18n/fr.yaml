@@ -2,7 +2,10 @@ home:
   section:
     me:
       title: "Bonjour, je suis **Arnaud !**"
-      text: "Mises en production bloquées, incidents à répétition, projets qui s’enlisent : j’interviens pour débloquer la situation et relancer le delivery."
+      text: |
+        Quand la  complexité technique, fonctionnelle et organisationnelle s’accumule freine la capacité à livrer, c’est la croissance qui ralentit.
+
+        Mises en production bloquées, incidents à répétition, projets qui s’enlisent : j’interviens pour restaurer durablement la capacité à livrer sans arrêter le produit.
       buttonPrimary: "Échangeons 30 minutes"
       buttonSecondary: "À propos de moi"
     testimonials:

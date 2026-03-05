@@ -4,28 +4,29 @@ id: "portfolio"
 content:
   - image:
       src: "seasoned-guidance-on-your-projects.png"
-      alt: "When your application slows down delivery"
-    title: "When your application slows down delivery"
+      alt: "When complexity takes over"
+    title: "When complexity takes over"
     text: |
       Stressful deployments.
+      Features take too long to ship.
       Recurring incidents.
-      A legacy application that slows down every change.
+      Hiring more developers does not increase velocity.
+      A technical foundation that becomes risky to evolve.
       
-      It is almost never a lack of motivation or skills.<br>
+      It is almost never a motivation or skills problem.
       Most of the time, **the foundations, practices, and organization no longer scale.**
 
   - image:
       src: "boost-your-team-skills-or-shift-their-mindset.png"
-      alt: "The problem with a poorly managed application?"
-    title: "The problem with a poorly managed application?"
+      alt: "But what is the cost?"
+    title: "But what is the cost?"
     text: |
-      The real cost of inaction:
-      
-      * each delivery becomes riskier,
-      * technical debt slows down innovation,
-      * teams lose confidence,
-      * adding more developers does not speed things up.
-      
+      Each release becomes riskier.
+      Technical debt slows down innovation.
+      Teams lose confidence.
+      Adding developers does not speed things up.
+      Features reach production slowly.
+          
       Result: **you deliver less, more slowly, and with more incidents.**
 
   - image:
@@ -33,17 +34,18 @@ content:
       alt: "My role?"
     title: "My role?"
     text: |
-      I support teams as a **Software Architect and CTO on-demand**, with 15 years of experience on **critical legacy applications** as well as **from-scratch products**.
+      I work as a CTO / Head of Engineering on demand to restore the ability to deliver — without stopping the product.
       
-      My goal: **build strong foundations without stopping delivery.**
+      With 15 years of experience on critical systems and growing startups, I help teams take back control, both technically and organizationally.
       
       In practice, I work closely with teams to:
-      * identify what is really slowing down delivery (beyond the symptoms),
-      * evolve an existing application **step by step**, without a “big refactor”,
-      * improve practices (architecture, testing, CI/CD, collaboration),
-      * build solid foundations when starting a product from scratch.
+      * dentify what really slows down execution (beyond the symptoms)
+      * align business vision with technical decisions
+      * reduce the complexity that slows teams down
+      * secure deployments
+      * evolve the system step by step, without a “big refactor”
       
-      Often through **pair or mob programming**, to make sure changes last.
+      Always close to the teams, so the changes last.
 
   - image:
     title: What people I worked with say
@@ -57,13 +59,14 @@ content:
       I mainly work with:
       * software editors,
       * start-ups,
-      * companies with an existing application that has become hard to evolve,
+      * companies where technical and organizational complexity slows down growth,
       
       who want to:
-      * regain control over their legacy,
-      * make deployments safer,
-      * speed up sustainably,
-      * or build a product from scratch on solid foundations.
+      * restore a predictable delivery capacity
+      * secure their deployments
+      * accelerate in a sustainable way
+      * scale without teams stepping on each other
+      * or build a product from scratch on solid foundations
 
   - image:
       src: "hire-me.png"

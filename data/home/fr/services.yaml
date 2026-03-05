@@ -4,28 +4,29 @@ id: "portfolio"
 content:
   - image:
       src: "seasoned-guidance-on-your-projects.png"
-      alt: "Quand votre application freine vos livraisons"
-    title: "Quand votre application freine vos livraisons"
+      alt: "Quand la complexité prend le dessus"
+    title: "Quand la complexité prend le dessus"
     text: |
       Mises en production stressantes.
+      Les fonctionnalités mettent trop de temps à sortir
       Incidents à répétition.
-      Une application legacy qui ralentit chaque évolution.
+      Recrutements qui n’augmentent pas la vélocité.
+      Une base technique qui devient risquée à faire évoluer.
       
-      Ce n’est presque jamais un problème de motivation ou de compétences.<br>
+      Ce n’est presque jamais un problème de motivation ou de compétences.
       Le plus souvent, **les fondations techniques, les pratiques et l’organisation ne suivent plus.**
 
   - image:
       src: "boost-your-team-skills-or-shift-their-mindset.png"
-      alt: "Le problème avec une application mal gérée ?"
-    title: "Le problème avec une application mal gérée ?"
+      alt: "Mais quel est le coût de tout ça ?"
+    title: "Mais quel est le coût de tout ça ?"
     text: |
-      Le coût réel de l’inaction:
-      
-      * chaque livraison devient plus risquée,
-      * la dette technique étouffe l’innovation,
-      * les équipes perdent confiance,
-      * ajouter des développeurs n’accélère rien.
-    
+      Chaque livraison devient plus risquée.
+      La dette technique étouffe l’innovation.
+      Les équipes perdent confiance.
+      Ajouter des développeurs n’accélère rien.
+      Les fonctionnalités arrivent lentement en production.
+
       Résultat : **vous livrez moins, plus lentement, avec plus d’incidents.**
 
   - image:
@@ -33,17 +34,19 @@ content:
       alt: "Mon rôle ?"
     title: "Mon rôle ?"
     text: |
-      J’accompagne les équipes en tant qu’**Architecte logiciel et CTO on-demand**, avec 15 ans d’expérience sur des **applications legacy critiques** comme sur des **produits from scratch**.
+      J’interviens en tant que CTO / Head of Engineering on demand pour restaurer la capacité à livrer sans stopper le produit.
       
-      Mon objectif : **remettre des bases solides sans arrêter le delivery.**
-      
+      Avec 15 ans d’expérience sur des systèmes critiques et des startups en croissance, j’aide les équipes à reprendre le contrôle, techniquement et organisationnellement.
+
       Concrètement, je travaille aux côtés des équipes pour :
-      * identifier ce qui freine réellement les livraisons (au-delà des symptômes),
-      * faire évoluer une application existante **pas à pas**, sans “big refacto”,
-      * améliorer les pratiques (architecture, tests, CI/CD, collaboration),
-      * poser des fondations saines quand il faut construire un produit de zéro.
-      
-      Souvent en **pair ou mob programming**, pour que les changements durent.
+      * identifier ce qui freine réellement l’exécution (au-delà des symptômes),
+      * aligner la vision business et les décisions techniques,
+      * réduire la complexité qui ralentit les équipes,
+      * sécuriser les mises en production,
+      * faire évoluer le système pas à pas, sans “big refacto”.
+  
+
+       Toujours au plus près du terrain, pour que les changements durent.
 
   - image:
     title: Ce que disent les personnes avec lesquelles j’ai travaillé
@@ -57,12 +60,13 @@ content:
       J’accompagne principalement :
       * des éditeurs de logiciels,
       * des start-ups,
-      * des entreprises avec une application existante devenue difficile à faire évoluer,
+      * des entreprises dont la complexité technique et organisationnelle freine la croissance,
       
       qui veulent :
-      * reprendre le contrôle sur leur legacy,
+      * restaurer une capacité à livrer prévisible,
       * sécuriser leurs mises en production,
       * accélérer durablement,
+      * scaler sans que les équipes se marchent dessus,
       * ou construire un produit from scratch sur des bases solides.
 
   - image:

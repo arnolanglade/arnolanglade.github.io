@@ -2,7 +2,10 @@ home:
   section:
     me:
       title: "Hi there, I am **Arnaud!**"
-      text: "Blocked deployments, repeated incidents, projects getting stuck: I help unblock the situation and restart delivery."
+      text: |
+        When technical, functional, and organizational complexity builds up, it slows down the ability to deliver and growth slows down.
+
+        Blocked deployments, recurring incidents, projects that get stuck: I step in to restore the ability to deliver in a sustainable way, without stopping the product.
       buttonPrimary: "Book a 30-minute call"
       buttonSecondary: "About me"
     testimonials:
