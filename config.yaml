@@ -27,7 +27,7 @@ languages:
           weight: 2
       buttons:
         - name: "Book a 30-minute call"
-          url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
+          url: "https://calendly.com/arnaud-langlade/30min"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
@@ -58,7 +58,7 @@ languages:
           weight: 2
       buttons:
         - name: "Échangeons 30 minutes"
-          url: "https://meetings-eu1.hubspot.com/arnaud-langlade"
+          url: "https://calendly.com/arnaud-langlade/30min"
           weight: 5
           pre: "btn btn-primary text-light"
       footer:
