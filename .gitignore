@@ -1,4 +1,5 @@
 ./resources
 .idea
 /themes/up-business-theme
-/public/*
+public/
+resources/
