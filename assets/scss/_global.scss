@@ -176,7 +176,20 @@
 
 // Newsletter
 .newsletter {
+  .newsletter-form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .newsletter-form-wrapper > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   form {
+    margin-left: auto;
+    margin-right: auto;
+
     @media only screen and (min-width: 1200px) {
       width: 550px;
     }

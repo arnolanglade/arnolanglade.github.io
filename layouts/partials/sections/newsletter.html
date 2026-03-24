@@ -1,9 +1,11 @@
 <section class="section blog-single py-5 newsletter">
+  {{ $defaultFormID := "0bd69db2-2786-11f1-8dff-79b857a5931d" }}
+  {{ $formID := .Params.newsletter_form_id | default $defaultFormID }}
+  {{ $defaultScriptSrc := printf "https://eomail5.com/form/%s.js" $formID }}
+  {{ $scriptSrc := .Params.newsletter_script_src | default $defaultScriptSrc }}
   <div class="container">
     <div class="row d-flex justify-content-center">
-      <form
-        action="https://github.us13.list-manage.com/subscribe/post?u=d7313775f348f8c8d39a841a0&id=28bcb90eaa&f_id=00550ee4f0"
-        method="post"
+      <div
         class="text-center"
       >
         <h3 class="title fw-bold">{{ i18n "newsletter.title" }}</h3>
@@ -11,12 +13,11 @@
         {{ partial "asset-image" (dict "src" . "alt" "Blog" "size" "350x" "class" "my-5") }}
         {{ end }}
         <p>{{ i18n "newsletter.text" }}</p>
-        <input type="email" class="form-control" placeholder="{{ i18n "newsletter.placeholder" }}" name="EMAIL">
-        <button type="submit" class="btn btn-primary my-4 fw-bold fs-4 text-light px-5 py-3 text-dark">
-          {{ i18n "newsletter.button" }}
-        </button>
+        <div class="newsletter-form-wrapper">
+          <script async src="{{ $scriptSrc }}" data-form="{{ $formID }}"></script>
+        </div>
         <p class="privacy">{{ i18n "newsletter.privacy" }}</p>
-      </form>
+      </div>
     </div>
   </div>
 </section>
