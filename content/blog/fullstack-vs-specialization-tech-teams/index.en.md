@@ -1,6 +1,6 @@
 ---
 title: "Fullstack: someone who is expert in nothing?"
-date: "2026-03-24"
+date: "2026-03-28"
 url: "fullstack-vs-specialization-tech-teams"
 image_credit: pf91_photography
 description: "Why too much specialization can slow down a team and how fullstack developers help keep a global vision of the system."
