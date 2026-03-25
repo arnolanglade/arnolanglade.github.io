@@ -5,6 +5,7 @@ url: "faire-du-logiciel-pas-juste-ecrire-du-code"
 image_credit: "altumcode"
 description: "Pourquoi écrire du code ne suffit pas pour créer un logiciel utile : feedback utilisateur, simplicité et livraison régulière pour réellement livrer de la valeur."
 keywords: "livrer de la valeur logiciel,développement logiciel,livraison incrémentale logiciel,feedback utilisateur logiciel,dette fonctionnelle,delivery logiciel,développement produit logiciel,feature inutile logiciel"
+tags: [software-mindset-series]
 ---
 
 J’ai vu beaucoup d’équipes produire du code, parfois de très bonne qualité, sans jamais vraiment livrer de valeur.

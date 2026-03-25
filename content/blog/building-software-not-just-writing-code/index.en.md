@@ -5,6 +5,7 @@ url: "building-software-not-just-writing-code"
 image_credit: "altumcode"
 description: "Why writing code is not enough to build useful software: user feedback, simplicity, and regular delivery help teams truly deliver value."
 keywords: "deliver software value,software development,incremental delivery,user feedback software,functional debt,software delivery,product software development,unused software features"
+tags: [software-mindset-series]
 ---
 
 I have seen many teams produce code, sometimes of very good quality, without really delivering value.
