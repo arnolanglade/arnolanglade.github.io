@@ -1,6 +1,6 @@
 ---
 title: "Pourquoi une mauvaise stratégie de tests ralentit le delivery"
-date: "2026-04-30"
+date: "2026-04-28"
 url: "strategie-tests-delivery"
 image_credit: "nguyendhn"
 description: "Une mauvaise stratégie de tests peut ralentir votre équipe. Découvrez comment améliorer le feedback et accélérer le delivery logiciel."

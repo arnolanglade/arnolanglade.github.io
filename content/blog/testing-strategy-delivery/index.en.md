@@ -1,6 +1,6 @@
 ---
 title: "Why a poor testing strategy slows down delivery"
-date: "2026-04-30"
+date: "2026-04-28"
 url: "testing-strategy-delivery"
 image_credit: "nguyendhn"
 description: "A poor testing strategy can slow down your team. Learn how to improve feedback loops and speed up software delivery."
