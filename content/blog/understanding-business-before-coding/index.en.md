@@ -1,6 +1,6 @@
 ---
 title: "Understanding the business before coding (and avoid slowing down your team)"
-date: "2026-05-19"
+date: "2026-05-18"
 url: "understanding-business-before-coding"
 image_credit: "lingapp"
 description: "Why misunderstanding the business slows down delivery and how to better align teams to build useful features."
