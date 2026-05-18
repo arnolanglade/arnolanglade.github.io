@@ -1,6 +1,6 @@
 ---
 title: "Comprendre le métier avant de coder (et éviter de ralentir votre équipe)"
-date: "2026-05-19"
+date: "2026-05-18"
 url: "comprendre-metier-avant-coder"
 image_credit: "lingapp"
 description: "Pourquoi mal comprendre le métier ralentit le delivery et comment mieux aligner les équipes pour livrer des fonctionnalités utiles."
