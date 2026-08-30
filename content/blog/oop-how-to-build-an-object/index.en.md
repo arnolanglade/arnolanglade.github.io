@@ -41,7 +41,6 @@ final class Map
 
 **Tip:** If your objects encapsulate a collection of a specific type (like the `Marker` in this example), you can use variadic arguments to automatically validate each item of this collection. Here, we don’t need to iterate the collection to check the type of its items, the language does it for us.
 
-{{< training-link >}}
 
 ## Secondary constructor
 

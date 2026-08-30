@@ -27,12 +27,6 @@ post:
   published-at: "Published at"
   related-posts: "Related posts"
   last-posts: "Last posts"
-  training-link:
-    text: |
-      **Do you speak French ?** Tired of the same old CRUD applications, struggling with your framework, or feeling the pressure of production releases? It's time to take your career to the next level.
-
-      Discover the power of **Hexagonal Architecture** and **DDD** to build robust and sustainable Symfony applications. Join me and kickstart your journey toward mastering advanced development techniques.
-    button: 🚀 Start your journey here!
   about:
     title: "Hello, I'am Arnaud!"
     intro: "I'm a software craftsman. I aim to make complex software concepts accessible and interesting for all."

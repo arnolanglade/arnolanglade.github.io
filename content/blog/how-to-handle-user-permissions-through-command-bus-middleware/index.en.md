@@ -17,7 +17,6 @@ Applying user permissions might be very complex and can lead to introducing a lo
 
 Let’s imagine a basic use case: an application with two kinds of users: regular ones and admins. We want to allow certain actions only to admin users.
 
-{{< training-link >}}
 
 First, I will introduce an interface `OnlyPerformedByAdministrator` that will be implemented by the command restricted to the admin users.
 
