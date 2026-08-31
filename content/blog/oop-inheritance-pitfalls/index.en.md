@@ -28,9 +28,7 @@ This code won't ease team collaboration. Let's consider another scenario: where 
 
 I have worked on several codebases that heavily relied on inheritance, but now I barely use it due to the drawbacks I've described. Instead, I prefer to use composition. It is better to work with several small classes and assemble them, it’s like playing with Lego blocks. Moreover, it greatly simplifies testing.
 
-{{< training-link >}}
 
 I try to apply the open-closed principle as much as possible to enhance code modularity and facilitate evolution. In a related blog post, I explain the principle and provide an example to illustrate how to refactor code that doesn't follow this principle. Here is the link: 
 
 {{< page-link page="open-close-principle" >}}
-

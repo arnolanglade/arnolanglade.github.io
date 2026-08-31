@@ -34,7 +34,6 @@ Regardons les middleware les plus couramment utilisés dans la construction d'un
 
 Le 'middleware de validation' assure la validité de la commande avant de la passer au handler et bloque son exécution si les données sont invalides. Cet middleware est assez utile car il évite une validation de la commande manuelle.
 
-{{< training-link >}}
 
 Lorsque votre application utilise une base de données, le 'middleware de transaction' exécute le handler au sein d'une transaction SQL pour s'assurer que toutes les modifications sont correctement enregistrées en base de données. En cas d'erreur, la transaction est annulée.
 
@@ -67,4 +66,3 @@ Comme je l'ai expliqué plus tôt, un événement informe quelque chose qui s’
 J'ai écrit plusieurs articles sur comment gérer une commande, valider ses données, gérer les permissions des utilisateurs, etc. Jetez un œil à ces articles :
 
 {{< page-link page="tags/command-bus/" >}}
-

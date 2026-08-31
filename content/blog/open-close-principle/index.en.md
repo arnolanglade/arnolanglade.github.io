@@ -74,7 +74,6 @@ it.each([
 
 This code does not follow the open-close principle because we need to modify this `DiscountCalculator` class every time we want to add or remove a discount rule. The problem is that`DiscountCalculator` may become really large if the business asks us to add a lot of discount rules. Large objects are hard to understand, so it won't facilitate its maintenance and testability.
 
-{{< training-link >}}
 
 Let’s refactor this code to enhance its modularity and align it with the Open-Closed principle. We will use the strategy pattern to rewrite the calculator to remove the hard-coded rules. First, we will introduce a new interface that specifies how a discount works. This interface has two methods: the first one is `isApplicable`, which determines if a discount can be applied to a product, while the second one `calculate` calculates the amount of the discount.
 
@@ -154,4 +153,3 @@ it.each([
 ```
 
 We don't need to over-engineer to apply the open-close principle. With the right design pattern, it is quite simple. Now, the discount calculator is more flexible. We didn't introduce a lot of new code but we divided the class into smaller ones. Small classes are easier to test and understand, and it will facilitate the maintenance and the evolution of your application.
-

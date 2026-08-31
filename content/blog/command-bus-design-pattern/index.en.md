@@ -35,7 +35,6 @@ Let’s see the most common middleware used to build a command bus. The first on
 
 Then the “validation middleware” ensures that the command is valid before giving it to the handler. Its purpose is to stop the command processing if data is invalid. It is pretty convenient because it avoids validating them manually. 
 
-{{< training-link >}}
 
 When your application uses a database, the “transaction middleware” wraps the handler execution into a SQL transaction. It makes sure all database changes are done, otherwise it rollbacks the transaction. 
 

@@ -120,7 +120,6 @@ I’ve written an article about the Dependency Inversion Principle (DIP), which 
 
 {{< page-link page="solid-dependency-inversion-principle" >}}
 
-{{< training-link >}}
 
 The biggest benefit  of working with small classes is that it eases testing. The original `ProductImport` class required a working database and the ability to read files from the filesystem. This doesn't help with having a short feedback loop. Testing code that involves IO operations is more complicated because the code cannot be executed without the tools required by the application. Splitting massive classes into smaller ones helps isolate the IO operations and makes your code more testable.
 

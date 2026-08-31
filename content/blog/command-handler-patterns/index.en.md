@@ -33,7 +33,6 @@ This pattern has some rules. The first one is that a command can be handled by a
 
 The command is only a DTO that carries data while the command handler is responsible to handle use cases.
 
-{{< training-link >}}
 
 ## How to use it?
 

@@ -85,7 +85,6 @@ class PostgreSqlMaps implements Maps
 
 **Tip:** Thanks to the clause [ON CONFLICT](https://www.postgresql.org/docs/9.5/sql-insert.html) we can easily insert or update data with a single query.
 
-{{< training-link >}}
 
 ## Entity design impacts
 

@@ -121,7 +121,6 @@ J'ai écrit un article sur le Principe d'Inversion de Dépendance (DIP) qui expl
 
 {{< page-link page="solid-dependency-inversion-principle" >}}
 
-{{< training-link >}}
 
 Le plus grand avantage de travailler avec de petites classes est qu'il facilite les tests. La classe `ProductImport` originale nécessitait une base de données fonctionnelle et la capacité de lire des fichiers du système de fichiers. Cela ne facilite pas l'obtention d'une boucle de feedback courte. Tester du code impliquant des opérations d'entrée/sortie (Input/Output) est plus compliqué parce que le code ne peut pas être exécuté sans les outils requis par l'application. Diviser de grosses classes en plus petites aide à isoler les opérations d'entrée/sortie (Input/Output) et rend votre code plus testable.
 
