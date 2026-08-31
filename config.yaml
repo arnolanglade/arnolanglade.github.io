@@ -49,6 +49,9 @@ languages:
     weight: 2
 
 params:
+  header:
+    showButtons: false
+
   favicons:
     themeColor: "#FFFFFF"
     backgroundColor: "#FFFFFF"
